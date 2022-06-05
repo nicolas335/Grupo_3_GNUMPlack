@@ -1,4 +1,4 @@
-###Integrantes:  
+## Integrantes:  
 
 * Nicolás Ruiz: 
 - 21 años, Estudiante de Desarrollo Web Full Stack en Digital House y Fundación Formar.  
