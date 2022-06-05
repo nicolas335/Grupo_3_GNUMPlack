@@ -1,12 +1,18 @@
-###Integrantes:
+###Integrantes:  
+
 Nicolás Ruiz: 
-_21 años, Estudiante de Desarrollo Web Full Stack en Digital House y Fundación Formar.
+-21 años, Estudiante de Desarrollo Web Full Stack en Digital House y Fundación Formar.  
 
-María Servin:
-_31 años  Operador en informática en administración y gestión, Estudiante de Desarrollo Web Full Stack en Digital House y Fundación Formar.
 
-Agustín Bracamonte:
-_24 años, Estudiante de Desarrollo Web Full Stack en Digital House y Fundación Formar.
+María Servin:  
 
-Ulises Mendez:
-_25 años, Estudiante de Desarrollo Web Full Stack en Digital House y Fundación Formar.
+-31 años  Operador en informática en administración y gestión, Estudiante de Desarrollo Web Full Stack en Digital House y Fundación Formar.
+
+Agustín Bracamonte:  
+
+-24 años, Estudiante de Desarrollo Web Full Stack en Digital House y Fundación Formar.
+
+Ulises Mendez:  
+
+-25 años, Estudiante de Desarrollo Web Full Stack en Digital House y Fundación Formar.
+___
