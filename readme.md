@@ -28,7 +28,7 @@ Esta pagina esta diseñada y dirigida a aquellas personas con necesidad de soluc
   
 ##   Páginas referentes
 
-* https://www.novoplack.com/ Por el diseño de la página.
+* https://www.novoplack.com/ Por su diseño.
 * https://www.placassanfrancisco.com.ar/ Por la variedad de productos que brinda.
 * https://www.durlock.com/ Por la experiencia del UX y por la información técnica que ofrece.
 * https://www.knauf.com.ar/ Por el producto que oferce y sus beneficios.
