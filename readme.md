@@ -21,7 +21,14 @@
  25 años, Estudiante de Desarrollo Web Full Stack en Digital House y Fundación Formar.
  ___ 
     
-##   descripcion  
+##   Descripción  
 
 
-Esta pagina esta diseñada y dirigida a aquellas personas con necesidad de solucionar sus problemas de humedad implementando una construccion en seco, con el uso de placas de yeso de primera calidad. Brindamos la posibilidad de su compra, servicio de instalacion y garantia.
+Esta pagina esta diseñada y dirigida a aquellas personas con necesidad de solucionar sus problemas de humedad implementando una construccion en seco, con el uso de placas de yeso de primera calidad. Brindamos la posibilidad de su compra, servicio de instalacion y garantia.  
+  
+##   Páginas referentes
+
+* https://www.novoplack.com/ Por el diseño de la página.
+* https://www.placassanfrancisco.com.ar/ Por la variedad de productos que brinda.
+* https://www.durlock.com/ Por la experiencia del UX y por la información técnica que ofrece.
+* https://www.knauf.com.ar/ Por el producto que oferce y sus beneficios.
