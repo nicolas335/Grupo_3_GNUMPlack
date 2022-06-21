@@ -34,4 +34,4 @@ Esta pagina esta diseñada y dirigida a aquellas personas con necesidad de soluc
 * https://www.knauf.com.ar/ Por el producto que oferce y sus beneficios.  
  
 ## Wireframes  
-- [Wireframes-Desktop-Tablet-Mobile]([https://www.example.com](https://www.figma.com/file/xvOvHExqotF2ftPt0umYKK/Home-Mobile-Desktop-Tablet?node-id=0%3A1))
+ - [Wireframes-Desktop-Tablet-Mobile](https://www.figma.com/file/xvOvHExqotF2ftPt0umYKK/Home-Mobile-Desktop-Tablet?node-id=0%3A1)
