@@ -1,0 +1,11 @@
+@import url(./normalize.css);
+@import url(./general.css);
+@import url(./variables.css);
+@import url(./header.css);
+@import url(./home.css);
+@import url(./footer.css);
+@import url(./aboutUs.css);
+@import url(./detailOfProduct.css);
+@import url(./login.css);
+@import url(./signin.css);
+@import url(./product.css);
