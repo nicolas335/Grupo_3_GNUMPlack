@@ -1,0 +1,15 @@
+.home footer .social{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    justify-content: center;
+}
+.home footer{
+    margin-top: 40px;
+    text-align: center;
+}
+.home footer .social i{
+    font-size: 22px;
+    color: white;
+    margin: 6px 6px 0;
+}

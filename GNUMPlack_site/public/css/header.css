@@ -1,0 +1,80 @@
+header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffd000;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    border-bottom-left-radius:15px ;
+    border-bottom-right-radius: 15px;
+}
+
+#bar{
+    background-color: #d9d9d9;
+    padding: 5px;
+    border-radius: 12px;
+    border: none;
+}
+.lupa{
+    padding: 5px 10px 5px 0px;
+    font-size: 25px;
+    color: white;
+}
+.searchBar{
+    height: 30px;
+    display: flex;
+    background-color: #d9d9d9;
+    border-radius: 15px;
+    margin-right: -20px;
+}
+#check{
+    display: none;
+}
+.nav-menu ul{
+    display: flex;
+    align-items: center;
+}
+.nav-menu li{
+    margin-right: 1rem;
+}
+
+.logoImg{
+    height: 55px;
+    width: 80px;
+    margin: 2.5px 0 0 2.5px;
+    border-bottom-left-radius:15px;
+}
+
+.menu-icon{
+    margin-right: 15px;
+    font-size: 30px;
+    color: white;
+}
+
+.nav-menu ul{
+    display: block;
+    position: fixed;
+    top:-100%;
+    left: 0;
+    background: #ffd000;
+    width: 100%;
+    height: 399.7px;
+    right: 0;
+    border: solid .5px #858585;
+}
+.nav-menu ul li{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    border-top: solid .5px #858585;
+}
+.nav-menu ul li a{
+    font-size: small;
+}
+#check:checked ~ ul{
+    top: 55px;
+    transition: all .25s;
+}
