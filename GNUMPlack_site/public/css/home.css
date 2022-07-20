@@ -1,5 +1,5 @@
 .home{
-  background-image: linear-gradient(#ff7b00,#FF8800,#FF9500,#FFA200,#FFAA00,#FFB700,#FFC300,#FFD000,#FFDD00,#FFEA00/*  rgba(255,255,255,.5) */);
+  background-image: linear-gradient(#ff7b00,#FF8800,#FF9500,#FFA200,#FFAA00,#FFB700,#FFC300,#FFD000,#FFDD00,#FFEA00, white);
 }
 .home h3, .home li a{
   font-family:var(--principalFont) ;

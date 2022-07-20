@@ -1,4 +1,4 @@
-header{
+.header{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -77,4 +77,51 @@ header{
 #check:checked ~ ul{
     top: 55px;
     transition: all .25s;
+}
+/*tablet*/
+
+@media (min-width:461px){
+    .header{
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+    }
+    header .nav-menu .checkbtn i{
+        display: none;
+    }
+    .header .nav-menu{
+        position: relative;
+    }
+    .header .nav-menu ul{
+        display: inline-block;
+        position: relative;
+        height: max-content;
+        border: none;
+    }
+    .nav-menu ul li{
+        position: relative;
+        padding: 0;
+        display: inline-block;
+        margin: 0;
+        border-top: none;
+    }
+    #bar{
+        display: none;
+    }
+    .lupa{
+        padding: 5px 10px 5px 0px;
+        font-size: 25px;
+        color: white;
+    }
+    .searchBar{
+        height: max-content;
+        display: flex;
+        background-color: #ffd000;
+        border-radius: 0;
+        margin-right: 0;
+        right: 0;
+        order: 1;
+    }
+    .logoImg{
+        border-bottom-left-radius:0;
+    }
 }
