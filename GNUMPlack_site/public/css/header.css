@@ -18,7 +18,7 @@
     border: none;
 }
 .lupa{
-    padding: 5px 10px 5px 0px;
+    padding: 5px 10px 8px 0px;
     font-size: 25px;
     color: white;
 }
@@ -27,7 +27,7 @@
     display: flex;
     background-color: #d9d9d9;
     border-radius: 15px;
-    margin-right: -20px;
+    margin-right: 0;
 }
 #check{
     display: none;
@@ -69,6 +69,7 @@
     display: flex;
     justify-content: center;
     margin: 0;
+    align-items: center;
     border-top: solid .5px #858585;
 }
 .nav-menu ul li a{
@@ -78,6 +79,7 @@
     top: 55px;
     transition: all .25s;
 }
+
 /*tablet*/
 
 @media (min-width:461px){
@@ -88,14 +90,27 @@
     header .nav-menu .checkbtn i{
         display: none;
     }
-    .header .nav-menu{
-        position: relative;
+    #bar{
+        display: none;
+    }
+    .searchBar{
+        height: max-content;
+        display: flex;
+        background-color: transparent;
+        border-radius: 0;
+        margin-right: 0;
+        right: 0;
+        order: 1;
     }
     .header .nav-menu ul{
-        display: inline-block;
-        position: relative;
-        height: max-content;
+        display: contents;
         border: none;
+        left: 90px;
+        top: 0;
+        background-color: transparent;
+    }
+    .nav-menu ul li a{
+        font-size: 10px;
     }
     .nav-menu ul li{
         position: relative;
@@ -104,24 +119,15 @@
         margin: 0;
         border-top: none;
     }
-    #bar{
-        display: none;
-    }
-    .lupa{
-        padding: 5px 10px 5px 0px;
-        font-size: 25px;
-        color: white;
-    }
-    .searchBar{
-        height: max-content;
-        display: flex;
-        background-color: #ffd000;
-        border-radius: 0;
-        margin-right: 0;
-        right: 0;
-        order: 1;
-    }
     .logoImg{
         border-bottom-left-radius:0;
+    }
+}
+
+/* Desktop */
+
+@media (min-width:769px){
+    .nav-menu ul li a{
+        font-size: 16px;
     }
 }
