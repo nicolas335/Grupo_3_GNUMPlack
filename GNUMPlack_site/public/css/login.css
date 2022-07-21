@@ -1,0 +1,107 @@
+.login main{
+
+    margin: 0 auto;
+    background:linear-gradient(180deg, #FFA200 0%, rgba(255, 162, 0, 0.3) 100%);
+    
+}
+.login main h1{
+    text-align:center;
+    font-family: 'Teko', sans-serif;
+    
+
+}
+.login main .container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-family: 'Mukta', sans-serif;
+}
+.login main .container label{
+    margin-bottom:5px ;
+    text-align: left;
+    font-family: 'Mukta', sans-serif;
+}
+.login  main .container input{
+    width: 80%;
+    padding: 10px;
+    font-family: 'Mukta', sans-serif;
+    
+}
+.login main .container small{
+    margin-top: 5px;
+    text-align: left;
+    color:#f20808;
+    font-family: 'Mukta', sans-serif;
+}
+.login main h2{
+    font-family: 'Mukta', sans-serif;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login main h4{
+    text-align: center;
+    font-family:'Mukta',sans-serif;
+    color: #000000;
+}
+.login main button {
+  padding: 15px;  
+  background-color: #d0770a;
+  color: black;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 170px;
+  text-align: center;
+  font-family: 'Mukta', sans-serif;
+}
+.login .bottom{
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Mukta', sans-serif;
+}
+.login main a{
+    color: #000000;
+    font-family: 'Mukta', sans-serif;
+}
+
+/* Tablet */
+
+@media(min-width:461px){
+    .login main button {
+        padding: 15px; 
+        background-color: #d0770a;
+        color: black;
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+        width: 170px;
+        text-align: center;
+        font-family: 'Mukta', sans-serif;
+
+}
+}
+
+/*Desktop*/
+
+@media(min-width :768px) {
+    .login main button {
+        padding: 10px; 
+        background-color: #d0770a;
+        color: black;
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+        width: 170px;
+        text-align: center;
+        font-family: 'Mukta', sans-serif;
+
+}
+}
+

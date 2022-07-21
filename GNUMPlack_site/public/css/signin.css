@@ -1,0 +1,122 @@
+.signin main{
+   
+    margin: 0 auto;
+    background:linear-gradient(180deg, #FFA200 0%, rgba(255, 162, 0, 0.3) 100%);
+    
+}
+.signin main h1{
+    text-align: center;
+    font-family: 'Teko', sans-serif;
+    
+}
+.signin main .container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-family: 'Mukta', sans-serif;
+}
+.signin main .container label{
+    margin-bottom:5px ;
+    font-family: 'Mukta', sans-serif;
+    
+    
+}
+.signin  main .container input{
+    width: 80%;
+    padding: 10px;
+    font-family: 'Mukta', sans-serif;
+    
+}
+.signin main .container small{
+    margin-top: 5px;
+    color:#f20808;
+    font-family: 'Mukta', sans-serif;
+
+
+}
+.signin main h2 .container{
+    font-family: 'Mukta', sans-serif;
+    text-align: center;
+    margin-top: 15px;
+}
+.signin main h4{
+    text-align: center;
+    color: #000000;
+    font-family:'Mukta', sans-serif ;
+}
+.signin main button {
+  padding: 20px;  
+  background-color: #d0770a;
+  color: black;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 170px;
+  text-align: center;
+  font-family: 'Mukta', sans-serif;
+
+}
+.signin .bottom{
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: 'Mukta', sans-serif;
+}
+.signin main a{
+    color: #000000;
+    font-family: 'Mukta', sans-serif;
+}
+
+/*tablet*/
+
+@media(min-width:461px){ 
+    .signin main button {
+        padding: 15px;  
+        background-color: #d0770a;
+        color: black;
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+        width: 170px;
+        text-align: center;
+        font-family: 'Mukta', sans-serif;
+      
+      }
+      .signin .bottom{
+          margin-bottom: 10px;
+          text-align: center;
+          font-family: 'Mukta', sans-serif;
+      } 
+    
+}
+
+/*Desktop*/
+
+@media(min-width :768px) {
+    .signin main button {
+        padding: 10px;  
+        background-color: #d0770a;
+        color: black;
+        font-weight: 600;
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+        width: 170px;
+        text-align: center;
+        font-family: 'Mukta', sans-serif;
+      
+      }
+      .signin .bottom{
+          margin-bottom: 5px;
+          text-align: center;
+          font-family: 'Mukta', sans-serif;
+      }
+
+}
+
+
+
