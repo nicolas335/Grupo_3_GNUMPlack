@@ -1,10 +1,15 @@
-.home{
+.home {
   background-image: linear-gradient(#ff7b00,#FF8800,#FF9500,#FFA200,#FFAA00,#FFB700,#FFC300,#FFD000,#FFDD00,#FFEA00, white);
+  
 }
+
 .home h3, .home li a{
   font-family:var(--principalFont) ;
   font-weight: 600;
   text-transform: uppercase;
+}
+.home h3{
+  margin-top: 25px;
 }
 .home p{
   font-family:var(--secondaryFont);
@@ -31,20 +36,29 @@
 .home main .section1 div img{
     margin: 15px 0 10px 0;
     border-radius: 15px;
+    max-width: fit-content;
 }
 .home .containerUbi{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  border-bottom: .4px solid grey;
+  padding-bottom: 70px;
 }
------------------------------------------------
+.home main .ubiSection{
+  border-top: .4px solid grey;
+  width: 380px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+}
+/* ----------------------------------------------- */
 #home-slider{
   margin:0 auto;
   background-color: white;
-  max-width: 800px;
-  width: 100%;
+  width: 380px; 
   padding: 30px;
   box-sizing: border-box;
+  margin-bottom: 70px;
 }
 
 #home-slider > ul, li {
@@ -55,7 +69,6 @@
 
 #home-slider > ul.slider{
   position: relative;
-  max-width: 800px;
   width: 100%;
   height: 300px;
 }
@@ -89,7 +102,7 @@
 
 #home-slider > .menu{
   text-align: center;
-  margin: 20px;
+  margin: 0 auto;
 }
 
 #home-slider > .menu li{
@@ -125,3 +138,55 @@
   opacity: 1;
   visibility: visible;
 } 
+
+/* Medias Queries */
+
+@media (min-width:1000px){
+  .home main p{
+    font-size: 1.5rem;
+  }
+  .home main .banner img{
+    width: 700px;
+    height: 390px;
+    max-width: 720px;
+    margin-bottom: 150px;
+  }
+  .home main{
+    width: 800px;
+    margin: 0 auto;
+  }
+  .home main #home-slider{
+    width: 550px;
+}}
+/* --------------------------------------------------- */
+/* Tablet */
+
+@media (min-width:461px){
+  .home p {
+    font-size: larger;
+    letter-spacing: .4px;
+  }
+  .home .sliderSection{
+    display: flex;
+    justify-content: center;
+  }  
+  #home-slider > ul.slider li img{
+    object-fit: none;
+  }
+  #home-slider > ul{
+    height: 250px;
+    width: 340px;
+  }
+  .home main .ubiSection h3{
+    margin: 18px auto;
+    padding-top: 20px;
+  }
+  .home main .ubiSection{
+    border-top: .4px solid grey;
+    width: 400px;
+    margin: 0 auto 20px auto;
+  }
+  #home-slider{
+    height: 500px;
+  }
+};
