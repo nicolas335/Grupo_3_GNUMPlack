@@ -13,6 +13,9 @@
 .aboutUs main section div img{
     width: 100%;
 }
+.aboutUs p{
+    text-align: justify;
+}
 
 /* Tablet */
 @media (min-width:461px){
@@ -44,7 +47,9 @@
 /* Desktop */
 @media (min-width:769px) {
     .aboutUs main section{
-        margin: 25px 0 60px;
+        margin: 10px 0 40px;
+        padding: 20px 0;
+        border-top: 1px solid;
     }
     .aboutUs main section div img{
         width: 350px;
