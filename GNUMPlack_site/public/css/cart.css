@@ -1,0 +1,112 @@
+.cart main h1 i{
+    margin: 0 10px 0 30px;
+    font-size: 26px;
+}
+.cart main section article:first-child{
+    border-top: 1px solid;
+}
+.cart main section article{
+    display: flex;
+    margin: 10px 0;
+    border-bottom: 1px solid;
+    padding: 15px 0;
+}
+.cart main .productos article .imagen{
+    width: 30%;
+}
+.cart main .productos article section{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.cart main section.productos article div a img{
+    width: 100%;
+}
+.cart main section.productos article section div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.cart .productos .detalle p{
+    width: 80%;
+    text-align: center;
+    text-transform: unset;
+    font-size: 18px;
+    padding: 5px;
+}
+.cart .productos .detalle button{
+    font-size: 20px;
+    width: 35px;
+    height: 30px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+}
+.cart .productos .detalle button i{}
+.cart .productos .precio div{
+    width: 80%;
+    justify-content: center;
+}
+.cart .productos .precio .cantidad i{
+    border-radius: 50%;
+    margin: 0 15px;
+    background-color: white;
+    padding: 2px 3px;
+}
+.cart .productos .precio .cantidad input{
+    width: 50px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+}
+.cart .productos .precio p{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.cart main section.total{
+    width: 80%;
+    margin: 30px auto;
+}
+.cart main section.total div{
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0;
+}
+.cart main section.total div p{
+    font-size: 18.72px;
+}
+.cart main section.total div.subtotal{
+    padding-bottom: 15px;
+    border-bottom: solid 1px black;
+}
+
+.cart section .finalizar{
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid;
+    color: white;
+    background-color: #FFA200;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: none;
+}
+.cart section .seguir{
+    text-transform: uppercase;
+    text-align: center;
+    border: 1px solid;
+    color: #FFA200;
+    background-color: white;
+    padding: 15px;
+    border: none;
+}
+.cart .comprar a h4{
+    margin: 12px 0;
+    text-align: center;
+}
+.cart .comprar a i{
+    margin-right: 6px;
+    color:#FFA200;    
+}

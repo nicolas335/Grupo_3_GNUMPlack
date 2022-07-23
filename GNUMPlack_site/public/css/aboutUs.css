@@ -1,0 +1,57 @@
+.aboutUs main h1{
+    text-align: center;
+}
+.aboutUs main section h2{
+    margin: 10px 0;
+}
+.aboutUs main section{
+    margin: 20px 0;
+}
+.aboutUs main section div{
+    margin: 10px 0;
+}
+.aboutUs main section div img{
+    width: 100%;
+}
+
+/* Tablet */
+@media (min-width:461px){
+    .aboutUs main section{
+        display: flex;
+        justify-content: space-between;
+        margin: 15px 0 40px;
+    }
+    .aboutUs main section.reverse{
+        flex-direction: row-reverse;
+    }
+    .aboutUs main section div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .aboutUs main section div img{
+        width: 200px;
+        margin: 0 15px;
+    }
+    .aboutUs main section p{
+        font-size: 18px;
+        text-align: justify;
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* Desktop */
+@media (min-width:769px) {
+    .aboutUs main section{
+        margin: 25px 0 60px;
+    }
+    .aboutUs main section div img{
+        width: 350px;
+        margin: 0 25px;
+    }
+    .aboutUs main section p{
+        font-size: 20px;
+        margin: 0 20px;
+    }
+}

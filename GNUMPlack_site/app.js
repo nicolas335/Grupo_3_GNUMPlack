@@ -10,6 +10,7 @@ app.get("/detailOfProduct",(req,res)=>res.sendFile(path.resolve(__dirname,"views
 app.get("/login",(req,res)=>res.sendFile(path.resolve(__dirname,"views","login.html")));
 app.get("/product",(req,res)=>res.sendFile(path.resolve(__dirname,"views","product.html")));
 app.get("/signin",(req,res)=>res.sendFile(path.resolve(__dirname,"views","signin.html")));
+app.get("/cart",(req,res)=>res.sendFile(path.resolve(__dirname,"views","cart.html")))
 
 app.use(express.static(path.join(__dirname,"public")));
 

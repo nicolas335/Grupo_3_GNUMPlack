@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    font-family: var(--fuenteSubtitulos);
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color:black
+}
+h1, h2, h3, h4, h5{
+    font-family: var(--fuenteTitulos);
+}
+body{
+    max-width: 95%;
+    margin: 0 auto;
+    background: var(--naranjaDegrade);
+}
