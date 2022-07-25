@@ -1,80 +1,89 @@
-.signin main{
-   
+.signin main {
+    width: 400px;
+    padding-top: 60px;
     margin: 0 auto;
-    background:linear-gradient(180deg, #FFA200 0%, rgba(255, 162, 0, 0.3) 100%);
-    
+    padding-bottom: 50px;
+
+
 }
-.signin main h1{
+
+.signin main h1 {
     text-align: center;
-    font-family: 'Teko', sans-serif;
-    
+    font-family: var(--fuenteTitulos)
 }
-.signin main .container{
+
+.signin main .container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
     margin-bottom: 15px;
     font-weight: bold;
-    font-family: 'Mukta', sans-serif;
+    font-family: var(--fuenteSubtitulos)
 }
-.signin main .container label{
-    margin-bottom:5px ;
-    font-family: 'Mukta', sans-serif;
-    
-    
+
+.signin main .container label {
+    margin-bottom: 5px;
+    font-family: var(--fuenteSubtitulos)
+
 }
-.signin  main .container input{
+
+.signin main .container input {
     width: 80%;
     padding: 10px;
-    font-family: 'Mukta', sans-serif;
-    
+    font-family: var(--fuenteSubtitulos)
 }
-.signin main .container small{
+
+.signin main .container small {
     margin-top: 5px;
-    color:#f20808;
-    font-family: 'Mukta', sans-serif;
+    color: #f20808;
+    font-family: var(--fuenteSubtitulos)
 
 
 }
-.signin main h2 .container{
-    font-family: 'Mukta', sans-serif;
+
+.signin main h2 .container {
+    font-family: var(--fuenteSubtitulos);
     text-align: center;
     margin-top: 15px;
 }
-.signin main h4{
+
+.signin main h4 {
     text-align: center;
     color: #000000;
-    font-family:'Mukta', sans-serif ;
+    font-family: var(--fuenteSubtitulos)
 }
+
 .signin main button {
-  padding: 20px;  
-  background-color: #d0770a;
-  color: black;
-  font-weight: 600;
-  border: none;
-  border-radius: 10px;
-  font-size: 20px;
-  width: 170px;
-  text-align: center;
-  font-family: 'Mukta', sans-serif;
+    padding: 20px;
+    background-color: #d0770a;
+    color: black;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 170px;
+    text-align: center;
+    font-family: var(--fuenteSubtitulos)
 
 }
-.signin .bottom{
+
+.signin .bottom {
     margin-bottom: 15px;
     text-align: center;
-    font-family: 'Mukta', sans-serif;
+    font-family: var(--fuenteSubtitulos)
 }
-.signin main a{
+
+.signin main a {
     color: #000000;
-    font-family: 'Mukta', sans-serif;
+    font-family: var(--fuenteSubtitulos)
 }
 
 /*tablet*/
 
-@media(min-width:461px){ 
+@media(min-width:461px) {
     .signin main button {
-        padding: 15px;  
+        padding: 15px;
         background-color: #d0770a;
         color: black;
         font-weight: 600;
@@ -83,22 +92,22 @@
         font-size: 20px;
         width: 170px;
         text-align: center;
-        font-family: 'Mukta', sans-serif;
-      
-      }
-      .signin .bottom{
-          margin-bottom: 10px;
-          text-align: center;
-          font-family: 'Mukta', sans-serif;
-      } 
-    
+        font-family: var(--fuenteSubtitulos)
+    }
+}
+
+    .signin .bottom {
+        margin-bottom: 10px;
+        text-align: center;
+        font-family: var(--fuenteSubtitulos)
+
 }
 
 /*Desktop*/
 
 @media(min-width :768px) {
     .signin main button {
-        padding: 10px;  
+        padding: 10px;
         background-color: #d0770a;
         color: black;
         font-weight: 600;
@@ -107,16 +116,14 @@
         font-size: 20px;
         width: 170px;
         text-align: center;
-        font-family: 'Mukta', sans-serif;
-      
-      }
-      .signin .bottom{
-          margin-bottom: 5px;
-          text-align: center;
-          font-family: 'Mukta', sans-serif;
-      }
+        font-family: var(--fuenteSubtitulos)
+
+    }
+
+    .signin .bottom {
+        margin-bottom: 5px;
+        text-align: center;
+        font-family: var(--fuenteSubtitulos)
+    }
 
 }
-
-
-
