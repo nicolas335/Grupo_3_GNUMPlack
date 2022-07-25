@@ -1,0 +1,43 @@
+
+.product main h1{
+    text-align:center;
+    
+}
+.product .contenedor div{ 
+    width: 100%;
+}
+
+.product .contenedor img{
+    width: 100%;
+}
+.product article{
+    margin: 40px 0;
+}
+
+.product article h3{
+    margin-bottom: 18px;
+}
+
+/* Tablet */
+@media (min-width:461px) {
+   .product .contenedor{
+    display:flex;
+    flex-wrap: wrap;
+   }
+   .product .contenedor h3{
+    width: 58%;
+    text-align: center;
+    margin: auto 0;
+    
+   }
+   .product .contenedor div{
+    width: 40%;
+    order:-1;
+   }
+    
+}
+
+/* Desktop */
+@media (min-width:769px){
+    
+}
