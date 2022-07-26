@@ -11,3 +11,8 @@ body{
 h1,h2,h3,h4,h5{
     font-family: var(--fuenteTitulos);
 }
+@media (max-width:460px){
+    main{
+        margin-top: 75px;
+    }
+}
