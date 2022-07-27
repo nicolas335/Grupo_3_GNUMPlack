@@ -1,15 +1,25 @@
-a{
-    text-decoration: none;
-    color: black;
-
-}
-body{
+*{
     box-sizing: border-box;
-    background:linear-gradient(180deg, #FFA200 0%, rgba(255, 162, 0, 0.3) 100%);
+    margin: 0;
+    border: 0;
     font-family: var(--fuenteSubtitulos);
 }
-h1,h2,h3,h4,h5{
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color:black
+}
+h1, h2, h3, h4, h5{
     font-family: var(--fuenteTitulos);
+}
+body{
+    background: var(--naranjaDegrade);
+}
+main{
+    max-width: 95%;
+    margin: 0 auto;
 }
 @media (max-width:460px){
     main{

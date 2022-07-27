@@ -6,7 +6,7 @@
     background-color: #ffd000;
     height: 60px;
     width: 100%;
-    position:fixed;
+    position: fixed;
     border-bottom-left-radius:15px ;
     border-bottom-right-radius: 15px;
     z-index: 100;
@@ -80,6 +80,7 @@
 #check:checked ~ ul{
     top: 55px;
     transition: all .25s;
+    padding: 0;
 }
 
 /*tablet*/
@@ -88,6 +89,7 @@
     .header{
     border-bottom-left-radius:0;
     border-bottom-right-radius:0;
+    position: relative;;
     }
     header .nav-menu .checkbtn i{
         display: none;

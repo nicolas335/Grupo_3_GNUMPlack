@@ -10,3 +10,9 @@ Mejorar la comunicacion individual con el grupo , si se presentan dificultades.
 Comenzar a definir las dailys, dia y hora.
 Etiquetar las tarjetas con dificultades.
 Agregar fechas de vencimiento a tarjetas y cumplirlas.
+
+## Hacer menos
+ Menos tareas a realizar para el compañero que tiene mas conocimientos y habilidades.
+
+ ## Dejar de hacer
+ Por el momento no tenemos una actividad que tendriamos que dejar de hacer.

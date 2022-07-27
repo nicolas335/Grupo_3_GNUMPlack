@@ -1,4 +1,3 @@
-
 body #footer .social{
     display: flex;
     flex-wrap: wrap;
@@ -30,3 +29,4 @@ body #footer p{
         transition: all .3s;
     }
 }
+ 
