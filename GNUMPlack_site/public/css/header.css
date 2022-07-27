@@ -1,0 +1,137 @@
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffd000;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    border-bottom-left-radius:15px ;
+    border-bottom-right-radius: 15px;
+    z-index: 100;
+    top: 0;
+}
+
+#bar{
+    background-color: #d9d9d9;
+    padding: 5px;
+    border-radius: 12px;
+    border: none;
+}
+.lupa{
+    padding: 5px 10px 8px 0px;
+    font-size: 25px;
+    color: white;
+}
+.searchBar{
+    height: 30px;
+    display: flex;
+    background-color: #d9d9d9;
+    border-radius: 15px;
+    margin-right: 0;
+}
+#check{
+    display: none;
+}
+.nav-menu ul{
+    display: flex;
+    align-items: center;
+}
+.nav-menu li{
+    margin-right: 1rem;
+}
+
+.logoImg{
+    height: 55px;
+    width: 80px;
+    margin: 2.5px 0 0 2.5px;
+    border-bottom-left-radius:15px;
+}
+
+.menu-icon{
+    margin-right: 15px;
+    font-size: 30px;
+    color: white;
+}
+
+.nav-menu ul{
+    display: block;
+    position: fixed;
+    top:-100%;
+    left: 0;
+    background: #ffd000;
+    width: 100%;
+    height: 399.7px;
+    right: 0;
+    border: solid .5px #858585;
+}
+.nav-menu ul li{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    align-items: center;
+    border-top: solid .5px #858585;
+}
+.nav-menu ul li a{
+    font-size: small;
+}
+#check:checked ~ ul{
+    top: 55px;
+    transition: all .25s;
+    padding: 0;
+}
+
+/*tablet*/
+
+@media (min-width:461px){
+    .header{
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+    position: relative;;
+    }
+    header .nav-menu .checkbtn i{
+        display: none;
+    }
+    #bar{
+        display: none;
+    }
+    .searchBar{
+        height: max-content;
+        display: flex;
+        background-color: transparent;
+        border-radius: 0;
+        margin-right: 0;
+        right: 0;
+        order: 1;
+    }
+    .header .nav-menu ul{
+        display: contents;
+        border: none;
+        left: 90px;
+        top: 0;
+        background-color: transparent;
+    }
+    .nav-menu ul li a{
+        font-size: 10px;
+    }
+    .nav-menu ul li{
+        position: relative;
+        padding: 0;
+        display: inline-block;
+        margin: 0;
+        border-top: none;
+    }
+    .logoImg{
+        border-bottom-left-radius:0;
+    }
+}
+
+/* Desktop */
+
+@media (min-width:769px){
+    .nav-menu ul li a{
+        font-size: 16px;
+    }
+}
