@@ -1,12 +1,28 @@
 *{
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    border: 0;
+    font-family: var(--fuenteSubtitulos);
 }
-ul li{
-    list-style-type: none;
+li{
+    list-style: none;
 }
 a{
-    color: black;
     text-decoration: none;
+    color:black
+}
+h1, h2, h3, h4, h5{
+    font-family: var(--fuenteTitulos);
+}
+body{
+    background: var(--naranjaDegrade);
+}
+main{
+    max-width: 95%;
+    margin: 0 auto;
+}
+@media (max-width:460px){
+    main{
+        margin-top: 75px;
+    }
 }

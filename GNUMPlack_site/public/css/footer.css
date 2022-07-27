@@ -1,7 +1,7 @@
 body #footer .social{
     display: flex;
     flex-wrap: wrap;
-    margin-top: 350px;
+    margin-top: 30px;
     justify-content: center;
 }
 body #footer{

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signin</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://kit.fontawesome.com/7c3a0709de.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="signin">
+    <header class="header">
+
+        <div class="logo">
+            <a href="#" class="linkLogo">
+                <img src="img/logoGNUMPlack.jfif" alt="logo de GNUMPlack" class="logoImg">
+            </a>
+        </div>
+
+        <div class="searchBar">
+            <input type="text" placeholder="¿Que desea buscar?" id="bar">
+            <i class="fa-solid fa-magnifying-glass lupa"></i>
+        </div>
+
+        <div class="nav-menu">
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn"><i class="fa-solid fa-bars menu-icon"></i></label>
+            <ul>
+                <li><a href="login">Iniciar Sesión</a></li>
+                <li><a href="signin">Regístrate</a></li>
+                <li><a href="product">Productos</a></li>
+                <li><a href="aboutUs">Sobre Nosotros</a></li>
+                <li><a href="#footer">Contáctanos</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="signin">
+        <h1> REGISTRARSE</h1>
+        <form action="" method="get">
+            <h2 class="container bottom"></h2>
+            <div class="container">
+                <label for="name">Nombre Completo</label>
+                <input type="text" name="name" id="name" placeholder="Ingresa tu nombre completo">
+                <small>obligatorio</small>
+            </div>
+            <div class="container">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Ingresa tu email">
+                <small>obligatorio</small>
+            </div>
+            <div class="container">
+                <label for="pass">Contraseña</label>
+                <input type="password" name="pass" id="pass" placeholder="Ingresa tu contraseña">
+                <small>obligatorio</small>
+            </div>
+            <div class="container">
+                <label for="pass2">Confirmar tu contraseña</label>
+                <input type="password" name="pass2" id="pass2" placeholder="Confirmar contraseña">
+                <small>Las contraseñas no coinciden</small>
+            </div>
+            <h2 class="bottom">Terminos y Condiciones</h2>
+            <div class="bottom">
+                <input type="checkbox" name="terminos" id="terminos">
+                <label for="terminos">Al registrarte aceptas nuestras Condiciones de uso y Politica de privacidad</labe>
+            </div>
+            <h2 class="bottom"></h2>
+            <div class="bottom">
+                <button type="submit">Registrarme</button>
+                <button type="reset">Cancelar</button>
+            </div>
+
+            <h4><a href="/inicia sesion">¿ya tenes cuenta? Inicia Sesion</a></h4>
+
+        </form>
+
+    </main>
+    <footer id="footer">
+        <div class="social">
+            <div><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></div>
+            <div><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></div>
+            <div><a href="https://www.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a></div>
+            <div><a href="https://www.twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a></div>
+            <div><a href="https://www.gmail.com/" target="_blank"><i class="fa-solid fa-at"></i></a></div>
+        </div>
+        <p>Copyright © 2022 GNUMPlack. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
