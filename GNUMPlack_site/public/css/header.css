@@ -83,22 +83,16 @@
     top: 55px;
     transition: all .25s;
 }
-.header .cart{
-    font-size: 30px;
-    position: fixed;
-    z-index: 100;
-    top:70px;
-    right: 40px;
-    color: white;
-}
 .header .cart {
     font-size: 30px;
     position: fixed;
     z-index: 100;
     top: 70px;
-    right: 40px;
+    right: 12px;
     color: white;
 }
+
+
 
 /*tablet*/
 
@@ -142,12 +136,25 @@
     .logoImg{
         border-bottom-left-radius:0;
     }
+
+}
+/* agrego cart en header */
+
+@media (min-width:530px){
+    .header .cart{
+        position: static;
+        font-size: 28px;
+    }
+    .nav-menu ul li a{
+        margin: 0 2px;
+    }
 }
 
 /* Desktop */
 
 @media (min-width:769px){
-    .nav-menu ul li a{
-        font-size: 16px;
+    .header .nav-menu ul li a{
+        font-size: 14px;
+        margin: 0 10px;
     }
 }
