@@ -89,8 +89,14 @@
     right: 40px;
     color: white;
 }
-
-
+.header .cart {
+    font-size: 30px;
+    position: fixed;
+    z-index: 100;
+    top: 70px;
+    right: 40px;
+    color: white;
+}
 
 /*tablet*/
 
