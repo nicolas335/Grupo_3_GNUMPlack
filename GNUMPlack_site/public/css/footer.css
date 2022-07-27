@@ -1,0 +1,31 @@
+body #footer .social{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 350px;
+    justify-content: center;
+}
+body #footer{
+    margin-top: 40px;
+    text-align: center;
+}
+body #footer .social i{
+    font-size: 22px;
+    color: #1d1d1d;
+    margin: 6px;
+    
+}
+body #footer p{
+    color: #494949;
+    margin-top: 15px;
+}
+@media (hover: hover){
+
+    body #footer .social i{
+        color: #a1a1a1; 
+    }
+    #footer .social  i:hover{
+        color: black;
+        font-size: 26px;
+        transition: all .3s;
+    }
+}

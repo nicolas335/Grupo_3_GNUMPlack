@@ -1,5 +1,5 @@
 .detail .descripcion .placas img {
-    width: 100%;
+    width: 90%;
 }
 
 .detail .descripcion p {
@@ -19,6 +19,7 @@
     padding: 8px;
     font-size: 18px;
     border-radius: 20px;
+    background-color: rgba(255, 127, 80, 0.498);
 }
 
 .detail .descripcion .lista li {
