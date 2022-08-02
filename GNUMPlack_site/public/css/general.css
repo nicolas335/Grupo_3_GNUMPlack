@@ -24,9 +24,5 @@ body{
 main{
     max-width: 95%;
     margin: 0 auto;
-}
-@media (max-width:460px){
-    main{
-        margin-top: 75px;
-    }
+    margin-top: 75px;
 }
