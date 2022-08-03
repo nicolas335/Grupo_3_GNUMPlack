@@ -22,6 +22,61 @@
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
+/* ------------ DESTACADOS ------------*/
+.home .destacados{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 25px 5px;
+  position: relative;
+  
+}
+.home .destacados article{
+  display: none;
+}
+.home .destacados .mobile{
+  display: block;
+  width: 45%;
+}
+.home .destacados h1,
+.home .destacados article div img{
+  width: 100%;
+}
+.home .destacados article h3{
+  text-align: center;
+  margin-bottom: 15px;
+}
+.home .destacados article p{
+  text-align: justify;
+}
+.home .destacados article .ver-mas{
+  display: inline-block;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: white;
+  color: #FFA200;
+  font-weight: bold;
+}
+.home .destacados i{
+  font-size: 25px;
+  position: absolute;
+  top: 55%;
+}
+.home .destacados i.fa-arrow-circle-left{
+  left: -7px;
+}
+.home .destacados i.fa-arrow-circle-right{
+  right: -7px;
+}
+
+/* ------------ */
+
+
+
+
+
 .home .section1{
     text-align: center;
 }
@@ -136,28 +191,28 @@
 
 /* Medias Queries */
 
-@media (min-width:1000px){
-  .home p{
-    font-size: 1.5rem;
-  }
-  .home .banner img{
-    width: 350px;
-    max-width: 720px;
-  }
-  .home{
-    width: 800px;
-
-  }
-  .home #home-slider{
-    width: 550px;
-}}
-/* --------------------------------------------------- */
 /* Tablet */
-
 @media (min-width:461px){
+  .home .destacados .tablet, .home .destacados .mobile{
+    display: block;
+    width: 31%;
+  }
+
+
   .home p {
     font-size: larger;
     letter-spacing: .4px;
+  }
+  .home .section1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .home .section1 div{
+    width: 45%;
+  }
+  .home .section1 div img{
+    width: 100%;
   }
   .home .sliderSection{
     display: flex;
@@ -182,4 +237,30 @@
   #home-slider{
     height: 500px;
   }
-};
+}/* Ojo aca, si se pone un ";" no funcionan las media queries de abajo */
+
+@media (min-width:769px){
+  .home .destacados .tablet,
+  .home .destacados .mobile,
+  .home .destacados article{
+    width: 23%;
+    display: block;
+  }
+
+
+
+  .home p{
+    font-size: 1.5rem;
+  }
+  .home .banner img{
+    width: 350px;
+  }
+  .home .section1{
+    justify-content: space-between;
+  }
+  .home .section1 div{
+    width: 33%;
+  }
+  .home #home-slider{
+    width: 550px;
+}}

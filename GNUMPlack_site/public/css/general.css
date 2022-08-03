@@ -1,6 +1,7 @@
 main{
     max-width: 95%;
     margin: 0 auto;
+    margin-top: 75px;
 }
 *{
     box-sizing: border-box;
@@ -20,9 +21,6 @@ h1, h2, h3, h4, h5{
 }
 body{
     background: var(--naranjaDegrade);
-}
-main{
-    max-width: 95%;
-    margin: 0 auto;
-    margin-top: 75px;
+    max-width: 1800px;
+
 }
