@@ -1,5 +1,9 @@
 .detail .descripcion .placas img {
-    width: 90%;
+    width: 75%;
+}
+.detail .descripcion .placas img {
+    border:solid 4px black;
+    border-radius: 25px;
 }
 
 .detail .descripcion p {

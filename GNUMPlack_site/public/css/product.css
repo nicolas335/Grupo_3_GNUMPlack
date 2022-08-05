@@ -8,7 +8,12 @@
 }
 
 .product .contenedor img{
-    width: 100%;
+    width: 80%;
+    border-radius: 35px;
+}
+.product .contenedor img{
+   border:solid 4px black;
+
 }
 .product article{
     margin: 40px 0;
