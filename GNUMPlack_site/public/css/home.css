@@ -88,26 +88,24 @@
     border-radius: 15px;
     max-width: fit-content;
 }
-.home .containerUbi{
+/* .home .containerUbi{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   border-bottom: .4px solid grey;
   padding-bottom: 70px;
-}
-.home .ubiSection{
+} */
+/* .home .ubiSection{
   border-top: .4px solid grey;
   width: 380px;
   margin: 0 auto 20px auto;
   text-align: center;
-}
+} */
 /* ----------------------------------------------- */
 #home-slider{
   margin:0 auto;
-  background-color: white;
-  width: 380px; 
+  background-color: white; 
   padding: 30px;
-  box-sizing: border-box;
   margin-bottom: 70px;
 }
 
