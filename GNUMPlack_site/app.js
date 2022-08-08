@@ -14,4 +14,4 @@ app.get("/cart",(req,res)=>res.sendFile(path.resolve(__dirname,"views","cart.htm
 
 app.use(express.static(path.join(__dirname,"public")));
 
-app.listen(port, ()=> console.log(`Server rise in http://localhost:${port}`)) /* ctrol+click */
+ app.listen(port, ()=> console.log(`Server rise in http://localhost:${port}`)) /* ctrol+click */ 

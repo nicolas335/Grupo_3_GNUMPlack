@@ -1,7 +1,3 @@
-.home {
-  background-image: linear-gradient(#ff7b00,#FF8800,#FF9500,#FFA200,#FFAA00,#FFB700,#FFC300,#FFD000,#FFDD00,#FFEA00, white);
-  
-}
 
 .home h3, .home li a{
   font-family:var(--principalFont) ;
@@ -16,48 +12,100 @@
   font-weight: 100;
   font-size: medium;
 }
-.home main .banner img{
-    height: 50%;
-    width: 90%;
+.home .banner img{
+    width: 250px;
+  }
+  .home .banner{
+    display: flex;
+    justify-content: center;
+    background-color: black;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
-.home main .banner{
-    display: flex;
-    justify-content: center;
-
+/* ------------ DESTACADOS ------------*/
+.home .destacados{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 25px 5px;
+  position: relative;
+  
 }
-.home main .section1{
+.home .destacados article{
+  display: none;
+}
+.home .destacados .mobile{
+  display: block;
+  width: 45%;
+}
+.home .destacados h1,
+.home .destacados article div img{
+  width: 100%;
+}
+.home .destacados article h3{
+  text-align: center;
+  margin-bottom: 15px;
+}
+.home .destacados article p{
+  text-align: justify;
+}
+.home .destacados article .ver-mas{
+  display: inline-block;
+  margin-top: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: white;
+  color: #FFA200;
+  font-weight: bold;
+}
+.home .destacados i{
+  font-size: 25px;
+  position: absolute;
+  top: 55%;
+}
+.home .destacados i.fa-arrow-circle-left{
+  left: -7px;
+}
+.home .destacados i.fa-arrow-circle-right{
+  right: -7px;
+}
+
+/* ------------ */
+
+
+
+
+
+.home .section1{
     text-align: center;
 }
-.home main .section1 p{
+.home .section1 p{
     margin: 10px 6px;
 }
-.home main .section1 div img{
+.home .section1 div img{
     margin: 15px 0 10px 0;
     border-radius: 15px;
     max-width: fit-content;
 }
-.home .containerUbi{
+/* .home .containerUbi{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   border-bottom: .4px solid grey;
   padding-bottom: 70px;
-}
-.home main .ubiSection{
+} */
+/* .home .ubiSection{
   border-top: .4px solid grey;
   width: 380px;
   margin: 0 auto 20px auto;
   text-align: center;
-}
+} */
 /* ----------------------------------------------- */
 #home-slider{
   margin:0 auto;
-  background-color: white;
-  width: 380px; 
+  background-color: white; 
   padding: 30px;
-  box-sizing: border-box;
   margin-bottom: 70px;
 }
 
@@ -122,7 +170,7 @@
   border-radius: 100%;
   margin: 0 6px;
 }
-.home main section #home-slider ul.slider .capa{
+.home section #home-slider ul.slider .capa{
   top:0;
   padding:10px;
   margin:0;
@@ -134,37 +182,35 @@
   visibility: hidden;
   text-align: center;
 }                                                                  /* revisar */
-.home main section #home-slider ul.slider:target > .capa{
+.home section #home-slider ul.slider:target > .capa{
   opacity: 1;
   visibility: visible;
 } 
 
 /* Medias Queries */
 
-@media (min-width:1000px){
-  .home main p{
-    font-size: 1.5rem;
-  }
-  .home main .banner img{
-    width: 700px;
-    height: 390px;
-    max-width: 720px;
-    margin-bottom: 150px;
-  }
-  .home main{
-    width: 800px;
-    margin: 0 auto;
-  }
-  .home main #home-slider{
-    width: 550px;
-}}
-/* --------------------------------------------------- */
 /* Tablet */
-
 @media (min-width:461px){
+  .home .destacados .tablet, .home .destacados .mobile{
+    display: block;
+    width: 31%;
+  }
+
+
   .home p {
     font-size: larger;
     letter-spacing: .4px;
+  }
+  .home .section1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .home .section1 div{
+    width: 45%;
+  }
+  .home .section1 div img{
+    width: 100%;
   }
   .home .sliderSection{
     display: flex;
@@ -177,11 +223,11 @@
     height: 250px;
     width: 340px;
   }
-  .home main .ubiSection h3{
+  .home .ubiSection h3{
     margin: 18px auto;
     padding-top: 20px;
   }
-  .home main .ubiSection{
+  .home .ubiSection{
     border-top: .4px solid grey;
     width: 400px;
     margin: 0 auto 20px auto;
@@ -189,4 +235,30 @@
   #home-slider{
     height: 500px;
   }
-};
+}/* Ojo aca, si se pone un ";" no funcionan las media queries de abajo */
+
+@media (min-width:769px){
+  .home .destacados .tablet,
+  .home .destacados .mobile,
+  .home .destacados article{
+    width: 23%;
+    display: block;
+  }
+
+
+
+  .home p{
+    font-size: 1.5rem;
+  }
+  .home .banner img{
+    width: 350px;
+  }
+  .home .section1{
+    justify-content: space-between;
+  }
+  .home .section1 div{
+    width: 33%;
+  }
+  .home #home-slider{
+    width: 550px;
+}}

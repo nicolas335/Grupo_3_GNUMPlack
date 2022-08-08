@@ -1,151 +1,156 @@
 .header{
+    height: 60px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    text-align: center;
     background-color: #ffd000;
-    height: 60px;
-    width: 100%;
+    justify-content: space-between;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     position: fixed;
-    border-bottom-left-radius:15px ;
-    border-bottom-right-radius: 15px;
     z-index: 100;
     top: 0;
 }
 
-#bar{
+.header div a img{
+    height: 55px;
+    width: 70px;
+    border-bottom-left-radius: 10px;
+}
+
+.header div input#bar{
     background-color: #d9d9d9;
-    padding: 5px;
     border-radius: 12px;
     border: none;
 }
-.lupa{
-    padding: 5px 10px 8px 0px;
-    font-size: 25px;
+
+.header div i.lupa, .header label i.menu-icon, .header a i.cart{
+    font-size: 23px;
     color: white;
+    margin-right: 8px;
 }
-.searchBar{
-    height: 30px;
-    display: flex;
-    background-color: #d9d9d9;
-    border-radius: 15px;
-    margin-right: 0;
-}
-#check{
+
+.header input#check{
     display: none;
 }
-.nav-menu ul{
-    display: flex;
-    align-items: center;
-}
-.nav-menu li{
-    margin-right: 1rem;
-}
 
-.logoImg{
-    height: 55px;
-    width: 80px;
-    margin: 2.5px 0 0 2.5px;
-    border-bottom-left-radius:15px;
-}
-
-.menu-icon{
-    margin-right: 15px;
-    font-size: 30px;
-    color: white;
-}
-
-.nav-menu ul{
-    display: block;
-    position: fixed;
-    top:-100%;
-    left: 0;
-    background: #ffd000;
+.header nav{
+    display: none;
+    background-color: #ffd000;
     width: 100%;
-    height: 399.7px;
-    right: 0;
-    border: solid .5px #858585;
-}
-.nav-menu ul li{
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    align-items: center;
-    border-top: solid .5px #858585;
-}
-.nav-menu ul li a{
-    font-size: small;
-}
-#check:checked ~ ul{
-    top: 55px;
-    transition: all .25s;
-}
-.header .cart{
-    font-size: 30px;
-    position: fixed;
-    z-index: 100;
-    top:70px;
-    right: 40px;
-    color: white;
-}
-.header .cart {
-    font-size: 30px;
-    position: fixed;
-    z-index: 100;
-    top: 70px;
-    right: 40px;
-    color: white;
+    margin-top: -5.85px;
 }
 
-/*tablet*/
+.header nav ul li{
+    border-bottom: #d9d9d9 .5px solid;
+    width: 90%;
+    font-size: small;
+    text-transform: uppercase;
+    padding: 3.5px;
+}
+
+.header nav ul:first-child{
+    border-top: #d9d9d9 .5px solid;
+}
+
+.header #check:checked ~nav{
+    display: inline-block;
+}
+
+
+
+
+
+/* Medias Queries */
+
+
+
+
+
+/* Tablet */
+
 
 @media (min-width:461px){
     .header{
+    flex-wrap: wrap;
     border-bottom-left-radius:0;
     border-bottom-right-radius:0;
     }
-    header .nav-menu .checkbtn i{
-        display: none;
-    }
-    #bar{
-        display: none;
-    }
-    .searchBar{
-        height: max-content;
-        display: flex;
-        background-color: transparent;
-        border-radius: 0;
-        margin-right: 0;
-        right: 0;
-        order: 1;
-    }
-    .header .nav-menu ul{
-        display: contents;
-        border: none;
-        left: 90px;
-        top: 0;
-        background-color: transparent;
-    }
-    .nav-menu ul li a{
-        font-size: 10px;
-    }
-    .nav-menu ul li{
-        position: relative;
-        padding: 0;
-        display: inline-block;
-        margin: 0;
-        border-top: none;
-    }
-    .logoImg{
+
+    .header div img.logoImg{
         border-bottom-left-radius:0;
     }
+
+    .header i.menu-icon, .header div input#bar{
+        display: none;
+    }
+
+    .header div.searchBar{
+        order: 2;
+        margin: 0 5px;
+    }
+
+    .header a.cart{
+        order: 1;
+    }
+
+    .header div i.lupa, .header a i.cart{
+        font-size: 22px;
+        margin-right: 0px;
+    }
+
+    .header nav{
+        display: inline ;
+        background-color: none;
+        margin: 0;
+        width: auto;
+    }
+
+    .header nav ul:first-child{
+        border: none;
+    }
+
+    .header nav ul{
+        display: contents;
+        flex-wrap: wrap;
+    }
+
+    .header nav ul li{
+        display: inline-block;
+        border: none;
+        padding: 0;
+        width: auto;
+        font-size: 12.2px;
+        text-transform: none;
+    }
+    
 }
+
+
+
+
 
 /* Desktop */
 
+
 @media (min-width:769px){
-    .nav-menu ul li a{
-        font-size: 16px;
+    .header nav ul li{
+        font-size: medium;
+        margin: 0 1.3vh;
     }
+
+    .header div i.lupa, .header a i.cart{
+        font-size: 26px;
+    }
+
+    .header a.cart{
+        margin: inherit;
+    }
+
+    .header a i.cart{
+        margin-right: 40vh ;
+    }
+
 }
