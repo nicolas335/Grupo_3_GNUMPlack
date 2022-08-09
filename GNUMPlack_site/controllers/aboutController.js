@@ -2,6 +2,6 @@
 
 module.exports = {
     about: (req, res) => {
-        return res.render("aboutUs")
+        return res.render('aboutUs')
     }
 }
