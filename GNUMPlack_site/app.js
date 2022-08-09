@@ -2,16 +2,27 @@ const express = require ('express');
 const app = express();
 const path = require("path");
 const port = 3001;
+ 
 
+/* Requiriendo rutas */
+let indexRouter = require('./routes/index');
+let adminRouter = require('./routes/admin');
+let cartRouter = require('./routes/cart')
 
-app.get("/",(req,res)=>res.sendFile(path.resolve(__dirname,"views","home.html")));
-app.get("/aboutUs",(req,res)=>res.sendFile(path.resolve(__dirname,"views","aboutUs.html")));
-app.get("/detailOfProduct",(req,res)=>res.sendFile(path.resolve(__dirname,"views","detailOfProduct.html")));
-app.get("/login",(req,res)=>res.sendFile(path.resolve(__dirname,"views","login.html")));
-app.get("/product",(req,res)=>res.sendFile(path.resolve(__dirname,"views","product.html")));
-app.get("/signin",(req,res)=>res.sendFile(path.resolve(__dirname,"views","signin.html")));
-app.get("/cart",(req,res)=>res.sendFile(path.resolve(__dirname,"views","cart.html")));
+/* Configurando view engine */
+app.set('views', path.resolve(__dirname,'views'));
+app.set("view engine", "ejs");
 
+/* Middlewares (para poder usar json mas adelante)*/
+app.use(express.json()); /* estes xd */
 app.use(express.static(path.join(__dirname,"public")));
+
+
+/* Rutas */
+app.use("/", indexRouter);
+app.use('/admin', adminRouter);
+app.use("/cart", cartRouter);
+
+
 
  app.listen(port, ()=> console.log(`Server rise in http://localhost:${port}`)) /* ctrol+click */ 
