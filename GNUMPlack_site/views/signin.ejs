@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include("./partials/head") %> 
+
+<body class="signin">
+    
+    <%- include("./partials/header") %> 
+
+    <main class="signin">
+        <h1> REGISTRARSE</h1>
+        <form action="" method="get">
+            <h2 class="container bottom"></h2>
+            <div class="container">
+                <label for="name">Nombre Completo</label>
+                <input type="text" name="name" id="name" placeholder="Ingresa tu nombre completo">
+                <small>obligatorio</small>
+            </div>
+            <div class="container">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Ingresa tu email">
+                <small>obligatorio</small>
+            </div>
+            <div class="container">
+                <label for="pass">Contraseña</label>
+                <input type="password" name="pass" id="pass" placeholder="Ingresa tu contraseña">
+                <small>obligatorio</small>
+            </div>
+            <div class="container">
+                <label for="pass2">Confirmar tu contraseña</label>
+                <input type="password" name="pass2" id="pass2" placeholder="Confirmar contraseña">
+                <small>Las contraseñas no coinciden</small>
+            </div>
+            <h2 class="bottom">Terminos y Condiciones</h2>
+            <div class="bottom">
+                <input type="checkbox" name="terminos" id="terminos">
+                <label for="terminos">Al registrarte aceptas nuestras Condiciones de uso y Politica de privacidad</labe>
+            </div>
+            <h2 class="bottom"></h2>
+            <div class="bottom">
+                <button type="submit">Registrarme</button>
+                <button type="reset">Cancelar</button>
+            </div>
+
+            <h4><a href="/inicia sesion">¿ya tenes cuenta? Inicia Sesion</a></h4>
+
+        </form>
+
+    </main>
+    
+    <%- include("./partials/footer") %> 
+
+</body>
+
+</html>

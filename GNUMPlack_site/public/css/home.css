@@ -1,6 +1,6 @@
 
 .home h3, .home li a{
-  font-family:var(--principalFont) ;
+/*   font-family:var(--principalFont) ; */
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -8,7 +8,7 @@
   margin-top: 25px;
 }
 .home p{
-  font-family:var(--secondaryFont);
+ /*  font-family:var(--secondaryFont); */
   font-weight: 100;
   font-size: medium;
 }
