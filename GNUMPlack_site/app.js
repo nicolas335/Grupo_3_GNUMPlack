@@ -7,8 +7,7 @@ const port = 3001;
 /* Requiriendo rutas */
 let indexRouter = require('./routes/index');
 let adminRouter = require('./routes/admin');
-let cartRouter = require('./routes/cart')
-let aboutRouter = require('./routes/about')
+let cartRouter = require('./routes/cart');
 
 /* Configurando view engine */
 app.set('views', path.resolve(__dirname,'views'));
@@ -23,7 +22,7 @@ app.use(express.static(path.join(__dirname,"public")));
 app.use("/", indexRouter);
 app.use('/admin', adminRouter);
 app.use("/cart", cartRouter);
-app.use("/about", aboutRouter)
+app.use("/about", indexRouter)
 
 
  app.listen(port, ()=> console.log(`Server rise in http://localhost:${port}`)) /* ctrol+click */ 
