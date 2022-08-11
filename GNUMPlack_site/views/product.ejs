@@ -1,47 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://kit.fontawesome.com/142c29101d.js" crossorigin="anonymous"></script>
-</head>
+    <%- include ("./partials/head.ejs) %> 
 
 <body>
-    <header class="header">
+    <%- include ("./partials/header.ejs") %> 
 
-        <div class="logo">
-        <a href="/" class="linkLogo">
-            <img src="img/logoGNUMPlack.jpg" alt="logo de GNUMPlack" class="logoImg">
-        </a>
-        </div>
-
-        <div class="searchBar">
-            <input type="text" placeholder="¿Que desea buscar?" id="bar">
-            <i class="fa-solid fa-magnifying-glass lupa"></i>  
-        </div>
-
-        <a class="cart" href="cart">
-          <i class="fa-solid fa-cart-shopping cart"></i>
-          </a>
-
-        <input type="checkbox" id="check">    
-          <label for="check" class="checkbtn"><i class="fa-solid fa-bars menu-icon"></i></label>
-
-        <nav>
-                <ul>
-                    <li><a href="login">Iniciar Sesión</a></li>
-                    <li><a href="signin">Regístrate</a></li>
-                    <li><a href="product">Productos</a></li>
-                    <li><a href="aboutUs">Sobre Nosotros</a></li>
-                    <li><a href="#footer">Contáctanos</a></li>
-                </ul>
-        </nav>
-        
-    </header>
     <main class="product">
         <h1>Productos</h1>
         <section>
@@ -71,17 +35,7 @@
             </article>
         </section>
     </main>
-
-    <footer id="footer">
-        <div class="social">
-          <div><a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></div>
-          <div><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></div>
-          <div><a href="https://www.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp"></i></a></div>
-          <div><a href="https://www.twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a></div>
-          <div><a href="https://www.gmail.com/" target="_blank"><i class="fa-solid fa-at"></i></a></div>
-        </div>
-          <p>Copyright © 2022 GNUMPlack. Todos los derechos reservados.</p>
-      </footer>
+<%- include ("./partials/footer.ejs") %> 
 </body>
 
 </html>
