@@ -9,6 +9,7 @@ let indexRouter = require('./routes/index');
 let adminRouter = require('./routes/admin');
 let cartRouter = require('./routes/cart')
 let userRouter = require('./routes/user');
+let productRouter = require('./routes/product')
 
 /* Configurando view engine */
 app.set('views', path.resolve(__dirname,'views'));
@@ -25,6 +26,7 @@ app.use('/admin', adminRouter);
 app.use("/cart", cartRouter);
 app.use("/about", indexRouter)
 app.use("/",userRouter);
+app.use("/",productRouter);
 
 
 

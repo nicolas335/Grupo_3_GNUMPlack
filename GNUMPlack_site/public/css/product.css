@@ -8,11 +8,11 @@
 }
 
 .product .contenedor img{
-    width: 80%;
-    border-radius: 35px;
+    width: 82%;
+    border-radius: 38px;
 }
 .product .contenedor img{
-   border:solid 4px black;
+   border:solid 7px orangered;
 
 }
 .product article{
