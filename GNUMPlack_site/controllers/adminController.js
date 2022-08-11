@@ -1,5 +1,11 @@
 module.exports = {
-    createAndEdit :(req, res) =>{
-        return res.render('admin/createAndEdit');
+    create :(req, res) =>{
+        return res.render('admin/create');
+    },
+    list :(req, res) =>{
+        return res.render('admin/list');
+    },
+    edit :(req, res) =>{
+        return res.render('admin/edit');
     },
 }
