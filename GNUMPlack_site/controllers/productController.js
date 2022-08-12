@@ -3,6 +3,6 @@ module.exports={
          res.render("product")
     },
    detail:(req,res)=>{
-    res.render("detailOfProduct")
+    res.render("detail")
    } 
 }
