@@ -30,13 +30,15 @@
   width: 345px;
   padding: 10px;
 }
+.home .ofertas {
+  width: 165px;
+}
 .home .destacados{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin: 25px 5px;
   position: relative;
-  
 }
 .home .destacados article{
   display: none;
