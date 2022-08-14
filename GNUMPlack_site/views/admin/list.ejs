@@ -41,13 +41,19 @@
         </nav>
         <style>main{margin-top: 50px;
         background: linear-gradient(to bottom,#007f5f, #2b9348, #55a630, #80b918, #aacc00, #bfd200, #d4d700);
-        background: no - repeat;}
-        body{background-color:#d4d700;}
+        background: no - repeat;
+        padding: 0 12px;}
+        body{background-color:#d4d700;
+        max-width: 1800px;
+        margin: 0 auto;}
         h1{color: white;}      
         </style>
       </header>
       <main>
-        <h1>Products!</h1>
+        <div class="d-flex align-items-center">
+          <h1>Products!</h1>
+          <button type="button" class="btn btn-light"><a href="/admin/create">Crear</a></button>
+        </div>
         <div class="table-responsive">
         <table class="table table-hover">
             <thead>
