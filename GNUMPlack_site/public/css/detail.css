@@ -13,7 +13,7 @@
     text-align: justify;
 }
 
-.detail .descripcion .precioDesktop
+.detail .descripcion .precioDesktop,
 .detail .descripcion .button {
     text-align: center;
     margin: 20px 0;
@@ -202,5 +202,8 @@
     }
     .detail .descripcion .imgPrincipal{
         width: 35%;
+    }
+    .detail .descripcion .lista{
+        margin: auto 0;
     }
 }
