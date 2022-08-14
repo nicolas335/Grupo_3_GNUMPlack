@@ -150,11 +150,8 @@
     }
 
     .header a i.cart{
-        margin-right: 40vh ;
+        margin-right: 0 ;
     }
 
-    .header div.searchBar{
-        margin-left: -30px;
-    }
 
 }
