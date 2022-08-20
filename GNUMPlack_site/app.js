@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname,"public")));
 
 /* Rutas */
 app.use("/", indexRouter);
-app.use("/",userRouter);
+app.use("/user",userRouter);
 app.use("/product",productRouter);
 app.use("/cart", cartRouter);
 app.use("/about", indexRouter)

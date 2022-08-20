@@ -1,8 +1,8 @@
 module.exports={
-    product:(req,res)=>{
-         res.render("product")
+     product:(req,res)=>{
+          return res.render("product")
     },
-   detail:(req,res)=>{
-    res.render("detail")
+     detail:(req,res)=>{
+          return res.render("detail")
    } 
 }
