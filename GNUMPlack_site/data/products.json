@@ -1,6 +1,6 @@
 [
     {
-        "id":"1",
+        "id": 1,
         "name":"LIGHTBOARD H1",
         "description":"Lightboard H1, alta tecnología para techos en zonas húmedas de interiores",
         "dimensions":"1.5mts x 2mts",
@@ -12,7 +12,7 @@
 
     },
     {
-        "id":"2",
+        "id": 2,
         "name":"LIGHTBOARD HORIZON A",
         "description":"Placa de yeso laminado muy ligera con 4 bordes afinados desarrollada para techos suspendidos continuos.",
         "dimensions":"1.5mts x 2mts",
@@ -24,7 +24,7 @@
 
     },
     {
-        "id":"3",
+        "id": 3,
         "name":"LIGHTBOARD A",
         "description":"Placa de yeso laminado muy ligera con 2 bordes afinados diseñada para su aplicación en sistemas de techos suspendidos continuos.",
         "dimensions":"1.5mts x 2mts",
@@ -36,7 +36,7 @@
 
     },
     {
-        "id":"4",
+        "id": 4,
         "name":"SILENTBOARD",
         "dimensions":"1.5mts x 2mts",
         "description":"Placa Premium de alta densidad para un mayor aislamiento acústico.",
@@ -48,7 +48,7 @@
 
     },
     {
-        "id":"5",
+        "id": 5,
         "name":"DIAMANT CLEANEO C",
         "description":"Placa robusta y versátil certificada para la calidad del aire interior",
         "dimensions":"1.5mts x 2mts",
@@ -60,7 +60,7 @@
 
     },
     {
-        "id":"6",
+        "id": 6,
         "name":"Diamant Secure",
         "description":"Placa de yeso laminado de 15 mm de espesor reforzada con malla de fibra de vidrio que aumenta su capacidad de carga y su resistencia.",
         "dimensions":"1.5mts x 2mts",
@@ -72,7 +72,7 @@
 
     },
     {
-        "id":"7",
+        "id": 7,
         "name":"Diamant DFH1IR",
         "description":"Placa versátil, cortafuego, impregnada, acústica y de alta dureza.",
         "dimensions":"1.5mts x 2mts",
@@ -84,7 +84,7 @@
 
     },
     {
-        "id":"8",
+        "id": 8,
         "name":"Acustik",
         "description":"Placa GNUMPlack de elevadas prestaciones acústicas.",
         "dimensions":"1.5mts x 2mts",
@@ -96,7 +96,7 @@
 
     },
     {
-        "id":"9",
+        "id": 9,
         "name":"Lightboard Brio W1",
         "description":"Elemento de fibra de yeso con aislamiento o sin él como solera seca",
         "dimensions":"1.5mts x 2mts",
@@ -108,7 +108,7 @@
 
     },
     {
-        "id":"10",
+        "id": 10,
         "name":"Lightboard Tecnosol W1DIR1",
         "description":"Placa de yeso con fibras de altas prestaciones, especialmente indicada para suelos continuos con gran capacidad de carga",
         "dimensions":"1.8mts x 4mts",
@@ -120,11 +120,11 @@
 
     },
     {
-        "id":"11",
+        "id": 11,
         "name":"Lightboard Torro",
         "description":"Placa de yeso con fibras para tabiques resistentes al impacto de balas",
         "dimensions":"1.5mts x 2mts",
-        "category":"Placa de yeso con fibras",
+        "category":"Placa de lana de madera",
         "condition":"destacados" ,
         "price":4000,
         "qualities":["GNUMPlack Torro es una placa compuesta por yeso mejorado con fibras de celulosa procedente de papel reciclado y unido en prensa de alta presión. Tiene ambas caras de color blanquecino y los cuatro bordes cortados BCO.Por su alta densidad y gran resistencia a cualquier tipo de impacto, conforma el interior de los sistemas de tabiques antibalas."],
@@ -132,51 +132,55 @@
 
     },
     {
-        "id":"12",
+        "id": 12,
         "name":"GNUMPlack AQUAPANEL® Rooftop",
         "description":"Placas de cemento ligeras para su uso en exterior en sistemas de cubiertas planas",
         "dimensions":"1.5mts x 3mts",
         "category":"Placa de cemento",
         "condition":"destacados" ,
-        "price":4000,   "qualities":["La placa de cemento AQUAPANEL® Rooftop es una solución premium para cubiertas planas donde el aislamiento tiene en su parte superior una membrana impermeable y, en la inferior, una barrera de vapor que la protege de la humedad que se difunde a través del techo del edificio."],
+        "price":4000,
+        "qualities":["La placa de cemento AQUAPANEL® Rooftop es una solución premium para cubiertas planas donde el aislamiento tiene en su parte superior una membrana impermeable y, en la inferior, una barrera de vapor que la protege de la humedad que se difunde a través del techo del edificio."],
         "image":["KAP_ACBRooftop_Front-web.jpg"]
 
     },
     {
-        "id":"13",
+        "id": 13,
         "name":"GNUMPlack AQUAPANEL® Outdoor",
         "description":"Placa de cemento ligera para uso exterior como fachadas.",
         "dimensions":"1.5mts x 3mts",
         "category":"Placa de cemento",
-     "condition":"destacados" ,
-     "price":4000,   "qualities":["Compuesta por un alma de cemento portland con aditivos y material aligerante, recubierta en sus caras por una malla de fibra de vidrio, que se extiende sobre sus bordes para reforzarlos.","La placa AQUAPANEL® es incombustible, estable y ligera, no se ablanda, ni se pudre con el agua."],
+        "condition":"destacados" ,
+        "price":4000,
+        "qualities":["Compuesta por un alma de cemento portland con aditivos y material aligerante, recubierta en sus caras por una malla de fibra de vidrio, que se extiende sobre sus bordes para reforzarlos.","La placa AQUAPANEL® es incombustible, estable y ligera, no se ablanda, ni se pudre con el agua."],
         "image":["cutout_640034_detail_picture_1.jpg"]
 
     },
     {
-        "id":"14",
+        "id": 14,
         "name":"GNUMPlack AQUAPANEL® Skylite",
         "description":"Placa de cemento ligera para techos en interior y exterior.",
         "dimensions":"1.5mts x 2mts",
         "category":"Placa de cemento",
-     "condition":"destacados" ,
-     "price":4000,   "qualities":["Placa ligera de 8 mm de espesor, compuesta por un alma de cemento portland con aditivos y material aligerante, recubierta en sus caras por una malla de fibra de vidrio, que se extiende sobre sus bordes para reforzarlos.","La placa AQUAPANEL® es incombustible, estable y ligera, no se ablanda, ni se pudre con el agua."],
+        "condition":"destacados" ,
+        "price":4000,
+        "qualities":["Placa ligera de 8 mm de espesor, compuesta por un alma de cemento portland con aditivos y material aligerante, recubierta en sus caras por una malla de fibra de vidrio, que se extiende sobre sus bordes para reforzarlos.","La placa AQUAPANEL® es incombustible, estable y ligera, no se ablanda, ni se pudre con el agua."],
         "image":["cutout_489778_detail_picture_1.jpg"]
 
     },
     {
-        "id":"15",
+        "id": 15,
         "name":"GNUMPlack AQUAPANEL® Indoor",
         "description":"Sistema de partición formado por una estructura metálica con una o más placas de cemento Aquapanel Indoor atornilladas a cada lado de la misma.",
         "dimensions":"1.5mts x 2mts",
         "category":"Placa de cemento",
-     "condition":"destacados" ,
-     "price":4000,   "qualities":["Los tabiques GNUMPlack AQUAPANEL® Indoor, son sistemas de partición formados por una estructura metálica de canales horizontales sujetos al forjado superior y al suelo, y montantes verticales encajados en los canales. A esta estructura se le atornilla a cada lado una o más placas de cemento GRC, en función de las necesidades técnicas del propio tabique."],
+        "condition":"destacados" ,
+        "price":4000,
+        "qualities":["Los tabiques GNUMPlack AQUAPANEL® Indoor, son sistemas de partición formados por una estructura metálica de canales horizontales sujetos al forjado superior y al suelo, y montantes verticales encajados en los canales. A esta estructura se le atornilla a cada lado una o más placas de cemento GRC, en función de las necesidades técnicas del propio tabique."],
         "image":["cutout_640033_detail_picture_1.jpg"]
 
     },
     {
-        "id":"16",
+        "id": 16,
         "name":"GNUMPlack Organic",
         "description":"Placas de lana de madera estándar para techos registrables.",
         "dimensions":"1.5mts x 2.50mts",
@@ -188,7 +192,7 @@
 
     },
     {
-        "id":"17",
+        "id": 17,
         "name":"GNUMPlack Organic Twin",
         "description":"Placa multicapa formada por un alma de lana de roca y dos capas de lana de madera, para techos registrables.",
         "dimensions":"1.5mts x 2mts",
@@ -200,7 +204,7 @@
 
     },
     {
-        "id":"18",
+        "id": 18,
         "name":"GNUMPlack Alta Dureza DI",
         "description":"Placa GNUMPlack de elevada dureza superficial.",
         "dimensions":"1.5mts x 2mts",
@@ -212,7 +216,7 @@
 
     },
     {
-        "id":"19",
+        "id": 19,
         "name":"Safeboard Tipo DF",
         "description":"Placa GNUMPlack antirradiaciones sin plomo.",
         "dimensions":"1.7mts x 2.35mts",
@@ -224,74 +228,74 @@
 
     },
     {
-        "id":"20",
+        "id": 20,
         "name":"GNUMPlack Antirradiaciones RX Plomo",
         "description":"Placa GNUMPlack antirradiaciones con lámina de plomo.",
         "dimensions":"1.5mts x 2mts",
         "category":"Placa de yeso",
-        
         "condition":"destacados" ,
-        "price":4000,"qualities":["Compuesta por una placa de yeso laminado GNUMPlack Cortafuego DF, con una cara revestida por una lámina de cartón y la otra con una lámina de plomo de distintos espesores."],
+        "price":4000,
+        "qualities":["Compuesta por una placa de yeso laminado GNUMPlack Cortafuego DF, con una cara revestida por una lámina de cartón y la otra con una lámina de plomo de distintos espesores."],
         "image":["cutout_516148_detail_picture_1.jpg"]
 
     },
     {
-        "id":"21",
+        "id": 21,
         "name":"GNUMPlack Brico",
         "description":"Placa GNUMPlack Brico idónea para reformas.",
         "dimensions":"1.25mts x 2.25mts",
         "category":"Placa de yeso",
-        
         "condition":"destacados" ,
-        "price":4000,"qualities":["Compuesta por un alma de yeso revestida con láminas de cartón. La placa Brico se caracteriza por ser adecuada en obras de reforma y rehabilitaciones pequeñas y ofrecer grandes ventajas a la hora de su manipulación por su reducido tamaño. Versión en ancho 900 para placa tipo A y 600 para placa tipo A y H1."],
+        "price":4000,
+        "qualities":["Compuesta por un alma de yeso revestida con láminas de cartón. La placa Brico se caracteriza por ser adecuada en obras de reforma y rehabilitaciones pequeñas y ofrecer grandes ventajas a la hora de su manipulación por su reducido tamaño. Versión en ancho 900 para placa tipo A y 600 para placa tipo A y H1."],
         "image":["cutout_790882_detail_picture_1.jpg"]
 
     },
     {
-        "id":"22",
+        "id": 22,
         "name":"Standard A",
         "description":"Placa Universal para interior.",
         "dimensions":"1.5mts x 2mts",
         "category":"Placa de yeso",
-        
         "condition":"destacados" ,
-        "price":4000,"qualities":["Compuesta por un alma de yeso revestida con láminas de cartón, la placa Standard se caracteriza por ser no combustible, y ofrecer grandes ventajas a la hora de su manipulación, como la realización de curvas o formas decorativas."],
+        "price":4000,
+        "qualities":["Compuesta por un alma de yeso revestida con láminas de cartón, la placa Standard se caracteriza por ser no combustible, y ofrecer grandes ventajas a la hora de su manipulación, como la realización de curvas o formas decorativas."],
         "image":["cutout_517721_detail_picture_1.jpg"]
 
     },
     {
-        "id":"23",
+        "id": 23,
         "name":"Standard Cleaneo C",
         "description":"Placa de yeso laminado certificada para la calidad del aire interior",
         "dimensions":"1.5mts x 2mts",
         "category":"Placa de yeso",
-        
         "condition":"destacados" ,
-        "price":4000,"qualities":["La placa Standard Cleaneo C es una placa de yeso laminado de 12,5 mm de espesor con aditivos que neutralizan los formaldehídos de los espacios interiores y mejoran la calidad del aire interior. Tiene bordes longitudinales afinados y bordes transversales cortados"],
+        "price":4000,
+        "qualities":["La placa Standard Cleaneo C es una placa de yeso laminado de 12,5 mm de espesor con aditivos que neutralizan los formaldehídos de los espacios interiores y mejoran la calidad del aire interior. Tiene bordes longitudinales afinados y bordes transversales cortados"],
         "image":["Placa-Standard-Cleaneo-C_0.jpg"]
 
     },
     {
-        "id":"24",
+        "id": 24,
         "name":"Drystar tipo GM-FH1IR",
         "description":"Placa especial para ambientes con elevada humedad y agua controlada.",
         "dimensions":"1.8mts x 2mts",
-        "category":"Placa de yeso",
-        
+        "category":"Placa de yeso",        
         "condition":"destacados" ,
-        "price":4000,"qualities":["Placa de yeso especial reforzada con fibra, que incorpora además un velo hidro-repelente. Tiene una clasificación a fuego A1 y es del tipo GM-FH1IR."],
+        "price":4000,
+        "qualities":["Placa de yeso especial reforzada con fibra, que incorpora además un velo hidro-repelente. Tiene una clasificación a fuego A1 y es del tipo GM-FH1IR."],
         "image":["cutout_510705_detail_picture_1.jpg"]
 
     },
     {
-        "id":"25",
+        "id": 25,
         "name":"GNUMPlack Trillaje",
         "description":"Panel conformado por placas de yeso laminado para la construcción de librerías, estantes…",
         "dimensions":"2mts x 2mts",
         "category":"Placa de yeso",
-        
         "condition":"destacados" ,
-        "price":4000,"qualities":["Panel transformado con Placas de Yeso Laminado con alma celular de cartón, formada por dos placas standard de 10 mm., unidas por un trillaje de celulosa especial que rigidiza el tablero resultante, conforme con UNE EN 13915."],
+        "price":4000,
+        "qualities":["Panel transformado con Placas de Yeso Laminado con alma celular de cartón, formada por dos placas standard de 10 mm., unidas por un trillaje de celulosa especial que rigidiza el tablero resultante, conforme con UNE EN 13915."],
         "image":["cutout_489222_detail_picture_1.jpg"]
 
     }

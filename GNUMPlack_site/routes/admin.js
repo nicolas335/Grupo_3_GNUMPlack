@@ -1,9 +1,13 @@
 const express = require('express');
 const router = express.Router();
-let {create, edit, list} = require('../controllers/adminController');
+let {create, edit, list,update,trash} = require('../controllers/adminController');
 
-router.get('/create', create);
 router.get('/list', list);
-router.get('/edit', edit);
+router.get('/create', create);
+
+router.get('/edit/:id', edit);
+router.put('/edit/:id',update)
+
+router.delete('/:id',trash);
 
 module.exports = router;
