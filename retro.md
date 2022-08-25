@@ -39,4 +39,23 @@ Dedicarle poco tiempo
 ## Dejar de hacer
 No subestimar las dificultades de las tareas.
 
+RETROSPECTIVA DEL SPRINT 3
+
+## Seguir haciendo
+La organizacion en Trello para el proximo Sprint y sumar la participacion de todos.
+
+## Hacer mas
+Repartir tareas equitativamente.
+La comunicacion individual con el grupo , si se presentan dificultades.
+Etiquetar las tarjetas con dificultades.
+
+## Empezar a hacer
+Puntualidad en las fechas de entrega de tareas.
+Agregar fechas de vencimiento en las tareas .
+
+## Hacer menos
+Dedicarle poco tiempo
+
+## Dejar de hacer
+Terminar las tareas sobre limite de tiempo.
 
