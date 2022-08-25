@@ -9,30 +9,16 @@
     <main class="product">
         <h1>Productos</h1>
         <section>
-            <article class="contenedor">
-                <h3><a href="/product/detail" target="_blank">Placa De Yeso Knauf 12,5mm 1.20 X 2.40 MtsStandard</a></h3>
-                <div>
-                    <img class="placas" src="img/cutout_123566_detail_picture_1.jpg" alt="placa de yeso" >
-                </div>
-            </article>
-            <article class="contenedor">
-                <h3><a href="/product/detail" target="_blank">Placa Yeso Knauf Rf 15mm 1,20x2,40 Roja Ignifuga</a></h3>
-                <div>
-                    <img class="placas" src="https://http2.mlstatic.com/D_NQ_NP_644413-MLA32401709864_102019-O.jpg" alt="placa de yeso">
-                </div>
-            </article>
-            <article class="contenedor">
-                <h3><a href="/product/detail" target="_blank">Placa Durlock Verde Resistente A La Humedad 12.5mm 1.20x2.40</a></h3>
-                <div>
-                    <img class="placas" src="https://http2.mlstatic.com/D_NQ_NP_806283-MLU46756778448_072021-V.jpg" alt="placa de yeso">
-                </div> 
-            </article>
-            <article class="contenedor">
-                <h3><a href="/product/detail" target="_blank">Placa Yeso Std Knauf 12,5mm 1,20 X 2,00m Cielorraso</a></h3>
-                <div>
-                    <img class="placas" src="https://www.ontil.com.uy/imagenes/img_contenido/productos/a/5000071713.jpg" alt="placa de yeso">
-                </div> 
-            </article>
+            <% products.forEach(producto => { %>
+                <article class="contenedor">
+                    <h3><a href="/product/detail/<%= producto.id %> " target="_blank"><%= producto.name %> </a></h3>
+                    <div>
+                        <img class="placas" src="/img/<%- producto.image[0] %> " alt="placa de yeso" >
+                    </div>
+                </article>
+             
+            <% }) %>
+           
         </section>
     </main>
 <%- include ("./partials/footer") %> 
