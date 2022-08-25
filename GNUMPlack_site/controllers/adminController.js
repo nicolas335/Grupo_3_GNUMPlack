@@ -7,7 +7,30 @@ module.exports = {
     create :(req, res) =>{
         return res.render('admin/create');
     },
+    
+    store: (req, res) => {
+            let {  name, description, dimensions, category, condition, stock, price, qualities, discount, image} = req.body;
 
+            let newProduct = {
+                id: products[products.length - 1].id + 1,
+                name: name,
+                description: description,
+                dimensions: dimensions,
+                category: category,
+                condition: condition,
+                stock: +stock,
+                price: +price,
+                discount: +discount,
+                qualities: qualities,
+                image: image,
+            }
+
+            products.push(newProduct)
+            guardarProductos(products)
+
+            /* Redirecciona a la lista de productos en admin*/
+            return res.redirect('/admin/list')
+        },
     list :(req, res) =>{
         return res.render('admin/list',{
             products
