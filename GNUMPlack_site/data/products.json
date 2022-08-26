@@ -22,11 +22,11 @@
         "dimensions":"1.5mts x 2mts",
         "category":"Placa de yeso laminado",
         "condition":"oferta",
-        "discount":5,
-        "price":4000,
+        "discount":8,
+        "price":1997,
         "qualities":["La placa GNUMPlack Lightboard Horizon es una placa de yeso laminado muy ligera con 4 bordes afinados 4BA desarrollada para techos suspendidos continuos.", "Especialmente diseñada para facilitar el tratamiento de juntas en ambos sentidos, logrando una superficie plana y lista para alcanzar altas exigencias de acabado."],
         "image":["Ligthboard-Horizon-A.png"],
-        "stock":4,
+        "stock":27,
         "advantage":["Para uso interior","Más respetuoso con el medio ambiente","Sistema ligero","No combustible","Ideales para habitaciones en residencial de obra nueva y reforma"]
 
     },
@@ -38,7 +38,7 @@
         "category":"Placa de yeso laminado",
         "condition":"oferta",
         "discount":15,
-        "price":4000,
+        "price":1740,
         "qualities":["La placa GNUMPlack Lightboard es una placa de yeso laminado muy ligera diseñada para su aplicación en sistemas de techos suspendidos continuos, sin requerimientos especiales"],
         "image":["Ligthboard-A.jpg"],
         "stock":4,
@@ -68,8 +68,8 @@
         "dimensions":"1.5mts x 2mts",
         "category":"Placa de yeso laminado",
         "condition":"oferta" ,
-        "discount":11,
-        "price":4000,
+        "discount":0,
+        "price":3000,
         "qualities":["La placa GNUMPlack Diamant Cleaneo C es una placa de yeso laminado resistente de 12,5 mm de espesor. Tiene un alma de yeso reforzado con fibra de vidrio y aditivos que neutralizan los formaldehídos. Es apta para espacios interiores con altas exigencias prestacionales. Tiene bordes longitudinales afinados y bordes transversales cortados."],
         "image":["Placa-Diamant-Cleaneo-C.jpg"],
         "stock":4,
@@ -99,7 +99,7 @@
         "category":"Placa de yeso laminado",
         "condition":"oferta",
         "discount":0,
-        "price":4000,
+        "price":1999,
         "qualities":["Compuesta por alma de yeso mezclada con fibra de vidrio y caras revestidas con lámina de cartón.","Fácilmente identificable por su cara aparente de color azul claro, la placa GNUMPlack Diamant se caracteriza por integrar en una sola placa las cualidades de la placa GNUMPlack Acustik, Cortafuego, Impregnada y Alta Dureza."],
         "image":["cutout_516158_detail_picture_1.jpg"],
         "stock":4,
@@ -114,7 +114,7 @@
         "category":"Placa de yeso laminado",
         "condition":"oferta",
         "discount":16,
-        "price":4000,
+        "price":8000,
         "qualities":["Compuesta por un alma de yeso revestida con láminas de cartón de color azul claro. La placa Acustik se caracteriza por mejorar las prestaciones acústicas del sistema en hasta +4 dBA, debido al perfecto estudio de su densidad. Placa de yeso no combustible, ofrece grandes ventajas a la hora de su manipulación, como la realización de curvas o formas decorativas."],
         "image":["cutout_531338_detail_picture_1.jpg"],
         "stock":4,
@@ -147,7 +147,7 @@
         "price":3150,
         "qualities":["Placa de yeso mejorada con celulosa de papel recliclado y con fibras de altas prestaciones, especialmente indicadas para suelos técnicos elevados, suelos sobre vigas metálicas, sistema de gradas…","Ambas caras son de color blanquecino, su superficie es áspera y los bordes son escalonados."],
         "image":["cutout_516168_detail_picture_1.jpg"],
-        "stock":4,
+        "stock":14,
         "advantage":["Instalación fácil y rápida, tras 24 horas después de su instalación puede entrar en carga","Espesores: 25, 28, 32 y 38 mm.","Bordes machihembrados","Placa tipo D, de elevada densidad 1400 Kg/m3.","Placa tipo W1, baja absorción superficial de agua (?300 g/m2).","Placa tipo I, alta dureza superficial (huella ?15mm).","Placa tipo R1, alta resistencia (R.flexión?10 N/mm2).","Protección frente al fuego.","Reacción al fuego, A1 Incombustible.","Elemento robusto.","Instalación fácil y rápida."]
 
     },
@@ -162,7 +162,7 @@
         "price":4780,
         "qualities":["GNUMPlack Torro es una placa compuesta por yeso mejorado con fibras de celulosa procedente de papel reciclado y unido en prensa de alta presión. Tiene ambas caras de color blanquecino y los cuatro bordes cortados BCO.Por su alta densidad y gran resistencia a cualquier tipo de impacto, conforma el interior de los sistemas de tabiques antibalas."],
         "image":["Placa-Torro.jpg"],
-        "stock":4,
+        "stock":8,
         "advantage":["El producto es fabricado de acuerdo a la Norma UNE-EN 15283-2. Sujeto a ensayos de tipo inicial y al control de producción en fábrica que le otorgan el marcado CE"]
 
     },
@@ -260,7 +260,7 @@
         "id": 18,
         "name":"GNUMPlack Alta Dureza DI",
         "description":"Placa GNUMPlack de elevada dureza superficial.",
-        "dimensions":"1.5mts x 2mts",
+        "dimensions":"1.7mts x 2mts",
         "category":"Placa de yeso laminado",
         "condition":"oferta",
         "discount":10,
@@ -283,7 +283,7 @@
         "qualities":["Compuesta por una placa de yeso laminado Knauf Cortafuego DF según UNE EN 520, con una cara revestida con una lámina de celulosa, con propiedades antirradiaciones sin adición de una lámina de plomo."],
         "image":["cutout_516161_detail_picture_1.jpg"],
         "stock":5,
-        "advantage":[]
+        "advantage":["Fabricada según UNE EN 520, la placa Knauf Alta Dureza se clasifica como Tipo DI.","Color del cartón(cara vista): blanquecino.","Tinta de rotulo azul.","Alta densidad y dureza superficial.","Buen apoyo para colgar cargas.","Buen aislamiento acústico de sistemas.","Fácil de trabajar.","No combustible","Se puede curvar (placa 12,5).","Se puede fresar.","Poca retracción e hinchazón con los cambios climáticos.","No es apta para zonas de humedad permanente ni tabiques que tengan conducciones de líquidos en su interior."]
 
     },
     {
@@ -298,7 +298,7 @@
         "qualities":["Compuesta por una placa de yeso laminado GNUMPlack Cortafuego DF, con una cara revestida por una lámina de cartón y la otra con una lámina de plomo de distintos espesores."],
         "image":["cutout_516148_detail_picture_1.jpg"],
         "stock":5,
-        "advantage":[]
+        "advantage":["Fabricada según UNE EN 14190, la placa Knauf Antirradiaciones se clasifica como Tipo RX.","Color del cartón(cara vista): blanquecina y en la cara oculta la lámina de plomo.","Tinta de rotulo negra.","Placa de yeso de 12,5 mm de espesor y lámina de plomo desde 0,5 a 3mm."]
 
     },
     {
@@ -313,7 +313,7 @@
         "qualities":["Compuesta por un alma de yeso revestida con láminas de cartón. La placa Brico se caracteriza por ser adecuada en obras de reforma y rehabilitaciones pequeñas y ofrecer grandes ventajas a la hora de su manipulación por su reducido tamaño. Versión en ancho 900 para placa tipo A y 600 para placa tipo A y H1."],
         "image":["cutout_790882_detail_picture_1.jpg"],
         "stock":4,
-        "advantage":[]
+        "advantage":["Fabricada según UNE EN 520, la placa Knauf Brico está diseñada para bricolaje en obras de reformas y pequeñas rehabilitaciones.","Placas de Tipo A y H1."]
 
     },
     {
@@ -327,7 +327,7 @@
         "qualities":["Compuesta por un alma de yeso revestida con láminas de cartón, la placa Standard se caracteriza por ser no combustible, y ofrecer grandes ventajas a la hora de su manipulación, como la realización de curvas o formas decorativas."],
         "image":["cutout_517721_detail_picture_1.jpg"],
         "stock":11,
-        "advantage":[]
+        "advantage":["Fabricada según UNE EN 520, la placa Knauf Standard se clasifica como Tipo A.","Color del cartón: gris.","Tinta de rotulo negra.","Fácil de trabajar.","No combustible.","Se puede curvar.","Poca retracción e hinchazón con los cambios climáticos.","No es apta para zonas de humedad permanente ni tabiques que tengan conducciones de líquidos en su interior."]
 
     },
     {
@@ -341,7 +341,7 @@
         "qualities":["La placa Standard Cleaneo C es una placa de yeso laminado de 12,5 mm de espesor con aditivos que neutralizan los formaldehídos de los espacios interiores y mejoran la calidad del aire interior. Tiene bordes longitudinales afinados y bordes transversales cortados"],
         "image":["Placa-Standard-Cleaneo-C_0.jpg"],
         "stock":6,
-        "advantage":[]
+        "advantage":["Mejora de la calidad del aire, reducción de la concentración de formaldehídos hasta en un 80%","Funcionamiento continuo sin consumo de energía","Sin almacenamiento de contaminantes","Universal para cualquier sistema","Fácil y rápida de instalar"," Libertad de diseño","Compatible con todos los revestimientos de acabado porosos"]
 
     },
     {
@@ -356,7 +356,7 @@
         "qualities":["Placa de yeso especial reforzada con fibra, que incorpora además un velo hidro-repelente. Tiene una clasificación a fuego A1 y es del tipo GM-FH1IR."],
         "image":["cutout_510705_detail_picture_1.jpg"],
         "stock":5,
-        "advantage":[]
+        "advantage":["Fabricada según UNE EN 15283-1. La placa Drystar mantiene su resistencia intacta en zonas con humedad elevada gracias a su escaso nivel de absorción.","100 % resistente al agua y al moho","No combustible","Fácil de trabajar, como cualquier otra placa de Yeso laminado.","Superficie ideal para alicatar e impermeabilizar.","Poca retracción y deformación ante cambios climáticos.","Fácil de curvar."]
 
     },
     {
@@ -370,7 +370,7 @@
         "qualities":["Panel transformado con Placas de Yeso Laminado con alma celular de cartón, formada por dos placas standard de 10 mm., unidas por un trillaje de celulosa especial que rigidiza el tablero resultante, conforme con UNE EN 13915."],
         "image":["cutout_489222_detail_picture_1.jpg"],
         "stock":7,
-        "advantage":[]
+        "advantage":["No se puede curvar.","Espesor total 50mm.","Poca retracción e hinchazón con cambios climáticos."]
 
     }
 ]
