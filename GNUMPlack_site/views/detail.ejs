@@ -8,24 +8,24 @@
         <%- include ("./partials/header") %>
 
             <main class="detail">
-                <h1><%- productoDetallado.name %> </h1>
+                <h1><%= productoDetallado.name %> </h1>
                 <article class="descripcion">
-                    <p><%= productoDetallado.description %> </p>
+                    <p class="textoDescripcion"><%= productoDetallado.description %> </p>
                     <div class="imgPrincipal">
                         <img src="/img/<%= productoDetallado.image %> " alt="placa de yeso">
                     </div>
-                    
-                    <p class="texto"><%= productoDetallado.qualities %> </p>
+                    <% productoDetallado.qualities.forEach(qualities => { %>
+                        <p class="texto"><%= qualities %> </p>
+                    <% }) %>
                     <div class="lista">
-                        <p class="textoDesktop"><%= productoDetallado.qualities %> </p>
+                        <% productoDetallado.qualities.forEach(qualities => { %>
+                        <p class="textoDesktop"><%= qualities %> </p>
+                        <% }) %>
                         <ul>
                             <h3>Ventajas/Aplicacion</h3>
-                            <li>Propiedades de absorción acústica.</li>
-                            <li>Aplicación sencilla.</li>
-                            <li>Cartón en blanco nuclear por el lado visible.</li>
-                            <li>No es preciso rellenar las juntas</li>
-                            <li>Facilidad en el pasaje de instalaciones.</li>
-                            <li>Excelente calidad de terminación.</li>
+                            <% productoDetallado.advantage.forEach(advantage => { %>
+                                <li><%= advantage %> </li>
+                            <% }) %>
                         </ul>
                         <div class="precioDesktop">
                             <span>$<%= productoDetallado.price %> </span>

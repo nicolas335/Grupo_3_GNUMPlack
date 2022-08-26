@@ -10,7 +10,7 @@
     <header>
       <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Create a product</a>
+          <a class="navbar-brand" href="/admin/list">Administrador</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -25,10 +25,10 @@
                   <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/admin/edit">edit</a>
+                  <a class="nav-link" href="/admin/Create">Create</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/admin/list">list</a>
+                  <a class="nav-link" href="/admin/list">List</a>
                 </li>
               </ul>
               <form class="d-flex" role="search">
@@ -44,11 +44,12 @@
       <style>main{margin-top: 50px;
         background: linear-gradient(to bottom,#007f5f, #2b9348, #55a630, #80b918, #aacc00, #bfd200, #d4d700);
         background: no - repeat;
-        padding: 0 12px;}
+        padding: 10px 12px 30px;}
         body{background-color:#d4d700;
         max-width: 1800px;
         margin: 0 auto;}
-        h1{color: white;}    
+        h1{color: white;} 
+        form{padding: 0 10%;}      
         </style>
       <h1>Creating a new product!</h1>
 
@@ -85,10 +86,11 @@
             <div class="form-floating">
                 <select class="form-select" name="category" id="floatingSelect" aria-label="Floating label select example">
                   <option selected hidden>Select the category</option>
+                  <option value="Placa de yeso">Placa de yeso</option>
                   <option value="Placa de yeso laminado">Placa de yeso laminado</option>
-                  <option value="Placa de cemento">Placa de cemento</option>
-                  <option value="Placa de lana de madera">Placa de lana de madera</option>
                   <option value="Placa de yeso con fibras">Placa de yeso con fibras</option>
+                  <option value="Placa de lana de madera">Placa de lana de madera</option>
+                  <option value="Placa de cemento">Placa de cemento</option>
                 </select>
                 <label for="floatingSelect">Category</label>
                 <small>*</small>
@@ -98,6 +100,7 @@
                   <option selected hidden>Select the condition</option>
                   <option value="destacados">Destacados</option>
                   <option value="oferta">Oferta</option>
+                  <option value="">Sin condición</option>
                 </select>
                 <label for="floatingSelect">Condition</label>
                 <small>*</small>
@@ -111,6 +114,7 @@
                   <input type="number" name="stock" class="form-control" id="stock" placeholder="Stock">
                   <label for="stock" value="1">Stock</label>
               </div>
+              <small>*</small>
               <div class="form-floating">
                 <input type="number" name="discount" class="form-control" id="discount" placeholder="Discount">
                 <label for="discount" value="0">Discount</label>

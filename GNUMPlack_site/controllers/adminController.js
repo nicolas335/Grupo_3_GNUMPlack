@@ -23,7 +23,7 @@ module.exports = {
                 description: description,
                 dimensions: dimensions,
                 category: category,
-                condition: condition,
+                condition: condition !== "sin condicion"? condition:"",
                 stock: +stock,
                 price: +price,
                 discount: +discount,
@@ -47,26 +47,26 @@ module.exports = {
     edit :(req, res) =>{
         let id = +req.params.id
         let productoAEditar = products.find(producto => producto.id === id)
-       /*  let cualidades = productoAEditar.qualities.join(' -- ')
-        let ventajas = productoAEditar */
         return res.render('admin/edit',{
             producto:productoAEditar
         });
     },
 
     update :(req,res) =>{
-        //return res.send(req.body)
         let id = +req.params.id
-        let {name,description,category,price,qualities,advantage} = req.body
-        let newAdvantages = advantage.split('--');
-        let newQualities = qualities.split('--');
+        let {name,description,dimensions,category,condition,discount,price,qualities,image,stock,advantage} = req.body
         products.forEach(producto => {
             if (producto.id === id) {
                 producto.name = name
                 producto.description = description
+                producto.dimensions = dimensions
                 producto.category = category
+                producto.condition = condition
+                producto.discount = +discount
                 producto.price = +price
-                producto.qualities = newQualities
+                producto.qualities = qualities.split('--')
+                producto.stock = +stock
+                producto.advantage = advantage.split('--')
             }
         })
         guardarProductos(products)

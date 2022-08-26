@@ -5,7 +5,7 @@
         "description": "Lightboard H1, alta tecnología para techos en zonas húmedas de interiores",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de yeso laminado",
-        "condition": "oferta",
+        "condition": "",
         "discount": 2,
         "price": 4000,
         "qualities": [
@@ -29,7 +29,7 @@
         "description": "Placa de yeso laminado muy ligera con 4 bordes afinados desarrollada para techos suspendidos continuos.",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de yeso laminado",
-        "condition": "oferta",
+        "condition": "Destacado",
         "discount": 8,
         "price": 1997,
         "qualities": [
@@ -56,7 +56,7 @@
         "category": "Placa de yeso laminado",
         "condition": "oferta",
         "discount": 15,
-        "price": 1740,
+        "price": 6740,
         "qualities": [
             "La placa GNUMPlack Lightboard es una placa de yeso laminado muy ligera diseñada para su aplicación en sistemas de techos suspendidos continuos, sin requerimientos especiales"
         ],
@@ -78,7 +78,7 @@
         "dimensions": "1.5mts x 2mts",
         "description": "Placa Premium de alta densidad para un mayor aislamiento acústico.",
         "category": "Placa de yeso laminado",
-        "condition": "oferta",
+        "condition": "",
         "discount": 0,
         "price": 2890,
         "qualities": [
@@ -107,7 +107,7 @@
         "description": "Placa robusta y versátil certificada para la calidad del aire interior",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de yeso laminado",
-        "condition": "oferta",
+        "condition": "",
         "discount": 0,
         "price": 3000,
         "qualities": [
@@ -138,7 +138,7 @@
         "description": "Placa de yeso laminado de 15 mm de espesor reforzada con malla de fibra de vidrio que aumenta su capacidad de carga y su resistencia.",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de yeso laminado",
-        "condition": "oferta",
+        "condition": "",
         "discount": 0,
         "price": 4000,
         "qualities": [
@@ -167,7 +167,7 @@
         "description": "Placa versátil, cortafuego, impregnada, acústica y de alta dureza.",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de yeso laminado",
-        "condition": "oferta",
+        "condition": "",
         "discount": 0,
         "price": 1999,
         "qualities": [
@@ -225,8 +225,8 @@
         "description": "Elemento de fibra de yeso con aislamiento o sin él como solera seca",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de yeso con fibras",
-        "condition": "oferta",
-        "discount": 0,
+        "condition": "destacado",
+        "discount": 8,
         "price": 2800,
         "qualities": [
             "Conformada con mezcla de yeso mejorado con adiciones de celulosas de papel reciclado, en prensa de alta presión.",
@@ -283,7 +283,7 @@
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de lana de madera",
         "condition": "oferta",
-        "discount": 21,
+        "discount": 11,
         "price": 4780,
         "qualities": [
             "GNUMPlack Torro es una placa compuesta por yeso mejorado con fibras de celulosa procedente de papel reciclado y unido en prensa de alta presión. Tiene ambas caras de color blanquecino y los cuatro bordes cortados BCO.Por su alta densidad y gran resistencia a cualquier tipo de impacto, conforma el interior de los sistemas de tabiques antibalas."
@@ -302,7 +302,7 @@
         "description": "Placas de cemento ligeras para su uso en exterior en sistemas de cubiertas planas",
         "dimensions": "1.5mts x 3mts",
         "category": "Placa de cemento",
-        "condition": "oferta",
+        "condition": "Destacado",
         "discount": 2,
         "price": 2800,
         "qualities": [
@@ -331,7 +331,7 @@
         "description": "Placa de cemento ligera para uso exterior como fachadas.",
         "dimensions": "1.5mts x 3mts",
         "category": "Placa de cemento",
-        "condition": "oferta",
+        "condition": "",
         "discount": 2,
         "price": 3700,
         "qualities": [
@@ -359,7 +359,7 @@
         "description": "Placa de cemento ligera para techos en interior y exterior.",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de cemento",
-        "condition": "oferta",
+        "condition": "Destacado",
         "discount": 5,
         "price": 7100,
         "qualities": [
@@ -384,7 +384,7 @@
         "description": "Sistema de partición formado por una estructura metálica con una o más placas de cemento Aquapanel Indoor atornilladas a cada lado de la misma.",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de cemento",
-        "condition": "oferta",
+        "condition": "Destacado",
         "discount": 5,
         "price": 4600,
         "qualities": [
@@ -414,8 +414,8 @@
         "description": "Placas de lana de madera estándar para techos registrables.",
         "dimensions": "1.5mts x 2.50mts",
         "category": "Placa de lana de madera",
-        "condition": "oferta",
-        "discount": 2,
+        "condition": "Oferta",
+        "discount": 15,
         "price": 3690,
         "qualities": [
             "A base de fibras muy finas de lana de madera procedente de coníferas, mineralizada y cubierta con argamasa de cemento y cal blanca. Ofrece excelentes prestaciones acústicas."
@@ -464,7 +464,7 @@
         "dimensions": "1.7mts x 2mts",
         "category": "Placa de yeso laminado",
         "condition": "oferta",
-        "discount": 10,
+        "discount": 15,
         "price": 4250,
         "qualities": [
             "Compuesta por alma de yeso aditivado, mezclado con fibra de vidrio y caras revestidas con lámina de cartón color blanquecino.",
@@ -558,6 +558,7 @@
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de yeso",
         "condition": "oferta",
+        "discount": 17,
         "price": 4500,
         "qualities": [
             "Compuesta por un alma de yeso revestida con láminas de cartón, la placa Standard se caracteriza por ser no combustible, y ofrecer grandes ventajas a la hora de su manipulación, como la realización de curvas o formas decorativas."
@@ -583,9 +584,12 @@
         "description": "Placa de yeso laminado certificada para la calidad del aire interior",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de yeso",
-        "condition": "oferta",
+        "condition": "Destacado",
+        "discount": 6,
         "price": 5280,
-        "qualities": "La placa Standard Cleaneo C es una placa de yeso laminado de 12,5 mm de espesor con aditivos que neutralizan los formaldehídos de los espacios interiores y mejoran la calidad del aire interior. Tiene bordes longitudinales afinados y bordes transversales cortados",
+        "qualities": [
+            "La placa Standard Cleaneo C es una placa de yeso laminado de 12,5 mm de espesor con aditivos que neutralizan los formaldehídos de los espacios interiores y mejoran la calidad del aire interior. Tiene bordes longitudinales afinados y bordes transversales cortados"
+        ],
         "image": [
             "Placa-Standard-Cleaneo-C_0.jpg"
         ],
@@ -606,8 +610,8 @@
         "description": "Placa especial para ambientes con elevada humedad y agua controlada.",
         "dimensions": "1.8mts x 2mts",
         "category": "Placa de yeso",
-        "condition": "oferta",
-        "discount": 9,
+        "condition": "Destacado",
+        "discount": 10,
         "price": 8100,
         "qualities": [
             "Placa de yeso especial reforzada con fibra, que incorpora además un velo hidro-repelente. Tiene una clasificación a fuego A1 y es del tipo GM-FH1IR."
@@ -633,7 +637,7 @@
         "dimensions": "2mts x 2mts",
         "category": "Placa de yeso",
         "condition": "oferta",
-        "discount": 10,
+        "discount": 15,
         "price": 6700,
         "qualities": [
             "Panel transformado con Placas de Yeso Laminado con alma celular de cartón, formada por dos placas standard de 10 mm., unidas por un trillaje de celulosa especial que rigidiza el tablero resultante, conforme con UNE EN 13915."

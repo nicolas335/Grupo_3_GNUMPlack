@@ -11,9 +11,12 @@
         <section>
             <% products.forEach(producto => { %>
                 <article class="contenedor">
-                    <h3><a href="/product/detail/<%= producto.id %> " target="_blank"><%= producto.name %> </a></h3>
-                    <div>
-                        <img class="placas" src="/img/<%- producto.image[0] %> " alt="placa de yeso" >
+                    <div class="name">
+                        <h3><a href="/product/detail/<%= producto.id %> " target="_blank"><%= producto.name %> </a></h3>
+                        <p><%= producto.description %> </p>
+                    </div>
+                    <div class="image">
+                        <a href="/product/detail/<%= producto.id %>" target="_blank" ><img class="placas" src="/img/<%- producto.image[0] %> " alt="placa de yeso" ></a>
                     </div>
                 </article>
              

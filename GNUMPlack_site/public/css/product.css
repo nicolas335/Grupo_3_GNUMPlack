@@ -1,9 +1,8 @@
 
-.product main h1{
+.product h1{
     text-align:center;
-    
+    padding: 5px;
 }
-
 
 .product .contenedor img{
     width: 82%;
@@ -21,19 +20,23 @@
     margin-bottom: 18px;
 }
 
+.product .name p{
+    margin-bottom: 15px;
+}
+
 /* Tablet */
 @media (min-width:461px) {
    .product .contenedor{
     display:flex;
     flex-wrap: wrap;
    }
-   .product .contenedor h3{
+   .product .contenedor .name{
     width: 58%;
     text-align: center;
     margin: auto 0;
     
    }
-   .product .contenedor div{
+   .product .contenedor .image{
     width: 40%;
     order:-1;
    }
@@ -42,5 +45,7 @@
 
 /* Desktop */
 @media (min-width:769px){
-    
+    .product h1{
+        padding-top: 15px;
+    }
 }
