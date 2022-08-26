@@ -60,13 +60,13 @@
               <small>*</small>
           </div>
           <div class="form-floating">
-            <input type="text" name="qualities" class="form-control" id="qualities" placeholder="Qualities" value="<%= producto.qualities %>">
+            <input type="text" name="qualities" class="form-control" id="qualities" placeholder="Qualities" value="<%= producto.qualities.join('--') %>">
             <label for="qualities">Qualities</label>
             <small>*</small>
             <small>Remember to use the -- to separate elements</small>
           </div>
           <div class="form-floating">
-            <input type="text" name="advantage" class="form-control" id="advantage" placeholder="Advantage" value="<%= producto.advantage %>">
+            <input type="text" name="advantage" class="form-control" id="advantage" placeholder="Advantage" value="<%= producto.advantage.join('--') %>">
             <label for="advantage">Advantage</label>
             <small>*</small>
             <small>Remember to use the -- to separate elements</small>
@@ -88,6 +88,7 @@
               <option value="Placa de yeso laminado">Placa de yeso laminado</option>
               <option value="Placa de cemento">Placa de cemento</option>
               <option value="Placa de lana de madera">Placa de lana de madera</option>
+              <option value="Placa de yeso con fibras">Placa de yeso con fibras</option>
             </select>
             <label for="floatingSelect">Category</label>
             <small>*</small>
@@ -96,23 +97,23 @@
             <select class="form-select" name="condition" id="floatingSelect" aria-label="Floating label select example">
               <option selected hidden>Select the condition</option>
               <option value="destacados">Destacados</option>
-              <option value="en oferta">En oferta</option>
+              <option value="oferta">En oferta</option>
             </select>
             <label for="floatingSelect">Condition</label>
             <small>*</small>
           </div>
           <div class="form-floating">
-              <input type="number" name="price" class="form-control" id="price" placeholder="Price">
+              <input type="number" name="price" class="form-control" id="price" placeholder="Price" value="<%= producto.price %>">
               <label for="price">Price</label>
               <small>*</small>
           </div>
           <div class="form-floating">
-              <input type="number" name="stock" class="form-control" id="stock" placeholder="Stock">
-              <label for="stock" value="1">Stock</label>
+              <input type="number" name="stock" class="form-control" id="stock" placeholder="Stock" value="<%= producto.stock %>">
+              <label for="stock" >Stock</label>
           </div>
           <div class="form-floating">
-            <input type="number" name="discount" class="form-control" id="discount" placeholder="Discount">
-            <label for="discount" value="0">Discount</label>
+            <input type="number" name="discount" class="form-control" id="discount" placeholder="Discount" value="<%= producto.discount %>">
+            <label for="discount" >Discount</label>
         </div>
           <div class="mb-3">
               <label for="formFile" class="form-label">Add image</label>
@@ -123,59 +124,7 @@
           <div class="button">
               <button class="btn btn-outline-success" type="submit">Create Product</button>
           </div>
-          
       </section>  
-        
-        <section>
-              <div class="form-floating">
-                  <input type="text" name="Name" class="form-control" id="name" placeholder="Name" value="<%= producto.name %>">
-                  <label for="name">Name</label>
-                  <small>*</small>
-                </div>
-                <div class="form-floating">
-                    <textarea class="form-control" name="Description" placeholder="Please insert the description of the product"
-                        id="floatingTextarea"><%= producto.description %></textarea>
-                    <label for="floatingTextarea">Description</label>
-                    <small>*</small>
-                </div>
-                <div class="form-floating">
-                  <select class="form-select" name="Category" id="floatingSelect" aria-label="Floating label select example">
-                    <option selected hidden>Select an option</option>
-                    <option value="Placa de yeso" <%= producto.category === "Placa de yeso" ? "selected" : "" %> >Placa de yeso</option>
-                    <option value="Placa de yeso laminado" <%= producto.category === "Placa de yeso laminado" ? "selected" : "" %> >Placa de yeso laminado</option>
-                    <option value="Placa de yeso con fibras" <%= producto.category === "Placa de yeso con fibras" ? "selected" : "" %> >Placa de yeso con fibras</option>
-                    <option value="Placa de lana de madera" <%= producto.category === "Placa de lana de madera" ? "selected" : "" %> >Placa de lana de madera</option>
-                    <option value="Placa de cemento" <%= producto.category === "Placa de cemento" ? "selected" : "" %> >Placa de cemento</option>
-                  </select>
-                  <label for="floatingSelect">Category</label>
-                  <small>*</small>
-                </div>
-                <div class="form-floating">
-                  <input type="number" name="Price" class="form-control" id="Price" placeholder="Price" value="<%= producto.price %>">
-                  <label for="Price">Price</label>
-                  <small>*</small>
-                </div>
-                <!-- <div class="form-floating">
-                  <input type="number" name="Stock" class="form-control" id="Stock" placeholder="Stock">
-                  <label for="Stock" value="1">Stock</label>
-                  <small>*</small>
-                </div> -->
-                <div class="form-floating">
-                  <input type="text" name="Qualities" class="form-control" id="qualities" placeholder="Qualities" value="<%= producto.qualities %>">
-                  <label for="qualities">Qualities</label>
-                  <small>*</small>
-              </div>
-                <div class="mb-3">
-                  <label for="formFile" class="form-label">Add images for the product</label>
-                  <input class="form-control" type="file" id="formFile" name="Image">
-                  <small>*</small>
-                </div>
-              
-                <div class="button">
-                    <button class="btn btn-outline-success" type="submit">Edit Product</button>
-                </div>
-              
-          </section>
       </form>
   </main>
   

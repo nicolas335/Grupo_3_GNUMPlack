@@ -1,4 +1,5 @@
 let fs = require('fs')
+const { join } = require('path')
 let path = require('path')
 let products = require('../data/products.json')
 let guardarProductos = (dato) => fs.writeFileSync(path.join(__dirname,"../data/products.json"),JSON.stringify(dato,null,4),'utf-8')
@@ -46,6 +47,8 @@ module.exports = {
     edit :(req, res) =>{
         let id = +req.params.id
         let productoAEditar = products.find(producto => producto.id === id)
+       /*  let cualidades = productoAEditar.qualities.join(' -- ')
+        let ventajas = productoAEditar */
         return res.render('admin/edit',{
             producto:productoAEditar
         });
@@ -54,14 +57,16 @@ module.exports = {
     update :(req,res) =>{
         //return res.send(req.body)
         let id = +req.params.id
-        let {Name,Description,Category,Price,Qualities} = req.body
+        let {name,description,category,price,qualities,advantage} = req.body
+        let newAdvantages = advantage.split('--');
+        let newQualities = qualities.split('--');
         products.forEach(producto => {
             if (producto.id === id) {
-                producto.name = Name
-                producto.description = Description
-                producto.category = Category
-                producto.price = +Price
-                producto.qualities = Qualities
+                producto.name = name
+                producto.description = description
+                producto.category = category
+                producto.price = +price
+                producto.qualities = newQualities
             }
         })
         guardarProductos(products)
