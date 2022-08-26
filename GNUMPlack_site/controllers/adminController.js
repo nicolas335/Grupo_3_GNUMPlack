@@ -9,7 +9,12 @@ module.exports = {
     },
     
     store: (req, res) => {
-            let {  name, description, dimensions, category, condition, stock, price, qualities, discount, image} = req.body;
+            let { name, description, dimensions, category, condition, stock, price, qualities, discount, advantage, image} = req.body;
+
+            let newAdvantages = advantage.split('--');
+            let newQualities = qualities.split('--');
+            let newImage = image.split();
+            
 
             let newProduct = {
                 id: products[products.length - 1].id + 1,
@@ -21,8 +26,9 @@ module.exports = {
                 stock: +stock,
                 price: +price,
                 discount: +discount,
-                qualities: qualities,
-                image: image,
+                qualities: newQualities,
+                advantage: newAdvantages,
+                image: newImage,
             }
 
             products.push(newProduct)
