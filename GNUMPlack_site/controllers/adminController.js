@@ -23,15 +23,27 @@ module.exports = {
     },
 
     update :(req,res) =>{
-        let id = +req.params
         return res.send(req.body)
-        let {} = req.body
+        let id = +req.params
+        let {Name,Description,Category,Price,Qualities} = req.body
+        products.forEach(producto => {
+            if (producto.id === id) {
+                producto.name = Name
+                producto.description = Description
+                producto.category = Category
+                producto.price = +Price
+                producto.qualities = Qualities
+            }
+        })
+        console.log(products);
+        guardarProductos(products)
+        return res.redirect(`/admin/list`)
     },
 
     trash:(req,res)=>{
         let id = +req.params.id
-        let prodoductosActualizados = products.filter(producto => producto.id !== id)
-        guardarProductos(prodoductosActualizados)
+        let productosActualizados = products.filter(producto => producto.id !== id)
+        guardarProductos(productosActualizados)
         return res.redirect('/admin/list')
     }
 }
