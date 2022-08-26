@@ -3,6 +3,8 @@ const { join } = require('path')
 let path = require('path')
 let products = require('../data/products.json')
 let guardarProductos = (dato) => fs.writeFileSync(path.join(__dirname,"../data/products.json"),JSON.stringify(dato,null,4),'utf-8')
+let productsRemoved = require('../data/productsRemoved.json')
+guardarHistorial = (dato) => fs.writeFileSync(path.join(__dirname,'../data/productsRemoved.json'),JSON.stringify(dato,null,4),'utf-8')
 
 module.exports = {
     create :(req, res) =>{
@@ -75,8 +77,39 @@ module.exports = {
 
     trash:(req,res)=>{
         let id = +req.params.id
+        let productoEliminado = products.find(producto => producto.id === id)
+        productsRemoved.push(productoEliminado)
+        guardarHistorial(productsRemoved)
+
         let productosActualizados = products.filter(producto => producto.id !== id)
         guardarProductos(productosActualizados)
         return res.redirect('/admin/list')
+    },
+
+    history: (req,res) => {
+        res.render('admin/listDeleted',{
+            products:productsRemoved
+        })
+    },
+
+    restore: (req,res) => {
+        let id = +req.params.id
+        let productoARestaurar = productsRemoved.find(producto => producto.id === id)
+        let productosEliminados = productsRemoved.filter(producto => producto.id !== id)
+
+        guardarHistorial(productosEliminados)
+
+        productoARestaurar.id = products[products.length -1].id +1
+        products.push(productoARestaurar)
+        guardarProductos(products)
+        res.redirect('/admin/list')
+    },
+
+    destroy: (req,res) => {
+        let id = +req.params.id
+        let productosEliminados = productsRemoved.filter(producto => producto.id !== id)
+
+        guardarHistorial(productosEliminados)
+        res.redirect('/admin/listDeleted')
     }
 }
