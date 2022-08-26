@@ -16,7 +16,7 @@
             </button>
             <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
               <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               </div>
               <div class="offcanvas-body">
@@ -70,7 +70,7 @@
                 <tr>
                   <th scope="row"><%= producto.id %></th>
                   <td><%= producto.name%></td>
-                  <td>X</td>
+                  <td><%= producto.stock %> </td>
                   <td>$<%= producto.price %></td>
                   <td>
                     <a href="/admin/edit/<%= producto.id %>"><button type="button" class="btn btn-dark"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">

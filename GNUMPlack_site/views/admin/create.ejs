@@ -16,7 +16,7 @@
           </button>
           <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
@@ -52,48 +52,71 @@
         </style>
       <h1>Creating a new product!</h1>
 
-      <form action="/admin/create" method="post">
+      <form action="" method="post">
           <section>
               <div class="form-floating">
-                  <input type="text" name="Name" class="form-control" id="name" placeholder="Name">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="name">
                   <label for="name">Name</label>
                   <small>*</small>
               </div>
               <div class="form-floating">
-                  <input type="text" name="Title" class="form-control" id="Title" placeholder="Title">
-                  <label for="Title">Title</label>
+                <input type="text" name="qualities" class="form-control" id="qualities" placeholder="Qualities">
+                <label for="qualities">Qualities</label>
+                <small>*</small>
+                <small>Remember to use the -- to separate elements</small>
+              </div>
+              <div class="form-floating">
+                <input type="text" name="advantage" class="form-control" id="advantage" placeholder="Advantage">
+                <label for="advantage">Advantage</label>
+                <small>*</small>
+                <small>Remember to use the -- to separate elements</small>
+              </div>
+              <div class="form-floating">
+                <input type="text" name="dimensions" class="form-control" id="dimensions" placeholder="Dimensions">
+                <label for="dimensions">Dimensions</label>
+                <small>*</small>
+              </div>
+              <div class="form-floating">
+                <textarea class="form-control" name="description" placeholder="Please insert the description of the product" id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">Description</label>
+                <small>*</small>
+              </div>  
+            </div>
+            <div class="form-floating">
+                <select class="form-select" name="category" id="floatingSelect" aria-label="Floating label select example">
+                  <option selected hidden>Select the category</option>
+                  <option value="Placa de yeso laminado">Placa de yeso laminado</option>
+                  <option value="Placa de cemento">Placa de cemento</option>
+                  <option value="Placa de lana de madera">Placa de lana de madera</option>
+                </select>
+                <label for="floatingSelect">Category</label>
+                <small>*</small>
+              </div>
+              <div class="form-floating">
+                <select class="form-select" name="condition" id="floatingSelect" aria-label="Floating label select example">
+                  <option selected hidden>Select the condition</option>
+                  <option value="destacados">Destacados</option>
+                  <option value="en oferta">En oferta</option>
+                </select>
+                <label for="floatingSelect">Condition</label>
+                <small>*</small>
+              </div>
+              <div class="form-floating">
+                  <input type="number" name="price" class="form-control" id="price" placeholder="Price">
+                  <label for="price">Price</label>
                   <small>*</small>
               </div>
               <div class="form-floating">
-                  <select class="form-select" name="Categoria" id="floatingSelect" aria-label="Floating label select example">
-                    <option selected hidden>Select an option</option>
-                    <option value="Placas">Placas</option>
-                    <option value="Yeso">Yeso</option>
-                    <option value="Soleras">Soleras</option>
-                    <option value="Montantes">Montantes</option>
-                  </select>
-                  <label for="floatingSelect">Category</label>
-                  <small>*</small>
-                </div>
-              <div class="form-floating">
-                  <input type="number" name="Price" class="form-control" id="Price" placeholder="Price">
-                  <label for="Price">Price</label>
-                  <small>*</small>
+                  <input type="number" name="stock" class="form-control" id="stock" placeholder="Stock">
+                  <label for="stock" value="1">Stock</label>
               </div>
               <div class="form-floating">
-                  <input type="number" name="Stock" class="form-control" id="Stock" placeholder="Stock">
-                  <label for="Stock" value="1">Stock</label>
-              </div>
-              <div class="form-floating">
-                  <textarea class="form-control" name="Description" placeholder="Please insert the description of the product"
-                      id="floatingTextarea"></textarea>
-                  <label for="floatingTextarea">Description</label>
-                  <small>*</small>
-              </div>
-
+                <input type="number" name="discount" class="form-control" id="discount" placeholder="Discount">
+                <label for="discount" value="0">Discount</label>
+            </div>
               <div class="mb-3">
-                  <label for="formFileMultiple" class="form-label">Add images for the product</label>
-                  <input class="form-control" type="file" id="formFileMultiple" multiple>
+                  <label for="formFile" class="form-label">Add image</label>
+                  <input class="form-control" type="file" id="formFile" name="image">
                   <small>*</small>
               </div>
               
