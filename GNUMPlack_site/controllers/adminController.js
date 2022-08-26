@@ -22,7 +22,7 @@ module.exports = {
                 description: description,
                 dimensions: dimensions,
                 category: category,
-                condition: condition,
+                condition: condition !== "sin condicion"? condition:"",
                 stock: +stock,
                 price: +price,
                 discount: +discount,
