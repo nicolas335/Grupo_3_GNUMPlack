@@ -7,7 +7,36 @@ module.exports = {
     create :(req, res) =>{
         return res.render('admin/create');
     },
+    
+    store: (req, res) => {
+            let { name, description, dimensions, category, condition, stock, price, qualities, discount, advantage, image} = req.body;
 
+            let newAdvantages = advantage.split('--');
+            let newQualities = qualities.split('--');
+            let newImage = image.split();
+            
+
+            let newProduct = {
+                id: products[products.length - 1].id + 1,
+                name: name,
+                description: description,
+                dimensions: dimensions,
+                category: category,
+                condition: condition,
+                stock: +stock,
+                price: +price,
+                discount: +discount,
+                qualities: newQualities,
+                advantage: newAdvantages,
+                image: newImage,
+            }
+
+            products.push(newProduct)
+            guardarProductos(products)
+
+            /* Redirecciona a la lista de productos en admin*/
+            return res.redirect('/admin/list')
+        },
     list :(req, res) =>{
         return res.render('admin/list',{
             products
@@ -23,8 +52,8 @@ module.exports = {
     },
 
     update :(req,res) =>{
-        return res.send(req.body)
-        let id = +req.params
+        //return res.send(req.body)
+        let id = +req.params.id
         let {Name,Description,Category,Price,Qualities} = req.body
         products.forEach(producto => {
             if (producto.id === id) {
@@ -35,7 +64,6 @@ module.exports = {
                 producto.qualities = Qualities
             }
         })
-        console.log(products);
         guardarProductos(products)
         return res.redirect(`/admin/list`)
     },

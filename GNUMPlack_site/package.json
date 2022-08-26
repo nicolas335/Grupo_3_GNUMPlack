@@ -1,7 +1,7 @@
 {
   "name": "grupo_4_gnumplack",
   "version": "1.0.0",
-  "description": "* Nicolás Ruiz:",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
