@@ -24,10 +24,6 @@ app.use(express.json()); /* estes xd */
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname,"public")));
 
-/* Habilitando put y delete */
-app.use(methodOverride('_method'));
-
-
 /* Rutas */
 app.use("/", indexRouter);
 app.use("/user",userRouter);
