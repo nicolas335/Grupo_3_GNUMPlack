@@ -59,3 +59,24 @@ Dedicarle poco tiempo
 ## Dejar de hacer
 Terminar las tareas sobre limite de tiempo.
 
+RETROSPECTIVA DEL SPRINT 4
+
+## Seguir haciendo
+Puntualidad en las fechas de entrega de tareas.
+La organizacion en Trello para el proximo Sprint y sumar la participacion de todos.
+
+## Hacer mas
+Hacer mas reuniones que duren poco.
+Repartir tareas equitativamente.
+La comunicacion individual con el grupo, si se presentan dificultades.
+
+## Empezar a hacer
+Hacer la retro cuando finalizamos el sprint.
+Etiquetar las tarjetas con dificultades.
+Agregar fechas de vencimiento en las tareas.
+
+## Hacer menos
+Dedicarle poco tiempo.
+
+## Dejar de hacer
+Terminar las tareas sobre limite de tiempo.
