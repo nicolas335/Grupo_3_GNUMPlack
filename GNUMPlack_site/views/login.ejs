@@ -12,22 +12,34 @@
         <form action="" method="post">
             <h2 class="container bottom"></h2>
             <div class="container bottom">
-                <label for="name">Email</label>
-                <input type="text" name="name" id="name" placeholder="Ingresa tu email">
-                <small>obligatorio</small>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Ingresa tu email">
+                <% if (locals.errors && errors.email) { %>
+
+                    <small><%= errors.email.msg %> </small>
+
+                <% } %>
+                
             </div>
             <div class="container bottom">
-                <label for="name">Contraseña</label>
+                <label for="pass">Contraseña</label>
                 <input type="password" name="pass" id="pass" placeholder="Ingresa tu contraseña">
-                <small>obligatorio</small>
+                <% if (locals.errors && errors.pass) { %>
+
+                    <small><%= errors.pass.msg %> </small>
+
+                <% } %>
+                
+                
             </div>
             <h2 class="bottom"></h2>
-            <div class="bottom">
+            <div class="recordarme bottom">
                 <input type="checkbox" name="recordame" id="recordame" value="Recordame">
-                <label for="R">Recordame</label>
+                <label for="recordame">Recordame</label>
             </div>
+            
             <h2 class="bottom"></h2>
-            <div class="bottom">
+            <div class=" bottom">
                 <button type="submit">Entrar</button>
                 <button type="reset">Cancelar</button>
              </div>
