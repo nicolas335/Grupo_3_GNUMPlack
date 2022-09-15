@@ -61,29 +61,29 @@
           <div class="form-floating">
               <input type="text" name="name" class="form-control" id="name" placeholder="Name"  value="<%= producto.name %>">
               <label for="name">Name</label>
-              <small>*</small>
+              <small> <%= (locals.errors && errors.name) ? errors.name.msg : '*' %> </small>
           </div>
           <div class="form-floating">
             <input type="text" name="qualities" class="form-control" id="qualities" placeholder="Qualities" value="<%= producto.qualities.join('--') %>">
             <label for="qualities">Qualities</label>
-            <small>*</small>
+            <small> <%= (locals.errors && errors.qualities) ? errors.qualities.msg : '*' %> </small>
             <small>Remember to use the -- to separate elements</small>
           </div>
           <div class="form-floating">
             <input type="text" name="advantage" class="form-control" id="advantage" placeholder="Advantage" value="<%= producto.advantage.join('--') %>">
             <label for="advantage">Advantage</label>
-            <small>*</small>
+            <small> <%= (locals.errors && errors.advantage) ? errors.advantage.msg : '*' %> </small>
             <small>Remember to use the -- to separate elements</small>
           </div>
           <div class="form-floating">
             <input type="text" name="dimensions" class="form-control" id="dimensions" placeholder="Dimensions" value="<%= producto.dimensions %>" >
             <label for="dimensions">Dimensions</label>
-            <small>*</small>
+            <small> <%= (locals.errors && errors.dimensions ) ? errors.dimensions.msg : '*' %> </small>
           </div>
           <div class="form-floating">
             <textarea class="form-control" name="description" placeholder="Please insert the description of the product" id="floatingTextarea"><%= producto.description %> </textarea>
             <label for="floatingTextarea">Description</label>
-            <small>*</small>
+            <small> <%= (locals.errors && errors.description ) ? errors.description.msg : '*' %> </small>
           </div>  
         </div>
         <div class="form-floating">
@@ -94,10 +94,9 @@
               <option value="Placa de yeso con fibras" <%= producto.category === "Placa de yeso con fibras" ? "selected" : "" %> >Placa de yeso con fibras</option>
               <option value="Placa de lana de madera" <%= producto.category === "Placa de lana de madera" ? "selected" : "" %> >Placa de lana de madera</option>
               <option value="Placa de cemento" <%= producto.category === "Placa de cemento" ? "selected" : "" %> >Placa de cemento</option>
-
             </select>
             <label for="floatingSelect">Category</label>
-            <small>*</small>
+            <small> <%= (locals.errors && errors.category ) ? errors.category.msg : '*' %> </small>
           </div>
           <div class="form-floating">
             <select class="form-select" name="condition" id="floatingSelect" aria-label="Floating label select example">
@@ -107,22 +106,23 @@
               <option value="" <%= producto.condition === "" ? "selected" : "" %> >Sin condición</option>
             </select>
             <label for="floatingSelect">Condition</label>
-            <small>*</small>
+            <small> <%= (locals.errors && errors.condition ) ? errors.condition.msg : '*' %> </small>
           </div>
           <div class="form-floating">
               <input type="number" name="price" class="form-control" id="price" placeholder="Price" value="<%= producto.price %>">
               <label for="price">Price</label>
-              <small>*</small>
-          </div>
+              <small> <%= (locals.errors && errors.price ) ? errors.price.msg : '*' %> </small>
+            </div>
           <div class="form-floating">
               <input type="number" name="stock" class="form-control" id="stock" placeholder="Stock" value="<%= producto.stock %>">
               <label for="stock" >Stock</label>
+              <small> <%= (locals.errors && errors.stock ) ? errors.stock.msg : '*' %> </small>
           </div>
-          <small>*</small>
           <div class="form-floating">
             <input type="number" name="discount" class="form-control" id="discount" placeholder="Discount" value="<%= producto.discount %>">
             <label for="discount" >Discount</label>
-        </div>
+            <small> <%= (locals.errors && errors.discount ) ? errors.discount.msg : '*' %> </small>
+          </div>
           <div class="mb-3">
               <label for="formFile" class="form-label">Add image</label>
               <input class="form-control" type="file" id="formFile" name="image">

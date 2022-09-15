@@ -5,6 +5,7 @@ let products = require('../data/products.json')
 let guardarProductos = (dato) => fs.writeFileSync(path.join(__dirname,"../data/products.json"),JSON.stringify(dato,null,4),'utf-8')
 let productsRemoved = require('../data/productsRemoved.json')
 guardarHistorial = (dato) => fs.writeFileSync(path.join(__dirname,'../data/productsRemoved.json'),JSON.stringify(dato,null,4),'utf-8')
+const {validationResult} = require('express-validator')
 
 module.exports = {
     create :(req, res) =>{
@@ -12,6 +13,9 @@ module.exports = {
     },
     
     store: (req, res) => {
+        let errors = validationResult(req)
+        if (errors.isEmpty()){
+
             let { name, description, dimensions, category, condition, stock, price, qualities, discount, advantage, image} = req.body;
 
             let newAdvantages = advantage.split('--');
@@ -39,6 +43,13 @@ module.exports = {
 
             /* Redirecciona a la lista de productos en admin*/
             return res.redirect('/admin/list')
+        }else{
+            //return res.send(errors.mapped())
+            res.render('admin/create',{
+                errors: errors.mapped(),
+                old:req.body
+            })
+        }
         },
     list :(req, res) =>{
         return res.render('admin/list',{
@@ -55,6 +66,9 @@ module.exports = {
     },
 
     update :(req,res) =>{
+        let errors = validationResult(req)
+        if (errors.isEmpty()) {
+            
         let id = +req.params.id
         let {name,description,dimensions,category,condition,discount,price,qualities,image,stock,advantage} = req.body
         products.forEach(producto => {
@@ -73,6 +87,15 @@ module.exports = {
         })
         guardarProductos(products)
         return res.redirect(`/admin/list`)
+        } else {
+            let id = +req.params.id
+            let productoAEditar = products.find(producto => producto.id === id)
+
+            res.render('admin/edit',{
+                producto: productoAEditar,
+                errors:errors.mapped()
+            })
+        }
     },
 
     trash:(req,res)=>{

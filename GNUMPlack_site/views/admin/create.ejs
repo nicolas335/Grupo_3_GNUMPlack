@@ -59,44 +59,43 @@
       <form action="" method="post">
           <section>
               <div class="form-floating">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="name">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="name" >
                   <label for="name">Name</label>
-                  <small>*</small>
+                  <small> <%= (locals.errors && errors.name) ? errors.name.msg : '*' %> </small>
               </div>
               <div class="form-floating">
-                <input type="text" name="qualities" class="form-control" id="qualities" placeholder="Qualities">
+                <input type="text" name="qualities" class="form-control" id="qualities" placeholder="Qualities" >
                 <label for="qualities">Qualities</label>
-                <small>*</small>
+                <small> <%= (locals.errors && errors.qualities) ? errors.qualities.msg : '*' %> </small>
                 <small>Remember to use the -- to separate elements</small>
               </div>
               <div class="form-floating">
-                <input type="text" name="advantage" class="form-control" id="advantage" placeholder="Advantage">
+                <input type="text" name="advantage" class="form-control" id="advantage" placeholder="Advantage" >
                 <label for="advantage">Advantage</label>
-                <small>*</small>
+                <small> <%= (locals.errors && errors.advantage) ? errors.advantage.msg : '*' %> </small>
                 <small>Remember to use the -- to separate elements</small>
               </div>
               <div class="form-floating">
-                <input type="text" name="dimensions" class="form-control" id="dimensions" placeholder="Dimensions">
+                <input type="text" name="dimensions" class="form-control" id="dimensions" placeholder="Dimensions" >
                 <label for="dimensions">Dimensions</label>
-                <small>*</small>
+                <small> <%= (locals.errors && errors.dimensions ) ? errors.dimensions.msg : '*' %> </small>
               </div>
               <div class="form-floating">
                 <textarea class="form-control" name="description" placeholder="Please insert the description of the product" id="floatingTextarea"></textarea>
                 <label for="floatingTextarea">Description</label>
-                <small>*</small>
+                <small> <%= (locals.errors && errors.description ) ? errors.description.msg : '*' %> </small>
               </div>  
-            </div>
-            <div class="form-floating">
+              <div class="form-floating">
                 <select class="form-select" name="category" id="floatingSelect" aria-label="Floating label select example">
                   <option selected hidden>Select the category</option>
-                  <option value="Placa de yeso">Placa de yeso</option>
-                  <option value="Placa de yeso laminado">Placa de yeso laminado</option>
-                  <option value="Placa de yeso con fibras">Placa de yeso con fibras</option>
-                  <option value="Placa de lana de madera">Placa de lana de madera</option>
-                  <option value="Placa de cemento">Placa de cemento</option>
+                  <option value="Placa de yeso" >Placa de yeso</option>
+                  <option value="Placa de yeso laminado" >Placa de yeso laminado</option>
+                  <option value="Placa de yeso con fibras" >Placa de yeso con fibras</option>
+                  <option value="Placa de lana de madera" >Placa de lana de madera</option>
+                  <option value="Placa de cemento" >Placa de cemento</option>
                 </select>
                 <label for="floatingSelect">Category</label>
-                <small>*</small>
+                <small> <%= (locals.errors && errors.category ) ? errors.category.msg : '*' %> </small>
               </div>
               <div class="form-floating">
                 <select class="form-select" name="condition" id="floatingSelect" aria-label="Floating label select example">
@@ -106,22 +105,23 @@
                   <option value="">Sin condición</option>
                 </select>
                 <label for="floatingSelect">Condition</label>
-                <small>*</small>
+                <small> <%= (locals.errors && errors.condition ) ? errors.condition.msg : '*' %> </small>
               </div>
               <div class="form-floating">
-                  <input type="number" name="price" class="form-control" id="price" placeholder="Price">
+                  <input type="number" name="price" class="form-control" id="price" placeholder="Price" >
                   <label for="price">Price</label>
-                  <small>*</small>
+                  <small> <%= (locals.errors && errors.price ) ? errors.price.msg : '*' %> </small>
               </div>
               <div class="form-floating">
-                  <input type="number" name="stock" class="form-control" id="stock" placeholder="Stock">
+                  <input type="number" name="stock" class="form-control" id="stock" placeholder="Stock" >
                   <label for="stock" value="1">Stock</label>
+                  <small> <%= (locals.errors && errors.stock ) ? errors.stock.msg : '*' %> </small>
               </div>
-              <small>*</small>
-              <div class="form-floating">
-                <input type="number" name="discount" class="form-control" id="discount" placeholder="Discount">
-                <label for="discount" value="0">Discount</label>
-            </div>
+                <div class="form-floating">
+                  <input type="number" name="discount" class="form-control" id="discount" placeholder="Discount">
+                  <label for="discount" value="0">Discount</label>
+                  <small> <%= (locals.errors && errors.discount ) ? errors.discount.msg : '*' %> </small>
+              </div>
               <div class="mb-3">
                   <label for="formFile" class="form-label">Add image</label>
                   <input class="form-control" type="file" id="formFile" name="image">
