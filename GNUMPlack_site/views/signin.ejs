@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include("./partials/head") %> 
+    
+<body class="signin">
+    
+    <%- include("./partials/header") %>
+   
+    <main class="signin">
+        <h1> REGISTRARSE</h1>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <h2 class="container bottom"></h2>
+            <div class="container">
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" value="<%= locals.old && old.name ? old.name : null%>">
+                <% if (locals.errors && errors.name) { %>
+                    <small><%= errors.name.msg %></small>
+                <% } %>
+                
+            </div>
+            <div class="container">
+                <label for="lastName">Apellido</label>
+                <input type="text" name="lastName" id="lastName" placeholder="Ingresa tu apellido" value="<%= locals.old && old.lastName ? old.lastName : null%>">
+                <% if (locals.errors && errors.lastName) { %>
+                    <small><%= errors.lastName.msg %></small>
+                <% } %>
+            </div>
+            <div class="container">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Ingresa tu email" value="<%= locals.old && old.email ? old.email : null%>">
+                <% if (locals.errors && errors.email) { %>
+                    <small><%= errors.email.msg %></small>
+                <% } %>
+            </div>
+            <div class="container">
+                <label for="pass">Contraseña</label>
+                <input type="password" name="pass" id="pass" placeholder="Ingresa tu contraseña">
+                <% if (locals.errors && errors.pass) { %>
+                    <small><%= errors.pass.msg %></small>
+                <% } %>
+            </div>
+            <div class="container">
+                <label for="pass2">Confirmar tu contraseña</label>
+                <input type="password" name="pass2" id="pass2" placeholder="Confirmar contraseña">
+                <% if (locals.errors && errors.pass2) { %>
+                    <small><%= errors.pass2.msg %></small>
+                <% } %>
+            </div>
+            <div class="container">
+                <label for="phoneNumber">Celular</label>
+                <input type="number" name="phoneNumber" id="phoneNumber" placeholder="11..." value="<%= locals.old && old.phoneNumber ? old.phoneNumber : null%>">
+                <% if (locals.errors && errors.phoneNumber) { %>
+                    <small><%= errors.phoneNumber.msg %></small>
+                <% } %>
+            </div>
+            <div class="container">
+                <label for="city">Ciudad</label>
+                <input type="text" name="city" id="city" placeholder="Ej: Buenos Aires, etc" value="<%= locals.old && old.city ? old.city : null%>">
+                <% if (locals.errors && errors.city) { %>
+                    <small><%= errors.city.msg %></small>
+                <% } %>
+            </div>
+            <div class="container">
+                <label for="gender">Género</label>
+                <select name="gender" id="gender">
+                    <option select hidden>Seleccione su género</option>
+                    <option value="male">Hombre</option>
+                    <option value="female">Mujer</option>
+                    <option value="nonSpecified">Sin especificar</option>
+                </select>
+            </div>
+            <div class="container">
+                <label for="signinFile" >Añadir imagen</label>
+                  <input class="signinFile" type="file" id="signinFile" name="imageUser">
+            </div>
+            <h2 class="bottom">Terminos y Condiciones</h2>
+            <div class="bottom">
+                <input type="checkbox" name="terminos" id="terminos">
+                <label for="terminos">Al registrarte aceptas nuestras Condiciones de uso y Politica de privacidad</label>
+                <% if (locals.errors && errors.terminos) { %>
+                    <small><%= errors.terminos.msg %></small>
+                <% } %>
+            </div>
+            <h2 class="bottom"></h2>
+            <div class="bottom">
+                <button type="submit">Registrarme</button>
+                <button type="reset">Cancelar</button>
+            </div>
+
+            <h4><a href="/inicia sesion">¿ya tienes cuenta? Inicia Sesion</a></h4>
+
+        </form>
+
+    </main>
+    
+    <%- include("./partials/footer") %> 
+
+</body>
+
+</html>
