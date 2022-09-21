@@ -1,20 +1,51 @@
+const fs = require('fs');
+const path = require('path');
 const { validationResult } = require('express-validator');
-
+const bcrypt = require('bcryptjs');
+const usuarios = require('../data/users.json');
+const guardar = (dato) => fs.writeFileSync(path.join(__dirname, '../data/users.json')
+    , JSON.stringify(dato, null, 4), 'utf-8');
 
 module.exports ={
     signin : (req,res) => {
         return res.render('users/signin')
     },
     processRegister: (req,res) => {
-      const errors = validationResult(req);
-      if (errors.errors.length > 0) {
-        return res.render('users/signin',{
-            errors : errors.mapped(),
-            old: req.body
-        })
+    
+        /* return res.send(req.file.filename) */
+      let errors = validationResult(req);
+      if (req.fileValidationError) {
+          let image = {
+              param: 'imageUser',
+              msg: req.fileValidationError,
+          }
+          errors.errors.push(image);
       }
+      if (errors.isEmpty()) {
+          let {name,lastName,email,pass,phoneNumber,city,gender} = req.body
+          let usuarioNuevo = {
+              id:usuarios[usuarios.length - 1].id + 1,
+              firstName: name.trim(),
+              lastName:lastName.trim(),
+              email:email.trim(),
+              pass:bcrypt.hashSync(pass, 12),
+              phoneNumber:phoneNumber.trim(),
+              city:city.trim(),
+              gender: gender === "Seleccione su género"? "nonSpecified": gender ,
+              image: req.file? req.file.filename: "default-profile-image.jfif",
+              category: "user"
+          }
+          usuarios.push(usuarioNuevo)
+          guardar(usuarios)
 
-    },
+          return res.redirect('/')
+      } else {
+
+          return res.render('users/signin', {
+              errors: errors.mapped(),
+              old: req.body
+          })
+        }},
     login: (req,res) =>{
         return res.render('login')
     }

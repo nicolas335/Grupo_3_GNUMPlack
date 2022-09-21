@@ -11,7 +11,14 @@ const storage = multer.diskStorage({
         cb(null, filename);
     }
 })
+const fileFilter = function(req, file,callback) {
+    if(!file.originalname.match(/\.(jpg|jpeg|png|jfif|webp)$/)){
+        req.fileValidationError = "Solo se permite imágenes";
+        return callback(null,false,req.fileValidationError);
+    }
+    callback(null,true);
+}
 
-const uploadFile = multer({storage});
+const uploadFile = multer({ storage, fileFilter });
 
 module.exports = uploadFile
