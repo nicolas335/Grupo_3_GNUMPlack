@@ -651,5 +651,46 @@
             "Espesor total 50mm.",
             "Poca retracción e hinchazón con cambios climáticos."
         ]
+    },
+    {
+        "id": 26,
+        "name": "Notebook",
+        "description": "kyth rgtg  grerg rg",
+        "dimensions": "3 4t 3",
+        "category": "Placa de yeso con fibras",
+        "condition": "",
+        "stock": 34,
+        "price": 343,
+        "discount": 4,
+        "qualities": [
+            "vreaewih ",
+            " ewifjpowje ",
+            " vpiewhjiqe"
+        ],
+        "advantage": [
+            "gergre",
+            "revribjwr",
+            "rgvorenvor",
+            "guerbevneo"
+        ],
+        "image": "default-product-image.png"
+    },
+    {
+        "id": 27,
+        "name": "Notebook",
+        "description": "brebrb",
+        "dimensions": "3 4t 3",
+        "category": "Placa de yeso",
+        "condition": "Select the condition",
+        "stock": 4,
+        "price": 200,
+        "discount": 2,
+        "qualities": [
+            "vrea"
+        ],
+        "advantage": [
+            "wvr"
+        ],
+        "image": "default-product-image.png"
     }
 ]

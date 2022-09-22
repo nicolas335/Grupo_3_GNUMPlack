@@ -14,6 +14,15 @@ module.exports = {
     
     store: (req, res) => {
         let errors = validationResult(req)
+        if (req.fileValidationError) {
+            let imagen = {
+                param: 'image',
+                msg: req.fileValidationError,
+            }
+            errors.errors.push(imagen)
+        }
+        //return res.send(errors)
+
         if (errors.isEmpty()){
 
             let { name, description, dimensions, category, condition, stock, price, qualities, discount, advantage, image} = req.body;
@@ -29,13 +38,13 @@ module.exports = {
                 description: description,
                 dimensions: dimensions,
                 category: category,
-                condition: condition !== "sin condicion"? condition:"",
+                condition: condition !== "sin condicion" ? condition : "",
                 stock: +stock,
                 price: +price,
                 discount: +discount,
                 qualities: newQualities,
                 advantage: newAdvantages,
-                image: newImage,
+                image: req.file ? req.file.filename : 'default-product-image.png',
             }
 
             products.push(newProduct)

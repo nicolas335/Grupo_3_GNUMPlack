@@ -20,26 +20,6 @@
         ]
     },
     {
-        "id": 28,
-        "name": "pruebd34faa 2 con id 28",
-        "description": "",
-        "dimensions": "g5",
-        "category": "Select the category",
-        "condition": "Select the condition",
-        "stock": 0,
-        "price": 0,
-        "discount": 0,
-        "qualities": [
-            "tg5"
-        ],
-        "advantage": [
-            "g54"
-        ],
-        "image": [
-            ""
-        ]
-    },
-    {
         "id": 26,
         "name": "ulises",
         "description": "efwvfwe erg r w ewr er e",
@@ -67,6 +47,66 @@
         "id": 26,
         "name": "pruebaa grg5eg4g42 con id 27",
         "description": "",
+        "dimensions": "g5",
+        "category": "Select the category",
+        "condition": "Select the condition",
+        "stock": 0,
+        "price": 0,
+        "discount": 0,
+        "qualities": [
+            "tg5"
+        ],
+        "advantage": [
+            "g54"
+        ],
+        "image": [
+            ""
+        ]
+    },
+    {
+        "id": 26,
+        "name": "wefr",
+        "description": "few",
+        "dimensions": "vrew",
+        "category": "Select the category",
+        "condition": "Select the condition",
+        "stock": 2,
+        "price": 21,
+        "discount": 34,
+        "qualities": [
+            "efwrf"
+        ],
+        "advantage": [
+            "rvef"
+        ],
+        "image": [
+            ""
+        ]
+    },
+    {
+        "id": 26,
+        "name": "ulises",
+        "description": "vrdvewvwefewfe",
+        "dimensions": "vw",
+        "category": "Select the category",
+        "condition": "Select the condition",
+        "stock": 3,
+        "price": 123,
+        "discount": 32,
+        "qualities": [
+            "vrea"
+        ],
+        "advantage": [
+            "wvr"
+        ],
+        "image": [
+            ""
+        ]
+    },
+    {
+        "id": 26,
+        "name": "pruebd34faa 2 con id 28",
+        "description": "tytuybiuhoijpk",
         "dimensions": "g5",
         "category": "Select the category",
         "condition": "Select the condition",
