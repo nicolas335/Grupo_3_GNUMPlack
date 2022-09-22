@@ -22,11 +22,18 @@
 
     <nav>
             <ul>
-                <li><a href="/user/login">Iniciar Sesión</a></li>
+              <% if (locals.userLogin) { %>
+                <li><a href="/user/profile">Bienvenido <%= locals.userLogin.name %> </a></li>
+                <li><a href="/product">Productos</a></li>
+                <li><a href="/aboutUs">Sobre Nosotros</a></li>
+                <li><a href="#footer">Contáctanos</a></li>
+              <% } else{%>
+                <li><a href="/user/login">Login</a></li>
                 <li><a href="/user/signin">Regístrate</a></li>
                 <li><a href="/product">Productos</a></li>
                 <li><a href="/aboutUs">Sobre Nosotros</a></li>
                 <li><a href="#footer">Contáctanos</a></li>
+                <% } %> 
             </ul>
     </nav>
     

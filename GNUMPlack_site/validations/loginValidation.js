@@ -1,4 +1,5 @@
-const{check} = require('express-validator')
+const{check,body} = require('express-validator')
+const usuarios = require('../data/Users.json')
 
 module.exports =[
 
@@ -10,9 +11,17 @@ module.exports =[
 
      //contraseña//
      check('pass').trim()
-     .notEmpty().withMessage('Debe ingresar su contraseña').bail()
-     .isLength({min:8}).withMessage('Debe contener al menos 8 caracteres'),
-
+     .notEmpty().withMessage('Debe ingresar su contraseña'),
      
+
+     body('email')
+     .custom((value,{req}) =>{
+          let usuario = usuarios.find(usuario => usuario.email === value && req.body.pass === usuario.password)
+          if (usuario) {
+               return true
+          } else {
+               return false   
+          }
+     }).withMessage('El email o la contraseña no coinciden')
     
 ]
