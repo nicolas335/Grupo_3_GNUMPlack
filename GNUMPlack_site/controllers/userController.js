@@ -65,15 +65,10 @@ module.exports ={
             }
             if (recordame) {
                 res.cookie('recordar',req.session.userLogin,{maxAge:10000*60*60*60})
-                
             }
-
-            return res.redirect('/user/login')
 
             return res.redirect("/")
 
-            return res.redirect('/user/profile')
-            //return res.send(req.body)//
         } else {
             //return res.send(errors.mapped())
             return res.render('users/login',{
