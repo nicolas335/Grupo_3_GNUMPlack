@@ -7,10 +7,10 @@ let productValidator = require('../validations/productValidation')
 router.get('/list', list);
 
 router.get('/create', create);
-router.post('/create',productValidator,upload.single('image'),store);
+router.post('/create',upload.single('image'),productValidator,store);
 
 router.get('/edit/:id', edit);
-router.put('/edit/:id',productValidator,upload.single('image'),update)
+router.put('/edit/:id',upload.single('image'),productValidator,update)
 
 router.delete('/:id', trash);
 

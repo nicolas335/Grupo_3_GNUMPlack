@@ -14,7 +14,7 @@ module.exports = {
     
     store: (req, res) => {
         let errors = validationResult(req)
-
+        return res.send(req.file)
         if (req.fileValidationError) {
             let imagen = {
                 params: 'image',
@@ -22,7 +22,7 @@ module.exports = {
             }
             errors.errors.push(imagen)
         }
-        return res.send(errors)
+        //return res.send(errors)
 
         if (req.fileValidationError) {
             let imagen = {
