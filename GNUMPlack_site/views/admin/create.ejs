@@ -125,9 +125,8 @@
               <div class="mb-3">
                   <label for="formFile" class="form-label">Add image</label>
                   <input class="form-control" type="file" id="formFile" name="image">
-                  <small>*</small>
+                  <small> <%= (locals.errors && errors.image ) ? errors.image.msg : '*' %> </small>
               </div>
-              
               <div class="button">
                   <button class="btn btn-outline-success" type="submit">Create Product</button>
               </div>

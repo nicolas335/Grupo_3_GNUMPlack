@@ -1,4 +1,5 @@
-const {check} = require('express-validator')
+const {check, body} = require('express-validator')
+const path = require('path')
 
 module.exports = [
     check('name').trim()
@@ -30,5 +31,23 @@ module.exports = [
 
     check('discount').trim()
     .notEmpty().withMessage('Debe ingresar el descuento').bail()
-    .isNumeric().withMessage('Debe ingresar datos numéricos')
+    .isNumeric().withMessage('Debe ingresar datos numéricos'),
+
+    //check('image').notEmpty().withMessage('Debe adjuntar una imagen del producto'),
+
+    body('image').custom((value, { req }) => {
+        let file = req.file;
+        let acceptedExtensions = [".jpg",".jpeg",".png",".jfif",".webp"];
+    
+       if (!file){
+        throw new Error('Tienes que subir una imagen');
+       }else {
+        let fileExtension = path.extname(file.originalname);
+    
+       if (!acceptedExtensions.includes(fileExtension)) {
+        throw new Error(`Las extensiones permitidas son ${acceptedExtensions.join(', ')}`);    
+       }}
+    
+       return true
+    })
 ]

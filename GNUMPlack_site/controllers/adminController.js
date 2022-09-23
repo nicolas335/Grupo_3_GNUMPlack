@@ -14,32 +14,23 @@ module.exports = {
     
     store: (req, res) => {
         let errors = validationResult(req)
-        return res.send(req.file)
-        if (req.fileValidationError) {
+        //return res.send(req.file)
+        /* if (req.fileValidationError) {
             let imagen = {
                 params: 'image',
-                mag: req.fileValidationError
+                msg: req.fileValidationError
             }
             errors.errors.push(imagen)
-        }
-        //return res.send(errors)
-
-        if (req.fileValidationError) {
-            let imagen = {
-                param: 'image',
-                msg: req.fileValidationError,
-            }
-            errors.errors.push(imagen)
-        }
+        } */
         //return res.send(errors)
 
         if (errors.isEmpty()){
 
-            let { name, description, dimensions, category, condition, stock, price, qualities, discount, advantage, image} = req.body;
+            let { name, description, dimensions, category, condition, stock, price, qualities, discount, advantage} = req.body;
 
             let newAdvantages = advantage.split('--');
             let newQualities = qualities.split('--');
-            let newImage = image.split();
+            //let newImage = image.split();
             
 
             let newProduct = {
@@ -54,7 +45,7 @@ module.exports = {
                 discount: +discount,
                 qualities: newQualities,
                 advantage: newAdvantages,
-                image: req.file ? req.file.filename : 'default-product-image.png',
+                image: req.file.filename,
             }
 
             products.push(newProduct)
@@ -63,7 +54,7 @@ module.exports = {
             /* Redirecciona a la lista de productos en admin*/
             return res.redirect('/admin/list')
         }else{
-            //return res.send(errors.mapped())
+            return res.send(errors.mapped())
             res.render('admin/create',{
                 errors: errors.mapped(),
                 old:req.body
