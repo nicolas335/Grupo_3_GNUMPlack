@@ -14,6 +14,16 @@ module.exports = {
     
     store: (req, res) => {
         let errors = validationResult(req)
+
+        if (req.fileValidationError) {
+            let imagen = {
+                params: 'image',
+                mag: req.fileValidationError
+            }
+            errors.errors.push(imagen)
+        }
+        return res.send(errors)
+
         if (req.fileValidationError) {
             let imagen = {
                 param: 'image',
