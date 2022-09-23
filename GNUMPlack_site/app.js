@@ -2,16 +2,55 @@ const express = require ('express');
 const app = express();
 const path = require("path");
 const port = 3001;
+const methodOverride = require('method-override')
 
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
 
-app.get("/",(req,res)=>res.sendFile(path.resolve(__dirname,"views","home.html")));
-app.get("/aboutUs",(req,res)=>res.sendFile(path.resolve(__dirname,"views","aboutUs.html")));
-app.get("/detailOfProduct",(req,res)=>res.sendFile(path.resolve(__dirname,"views","detailOfProduct.html")));
-app.get("/login",(req,res)=>res.sendFile(path.resolve(__dirname,"views","login.html")));
-app.get("/product",(req,res)=>res.sendFile(path.resolve(__dirname,"views","product.html")));
-app.get("/signin",(req,res)=>res.sendFile(path.resolve(__dirname,"views","signin.html")));
-app.get("/cart",(req,res)=>res.sendFile(path.resolve(__dirname,"views","cart.html")));
+//Implementamos locals dentro de nuestra aplicacion//
+const userLogin = require('./middlewares/userLoginCheck')
 
+/* Requiriendo rutas */
+let indexRouter = require('./routes/index');
+let adminRouter = require('./routes/admin');
+let cartRouter = require('./routes/cart')
+let userRouter = require('./routes/user');
+let productRouter = require('./routes/product')
+
+/* Configurando view engine */
+app.set('views', path.resolve(__dirname,'views'));
+app.set("view engine", "ejs");
+
+/* Metodos PUT y DELETE */
+app.use(methodOverride('_method'));
+
+// Login e inicio de sesion //
+app.use(session({
+    secret: "GNUM.Plack"
+}))
+
+app.use(userLogin)
+
+/* Middlewares (para poder usar json mas adelante)*/
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json()); /* estes xd */
 app.use(express.static(path.join(__dirname,"public")));
 
-app.listen(port, ()=> console.log(`Server rise in http://localhost:${port}`)) /* ctrol+click */
+app.use(cookieParser());
+
+
+/* Habilitando put y delete */
+app.use(methodOverride('_method'));
+
+
+/* Rutas */
+app.use("/", indexRouter);
+app.use("/user",userRouter);
+app.use("/product",productRouter);
+app.use("/cart", cartRouter);
+app.use("/about", indexRouter)
+app.use('/admin', adminRouter);
+
+
+
+ app.listen(port, ()=> console.log(`Server rise in http://localhost:${port}`)) /* ctrol+click */ 

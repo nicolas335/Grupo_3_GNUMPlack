@@ -1,0 +1,18 @@
+.profile main{
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile main h1{
+    text-transform: capitalize;
+}
+.profile main button{
+    border: none;
+    background-color: aqua;
+    height: 40px;
+    color:black;
+    border-radius: 8px;
+}

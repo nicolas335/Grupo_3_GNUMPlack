@@ -1,0 +1,156 @@
+.header{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    background-color: #ffd000;
+    justify-content: space-between;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+}
+
+.header div a img{
+    height: 55px;
+    width: 70px;
+    border-bottom-left-radius: 10px;
+}
+
+.header div input#bar{
+    background-color: #d9d9d9;
+    border-radius: 12px;
+    border: none;
+}
+
+.header div i.lupa, .header label i.menu-icon, .header a i.cart{
+    font-size: 23px;
+    color: white;
+    margin-right: 8px;
+}
+
+.header input#check{
+    display: none;
+}
+
+.header nav{
+    display: none;
+    background-color: #ffd000;
+    width: 100%;
+    margin-top: -5.85px;
+}
+
+.header nav ul li{
+    border-bottom: #d9d9d9 .5px solid;
+    width: 90%;
+    font-size: small;
+    text-transform: uppercase;
+    padding: 3.5px;
+}
+
+.header nav ul:first-child{
+    border-top: #d9d9d9 .5px solid;
+}
+
+.header #check:checked ~nav{
+    display: inline-block;
+}
+
+
+
+
+
+/* Medias Queries */
+
+
+
+
+
+/* Tablet */
+
+
+@media (min-width:461px){
+    .header{
+    flex-wrap: wrap;
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+    }
+
+    .header div img.logoImg{
+        border-bottom-left-radius:0;
+    }
+
+    .header i.menu-icon, .header div input#bar{
+        display: none;
+    }
+
+    .header div.searchBar{
+        order: 2;
+        margin: 0 5px;
+    }
+
+    .header .cart-container{
+        order: 1;
+    }
+
+    .header div i.lupa, .header a i.cart{
+        font-size: 22px;
+        margin-right: 0px;
+    }
+
+    .header nav{
+        display: inline ;
+        background-color: none;
+        margin: 0;
+        width: auto;
+    }
+
+    .header nav ul:first-child{
+        border: none;
+    }
+
+    .header nav ul{
+        display: contents;
+        flex-wrap: wrap;
+    }
+
+    .header nav ul li{
+        display: inline-block;
+        border: none;
+        padding: 0;
+        width: auto;
+        font-size: 12.2px;
+        text-transform: none;
+    }
+    
+}
+
+
+
+
+
+/* Desktop */
+
+
+@media (min-width:769px){
+    .header nav ul li{
+        font-size: medium;
+        margin: 0 1.3vh;
+    }
+
+    .header div i.lupa, .header a i.cart{
+        font-size: 26px;
+    }
+
+    .header a.cart{
+        margin: inherit;
+    }
+
+    .header a i.cart{
+        margin-right: 0 ;
+    }
+
+}

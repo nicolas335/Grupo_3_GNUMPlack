@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/admin/list">Administrador</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin/list">List</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin/create">Create</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin/listDeleted">List Deleted</a>
+                </li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <style>main{margin-top: 50px;
+        background: linear-gradient(to bottom,#007f5f, #2b9348, #55a630, #80b918, #aacc00, #bfd200, #d4d700);
+        background: no - repeat;
+        padding: 10px 12px 30px;}
+        body{background-color:#d4d700;
+        max-width: 1800px;
+        margin: 0 auto;}
+        h1{color: white;} 
+        form{padding: 0 10%;}   
+        </style>
+      <h1>Editing a product!</h1>
+
+      <form action="/admin/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <section>
+          <div class="form-floating">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Name"  value="<%= producto.name %>">
+              <label for="name">Name</label>
+              <small> <%= (locals.errors && errors.name) ? errors.name.msg : '*' %> </small>
+          </div>
+          <div class="form-floating">
+            <input type="text" name="qualities" class="form-control" id="qualities" placeholder="Qualities" value="<%= producto.qualities.join('--') %>">
+            <label for="qualities">Qualities</label>
+            <small> <%= (locals.errors && errors.qualities) ? errors.qualities.msg : '*' %> </small>
+            <small>Remember to use the -- to separate elements</small>
+          </div>
+          <div class="form-floating">
+            <input type="text" name="advantage" class="form-control" id="advantage" placeholder="Advantage" value="<%= producto.advantage.join('--') %>">
+            <label for="advantage">Advantage</label>
+            <small> <%= (locals.errors && errors.advantage) ? errors.advantage.msg : '*' %> </small>
+            <small>Remember to use the -- to separate elements</small>
+          </div>
+          <div class="form-floating">
+            <input type="text" name="dimensions" class="form-control" id="dimensions" placeholder="Dimensions" value="<%= producto.dimensions %>" >
+            <label for="dimensions">Dimensions</label>
+            <small> <%= (locals.errors && errors.dimensions ) ? errors.dimensions.msg : '*' %> </small>
+          </div>
+          <div class="form-floating">
+            <textarea class="form-control" name="description" placeholder="Please insert the description of the product" id="floatingTextarea"><%= producto.description %> </textarea>
+            <label for="floatingTextarea">Description</label>
+            <small> <%= (locals.errors && errors.description ) ? errors.description.msg : '*' %> </small>
+          </div>  
+        </div>
+        <div class="form-floating">
+            <select class="form-select" name="category" id="floatingSelect" aria-label="Floating label select example">
+              <option selected hidden>Select the category</option>
+              <option value="Placa de yeso" <%= producto.category === "Placa de yeso" ? "selected" : "" %> >Placa de yeso</option>
+              <option value="Placa de yeso laminado" <%= producto.category === "Placa de yeso laminado" ? "selected" : "" %> >Placa de yeso laminado</option>
+              <option value="Placa de yeso con fibras" <%= producto.category === "Placa de yeso con fibras" ? "selected" : "" %> >Placa de yeso con fibras</option>
+              <option value="Placa de lana de madera" <%= producto.category === "Placa de lana de madera" ? "selected" : "" %> >Placa de lana de madera</option>
+              <option value="Placa de cemento" <%= producto.category === "Placa de cemento" ? "selected" : "" %> >Placa de cemento</option>
+            </select>
+            <label for="floatingSelect">Category</label>
+            <small> <%= (locals.errors && errors.category ) ? errors.category.msg : '*' %> </small>
+          </div>
+          <div class="form-floating">
+            <select class="form-select" name="condition" id="floatingSelect" aria-label="Floating label select example">
+              <option selected hidden>Select the condition</option>
+              <option value="destacado" <%= producto.condition === "destacado" ? "selected" : "" %> >Destacados</option>
+              <option value="oferta" <%= producto.condition === "oferta" ? "selected" : "" %> >En oferta</option>
+              <option value="" <%= producto.condition === "" ? "selected" : "" %> >Sin condición</option>
+            </select>
+            <label for="floatingSelect">Condition</label>
+            <small> <%= (locals.errors && errors.condition ) ? errors.condition.msg : '*' %> </small>
+          </div>
+          <div class="form-floating">
+              <input type="number" name="price" class="form-control" id="price" placeholder="Price" value="<%= producto.price %>">
+              <label for="price">Price</label>
+              <small> <%= (locals.errors && errors.price ) ? errors.price.msg : '*' %> </small>
+            </div>
+          <div class="form-floating">
+              <input type="number" name="stock" class="form-control" id="stock" placeholder="Stock" value="<%= producto.stock %>">
+              <label for="stock" >Stock</label>
+              <small> <%= (locals.errors && errors.stock ) ? errors.stock.msg : '*' %> </small>
+          </div>
+          <div class="form-floating">
+            <input type="number" name="discount" class="form-control" id="discount" placeholder="Discount" value="<%= producto.discount %>">
+            <label for="discount" >Discount</label>
+            <small> <%= (locals.errors && errors.discount ) ? errors.discount.msg : '*' %> </small>
+          </div>
+          <div class="mb-3">
+              <label for="formFile" class="form-label">Add image</label><br>
+               <small>El producto tiene la siguiente imagen: <%= producto.image %> </small>
+              <input class="form-control" type="file" id="formFile" name="image">
+              <small> <%= (locals.errors && errors.image ) ? errors.image.msg : '*' %> </small>
+          </div>
+          
+          <div class="button">
+              <button class="btn btn-outline-success" type="submit">Edit Product</button>
+          </div>
+      </section>  
+      </form>
+  </main>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+  </body>
+</html>

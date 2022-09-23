@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include("./partials/head") %> 
+
+<body class="cart">
+
+    <%- include("./partials/header") %> 
+
+
+    <main>
+        <h1><i class="fas fa-shopping-cart"></i>Mi carrito</h1>
+        <section class="productos">
+            <article>
+                <div class="imagen">
+                    <a href="/cart"><img src="/img/cutout_123566_popup_landscape_4x3_1.jpg" alt=""></a>
+                </div>
+                <section>
+                    <div class="detalle">
+                        <p><a href="">Claneo Akustik Linear</a></p>
+                        <button><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                    <div class="precio">
+                        <div class="cantidad">
+                            <i class="fas fa-minus"></i>
+                            <input type="number" value="1">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <p>$XXXX</p>
+                    </div>
+                </section>
+            </article>
+            <article>
+                <div class="imagen">
+                    <a href="/cart"><img src="/img/cutout_82877_detail_picture_1.jpg" alt=""></a>
+                </div>
+                <section>
+                    <div class="detalle">
+                        <p><a href="">Aquapanel Cement Board Indoor</a></p>
+                        <button><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                    <div class="precio">
+                        <div class="cantidad">
+                            <i class="fas fa-minus"></i>
+                            <input type="number" value="1">
+                            <i class="fas fa-plus"></i>
+                        </div>
+                        <p>$XXXX</p>
+                    </div>
+                </section>
+            </article>
+        </section>
+        <aside>
+            <section class="numeros">
+                <div class="subtotal">
+                    <h3>Subtotal:</h3>
+                    <p>$XXXX</p>
+                </div>
+                <div class="total">
+                    <h2>Total:</h2>
+                    <p>$XXXX</p>
+                </div>
+            </section>
+            <section class="comprar">
+                <a href=""><h2 class="finalizar">Finalizar Compra</h2></a>
+                <a href="/product"><h2 class="seguir">Seguir Comprando</h2></a>
+                <a href="/login"><h4><i class="fas fa-user"></i>Para comprar debes ingresar a tu cuenta.</h4></a>
+                <a href="/register"><h4><i class="fas fa-sign-in"></i>¿No tenés cuenta? Registrate!</h4></a>
+            </section>
+        </aside>
+    </main>
+
+    <%- include("./partials/footer") %> 
+    
+</body>
+
+</html>

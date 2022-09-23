@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&family=Teko:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --fuenteTitulos: 'Teko', sans-serif;
+    --fuenteSubtitulos: 'Mukta', sans-serif;
+    --naranjaDegrade: linear-gradient(180deg, #FFA200 0%, rgba(255, 162, 0, 0.3) 100%);
+}

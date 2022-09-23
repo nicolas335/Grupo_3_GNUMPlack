@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ("./partials/head") %>
+
+    <body>
+
+        <%- include ("./partials/header") %>
+
+            <main class="detail">
+                <h1><%= productoDetallado.name %> </h1>
+                <article class="descripcion">
+                    <p class="textoDescripcion"><%= productoDetallado.description %> </p>
+                    <div class="imgPrincipal">
+                        <img src="/img/<%= productoDetallado.image %> " alt="placa de yeso">
+                    </div>
+                    <% productoDetallado.qualities.forEach(qualities => { %>
+                        <p class="texto"><%= qualities %> </p>
+                    <% }) %>
+                    <div class="lista">
+                        <% productoDetallado.qualities.forEach(qualities => { %>
+                        <p class="textoDesktop"><%= qualities %> </p>
+                        <% }) %>
+                        <ul>
+                            <h3>Ventajas/Aplicacion</h3>
+                            <% productoDetallado.advantage.forEach(advantage => { %>
+                                <li><%= advantage %> </li>
+                            <% }) %>
+                        </ul>
+                        <div class="precioDesktop">
+                            <span>$<%= productoDetallado.price %> </span>
+                            <input type="submit" value="Añadir a carrito">
+                        </div>
+                    </div>
+                    <div class="button">
+                        <span>$<%= productoDetallado.price %> </span>
+                        <input type="submit" value="Añadir a carrito">
+                    </div>
+                </article>
+
+                <h1 class="relacionados">Productos relacionados</h1>
+                <section class="destacados">
+                <article class="mobile">
+                    <i class="fas fa-arrow-circle-left"></i>
+                    <div>
+                        <a href="/product/detail"><img src="/img/cutout_123566_popup_landscape_4x3_1.jpg" alt=""></a>
+                    </div>
+                    <h3><a href="">CLEANEO AKUSTIK LINEAR</a></h3>
+                    <p>Placa de yeso perforada con formación de bordes sin relleno para una absorción acústica con efecto
+                    purificador del aire</p>
+                    <a class="ver-mas" href="/detailOfProduct">Ver más</a>
+                </article>
+                <article class="mobile">
+                    <div>
+                    <a href="/product/detail"><img src="/img/cutout_82877_detail_picture_1.jpg" alt=""></a>
+                    </div>
+                    <h3><a href="">AQUAPANEL CEMENT BOARD INDOOR</a></h3>
+                    <p>Placa para baldosas idónea para toda clase de entornos con humedad</p>
+                    <a class="ver-mas" href="/detailOfProduct">Ver más</a>
+                </article>
+                <article class="tablet">
+                    <div>
+                    <a href="/product/detail"><img src="/img/cutout_123584_detail_picture_1.jpg" alt=""></a>
+                    </div>
+                    <h3><a href="">SAFEBOARD</a></h3>
+                    <p>Placa de protección radiológica para instalaciones radiográficas</p>
+                    <a class="ver-mas" href="/detailOfProduct">Ver más</a>
+                </article>
+                <article>
+                    <div>
+                    <a href="/product/detail"><img src="/img/cutout_123615_detail_picture_1.jpg" alt=""></a>
+                    </div>
+                    <h3><a href="">SILENTBOARD</a></h3>
+                    <p>Placa para el máximo aislamiento acústico en construcciones en seco</p>
+                    <a class="ver-mas" href="/detailOfProduct">Ver más</a>
+                </article>
+                <i class="fas fa-arrow-circle-right"></i>
+                </section>
+            </main>
+
+            <%- include ("./partials/footer") %>
+    </body>
+
+</html>

@@ -1,0 +1,279 @@
+
+.home h3, .home li a{
+/*   font-family:var(--principalFont) ; */
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.home h3{
+  margin-top: 25px;
+}
+.home p{
+ /*  font-family:var(--secondaryFont); */
+  font-weight: 100;
+  font-size: medium;
+}
+.home .banner img{
+    width: 250px;
+  }
+  .home .banner{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+/* ------------ DESTACADOS ------------*/
+.home h1{
+  margin-left: 25px;
+  background: linear-gradient(90deg, #ffd000 0%, rgba(255, 162, 0, 0.3) 100%);
+  height: 50px;
+  width: 345px;
+  padding: 10px;
+}
+.home .ofertas {
+  width: 165px;
+}
+.home .destacados{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 25px 5px;
+  position: relative;
+}
+.home .destacados article{
+  display: none;
+}
+.home .destacados .mobile{
+  display: block;
+  width: 45%;
+}
+.home .destacados article div img{
+  width: 100%;
+}
+.home .destacados article h3{
+  text-align: center;
+  margin-bottom: 15px;
+}
+.home .destacados article p{
+  text-align: justify;
+}
+.home .destacados article .ver-mas{
+  display: block;
+  text-align: center;
+  margin: 10px 20% 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: white;
+  color: #FFA200;
+  font-weight: bold;
+}
+.home .destacados i{
+  font-size: 25px;
+  position: absolute;
+  top: 55%;
+}
+.home .destacados i.fa-arrow-circle-left{
+  left: -7px;
+}
+.home .destacados i.fa-arrow-circle-right{
+  right: -7px;
+}
+
+/* ------------ */
+
+
+
+
+
+.home .section1{
+    text-align: center;
+}
+.home .section1 p{
+    margin: 10px 6px;
+}
+.home .section1 div img{
+    margin: 15px 0 10px 0;
+    border-radius: 15px;
+    max-width: fit-content;
+}
+/* .home .containerUbi{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-bottom: .4px solid grey;
+  padding-bottom: 70px;
+} */
+/* .home .ubiSection{
+  border-top: .4px solid grey;
+  width: 380px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+} */
+/* ----------------------------------------------- */
+#home-slider{
+  margin:0 auto;
+  background-color: white; 
+  padding: 30px;
+  margin-bottom: 70px;
+}
+
+#home-slider > ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#home-slider > ul.slider{
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+#home-slider > ul.slider li {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    width: inherit;
+    height: inherit;
+    transition: opacity .5s;
+    background:#fff;
+}
+
+#home-slider > ul.slider li img{
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  padding: 15px 0;
+}
+
+#home-slider > ul.slider li:first-child {
+    opacity: 1; /*Mostramos el primer <li>*/
+}
+
+#home-slider > ul.slider li:target {
+    opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
+}
+
+
+#home-slider > .menu{
+  text-align: center;
+  margin: 0 auto;
+}
+
+#home-slider > .menu li{
+  display: inline-block;
+  text-align: center;
+}
+
+#home-slider > .menu li a{
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  background-color: grey;
+  padding: 15px;
+  width: 25px;
+  height: 25px;
+  font-size: 20px;
+  border-radius: 100%;
+  margin: 0 6px;
+}
+.home section #home-slider ul.slider .capa{
+  top:0;
+  padding:10px;
+  margin:0;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 12px 6px;
+  opacity: 0;
+  transition: all 500ms ease-out;
+  visibility: hidden;
+  text-align: center;
+}                                                                  /* revisar */
+.home section #home-slider ul.slider:target > .capa{
+  opacity: 1;
+  visibility: visible;
+} 
+
+/* Medias Queries */
+
+/* Tablet */
+@media (min-width:461px){
+  .home .destacados .tablet, .home .destacados .mobile{
+    display: block;
+    width: 31%;
+  }
+
+
+  .home p {
+    font-size: larger;
+    letter-spacing: .4px;
+  }
+  .home .section1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .home .section1 div{
+    width: 45%;
+  }
+  .home .section1 div img{
+    width: 100%;
+  }
+  .home .sliderSection{
+    display: flex;
+    justify-content: center;
+  }  
+  #home-slider > ul.slider li img{
+    object-fit: none;
+  }
+  #home-slider > ul{
+    height: 250px;
+    width: 340px;
+  }
+  .home .ubiSection h3{
+    margin: 18px auto;
+    padding-top: 20px;
+  }
+  .home .ubiSection{
+    border-top: .4px solid grey;
+    width: 400px;
+    margin: 0 auto 20px auto;
+  }
+  #home-slider{
+    height: 500px;
+  }
+}/* Ojo aca, si se pone un ";" no funcionan las media queries de abajo */
+
+@media (min-width:769px){
+  .home .destacados .tablet,
+  .home .destacados .mobile,
+  .home .destacados article{
+    width: 23%;
+    display: block;
+    padding: 8px;
+
+  }
+  .home .destacados article:hover{
+    box-shadow : 0px 0px 10px #646464;
+    transition: all 100ms;
+  }
+
+
+
+  .home p{
+    font-size: 1.5rem;
+  }
+  .home .banner img{
+    width: 350px;
+  }
+  .home .section1{
+    justify-content: space-between;
+  }
+  .home .section1 div{
+    width: 33%;
+  }
+  .home #home-slider{
+    width: 550px;
+}}
