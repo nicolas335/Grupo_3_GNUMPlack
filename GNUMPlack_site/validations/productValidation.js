@@ -33,9 +33,8 @@ module.exports = [
     .notEmpty().withMessage('Debe ingresar el descuento').bail()
     .isNumeric().withMessage('Debe ingresar datos numéricos'),
 
-    //check('image').notEmpty().withMessage('Debe adjuntar una imagen del producto'),
-
-    body('image').custom((value, { req }) => {
+    check('image').notEmpty().withMessage('Debe adjuntar una imagen del producto')
+    /* body('image').custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = [".jpg",".jpeg",".png",".jfif",".webp"];
     
@@ -49,5 +48,5 @@ module.exports = [
        }}
     
        return true
-    })
+    }) */
 ]
