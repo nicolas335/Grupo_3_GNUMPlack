@@ -7,7 +7,7 @@
         <img src="/img/users/<%= locals.userLogin.image %> "alt="">
         <h1>Hola <%= `${locals.userLogin.category} ${locals.userLogin.name}` %> </h1>
 
-        <form action="/users/logout?_method=DELETE" method="post">
+        <form action="/user/logout?_method=DELETE" method="post">
            <button type="submit"> Cerrar Sesion</button>
         </form>
 

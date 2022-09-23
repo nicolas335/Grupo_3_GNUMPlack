@@ -48,6 +48,10 @@ module.exports ={
     },
     logout : (req,res)=>{
         req.session.destroy();
+        if(req.cookies.recordar){
+            res.cookie('recordar','',{maxAge: -1})
+        }
+
 
         return res.redirect('/')
     }
