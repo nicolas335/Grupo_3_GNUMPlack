@@ -34,7 +34,6 @@ app.use(userLogin)
 /* Middlewares (para poder usar json mas adelante)*/
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json()); /* estes xd */
-app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname,"public")));
 
 app.use(cookieParser());

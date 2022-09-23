@@ -12,6 +12,7 @@
     font-family: var(--fuenteTitulos)
 }
 
+
 .signin main .container {
     display: flex;
     flex-direction: column;
@@ -34,7 +35,7 @@
     font-family: var(--fuenteSubtitulos)
 }
 
-.signin main .container small {
+.signin main .container small, .signin small {
     margin-top: 5px;
     color: #f20808;
     font-family: var(--fuenteSubtitulos)
