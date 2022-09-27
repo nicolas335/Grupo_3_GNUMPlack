@@ -31,7 +31,7 @@ module.exports ={
               pass:bcrypt.hashSync(pass, 12),
               phoneNumber:phoneNumber.trim(),
               city:city.trim(),
-              gender: gender === "Seleccione su género"? "nonSpecified": gender ,
+              gender: gender === "Seleccione su género"? "N/C": gender ,
               image: req.file? req.file.filename: "default-profile-image.jfif",
               category: "user"
           }

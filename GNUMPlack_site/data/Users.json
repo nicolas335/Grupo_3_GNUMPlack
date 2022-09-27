@@ -238,5 +238,17 @@
         "gender": "hombre",
         "category": "user",
         "image": "default-user-img.png"
+    },
+    {
+        "id": 21,
+        "firstName": "test",
+        "lastName": "Nicolas Ruiz",
+        "email": "nicolasemanuel335@gmail.com",
+        "pass": "$2a$12$QJ58.DBmaOuwXP6X7/c7ceG9Kbf5UGjNTYT.EvxvKty3M2vZrTTfi",
+        "phoneNumber": "123123123123",
+        "city": "San Miguel",
+        "gender": "nonSpecified",
+        "image": "default-profile-image.jfif",
+        "category": "user"
     }
 ]
