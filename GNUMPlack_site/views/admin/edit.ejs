@@ -124,9 +124,10 @@
             <small> <%= (locals.errors && errors.discount ) ? errors.discount.msg : '*' %> </small>
           </div>
           <div class="mb-3">
-              <label for="formFile" class="form-label">Add image</label>
+              <label for="formFile" class="form-label">Add image</label><br>
+               <small>El producto tiene la siguiente imagen: <%= producto.image %> </small>
               <input class="form-control" type="file" id="formFile" name="image">
-              <small>*</small>
+              <small> <%= (locals.errors && errors.image ) ? errors.image.msg : '*' %> </small>
           </div>
           
           <div class="button">

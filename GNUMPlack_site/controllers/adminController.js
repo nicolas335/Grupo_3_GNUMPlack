@@ -18,14 +18,13 @@ module.exports = {
     store: (req, res) => {
         let errors = validationResult(req)
         //return res.send(req.file)
-        /* if (req.fileValidationError) {
-            let imagen = {
+        if (req.fileValidationError) {
+            let image = {
                 params: 'image',
                 msg: req.fileValidationError
             }
-            errors.errors.push(imagen)
-        } */
-        //return res.send(errors)
+            errors.errors.push(image)
+        }
 
         if (errors.isEmpty()){
 
@@ -54,10 +53,9 @@ module.exports = {
             products.push(newProduct)
             guardarProductos(products)
 
-            /* Redirecciona a la lista de productos en admin*/
             return res.redirect('/admin/list')
         }else{
-            return res.send(errors.mapped())
+            //return res.send(errors.mapped())
             res.render('admin/create',{
                 errors: errors.mapped(),
                 old:req.body

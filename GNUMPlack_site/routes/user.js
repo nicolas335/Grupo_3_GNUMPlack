@@ -1,14 +1,11 @@
 const express = require('express');
 const router = express.Router();
+
+let {signin,login,processLogin,processRegister,profile,logout} = require ('../controllers/userController');
+
 const validationsRegister = require('../validations/registerValidations');
-const uploadFile = require('../middlewares/multerRegister');
-
-
-let {signin,login,processLogin,processRegister/*changes processSignin */,profile,logout} = require ('../controllers/userController');
-
-
 const loginValidator = require('../validations/loginValidation');
-/*deletes const upload = require('../middlewares/multerUsuarios'); */
+const uploadFile = require('../middlewares/multerRegister');
 
 
 router.get('/signin',signin);
