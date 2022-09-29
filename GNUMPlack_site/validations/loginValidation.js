@@ -1,3 +1,4 @@
+const { compareSync } = require('bcryptjs')
 const{check,body} = require('express-validator')
 const usuarios = require('../data/Users.json')
 
@@ -16,7 +17,7 @@ module.exports =[
 
      body('email')
      .custom((value,{req}) =>{
-          let usuario = usuarios.find(usuario => usuario.email === value && req.body.pass === usuario.password)
+          let usuario = usuarios.find(usuario => usuario.email === value && compareSync(req.body.pass,usuario.pass))
           if (usuario) {
                return true
           } else {
