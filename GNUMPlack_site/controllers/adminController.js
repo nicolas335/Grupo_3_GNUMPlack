@@ -17,13 +17,13 @@ module.exports = {
     
     store: (req, res) => {
         let errors = validationResult(req)
-        //return res.send(req.file)
+        //return res.send(req.fileValidationError)
         if (req.fileValidationError) {
             let image = {
-                params: 'image',
-                msg: req.fileValidationError
+                param: 'image',
+                msg: req.fileValidationError,
             }
-            errors.errors.push(image)
+            errors.errors.push(image);
         }
 
         if (errors.isEmpty()){
@@ -47,7 +47,7 @@ module.exports = {
                 discount: +discount,
                 qualities: newQualities,
                 advantage: newAdvantages,
-                image: req.file.filename,
+                image: req.file.filename
             }
 
             products.push(newProduct)
@@ -55,7 +55,12 @@ module.exports = {
 
             return res.redirect('/admin/list')
         }else{
-            //return res.send(errors.mapped())
+
+            let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'img', 'products', dato))
+            if (req.file && ruta(req.file.filename) && (req.file.filename !== "default-product-image.png")) {
+                fs.unlinkSync(path.join(__dirname, '..', 'public', 'img', 'products', req.file.filename))
+            }
+
             res.render('admin/create',{
                 errors: errors.mapped(),
                 old:req.body
@@ -78,10 +83,17 @@ module.exports = {
 
     update :(req,res) =>{
         let errors = validationResult(req)
+        if (req.fileValidationError) {
+            let image = {
+                param: 'image',
+                msg: req.fileValidationError,
+            }
+            errors.errors.push(image);
+        }
+
         if (errors.isEmpty()) {
-            
         let id = +req.params.id
-        let {name,description,dimensions,category,condition,discount,price,qualities,image,stock,advantage} = req.body
+        let {name,description,dimensions,category,condition,discount,price,qualities,stock,advantage} = req.body
         products.forEach(producto => {
             if (producto.id === id) {
                 producto.name = name
@@ -94,11 +106,18 @@ module.exports = {
                 producto.qualities = qualities.split('--')
                 producto.stock = +stock
                 producto.advantage = advantage.split('--')
+                producto.image = (req.file ? req.file.filename : producto.image)
             }
         })
         guardarProductos(products)
         return res.redirect(`/admin/list`)
+
         } else {
+            let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'img', 'products', dato))
+            if (req.file && ruta(req.file.filename) && (req.file.filename !== "default-product-image.png")) {
+                fs.unlinkSync(path.join(__dirname, '..', 'public', 'img', 'products', req.file.filename))
+            }
+            
             let id = +req.params.id
             let productoAEditar = products.find(producto => producto.id === id)
 
@@ -112,11 +131,14 @@ module.exports = {
     trash:(req,res)=>{
         let id = +req.params.id
         let productoEliminado = products.find(producto => producto.id === id)
-        productsRemoved.push(productoEliminado)
-        guardarHistorial(productsRemoved)
 
         let productosActualizados = products.filter(producto => producto.id !== id)
         guardarProductos(productosActualizados)
+        
+        productoEliminado.id = productsRemoved[productsRemoved.length - 1].id -1
+        productsRemoved.push(productoEliminado)
+        guardarHistorial(productsRemoved)
+
         return res.redirect('/admin/list')
     },
 
