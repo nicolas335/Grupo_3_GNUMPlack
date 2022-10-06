@@ -50,9 +50,10 @@ module.exports ={
         return res.render('users/login')
     },
     processLogin:(req,res) =>{
+    
         let errors = validationResult(req)
         if (errors.isEmpty()) {
-
+            
             const {email,recordame} = req.body
 
             let usuario = usuarios.find(user => user.email === email)
