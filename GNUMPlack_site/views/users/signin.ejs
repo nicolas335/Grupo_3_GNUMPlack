@@ -65,18 +65,21 @@
                 <label for="gender">Género</label>
                 <select name="gender" id="gender">
                     <option select hidden>Seleccione su género</option>
-                    <option value="male">Hombre</option>
-                    <option value="female">Mujer</option>
-                    <option value="nonSpecified">Sin especificar</option>
+                    <option value="male" <%= (locals.old && old.gender === 'male') ? 'selected' : null %>>Hombre</option>
+                    <option value="female" <%= (locals.old && old.gender === 'female') ? 'selected' : null %>>Mujer</option>
+                    <option value="nonSpecified" <%= (locals.old && old.gender === 'nonSpecified') ? 'selected' : null %>>Sin especificar</option>
                 </select>
             </div>
             <div class="container">
                 <label for="signinFile" >Añadir imagen</label>
-                  <input class="signinFile" type="file" id="signinFile" name="imageUser">
+                  <input class="signinFile" type="file" id="signinFile" name="imageUser" >
+                  <% if (locals.errors && errors.imageUser) { %>
+                    <small><%= errors.imageUser.msg %> </small>
+                <% } %>
             </div>
             <h2 class="bottom">Terminos y Condiciones</h2>
             <div class="bottom">
-                <input type="checkbox" name="terminos" id="terminos">
+                <input type="checkbox" name="terminos" id="terminos" <%= locals.old && old.terminos == "on"? "checked":"" %> >
                 <label for="terminos">Al registrarte aceptas nuestras Condiciones de uso y Politica de privacidad</label>
                 <% if (locals.errors && errors.terminos) { %>
                     <small><%= errors.terminos.msg %></small>
