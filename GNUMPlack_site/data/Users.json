@@ -10,29 +10,6 @@
         "gender": "mujer",
         "category": "user",
         "image": "default-user-img.png"
-    },
-    {
-        "id": 2,
-        "firstName": "ulises",
-        "lastName": "mendez",
-        "email": "ulises@gmail.com",
-        "pass": "$2a$12$v494FPgiS/hDqIiVdohvDeSEQqwd9AsmvfQmcQwfIa75ISgWtf7Be",
-        "phoneNumber": "1161115783",
-        "city": "San Miguel",
-        "gender": "male",
-        "image": "default-profile-image.jfif",
-        "category": "user"
-    },
-    {
-        "id": 3,
-        "firstName": "test",
-        "lastName": "testing",
-        "email": "test@test.com",
-        "pass": "$2a$12$54PYdFQAGuQtaBhA6HJ8neGGz81txqHgXq8dg/l4lam2GnYxJdmR6",
-        "phoneNumber": "123123123",
-        "city": "San Miguel",
-        "gender": "male",
-        "image": "1665080700311_img.jpg",
-        "category": "user"
     }
+    
 ]
