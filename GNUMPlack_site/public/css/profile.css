@@ -1,3 +1,6 @@
+.profile{
+    background: rgba(237, 237, 237, 1);
+}
 .profile main{
     height: 70vh;
     display: flex;
@@ -5,14 +8,81 @@
     justify-content: center;
     align-items: center;
 }
-
-.profile main h1{
+.profile main section .container-top{
+    margin-top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.profile main section article .container-component{
+    width: 300px;
+    box-shadow: 6px 3px 20px 0px rgba(0,0,0,0.68);
+    -webkit-box-shadow: 6px 3px 20px 0px rgba(0,0,0,0.68);
+    -moz-box-shadow: 6px 3px 20px 0px rgba(0,0,0,0.68);
+    margin: 10px;
+}
+.profile main section article div .container-accountNav{
+    text-decoration: none;
+    transition: color .3s ease-in-out;
+    display: block;
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.profile main section article div div .account-data{
+    margin: 0;
+    border: 0;
+    color: #fff;
+    padding: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.profile main section article div div .account-data .headline{
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.profile main section article div div .account-data .lead{
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: small;
+}
+.profile main section article div div a .accountNav-bg{
+    width: 100%;
+    height: 140px;
+    opacity: .85;
+    transition: all .3s ease-in-out;
+}
+.profile main h2{
     text-transform: capitalize;
+}
+.profile main section article div h4{
+    color: rgba(25, 93, 253, .8);
+}
+.profile main section article div .user-image{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
 }
 .profile main button{
     border: none;
-    background-color: aqua;
+    background-color: white;
     height: 40px;
     color:black;
     border-radius: 8px;
+    margin-top: 40px;
+}
+
+@media(min-width :768px){
+    .profile main section .container-top{
+        margin-top: 250px;
+    }
 }
