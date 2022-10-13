@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
-const bcrypt = require('bcryptjs');
+const bcryptjs = require('bcryptjs');
 const usuarios = require('../data/users.json');
 const guardar = (dato) => fs.writeFileSync(path.join(__dirname, '../data/users.json')
     , JSON.stringify(dato, null, 4), 'utf-8');
@@ -12,7 +12,7 @@ module.exports ={
     },
     processRegister: (req,res) => {
     
-        /* return res.send(req.file.filename) */
+         /* return res.send(req.body) */
       let errors = validationResult(req);
       if (req.fileValidationError) {
           let image = {
@@ -28,10 +28,10 @@ module.exports ={
               firstName: name.trim(),
               lastName:lastName.trim(),
               email:email.trim(),
-              pass:bcrypt.hashSync(pass, 12),
+              pass:bcryptjs.hashSync(pass, 12),
               phoneNumber:phoneNumber.trim(),
               city:city.trim(),
-              gender: gender === "Seleccione su género"? "nonSpecified": gender ,
+              gender: gender === "Seleccione su género"? "N/C": gender ,
               image: req.file? req.file.filename: "default-profile-image.jfif",
               category: "user"
           }
@@ -40,6 +40,11 @@ module.exports ={
 
           return res.redirect('/')
       } else {
+        if (req.file) {
+            let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'img','users', dato))
+            if (ruta(req.file.filename) && (req.file.filename !== "default-profile-image.jfif")) {
+                fs.unlinkSync(path.join(__dirname, '..', 'public', 'img','users', req.file.filename))
+            }}
 
           return res.render('users/signin', {
               errors: errors.mapped(),
