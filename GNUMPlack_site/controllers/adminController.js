@@ -143,7 +143,7 @@ module.exports = {
     },
 
     history: (req,res) => {
-        res.render('admin/listDeleted',{
+        return res.render('admin/listDeleted',{
             products:productsRemoved
         })
     },
