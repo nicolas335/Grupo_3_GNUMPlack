@@ -13,7 +13,7 @@
             <h2 class="container bottom"></h2>
             <div class="container bottom">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Ingresa tu email">
+                <input type="email" name="email" id="email" placeholder="Ingresa tu email" value="<%= locals.old && old.email ? old.email : null%>">
                 <% if (locals.errors && errors.email) { %>
 
                     <small><%= errors.email.msg %> </small>

@@ -46,6 +46,7 @@ module.exports ={
               old: req.body
           })
         }},
+
     login: (req,res) =>{
         return res.render('users/login')
     },
@@ -64,11 +65,11 @@ module.exports ={
                 category : usuario.category,
             }
             if (recordame) {
-                res.cookie('recordar',req.session.userLogin,{maxAge:10000*60*60*60})
+                res.cookie('recordar',req.session.userLogin,{maxAge:1000 * 60 *60 * 24})
             }
 
-            return res.redirect("/")
-
+            //return res.redirect("/users/profile")//
+            /* return res.send(req.body)*/
         } else {
             //return res.send(errors.mapped())
             return res.render('users/login',{
