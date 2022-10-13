@@ -1,21 +1,24 @@
 const express = require('express');
 const router = express.Router();
-const upload = require('../middlewares/multerProducts')
+
 let {create, edit, list, update, trash, store,history,destroy,restore} = require('../controllers/adminController');
-let productValidator = require('../validations/productValidation')
 
-router.get('/list', list);
+const adminCheck = require('../middlewares/adminCheck')
+const upload = require('../middlewares/multerProducts')
+const productValidator = require('../validations/productValidation')
 
-router.get('/create', create);
-router.post('/create',upload.single('image'),productValidator,store);
+router.get('/list',adminCheck, list);
 
-router.get('/edit/:id', edit);
-router.put('/edit/:id',upload.single('image'),productValidator,update)
+router.get('/create',adminCheck, create);
+router.post('/create',adminCheck,upload.single('image'),productValidator,store);
 
-router.delete('/:id', trash);
+router.get('/edit/:id',adminCheck, edit);
+router.put('/edit/:id',adminCheck,upload.single('image'),productValidator,update)
 
-router.get('/listDeleted',history)
-router.put('/restored/:id',restore)
-router.delete('/destroy/:id',destroy)
+router.delete('/:id',adminCheck, trash);
+
+router.get('/listDeleted',adminCheck,history)
+router.put('/restored/:id',adminCheck,restore)
+router.delete('/destroy/:id',adminCheck,destroy)
 
 module.exports = router;

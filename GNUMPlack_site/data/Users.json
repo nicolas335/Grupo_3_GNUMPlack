@@ -10,18 +10,6 @@
         "gender": "mujer",
         "category": "user",
         "image": "default-user-img.png"
-    },
-    {
-        "id": 2,
-        "firstName": "ulises",
-        "lastName": "mendez",
-        "email": "ulises@gmail.com",
-        "pass": "$2a$12$v494FPgiS/hDqIiVdohvDeSEQqwd9AsmvfQmcQwfIa75ISgWtf7Be",
-        "phoneNumber": "1161115783",
-        "city": "San Miguel",
-        "gender": "male",
-        "image": "default-profile-image.jfif",
-        "category": "user"
     }
    
 ]

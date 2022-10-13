@@ -23,17 +23,20 @@ module.exports = [
 
     check('price').trim()
     .notEmpty().withMessage('Debe ingresar el precio').bail()
-    .isNumeric().withMessage('Debe ingresar datos numéricos'),
+    .isNumeric().withMessage('Debe ingresar datos numéricos')
+    .isInt({min:0}).withMessage('El precio no puede ser menor a 0'),
 
     check('stock').trim()
     .notEmpty().withMessage('Debe ingresar el stock').bail()
-    .isNumeric().withMessage('Debe ingresar datos numéricos'),
+    .isNumeric().withMessage('Debe ingresar datos numéricos')
+    .isInt({min:0}).withMessage('El stock no puede ser menor a 0'),
 
     check('discount').trim()
     .notEmpty().withMessage('Debe ingresar el descuento').bail()
-    .isNumeric().withMessage('Debe ingresar datos numéricos'),
+    .isNumeric().withMessage('Debe ingresar datos numéricos')
+    .isInt({min:0,max:100}).withMessage('El descuento debe ser entre 0 y 100'),
 
-    check('image').notEmpty().withMessage('Debe adjuntar una imagen del producto')
+/*     check('image').notEmpty().withMessage('Debe adjuntar una imagen del producto') */
     /* body('image').custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = [".jpg",".jpeg",".png",".jfif",".webp"];

@@ -3,21 +3,23 @@ const router = express.Router();
 
 let {signin,login,processLogin,processRegister,profile,logout} = require ('../controllers/userController');
 
+const noLogin = require('../middlewares/noLogin')
+const loginCheck = require('../middlewares/loginCkeck')
 const validationsRegister = require('../validations/registerValidations');
 const loginValidator = require('../validations/loginValidation');
 const uploadFile = require('../middlewares/multerRegister');
 
 
-router.get('/signin',signin);
-router.post('/signin', uploadFile.single('imageUser'), validationsRegister ,processRegister);
+router.get('/signin',loginCheck,signin);
+router.post('/signin',loginCheck, uploadFile.single('imageUser'), validationsRegister ,processRegister);
 
 
-router.get('/login',login);
-router.post('/login',loginValidator,processLogin);
+router.get('/login',loginCheck,login);
+router.post('/login',loginCheck,loginValidator,processLogin);
 
 
-router.get('/profile',profile);
-router.delete('/logout',logout);
+router.get('/profile',noLogin,profile);
+router.delete('/logout',noLogin,logout);
 
 
 module.exports = router;
