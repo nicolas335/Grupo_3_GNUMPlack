@@ -1,24 +1,6 @@
 [
     {
-        "id": 27,
-        "name": "Notebook",
-        "description": "brebrb",
-        "dimensions": "3 4t 3",
-        "category": "Placa de yeso",
-        "condition": "Select the condition",
-        "stock": 4,
-        "price": 200,
-        "discount": 2,
-        "qualities": [
-            "vrea"
-        ],
-        "advantage": [
-            "wvr"
-        ],
-        "image": "default-product-image.png"
-    },
-    {
-        "id": 26,
+        "id": -3,
         "name": "pruebaa 2 con id 26",
         "description": "",
         "dimensions": "g5",
