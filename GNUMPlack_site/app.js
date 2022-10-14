@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser');
 
 //Implementamos locals dentro de nuestra aplicacion//
 const userLogin = require('./middlewares/userLoginCheck')
+const dbConnectionTest = require('./utils/dbConnectionTest')
 
 /* Requiriendo rutas */
 let indexRouter = require('./routes/index');
@@ -37,6 +38,7 @@ app.use(express.json()); /* estes xd */
 app.use(express.static(path.join(__dirname,"public")));
 
 app.use(cookieParser());
+dbConnectionTest()
 
 
 /* Habilitando put y delete */
