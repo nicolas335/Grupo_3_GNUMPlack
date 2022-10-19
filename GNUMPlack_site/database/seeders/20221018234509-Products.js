@@ -4,7 +4,7 @@ let productsJson = require('../../data/products.json');
 
 let categories_products = ["Placa de yeso","Placa de yeso laminado","Placa de yeso con fibras","Placa de lana de madera","Placa de cemento"];
 
-let conditionId = ["destacados","oferta","sin condicion"]
+let conditionId = ["destacado","oferta","sin condicion"]
 
 let ids = (param, array) => {
   let result  = array.findIndex(element => element === param )
@@ -22,7 +22,7 @@ let Products = productsJson.map(product => {
       image: product.image[0],
       stock: product.stock,
       categories_products_id: ids(product.category, categories_products),
-      conditions_id: 3,
+      conditions_id: ids(product.condition, conditionId),
       createdAt: new Date,
       updatedAt: new Date
       
