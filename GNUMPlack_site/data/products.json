@@ -1,3 +1,4 @@
+
 [
     {
         "id": 1,
@@ -5,7 +6,7 @@
         "description": "Lightboard H1, alta tecnología para techos en zonas húmedas de interiores",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de yeso laminado",
-        "condition": "",
+        "condition": "sin condicion",
         "discount": 2,
         "price": 4000,
         "qualities": [
@@ -29,7 +30,7 @@
         "description": "Placa de yeso laminado muy ligera con 4 bordes afinados desarrollada para techos suspendidos continuos.",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de yeso laminado",
-        "condition": "Destacado",
+        "condition": "destacado",
         "discount": 8,
         "price": 1997,
         "qualities": [
@@ -78,7 +79,7 @@
         "dimensions": "1.5mts x 2mts",
         "description": "Placa Premium de alta densidad para un mayor aislamiento acústico.",
         "category": "Placa de yeso laminado",
-        "condition": "",
+        "condition": "destacado",
         "discount": 0,
         "price": 2890,
         "qualities": [
@@ -107,7 +108,7 @@
         "description": "Placa robusta y versátil certificada para la calidad del aire interior",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de yeso laminado",
-        "condition": "",
+        "condition": "destacado",
         "discount": 0,
         "price": 3000,
         "qualities": [
@@ -138,7 +139,7 @@
         "description": "Placa de yeso laminado de 15 mm de espesor reforzada con malla de fibra de vidrio que aumenta su capacidad de carga y su resistencia.",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de yeso laminado",
-        "condition": "",
+        "condition": "sin condicion",
         "discount": 0,
         "price": 4000,
         "qualities": [
@@ -167,7 +168,7 @@
         "description": "Placa versátil, cortafuego, impregnada, acústica y de alta dureza.",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de yeso laminado",
-        "condition": "",
+        "condition": "sin condicion",
         "discount": 0,
         "price": 1999,
         "qualities": [
@@ -302,7 +303,7 @@
         "description": "Placas de cemento ligeras para su uso en exterior en sistemas de cubiertas planas",
         "dimensions": "1.5mts x 3mts",
         "category": "Placa de cemento",
-        "condition": "Destacado",
+        "condition": "destacado",
         "discount": 2,
         "price": 2800,
         "qualities": [
@@ -331,7 +332,7 @@
         "description": "Placa de cemento ligera para uso exterior como fachadas.",
         "dimensions": "1.5mts x 3mts",
         "category": "Placa de cemento",
-        "condition": "",
+        "condition": "sin condicion",
         "discount": 2,
         "price": 3700,
         "qualities": [
@@ -359,7 +360,7 @@
         "description": "Placa de cemento ligera para techos en interior y exterior.",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de cemento",
-        "condition": "Destacado",
+        "condition": "destacado",
         "discount": 5,
         "price": 7100,
         "qualities": [
@@ -384,7 +385,7 @@
         "description": "Sistema de partición formado por una estructura metálica con una o más placas de cemento Aquapanel Indoor atornilladas a cada lado de la misma.",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de cemento",
-        "condition": "Destacado",
+        "condition": "destacado",
         "discount": 5,
         "price": 4600,
         "qualities": [
@@ -414,7 +415,7 @@
         "description": "Placas de lana de madera estándar para techos registrables.",
         "dimensions": "1.5mts x 2.50mts",
         "category": "Placa de lana de madera",
-        "condition": "Oferta",
+        "condition": "oferta",
         "discount": 15,
         "price": 3690,
         "qualities": [
@@ -584,7 +585,7 @@
         "description": "Placa de yeso laminado certificada para la calidad del aire interior",
         "dimensions": "1.5mts x 2mts",
         "category": "Placa de yeso",
-        "condition": "Destacado",
+        "condition": "destacado",
         "discount": 6,
         "price": 5280,
         "qualities": [
@@ -610,7 +611,7 @@
         "description": "Placa especial para ambientes con elevada humedad y agua controlada.",
         "dimensions": "1.8mts x 2mts",
         "category": "Placa de yeso",
-        "condition": "Destacado",
+        "condition": "destacado",
         "discount": 10,
         "price": 8100,
         "qualities": [
@@ -651,23 +652,5 @@
             "Espesor total 50mm.",
             "Poca retracción e hinchazón con cambios climáticos."
         ]
-    },
-    {
-        "id": 26,
-        "name": "Notebook",
-        "description": "brebrb",
-        "dimensions": "3 4t 3",
-        "category": "Placa de yeso",
-        "condition": "Select the condition",
-        "stock": 4,
-        "price": 200,
-        "discount": 2,
-        "qualities": [
-            "vrea"
-        ],
-        "advantage": [
-            "wvr"
-        ],
-        "image": "default-product-image.png"
     }
 ]
