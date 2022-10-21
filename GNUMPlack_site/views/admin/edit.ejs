@@ -65,13 +65,13 @@
               <small> <%= (locals.errors && errors.name) ? errors.name.msg : '*' %> </small>
           </div>
           <div class="form-floating">
-            <input type="text" name="qualities" class="form-control" id="qualities" placeholder="Qualities" value="<%= producto.qualities.join('--') %>">
+            <input type="text" name="qualities" class="form-control" id="qualities" placeholder="Qualities" value="<%= producto.qualities %>">
             <label for="qualities">Qualities</label>
             <small> <%= (locals.errors && errors.qualities) ? errors.qualities.msg : '*' %> </small>
             <small>Remember to use the -- to separate elements</small>
           </div>
           <div class="form-floating">
-            <input type="text" name="advantage" class="form-control" id="advantage" placeholder="Advantage" value="<%= producto.advantage.join('--') %>">
+            <input type="text" name="advantage" class="form-control" id="advantage" placeholder="Advantage" value="<%= producto.advantage %>">
             <label for="advantage">Advantage</label>
             <small> <%= (locals.errors && errors.advantage) ? errors.advantage.msg : '*' %> </small>
             <small>Remember to use the -- to separate elements</small>

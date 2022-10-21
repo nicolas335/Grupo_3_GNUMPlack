@@ -4,10 +4,10 @@ const { join } = require('path');
 let path = require('path');
 let products = require('../data/products.json');
 
-
-let guardarProductos = (dato) => fs.writeFileSync(path.join(__dirname,"../data/products.json"),JSON.stringify(dato,null,4),'utf-8')
-let productsRemoved = require('../data/productsRemoved.json')
-guardarHistorial = (dato) => fs.writeFileSync(path.join(__dirname,'../data/productsRemoved.json'),JSON.stringify(dato,null,4),'utf-8')
+const db = require('../database/models')
+//let guardarProductos = (dato) => fs.writeFileSync(path.join(__dirname,"../data/products.json"),JSON.stringify(dato,null,4),'utf-8')
+//let productsRemoved = require('../data/productsRemoved.json')
+//guardarHistorial = (dato) => fs.writeFileSync(path.join(__dirname,'../data/productsRemoved.json'),JSON.stringify(dato,null,4),'utf-8')
 
 
 module.exports = {
@@ -74,11 +74,22 @@ module.exports = {
     },
     
     edit :(req, res) =>{
-        let id = +req.params.id
-        let productoAEditar = products.find(producto => producto.id === id)
-        return res.render('admin/edit',{
-            producto:productoAEditar
-        });
+        let categoria = db.Categories_products.findAll()
+        let condicion = db.Condition.findAll()
+        let producto = db.Products.findOne({
+            where: {
+                id : req.params.id
+            },
+            include: [{
+                all:true
+            }]
+        })
+        Promise.all([producto,categoria,condicion])
+        .then(([producto,categoria,condicion]) => {
+            return res.send(producto)
+            res.render('admin/edit',{producto:producto})
+        })
+        .catch(error => res.send(error))
     },
 
     update :(req,res) =>{
@@ -92,8 +103,20 @@ module.exports = {
         }
 
         if (errors.isEmpty()) {
-        let id = +req.params.id
-        let {name,description,dimensions,category,condition,discount,price,qualities,stock,advantage} = req.body
+
+            db.Products.findOne({
+                where: {id:req.params.id}
+            },{
+                include: [{
+                    all:true
+                }]
+            })
+            .then(product => {
+                res.send(product)
+            })
+            .catch(error => res.send(error))
+
+        /* let {name,description,dimensions,category,condition,discount,price,qualities,stock,advantage} = req.body
         products.forEach(producto => {
             if (producto.id === id) {
                 producto.name = name
@@ -110,7 +133,7 @@ module.exports = {
             }
         })
         guardarProductos(products)
-        return res.redirect(`/admin/list`)
+        return res.redirect(`/admin/list`) */
 
         } else {
             let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'img', 'products', dato))
@@ -129,7 +152,41 @@ module.exports = {
     },
 
     trash:(req,res)=>{
-        let id = +req.params.id
+        db.Products.findOne({
+            where: {id: +req.params.id},
+            include: [{
+                all:true
+            }] 
+        })
+        .then(producto => {
+            // Agrego el producto al historial
+            let productoAlHistorial = db.Removed_products.Create({
+                name: producto.name,
+                description: producto.description,
+                dimensions: producto.dimensions,
+                discount: producto.discount,
+                price: producto.price,
+                qualities: producto.qualities,
+                image: producto.image,
+                stock: producto.stock,
+                condition_id: producto.condition_id,
+                categories_products_id: producto.categories_products_id,
+                createdAt: producto.createdAd,
+                updatedAt: producto.updatedAt
+            })
+            // Elimino el producto de la lista
+            let productosActualizados = db.Products.destroy({
+                where: {id: producto.id}
+            })
+
+            Promise.all([productoAlHistorial,productosActualizados])
+            .then(([productoAlHistorial,productosActualizados]) => {
+                res.redirect('/admin/list')
+            })
+        })
+        .catch(error => res.send(error))
+        
+        /* let id = +req.params.id
         let productoEliminado = products.find(producto => producto.id === id)
 
         let productosActualizados = products.filter(producto => producto.id !== id)
@@ -139,7 +196,7 @@ module.exports = {
         productsRemoved.push(productoEliminado)
         guardarHistorial(productsRemoved)
 
-        return res.redirect('/admin/list')
+        return res.redirect('/admin/list') */
     },
 
     history: (req,res) => {
