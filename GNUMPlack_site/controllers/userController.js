@@ -5,14 +5,13 @@ const bcryptjs = require('bcryptjs');
 const usuarios = require('../data/users.json');
 const guardar = (dato) => fs.writeFileSync(path.join(__dirname, '../data/users.json')
     , JSON.stringify(dato, null, 4), 'utf-8');
+const db = require('../database/models')
 
 module.exports ={
     signin : (req,res) => {
         return res.render('users/signin')
     },
     processRegister: (req,res) => {
-    
-         /* return res.send(req.body) */
       let errors = validationResult(req);
       if (req.fileValidationError) {
           let image = {
@@ -22,29 +21,36 @@ module.exports ={
           errors.errors.push(image);
       }
       if (errors.isEmpty()) {
-          let {name,lastName,email,pass,phoneNumber,city,gender} = req.body
-          let usuarioNuevo = {
-              id:usuarios[usuarios.length - 1].id + 1,
-              firstName: name.trim(),
-              lastName:lastName.trim(),
-              email:email.trim(),
-              pass:bcryptjs.hashSync(pass, 12),
-              phoneNumber:phoneNumber.trim(),
-              city:city.trim(),
-              gender: gender === "Seleccione su género"? "N/C": gender ,
-              image: req.file? req.file.filename: "default-profile-image.jfif",
-              category: "user"
-          }
-          usuarios.push(usuarioNuevo)
-          guardar(usuarios)
+          let {name,lastName,email,pass,phoneNumber,city,gender} = req.body;
+
+          db.Users.create({
+            first_name: name,
+            last_name: lastName,
+            email: email,
+            password: bcryptjs.hashSync(pass, 12),
+            phoneNumber: phoneNumber,
+            city: city,
+            genders_id: gender,
+            image: req.file? req.file.filename: "default-profile-image.jfif",
+            categories_users_id: 1
+          })
+          .then(user =>{
+            req.session.userLogin = {
+            first_name: user.name,
+            last_name: user.lastName,
+            email: user.email,
+            password: user.pass,
+            phoneNumber: user.phoneNumber,
+            city: user.city,
+            genders_id: user.genders_id,
+            image: user.image,
+            categories_users_id: user.categories_users_id
+            }
+          })
+          .catch(errors => res.send(errors))
 
           return res.redirect('/')
       } else {
-        if (req.file) {
-            let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'img','users', dato))
-            if (ruta(req.file.filename) && (req.file.filename !== "default-profile-image.jfif")) {
-                fs.unlinkSync(path.join(__dirname, '..', 'public', 'img','users', req.file.filename))
-            }}
 
           return res.render('users/signin', {
               errors: errors.mapped(),

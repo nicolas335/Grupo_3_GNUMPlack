@@ -65,9 +65,9 @@
                 <label for="gender">Género</label>
                 <select name="gender" id="gender">
                     <option select hidden>Seleccione su género</option>
-                    <option value="male" <%= (locals.old && old.gender === 'male') ? 'selected' : null %>>Hombre</option>
-                    <option value="female" <%= (locals.old && old.gender === 'female') ? 'selected' : null %>>Mujer</option>
-                    <option value="nonSpecified" <%= (locals.old && old.gender === 'nonSpecified') ? 'selected' : null %>>Sin especificar</option>
+                    <option value="2" <%= (locals.old && old.gender === '2') ? 'selected' : null %>>Hombre</option>
+                    <option value="1" <%= (locals.old && old.gender === '1') ? 'selected' : null %>>Mujer</option>
+                    <option value="3" <%= (locals.old && old.gender === '3') ? 'selected' : null %>>Sin especificar</option>
                 </select>
             </div>
             <div class="container">
