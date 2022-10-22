@@ -62,33 +62,39 @@ module.exports ={
         return res.render('users/login')
     },
     processLogin:(req,res) =>{
-        let errors = validationResult(req)
-        if (errors.isEmpty()) {
-
-            const {email,recordame} = req.body
-
-            let usuario = usuarios.find(user => user.email === email)
-
-            req.session.userLogin = {
-                id: usuario.id,
-                name: usuario.firstName,
-                image:usuario.image,
-                category : usuario.category,
+         let errors= validationResult(req)
+        // return res.send(errors); 
+        if (errors.isEmpty()){
+            
+            const {email, recordame} = req.body
+            db.Users.findOne({
+                where : {
+                    email
+                }
+            })
+            .then(user => {
+                
+                //return res.send(user)
+                req.session.userLogin = {
+                name: user.firstName,
+                email: user.email,
+                password: user.pass,
+                image: user.image,
+                categories_users_id: user.category
+                }
+            if(recordame){
+                res.cookie('GNUM.Plack',req.session.userLogin,{maxAge: 1000 * 60 * 60 * 24})
             }
-            if (recordame) {
-                res.cookie('recordar',req.session.userLogin,{maxAge:1000 * 60 *60 * 24})
-            }
-
-            //return res.redirect("/users/profile")//
-            /* return res.send(req.body)*/
+            // console.log(req.session.userLogin); 
+            return res.redirect('/')
+            // return res.send(req.body) 
+            })
+            .catch(err => res.send(err))
         } else {
-            //return res.send(errors.mapped())
+            //return res.send(req.body)
             return res.render('users/login',{
                 errors: errors.mapped(),
-                old: req.body
-            })
-            
-        }
+                old: req.body})}
     },
     profile:(req,res) =>{
         return res.render('users/profile')

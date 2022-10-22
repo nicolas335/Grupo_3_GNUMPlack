@@ -3,6 +3,7 @@ let fs = require('fs');
 const { join } = require('path');
 let path = require('path');
 let products = require('../data/products.json');
+const db = require('../database/models')
 
 
 let guardarProductos = (dato) => fs.writeFileSync(path.join(__dirname,"../data/products.json"),JSON.stringify(dato,null,4),'utf-8')
@@ -68,9 +69,33 @@ module.exports = {
         }
         },
     list :(req, res) =>{
-        return res.render('admin/list',{
-            products
+        db.Products.findAll({
+            include: [
+                {
+                    all:true
+                }
+            ]
+        })
+        .then(products => {
+            return res.render('admin/list',{
+                products
+        })
+        
         });
+        /* db.Productos.findAll({
+            include: [
+                {
+                all: true,
+                },
+            ],
+            })
+            .then((productos) => {
+            // return res.send(productos) 
+                return res.render("admin/listar", {
+                    productos,
+                    redirection: "historial",
+                });
+            }); */
     },
     
     edit :(req, res) =>{
