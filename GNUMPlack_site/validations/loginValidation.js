@@ -16,20 +16,20 @@ module.exports =[
      check('pass').trim()
      .notEmpty().withMessage('Debe ingresar su contraseña'),
      
-    body('pass')
-    .custom((value, {req}) => {
-       return db.Users.findOne({
-            where: {
-                email: req.body.email
-            }
-       })
-       .then(user => {
-           if(!bcryptjs.compareSync(value, user.dataValues.password)){
-               return Promise.reject()
-           }
+     body('pass')
+     .custom((value, {req}) => {
+     return db.Users.findOne({
+          where: {
+               email: req.body.email
+          }
+        })
+        .then(user => {
+          if(!bcryptjs.compareSync(value, user.dataValues.password)){
+          return Promise.reject()
+          }
        })
        .catch(() => {
-           return Promise.reject("Email o contraseña incorrecta")
+          return Promise.reject("Email o contraseña incorrecta")
        })
     })
     

@@ -2,9 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const { validationResult } = require('express-validator');
 const bcryptjs = require('bcryptjs');
-const usuarios = require('../data/users.json');
+/* const usuarios = require('../data/users.json');
 const guardar = (dato) => fs.writeFileSync(path.join(__dirname, '../data/users.json')
-    , JSON.stringify(dato, null, 4), 'utf-8');
+    , JSON.stringify(dato, null, 4), 'utf-8'); */
 const db = require('../database/models')
 
 module.exports ={
@@ -76,16 +76,17 @@ module.exports ={
                 
                 //return res.send(user)
                 req.session.userLogin = {
-                name: user.firstName,
+                first_name: user.first_name,
                 email: user.email,
-                password: user.pass,
+                password: user.password,
                 image: user.image,
-                categories_users_id: user.category
+                categories_users_id: user.categories_users_id
                 }
+                //return res.send(req.session.userLogin)
             if(recordame){
-                res.cookie('GNUM.Plack',req.session.userLogin,{maxAge: 1000 * 60 * 60 * 24})
+                res.cookie('recordar',req.session.userLogin,{maxAge: 1000 * 60 * 60 * 24})
             }
-            // console.log(req.session.userLogin); 
+             console.log(req.session.userLogin); 
             return res.redirect('/')
             // return res.send(req.body) 
             })
