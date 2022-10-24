@@ -10,7 +10,8 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(100),
+        allowNull: false
       },
       description: {
         type: Sequelize.STRING(600),
@@ -30,6 +31,9 @@ module.exports = {
       qualities:{
         type: Sequelize.STRING(600)
       },
+      advantages:{
+        type: Sequelize.STRING(600)
+      },
       image:{
         type: Sequelize.STRING(100)
       },
@@ -37,22 +41,22 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false
       },
-      conditions_id:{
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references:{
-          model:{
-            tableName:'Conditions'
-          },
-          key:'id'
-        }
-      },
       categories_products_id:{
         type: Sequelize.INTEGER,
         allowNull: false,
         references:{
           model:{
             tableName:'Categories_products'
+          },
+          key:'id'
+        }
+      },
+      conditions_id:{
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references:{
+          model:{
+            tableName:'Conditions'
           },
           key:'id'
         }

@@ -1,20 +1,27 @@
-const products = require('../data/products.json')
+//const products = require('../data/products.json')
+const db = require('../database/models')
+
 
 module.exports={
      product:(req,res)=>{
-          return res.render("product",{products})
+        db.Products.findAll()
+        .then(products => {
+            return res.render("product",{products})
+        })
+        .catch(error => res.send(error))
     },
      detail:(req,res)=>{
+        const idParams = +req.params.id
           db.Products.findOne({
                where: {
-                   id : req.params.id
+                   id : idParams
                },
                include: [{
                    all:true
                }]
            })
            .then(product => {
-               //res.send(product)
+               //return res.send(product)
                return res.render("detail",{productoDetallado:product})
            })
            .catch(error => res.send(error))

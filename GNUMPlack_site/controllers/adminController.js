@@ -1,13 +1,13 @@
-const { validationResult } = require('express-validator');
-let fs = require('fs');
-const { join } = require('path');
-let path = require('path');
-let products = require('../data/products.json');
-
-const db = require('../database/models')
+//let fs = require('fs');
 //let guardarProductos = (dato) => fs.writeFileSync(path.join(__dirname,"../data/products.json"),JSON.stringify(dato,null,4),'utf-8')
-//let productsRemoved = require('../data/productsRemoved.json')
 //guardarHistorial = (dato) => fs.writeFileSync(path.join(__dirname,'../data/productsRemoved.json'),JSON.stringify(dato,null,4),'utf-8')
+//let productsRemoved = require('../data/productsRemoved.json')
+//let products = require('../data/products.json');
+
+const { validationResult } = require('express-validator');
+const path = require('path');
+const db = require('../database/models')
+
 
 
 module.exports = {
@@ -175,8 +175,9 @@ module.exports = {
     },
 
     trash:(req,res)=>{
+        let idParams = +req.params.id
         db.Products.findOne({
-            where: {id: +req.params.id},
+            where: {id: idParams},
             include: [{
                 all:true
             }] 
@@ -184,28 +185,29 @@ module.exports = {
         .then(producto => {
             //return res.send(producto)
             // Agrego el producto al historial
-            let productoAlHistorial = db.Removed_products.Create({
+            db.Removed_products.create({
                 name: producto.name,
                 description: producto.description,
                 dimensions: producto.dimensions,
                 discount: producto.discount,
                 price: producto.price,
                 qualities: producto.qualities,
+                advantages: producto.advantages,
                 image: producto.image,
                 stock: producto.stock,
-                condition_id: producto.condition.id,
                 categories_products_id: producto.categoryProduct.id,
-                createdAt: producto.createdAd,
-                updatedAt: producto.updatedAt
-            })
-            // Elimino el producto de la lista
-            let productosActualizados = db.Products.destroy({
-                where: {id: producto.id}
+                conditions_id: producto.condition.id,
+                createdAt: producto.createdAt,
+                updatedAt: new Date
             })
 
-            Promise.all([productoAlHistorial,productosActualizados])
-            .then(([productoAlHistorial,productosActualizados]) => {
-                res.redirect('/admin/list')
+            .then(historial => {
+                db.Products.destroy({
+                    where: {id: idParams}
+                })
+            })
+            .then(producto => {
+                res.redirect('/admin/listDeleted')
             })
         })
         .catch(error => res.send(error))
@@ -224,29 +226,69 @@ module.exports = {
     },
 
     history: (req,res) => {
-        return res.render('admin/listDeleted',{
-            products:productsRemoved
+        db.Removed_products.findAll()
+        .then(productsRemoved => {
+            return res.render('admin/listDeleted',{
+                products:productsRemoved
+            })
         })
     },
 
     restore: (req,res) => {
-        let id = +req.params.id
-        let productoARestaurar = productsRemoved.find(producto => producto.id === id)
-        let productosEliminados = productsRemoved.filter(producto => producto.id !== id)
-
-        guardarHistorial(productosEliminados)
-
-        productoARestaurar.id = products[products.length -1].id +1
-        products.push(productoARestaurar)
-        guardarProductos(products)
-        res.redirect('/admin/list')
+        let idParams = +req.params.id
+        
+        db.Removed_products.findOne({
+            where: {id: idParams},
+            include: [{
+                all:true
+            }] 
+        })
+        .then(producto => {
+            //return res.send(producto)
+            db.Products.create({
+                name: producto.name,
+                description: producto.description,
+                dimensions: producto.dimensions,
+                discount: producto.discount,
+                price: producto.price,
+                qualities: producto.qualities,
+                advantages: producto.advantages,
+                image: producto.image,
+                stock: producto.stock,
+                categories_products_id: producto.categoryProduct.id,
+                conditions_id: producto.condition.id,
+                createdAt: producto.createdAt,
+                updatedAt: new Date
+            })
+            .then(eliminar => {
+                db.Removed_products.destroy({
+                    where: {id: idParams}
+                })
+            })
+            .then(redireccion => {
+                res.redirect('/admin/list')
+            })
+        })
+        .catch(error => res.send(error))
+        
+        //let productoARestaurar = productsRemoved.find(producto => producto.id === id)
+        //let productosEliminados = productsRemoved.filter(producto => producto.id !== id)
+        //guardarHistorial(productosEliminados)
+        //productoARestaurar.id = products[products.length -1].id +1
+        //products.push(productoARestaurar)
+        //guardarProductos(products)
     },
 
     destroy: (req,res) => {
-        let id = +req.params.id
-        let productosEliminados = productsRemoved.filter(producto => producto.id !== id)
-
-        guardarHistorial(productosEliminados)
-        res.redirect('/admin/listDeleted')
+        let idParams = +req.params.id
+        db.Removed_products.destroy({
+            where: {id:idParams}
+        })
+        .then(redireccion => {
+            res.redirect('/admin/listDeleted')
+        })
+        
+        //let productosEliminados = productsRemoved.filter(producto => producto.id !== id)
+        //guardarHistorial(productosEliminados)
     }
 }
