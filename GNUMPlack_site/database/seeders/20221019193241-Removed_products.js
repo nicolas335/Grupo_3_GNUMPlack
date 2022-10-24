@@ -19,6 +19,7 @@ let Removed_products = productsJson.map(product => {
       discount: product.discount,
       price: product.price,
       qualities: product.qualities.toString(),
+      advantages: product.advantage.toString(),
       image: product.image[0],
       stock: product.stock,
       categories_products_id: ids(product.category, categories_products),
