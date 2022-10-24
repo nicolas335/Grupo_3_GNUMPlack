@@ -1,16 +1,6 @@
 const { validationResult } = require('express-validator');
-let fs = require('fs');
-const { join } = require('path');
-let path = require('path');
-let products = require('../data/products.json');
+const path = require('path');
 const db = require('../database/models')
-
-let db = require('../database/models')
-
-
-let guardarProductos = (dato) => fs.writeFileSync(path.join(__dirname,"../data/products.json"),JSON.stringify(dato,null,4),'utf-8')
-let productsRemoved = require('../data/productsRemoved.json')
-guardarHistorial = (dato) => fs.writeFileSync(path.join(__dirname,'../data/productsRemoved.json'),JSON.stringify(dato,null,4),'utf-8')
 
 
 module.exports = {
@@ -40,12 +30,9 @@ module.exports = {
         }
 
         if (errors.isEmpty()) {
-            /*let newAdvantages = advantage.split('--');
-            let newQualities = qualities.split('--');
-            //let newImage = image.split();*/
 
             let { name, description, dimensions, category, condition, stock, price, qualities, discount, advantage } = req.body;
-             //return res.send(req.body)//
+             //return res.send(req.body)
 
             db.Products.create({
 
@@ -98,13 +85,21 @@ module.exports = {
         });
         
     },
-
-    edit: (req, res) => {
-        let id = +req.params.id
-        let productoAEditar = products.find(producto => producto.id === id)
-        return res.render('admin/edit', {
-            producto: productoAEditar
-        });
+    
+    edit :(req, res) =>{
+        db.Products.findOne({
+            where: {
+                id : req.params.id
+            },
+            include: [{
+                all:true
+            }]
+        })
+        .then(producto => {
+            //return res.send(producto)
+            res.render('admin/edit',{producto})
+        })
+        .catch(error => res.send(error))
     },
 
     update: (req, res) => {
@@ -118,81 +113,149 @@ module.exports = {
         }
 
         if (errors.isEmpty()) {
-            let id = +req.params.id
-            return res.send(req.body)
-            let { name, description, dimensions, category, condition, discount, price, qualities, stock, advantage } = req.body
-            products.forEach(producto => {
-                if (producto.id === id) {
-                    producto.name = name
-                    producto.description = description
-                    producto.dimensions = dimensions
-                    producto.category = category
-                    producto.condition = condition
-                    producto.discount = +discount
-                    producto.price = +price
-                    producto.qualities = qualities.split('--')
-                    producto.stock = +stock
-                    producto.advantage = advantage.split('--')
-                    producto.image = (req.file ? req.file.filename : producto.image)
+
+            db.Products.update({
+                name: req.body.name,
+                description: req.body.description,
+                dimensions: req.body.dimensions,
+                discount: +req.body.discount,
+                price: +req.body.price,
+                qualities: req.body.qualities,
+                image: req.file.filename,
+                stock: +req.body.stock,
+                categories_products_id: +req.body.category,
+                condition_id: +req.body.condition,
+                updatedAt: new Date,
+            },{
+                where: {
+                    id : +req.params.id
                 }
             })
-            guardarProductos(products)
-            return res.redirect(`/admin/list`)
+            .then(product => {
+                res.redirect('/admin/list')
+            })
+            .catch(error => res.send(error))
 
         } else {
             let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'img', 'products', dato))
             if (req.file && ruta(req.file.filename) && (req.file.filename !== "default-product-image.png")) {
                 fs.unlinkSync(path.join(__dirname, '..', 'public', 'img', 'products', req.file.filename))
             }
-
-            let id = +req.params.id
-            let productoAEditar = products.find(producto => producto.id === id)
-
-            res.render('admin/edit', {
-                producto: productoAEditar,
-                errors: errors.mapped()
+            
+            db.Products.findOne({
+                where: {
+                    id : +req.params.id
+                },
+                include: [{
+                    all:true
+                }]
             })
+            .then(producto => {
+                res.render('admin/edit',{
+                    producto,
+                    errors:errors.mapped()
+                })
+            })
+            .catch(error => res.send(error))
         }
     },
 
-    trash: (req, res) => {
-        let id = +req.params.id
-        let productoEliminado = products.find(producto => producto.id === id)
+    trash:(req,res)=>{
+        
+        let idParams = +req.params.id
+        db.Products.findOne({
+            where: {id: idParams},
+            include: [{
+                all:true
+            }] 
+        })
+        .then(producto => {
+            //return res.send(producto)
+            // Agrego el producto al historial
+            db.Removed_products.create({
+                name: producto.name,
+                description: producto.description,
+                dimensions: producto.dimensions,
+                discount: producto.discount,
+                price: producto.price,
+                qualities: producto.qualities,
+                advantages: producto.advantages,
+                image: producto.image,
+                stock: producto.stock,
+                categories_products_id: producto.categoryProduct.id,
+                conditions_id: producto.condition.id,
+                createdAt: producto.createdAt,
+                updatedAt: new Date
+            })
 
-        let productosActualizados = products.filter(producto => producto.id !== id)
-        guardarProductos(productosActualizados)
-
-        productoEliminado.id = productsRemoved[productsRemoved.length - 1].id - 1
-        productsRemoved.push(productoEliminado)
-        guardarHistorial(productsRemoved)
-
-        return res.redirect('/admin/list')
+            .then(historial => {
+                db.Products.destroy({
+                    where: {id: idParams}
+                })
+            })
+            .then(producto => {
+                res.redirect('/admin/listDeleted')
+            })
+        })
+        .catch(error => res.send(error))
+        
     },
 
-    history: (req, res) => {
-        return res.render('admin/listDeleted', {
-            products: productsRemoved
+    history: (req,res) => {
+        db.Removed_products.findAll()
+        .then(productsRemoved => {
+            return res.render('admin/listDeleted',{
+                products:productsRemoved
+            })
         })
     },
 
-    restore: (req, res) => {
-        let id = +req.params.id
-        let productoARestaurar = productsRemoved.find(producto => producto.id === id)
-        let productosEliminados = productsRemoved.filter(producto => producto.id !== id)
-
-        guardarHistorial(productosEliminados)
-
-        productoARestaurar.id = products[products.length - 1].id + 1
-        products.push(productoARestaurar)
-        guardarProductos(products)
-        res.redirect('/admin/list')
+    restore: (req,res) => {
+        let idParams = +req.params.id
+        
+        db.Removed_products.findOne({
+            where: {id: idParams},
+            include: [{
+                all:true
+            }] 
+        })
+        .then(producto => {
+            //return res.send(producto)
+            db.Products.create({
+                name: producto.name,
+                description: producto.description,
+                dimensions: producto.dimensions,
+                discount: producto.discount,
+                price: producto.price,
+                qualities: producto.qualities,
+                advantages: producto.advantages,
+                image: producto.image,
+                stock: producto.stock,
+                categories_products_id: producto.categoryProduct.id,
+                conditions_id: producto.condition.id,
+                createdAt: producto.createdAt,
+                updatedAt: new Date
+            })
+            .then(eliminar => {
+                db.Removed_products.destroy({
+                    where: {id: idParams}
+                })
+            })
+            .then(redireccion => {
+                res.redirect('/admin/list')
+            })
+        })
+        .catch(error => res.send(error))
+        
     },
 
-    destroy: (req, res) => {
-        let id = +req.params.id
-        let productosEliminados = productsRemoved.filter(producto => producto.id !== id)
-
-        guardarHistorial(productosEliminados)
-        res.redirect('/admin/listDeleted')
+    destroy: (req,res) => {
+        let idParams = +req.params.id
+        db.Removed_products.destroy({
+            where: {id:idParams}
+        })
+        .then(redireccion => {
+            res.redirect('/admin/listDeleted')
+        })
     }
 }
