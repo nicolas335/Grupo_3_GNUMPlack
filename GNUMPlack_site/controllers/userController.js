@@ -73,7 +73,7 @@ module.exports ={
                 res.cookie('recordar',req.session.userLogin,{maxAge:1000 * 60 *60 * 24})
             }
 
-            //return res.redirect("/users/profile")//
+            return res.redirect("/users/profile")
             /* return res.send(req.body)*/
         } else {
             //return res.send(errors.mapped())
