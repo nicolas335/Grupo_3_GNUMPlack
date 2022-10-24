@@ -17,35 +17,34 @@ module.exports ={
           errors.errors.push(image);
       }
       if (errors.isEmpty()) {
-          let {name,lastName,email,pass,phoneNumber,city,gender} = req.body;
+        let {name,lastName,email,pass,phoneNumber,city,gender} = req.body;
 
-          db.Users.create({
-            first_name: name,
-            last_name: lastName,
-            email: email,
-            password: bcryptjs.hashSync(pass, 12),
-            phoneNumber: phoneNumber,
-            city: city,
-            genders_id: gender,
-            image: req.file? req.file.filename: "default-profile-image.jfif",
-            categories_users_id: 1
-          })
-          .then(user =>{
-            req.session.userLogin = {
-            first_name: user.name,
-            last_name: user.lastName,
-            email: user.email,
-            password: user.pass,
-            phoneNumber: user.phoneNumber,
-            city: user.city,
-            genders_id: user.genders_id,
-            image: user.image,
-            categories_users_id: user.categories_users_id
-            }
-          })
-          .catch(errors => res.send(errors))
+        db.Users.create({
+          first_name: name,
+          last_name: lastName,
+          email: email,
+          password: bcryptjs.hashSync(pass, 12),
+          phoneNumber: phoneNumber,
+          city: city,
+          genders_id: gender,
+          image: req.file? req.file.filename: "default-profile-image.jfif",
+          categories_users_id: 1
+        })
+        .then(user =>{
+          req.session.userLogin = {
+          first_name: user.name,
+          last_name: user.lastName,
+          email: user.email,
+          image: user.image,
+          categories_users_id: user.categories_users_id
+          }
+          res.cookie('recordar',req.session.userLogin,{maxAge: 1000 * 60 * 60 * 24})
+        })
+        .then(iniciar => {
+            return res.redirect('/')
+        })
+        .catch(errors => res.send(errors))
 
-          return res.redirect('/')
       } else {
 
           return res.render('users/signin', {
@@ -73,8 +72,8 @@ module.exports ={
                 //return res.send(user)
                 req.session.userLogin = {
                 first_name: user.first_name,
+                last_name: user.last_name,
                 email: user.email,
-                password: user.password,
                 image: user.image,
                 categories_users_id: user.categories_users_id
                 }
@@ -82,7 +81,6 @@ module.exports ={
             if(recordame){
                 res.cookie('recordar',req.session.userLogin,{maxAge: 1000 * 60 * 60 * 24})
             }
-             console.log(req.session.userLogin); 
             return res.redirect('/')
             // return res.send(req.body) 
             })

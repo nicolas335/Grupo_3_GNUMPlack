@@ -11,12 +11,6 @@ module.exports={
         .catch(error => res.send(error))
     },
      detail:(req,res)=>{
-<<<<<<< HEAD
-          let id = +req.params.id
-          let productoDetallado = products.find(producto => producto.id === id)
-          return res.render("detail",{productoDetallado})
-   }
-=======
         const idParams = +req.params.id
           db.Products.findOne({
                where: {
@@ -32,5 +26,4 @@ module.exports={
            })
            .catch(error => res.send(error))
    } 
->>>>>>> ulises
 }

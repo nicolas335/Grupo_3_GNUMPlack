@@ -1,3 +1,4 @@
+const fs = require('fs')
 const { validationResult } = require('express-validator');
 const path = require('path');
 const db = require('../database/models')
@@ -194,7 +195,7 @@ module.exports = {
                 })
             })
             .then(producto => {
-                res.redirect('/admin/listDeleted')
+                res.redirect('/admin/list')
             })
         })
         .catch(error => res.send(error))
