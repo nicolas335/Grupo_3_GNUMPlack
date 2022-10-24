@@ -100,6 +100,27 @@ module.exports ={
     profile:(req,res) =>{
         return res.render('users/profile')
     },
+    editUser:() =>{
+        editarUser: (req, res) => {  
+            let id = +req.params.id;
+            db.User.findOne({
+                where: {
+                    id : id,
+                },
+                include: [{
+                    all: true,
+                }]
+            })
+            .then((user) => {
+                //console.log(usuario);
+                return res.render('editUser', {
+                    user
+                });
+            }).catch((error)=> res.send(error));
+        }
+
+    },
+
     logout : (req,res)=>{
         req.session.destroy();
         if(req.cookies.recordar){
