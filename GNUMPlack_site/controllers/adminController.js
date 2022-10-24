@@ -74,9 +74,7 @@ module.exports = {
     },
     
     edit :(req, res) =>{
-        let categoria = db.Categories_products.findAll()
-        let condicion = db.Condition.findAll()
-        let producto = db.Products.findOne({
+        db.Products.findOne({
             where: {
                 id : req.params.id
             },
@@ -84,10 +82,9 @@ module.exports = {
                 all:true
             }]
         })
-        Promise.all([producto,categoria,condicion])
-        .then(([producto,categoria,condicion]) => {
-            return res.send(producto)
-            res.render('admin/edit',{producto:producto})
+        .then(producto => {
+            //return res.send(producto)
+            res.render('admin/edit',{producto})
         })
         .catch(error => res.send(error))
     },
@@ -104,15 +101,25 @@ module.exports = {
 
         if (errors.isEmpty()) {
 
-            db.Products.findOne({
-                where: {id:req.params.id}
+            db.Products.update({
+                name: req.body.name,
+                description: req.body.description,
+                dimensions: req.body.dimensions,
+                discount: +req.body.discount,
+                price: +req.body.price,
+                qualities: req.body.qualities,
+                image: req.file.filename,
+                stock: +req.body.stock,
+                categories_products_id: +req.body.category,
+                condition_id: +req.body.condition,
+                updatedAt: new Date,
             },{
-                include: [{
-                    all:true
-                }]
+                where: {
+                    id : +req.params.id
+                }
             })
             .then(product => {
-                res.send(product)
+                res.redirect('/admin/list')
             })
             .catch(error => res.send(error))
 
@@ -141,13 +148,29 @@ module.exports = {
                 fs.unlinkSync(path.join(__dirname, '..', 'public', 'img', 'products', req.file.filename))
             }
             
-            let id = +req.params.id
+            /* let id = +req.params.id
             let productoAEditar = products.find(producto => producto.id === id)
 
             res.render('admin/edit',{
                 producto: productoAEditar,
                 errors:errors.mapped()
+            }) */
+
+            db.Products.findOne({
+                where: {
+                    id : +req.params.id
+                },
+                include: [{
+                    all:true
+                }]
             })
+            .then(producto => {
+                res.render('admin/edit',{
+                    producto,
+                    errors:errors.mapped()
+                })
+            })
+            .catch(error => res.send(error))
         }
     },
 
@@ -159,6 +182,7 @@ module.exports = {
             }] 
         })
         .then(producto => {
+            //return res.send(producto)
             // Agrego el producto al historial
             let productoAlHistorial = db.Removed_products.Create({
                 name: producto.name,
@@ -169,8 +193,8 @@ module.exports = {
                 qualities: producto.qualities,
                 image: producto.image,
                 stock: producto.stock,
-                condition_id: producto.condition_id,
-                categories_products_id: producto.categories_products_id,
+                condition_id: producto.condition.id,
+                categories_products_id: producto.categoryProduct.id,
                 createdAt: producto.createdAd,
                 updatedAt: producto.updatedAt
             })
@@ -191,7 +215,7 @@ module.exports = {
 
         let productosActualizados = products.filter(producto => producto.id !== id)
         guardarProductos(productosActualizados)
-        
+
         productoEliminado.id = productsRemoved[productsRemoved.length - 1].id -1
         productsRemoved.push(productoEliminado)
         guardarHistorial(productsRemoved)

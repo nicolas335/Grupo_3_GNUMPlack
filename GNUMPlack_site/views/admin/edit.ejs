@@ -90,11 +90,11 @@
         <div class="form-floating">
             <select class="form-select" name="category" id="floatingSelect" aria-label="Floating label select example">
               <option selected hidden>Select the category</option>
-              <option value="Placa de yeso" <%= producto.category === "Placa de yeso" ? "selected" : "" %> >Placa de yeso</option>
-              <option value="Placa de yeso laminado" <%= producto.category === "Placa de yeso laminado" ? "selected" : "" %> >Placa de yeso laminado</option>
-              <option value="Placa de yeso con fibras" <%= producto.category === "Placa de yeso con fibras" ? "selected" : "" %> >Placa de yeso con fibras</option>
-              <option value="Placa de lana de madera" <%= producto.category === "Placa de lana de madera" ? "selected" : "" %> >Placa de lana de madera</option>
-              <option value="Placa de cemento" <%= producto.category === "Placa de cemento" ? "selected" : "" %> >Placa de cemento</option>
+              <option value="1" <%= producto.categoryProduct.name === "Placa de yeso" ? "selected" : "" %> >Placa de yeso</option>
+              <option value="2" <%= producto.categoryProduct.name === "Placa de yeso laminado" ? "selected" : "" %> >Placa de yeso laminado</option>
+              <option value="3" <%= producto.categoryProduct.name === "Placa de yeso con fibras" ? "selected" : "" %> >Placa de yeso con fibras</option>
+              <option value="4" <%= producto.categoryProduct.name === "Placa de lana de madera" ? "selected" : "" %> >Placa de lana de madera</option>
+              <option value="5" <%= producto.categoryProduct.name === "Placa de cemento" ? "selected" : "" %> >Placa de cemento</option>
             </select>
             <label for="floatingSelect">Category</label>
             <small> <%= (locals.errors && errors.category ) ? errors.category.msg : '*' %> </small>
@@ -102,9 +102,9 @@
           <div class="form-floating">
             <select class="form-select" name="condition" id="floatingSelect" aria-label="Floating label select example">
               <option selected hidden>Select the condition</option>
-              <option value="destacado" <%= producto.condition === "destacado" ? "selected" : "" %> >Destacados</option>
-              <option value="oferta" <%= producto.condition === "oferta" ? "selected" : "" %> >En oferta</option>
-              <option value="" <%= producto.condition === "" ? "selected" : "" %> >Sin condición</option>
+              <option value="1" <%= producto.condition.name === "destacados" ? "selected" : "" %> >Destacados</option>
+              <option value="2" <%= producto.condition.name === "oferta" ? "selected" : "" %> >En oferta</option>
+              <option value="3" <%= producto.condition.name === "sin condicion" ? "selected" : "" %> >Sin condición</option>
             </select>
             <label for="floatingSelect">Condition</label>
             <small> <%= (locals.errors && errors.condition ) ? errors.condition.msg : '*' %> </small>

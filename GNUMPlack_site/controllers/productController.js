@@ -5,8 +5,18 @@ module.exports={
           return res.render("product",{products})
     },
      detail:(req,res)=>{
-          let id = +req.params.id
-          let productoDetallado = products.find(producto => producto.id === id)
-          return res.render("detail",{productoDetallado})
+          db.Products.findOne({
+               where: {
+                   id : req.params.id
+               },
+               include: [{
+                   all:true
+               }]
+           })
+           .then(product => {
+               //res.send(product)
+               return res.render("detail",{productoDetallado:product})
+           })
+           .catch(error => res.send(error))
    } 
 }
