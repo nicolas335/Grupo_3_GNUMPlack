@@ -18,6 +18,8 @@ router.get('/login',loginCheck,login);
 router.post('/login',loginCheck,loginValidator,processLogin);
 
 
+
+
 router.get('/profile',noLogin,profile);
 router.delete('/logout',noLogin,logout);
 

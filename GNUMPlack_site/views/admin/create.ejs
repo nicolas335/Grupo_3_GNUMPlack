@@ -88,11 +88,11 @@
               <div class="form-floating">
                 <select class="form-select" name="category" id="floatingSelect" aria-label="Floating label select example">
                   <option value="" selected hidden>Select the category</option>
-                  <option value="Placa de yeso" <%= (locals.old && old.category === 'Placa de yeso') ? 'selected' : null %> >Placa de yeso</option>
-                  <option value="Placa de yeso laminado" <%= (locals.old && old.category === 'Placa de yeso laminado') ? 'selected' : null %> >Placa de yeso laminado</option>
-                  <option value="Placa de yeso con fibras" <%= (locals.old && old.category === 'Placa de yeso con fibras') ? 'selected' : null %> >Placa de yeso con fibras</option>
-                  <option value="Placa de lana de madera" <%= (locals.old && old.category === 'Placa de lana de madera') ? 'selected' : null %> >Placa de lana de madera</option>
-                  <option value="Placa de cemento" <%= (locals.old && old.category === 'Placa de cemento') ? 'selected' : null %> >Placa de cemento</option>
+                  <option value= 1 <%= (locals.old && old.category === 'Placa de yeso') ? 'selected' : null %> >Placa de yeso</option>
+                  <option value=  2 <%= (locals.old && old.category === 'Placa de yeso laminado') ? 'selected' : null %> >Placa de yeso laminado</option>
+                  <option value= 3 <%= (locals.old && old.category === 'Placa de yeso con fibras') ? 'selected' : null %> >Placa de yeso con fibras</option>
+                  <option value= 4 <%= (locals.old && old.category === 'Placa de lana de madera') ? 'selected' : null %> >Placa de lana de madera</option>
+                  <option value= 5  <%= (locals.old && old.category === 'Placa de cemento') ? 'selected' : null %> >Placa de cemento</option>
                 </select>
                 <label for="floatingSelect">Category</label>
                 <small> <%= (locals.errors && errors.category ) ? errors.category.msg : '*' %> </small>
@@ -100,9 +100,9 @@
               <div class="form-floating">
                 <select class="form-select" name="condition" id="floatingSelect" aria-label="Floating label select example">
                   <option value="" selected hidden>Select the condition</option>
-                  <option value="destacados" <%= (locals.old && old.condition === 'destacados') ? 'selected' : null %> >Destacados</option>
-                  <option value="oferta" <%= (locals.old && old.condition === 'oferta') ? 'selected' : null %> >Oferta</option>
-                  <option value="sin condicion" <%= (locals.old && old.condition === '') ? 'selected' : null %> >Sin condición</option>
+                  <option value= 1 <%= (locals.old && old.condition === 'destacados') ? 'selected' : null %> >Destacados</option>
+                  <option value= 2 <%= (locals.old && old.condition === 'oferta') ? 'selected' : null %> >Oferta</option>
+                  <option value= 3 <%= (locals.old && old.condition === '') ? 'selected' : null %> >Sin condición</option>
                 </select>
                 <label for="floatingSelect">Condition</label>
                 <small> <%= (locals.errors && errors.condition ) ? errors.condition.msg : '*' %> </small>
