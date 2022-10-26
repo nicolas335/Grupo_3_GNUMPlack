@@ -9,11 +9,11 @@
    
     <main class="signin">
         <h1>Editar Datos Personales</h1>
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="/user/editUser?_method=Put" method="POST" enctype="multipart/form-data">
             <h2 class="container bottom"></h2>
             <div class="container">
                 <label for="name">Nombre</label>
-                <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" value="<%= /* locals.old && old.name ? old.name : null */%><%=/*  user.first_name */ %>" >
+                <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" value="<%= user.first_name? user.first_name : "" %>" >
                 <% if (locals.errors && errors.name) { %>
                     <small><%= errors.name.msg %></small>
                 <% } %>
@@ -21,28 +21,28 @@
             </div>
             <div class="container">
                 <label for="lastName">Apellido</label>
-                <input type="text" name="lastName" id="lastName" placeholder="Ingresa tu apellido" value="<%= /* locals.old && old.lastName ? old.lastName : null%><%= user.last_name  */%>">
+                <input type="text" name="lastName" id="lastName" placeholder="Ingresa tu apellido" value="<%= user.last_name? user.last_name : "" %>">
                 <% if (locals.errors && errors.lastName) { %>
                     <small><%= errors.lastName.msg %></small>
                 <% } %>
             </div>
             <div class="container">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Ingresa tu email" value="<%=/*  locals.old && old.email ? old.email : null%><%= user.email  */%>">
+                <input type="email" name="email" id="email" placeholder="Ingresa tu email" value="<%= user.email? user.email : "" %>">
                 <% if (locals.errors && errors.email) { %>
                     <small><%= errors.email.msg %></small>
                 <% } %>
             </div>
             <div class="container">
                 <label for="phoneNumber">Celular</label>
-                <input type="number" name="phoneNumber" id="phoneNumber" placeholder="11..." value="<%=/*  locals.old && old.phoneNumber ? old.phoneNumber : null%><%= user.phonenumber  */%>">
+                <input type="number" name="phoneNumber" id="phoneNumber" placeholder="11..." value="<%=user.phoneNumber? user.phoneNumber: ""%>">
                 <% if (locals.errors && errors.phoneNumber) { %>
                     <small><%= errors.phoneNumber.msg %></small>
                 <% } %>
             </div>
             <div class="container">
                 <label for="city">Ciudad</label>
-                <input type="text" name="city" id="city" placeholder="Ej: Buenos Aires, etc" value="<%= /* locals.old && old.city ? old.city : null%><%= user.city */ %>">
+                <input type="text" name="city" id="city" placeholder="Ej: Buenos Aires, etc" value="<%= user.city? user.city: "" %>">
                 <% if (locals.errors && errors.city) { %>
                     <small><%= errors.city.msg %></small>
                 <% } %>
