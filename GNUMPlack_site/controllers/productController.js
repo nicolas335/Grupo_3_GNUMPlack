@@ -1,5 +1,6 @@
 //const products = require('../data/products.json')
 const db = require('../database/models')
+const {Op} = require('Sequelize')
 
 
 module.exports={
@@ -25,5 +26,28 @@ module.exports={
                return res.render("detail",{productoDetallado:product})
            })
            .catch(error => res.send(error))
-   } 
+   },
+   search: (req,res) => {
+    let busqueda = req.query.search
+
+    db.Products.findAll({
+        where: {
+            [Op.or]: [
+                {name: {[Op.substring]: busqueda}},
+                {description: {[Op.substring]: busqueda}},
+                {qualities: {[Op.substring]: busqueda}},
+                {advantages: {[Op.substring]: busqueda}}
+            ]
+        }
+    })
+    .then(resultado => {
+        //return res.send(resultado)
+        res.render('search',{
+            products:resultado,
+            busqueda
+        })
+    })
+    .catch(error => res.send(error))
+
+   }
 }

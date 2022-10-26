@@ -10,11 +10,11 @@
 
   <% if (locals.userLogin && locals.userLogin.categories_users_id === 2) { %>
     <div class="adminIcon">
-      <a href="admin/list"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
+      <a href="/admin/list"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
     </div>
 <% } %>
   
-    <form action="/search" method="get">
+    <form action="/product/search" method="get">
         <input type="text" name="search" id="search" class="searchBar" placeholder="Busque aquí...">
         <button type="submit" class="lupa"><i class="fas fa-search"></i></button>
     </form>
