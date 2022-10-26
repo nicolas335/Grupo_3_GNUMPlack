@@ -1,88 +1,130 @@
 .profile{
-    background: rgba(237, 237, 237, 1);
+    background: rgba(0, 0, 0, .85);
 }
-.profile main{
-    height: 70vh;
+.profile .seccion-perfil-usuario .perfil-usuario-body,
+.profile .seccion-perfil-usuario {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-}
-.profile main section .container-top{
-    margin-top: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.profile main section article .container-component{
-    width: 300px;
-    box-shadow: 6px 3px 20px 0px rgba(0,0,0,0.68);
-    -webkit-box-shadow: 6px 3px 20px 0px rgba(0,0,0,0.68);
-    -moz-box-shadow: 6px 3px 20px 0px rgba(0,0,0,0.68);
-    margin: 10px;
-}
-.profile main section article div .container-accountNav{
-    text-decoration: none;
-    transition: color .3s ease-in-out;
-    display: block;
-    margin: 5px;
     position: relative;
-    overflow: hidden;
-}
-.profile main section article div div .account-data{
-    margin: 0;
-    border: 0;
-    color: #fff;
-    padding: 15px;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.profile main section article div div .account-data .headline{
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    text-transform: uppercase;
-    margin-bottom: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.profile main section article div div .account-data .lead{
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: small;
-}
-.profile main section article div div a .accountNav-bg{
-    width: 100%;
-    height: 140px;
-    opacity: .85;
-    transition: all .3s ease-in-out;
-}
-.profile main h2{
-    text-transform: capitalize;
-}
-.profile main section article div h4{
-    color: rgba(25, 93, 253, .8);
-}
-.profile main section article div .user-image{
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-}
-.profile main button{
-    border: none;
-    background-color: white;
-    height: 40px;
-    color:black;
-    border-radius: 8px;
-    margin-top: 40px;
+    
 }
 
-@media(min-width :768px){
-    .profile main section .container-top{
-        margin-top: 250px;
+.profile .seccion-perfil-usuario .perfil-usuario-avatar {
+    display: flex;
+    width: 180px;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+    border: 7px solid #FFFFFF;
+    background-color: #DFE5F2;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    z-index: 1;
+    margin: 20px;
+} 
+.profile .seccion-perfil-usuario .perfil-usuario-avatar .boton-avatar{
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    border: 0;
+    background-color: #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+ .profile .seccion-perfil-usuario .perfil-usuario-avatar img {
+    width: 100%;
+    position: relative;
+    border-radius: 50%;
+} 
+
+.profile .seccion-perfil-usuario .perfil-usuario-body {
+    width: 70%;
+    position: relative;
+    max-width: 750px;
+}
+
+.profile .seccion-perfil-usuario .perfil-usuario-body .titulo {
+    display: block;
+    width: 100%;
+    font-size: 1.75em;
+    margin-bottom: 0.5rem;
+}
+   
+.profile .seccion-perfil-usuario .perfil-usuario-datos,
+.profile .seccion-perfil-usuario .perfil-usuario-bio {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    background-image: url(../img/profile/fondo-div-user.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.profile .seccion-perfil-usuario .perfil-usuario-bio {
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.profile .seccion-perfil-usuario .lista-datos {
+    width: 50%;
+    list-style: none;
+}
+
+.profile .seccion-perfil-usuario .lista-datos li {
+    padding: 5px 0;
+}
+
+.profile .seccion-perfil-usuario .lista-datos li>.icono {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.profile main section .perfil-usuario-last{
+    display: inline-block; 
+    text-align: center;
+    padding: 1rem .5rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    background-image: url(../img/profile/fondo-div-user.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    width: 10%;
+    margin: 15px 10px;
+}
+
+.profile main section .perfil-usuario-last form button, .profile main section .perfil-usuario-last a button{
+    background: none;
+    cursor: pointer;
+}
+
+.profile main .container-section{
+    display: flex;
+    justify-content: center;
+}
+
+
+/* adaptacion a dispositivos */
+@media (max-width: 750px) {
+    .profile .seccion-perfil-usuario .lista-datos {
+        width: 100%;
     }
+
+    .profile .seccion-perfil-usuario .perfil-usuario-portada,
+    .profile .seccion-perfil-usuario .perfil-usuario-body {
+        width: 95%;
+    }
+
 }

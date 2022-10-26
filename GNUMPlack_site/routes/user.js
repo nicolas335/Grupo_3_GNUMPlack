@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-let {signin,login,processLogin,processRegister,profile,logout} = require ('../controllers/userController');
+let {signin,login,processLogin,processRegister,profile,logout, test} = require ('../controllers/userController');
 
 const noLogin = require('../middlewares/noLogin')
 const loginCheck = require('../middlewares/loginCkeck')
@@ -23,5 +23,6 @@ router.post('/login',loginCheck,loginValidator,processLogin);
 router.get('/profile',noLogin,profile);
 router.delete('/logout',noLogin,logout);
 
+router.get('/editUser', test);
 
 module.exports = router;

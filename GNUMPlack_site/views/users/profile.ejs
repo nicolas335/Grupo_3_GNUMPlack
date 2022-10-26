@@ -1,50 +1,58 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('../partials/head') %> 
-<body class ="profile">
-    <%- include('../partials/header') %> 
+
+    <%- include("../partials/head") %> 
+
+<body class="profile">
+
+    <%- include("../partials/header") %> 
+
+
     <main>
+        <form action="" method="post" enctype="multipart/form-data">
+        <section class="seccion-perfil-usuario">
+            
+            <div class="perfil-usuario-avatar">
+                <img src="/img/users/default-profile-image.jpg " alt="img-avatar">
+                    <button type="button" class="boton-avatar">
+                        <i class="far fa-image"></i>
+                    </button>
+            </div>
 
-        <section>
-            <article class="container-top">
-                <div>
-                <h2>MI PERFIL</h2>
-                <h4>email@email.com</h4>
-                <img src="/img/users/<%= locals.userLogin.image %> "alt="" class="user-image">
-                </div>
-            </article>
-            <article>
-                <div class="container-component">
-                <div class="container-accountNav">
-                    <a href="/" target="_blank" rel="noopener noreferrer">
-                    <img class="accountNav-bg" title="Visualizá y editá tus datos personales" alt="micuenta_datos.jpg" src="https://medias.musimundo.com/medias/?context=bWFzdGVyfGltYWdlc3w0MjI4NHxpbWFnZS9qcGVnfGltYWdlcy9oYjMvaDhjLzg3OTYyNDYyNDU0MDYuanBnfDhhZDMzY2Q1MDM3M2FjMmNlOGQzNTJjZjQyYmUzY2E1ZTAyMGNmZjcxOTE0MDRjNDNkZTJjMGRlZDdlOWY0YmE">
-                   </a>
-                   <div class="account-data">
-                    <h5 class="headline">Mis datos personales</h5>
-                    <p class="lead">Visualizá y editá tus datos personales</p>
-                   </div>
-                </div>
-                </div>
-                <div class="container-component">
-                    <div class="container-accountNav">
-                        <a href="/" target="_blank" rel="noopener noreferrer">
-                        <img class="accountNav-bg shop-img" title="Mis compras" alt="Mis compras" src="/img/profile/myPurchases.jpg">
-                       </a>
-                       <div class="account-data">
-                        <h5 class="headline">Mis compras</h5>
-                        <p class="lead">Visualizá tus compras</p>
-                       </div>
-                    </div>
-                    </div>
-            </article>
+            <div class="perfil-usuario-body">
 
+                <div class="perfil-usuario-bio">
+                    <h3 class="titulo">Nombre de usuario </h3>
+                </div>
+                <div class="perfil-usuario-datos">
+                <ul class="lista-datos">
+                    <li><i class="icono fa-solid fa-cart-shopping"></i>Mi Carrito </li>
+                    <li><i class="icono fas fa-phone-alt"></i>Teléfono: 111111111 </i></li>
+                </ul>
+                <ul class="lista-datos">
+                    <li><i class="icono fas fa-map-marker-alt"></i> Ciudad: Lorem ipsum dolor </li>
+                    <li><i class="icono fas fa-solid fa-envelope"></i>Email: email@hotmail.com </li>
+                </ul>
+                </div>
+            </div>
         </section>
-        
-
-        <form action="/user/logout?_method=DELETE" method="post">
-            <button type="submit"> Cerrar Sesion</button>
         </form>
-
+        <section class="container-section">
+                <div class="perfil-usuario-last">
+                    <form action="/user/logout?_method=DELETE" method="post">
+                        <button type="submit">Cerrar Sesión</button>
+                    </form>
+                </div>
+                <div class="perfil-usuario-last">
+                <a href="/user/editUser">
+                    <button>Editar Datos</button>
+                    </a>
+                </div>
+        </section>
     </main>
+
+    <%- include("../partials/footer") %> 
+    
 </body>
+
 </html>

@@ -5,9 +5,6 @@ let path = require('path');
 let products = require('../data/products.json');
 const db = require('../database/models')
 
-let db = require('../database/models')
-
-
 let guardarProductos = (dato) => fs.writeFileSync(path.join(__dirname,"../data/products.json"),JSON.stringify(dato,null,4),'utf-8')
 let productsRemoved = require('../data/productsRemoved.json')
 guardarHistorial = (dato) => fs.writeFileSync(path.join(__dirname,'../data/productsRemoved.json'),JSON.stringify(dato,null,4),'utf-8')

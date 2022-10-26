@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include("../partials/head") %> 
+    
+<body class="signin">
+    
+    <%- include("../partials/header") %>
+   
+    <main class="signin">
+        <h1>Editar Datos Personales</h1>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <h2 class="container bottom"></h2>
+            <div class="container">
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" value="<%= /* locals.old && old.name ? old.name : null */%><%=/*  user.first_name */ %>" >
+                <% if (locals.errors && errors.name) { %>
+                    <small><%= errors.name.msg %></small>
+                <% } %>
+                
+            </div>
+            <div class="container">
+                <label for="lastName">Apellido</label>
+                <input type="text" name="lastName" id="lastName" placeholder="Ingresa tu apellido" value="<%= /* locals.old && old.lastName ? old.lastName : null%><%= user.last_name  */%>">
+                <% if (locals.errors && errors.lastName) { %>
+                    <small><%= errors.lastName.msg %></small>
+                <% } %>
+            </div>
+            <div class="container">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Ingresa tu email" value="<%=/*  locals.old && old.email ? old.email : null%><%= user.email  */%>">
+                <% if (locals.errors && errors.email) { %>
+                    <small><%= errors.email.msg %></small>
+                <% } %>
+            </div>
+            <div class="container">
+                <label for="phoneNumber">Celular</label>
+                <input type="number" name="phoneNumber" id="phoneNumber" placeholder="11..." value="<%=/*  locals.old && old.phoneNumber ? old.phoneNumber : null%><%= user.phonenumber  */%>">
+                <% if (locals.errors && errors.phoneNumber) { %>
+                    <small><%= errors.phoneNumber.msg %></small>
+                <% } %>
+            </div>
+            <div class="container">
+                <label for="city">Ciudad</label>
+                <input type="text" name="city" id="city" placeholder="Ej: Buenos Aires, etc" value="<%= /* locals.old && old.city ? old.city : null%><%= user.city */ %>">
+                <% if (locals.errors && errors.city) { %>
+                    <small><%= errors.city.msg %></small>
+                <% } %>
+            </div>
+            <div class="container">
+                <label for="pass">Contraseña</label>
+                <input type="password" name="pass" id="pass" placeholder="Ingresa tu contraseña">
+                <% if (locals.errors && errors.pass) { %>
+                    <small><%= errors.pass.msg %></small>
+                <% } %>
+            </div>
+            <div class="container">
+                <label for="pass2">Confirmar tu contraseña</label>
+                <input type="password" name="pass2" id="pass2" placeholder="Confirmar contraseña">
+                <% if (locals.errors && errors.pass2) { %>
+                    <small><%= errors.pass2.msg %></small>
+                <% } %>
+            </div>
+            <div class="container">
+                <label for="signinFile" >Cambiar imagen</label>
+                  <input class="signinFile" type="file" id="signinFile" name="imageUser" >
+                  <% if (locals.errors && errors.imageUser) { %>
+                    <small><%= errors.imageUser.msg %> </small>
+                <% } %>
+            </div>  
+            <h2 class="bottom"></h2>
+            <div class="bottom">
+                <button type="submit">Guardar Datos</button>
+                <button type="reset">Cancelar</button>
+            </div>
+
+        </form>
+
+    </main>
+    
+    <%- include("../partials/footer") %> 
+
+</body>
+
+</html>

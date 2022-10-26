@@ -108,5 +108,11 @@ module.exports ={
 
 
         return res.redirect('/')
+    },
+    test: (req, res) => {  
+
+    return res.render('users/editUser')
     }
+        
 }
+
