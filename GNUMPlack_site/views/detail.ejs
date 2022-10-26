@@ -12,18 +12,18 @@
                 <article class="descripcion">
                     <p class="textoDescripcion"><%= productoDetallado.description %> </p>
                     <div class="imgPrincipal">
-                        <img src="/img/<%= productoDetallado.image %> " alt="placa de yeso">
+                        <img src="/img/products/<%= productoDetallado.image %> " alt="placa de yeso">
                     </div>
-                    <% productoDetallado.qualities.forEach(qualities => { %>
+                    <% productoDetallado.qualities.split('.,').forEach(qualities => { %>
                         <p class="texto"><%= qualities %> </p>
                     <% }) %>
                     <div class="lista">
-                        <% productoDetallado.qualities.forEach(qualities => { %>
+                        <% productoDetallado.qualities.split('.,').forEach(qualities => { %>
                         <p class="textoDesktop"><%= qualities %> </p>
                         <% }) %>
                         <ul>
                             <h3>Ventajas/Aplicacion</h3>
-                            <% productoDetallado.advantage.forEach(advantage => { %>
+                            <% productoDetallado.advantages.split('.,').forEach(advantage => { %>
                                 <li><%= advantage %> </li>
                             <% }) %>
                         </ul>

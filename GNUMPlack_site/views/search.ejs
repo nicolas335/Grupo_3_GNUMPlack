@@ -7,7 +7,7 @@
     <%- include ("./partials/header") %> 
 
     <main class="product">
-        <h1>Productos</h1>
+        <h1>Resultados de la busqueda: <%= busqueda %> </h1>
         <section>
             <% products.forEach(producto => { %>
                 <article class="contenedor">
@@ -19,9 +19,7 @@
                         <a href="/product/detail/<%= producto.id %>" target="_blank" ><img class="placas" src="/img/products/<%- producto.image %> " alt="placa de yeso" ></a>
                     </div>
                 </article>
-             
             <% }) %>
-           
         </section>
     </main>
 <%- include ("./partials/footer") %> 

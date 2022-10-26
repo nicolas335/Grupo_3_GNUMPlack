@@ -31,6 +31,9 @@ module.exports = {
       qualities:{
         type: Sequelize.STRING(600)
       },
+      advantages:{
+        type: Sequelize.STRING(600)
+      },
       image:{
         type: Sequelize.STRING(100)
       },

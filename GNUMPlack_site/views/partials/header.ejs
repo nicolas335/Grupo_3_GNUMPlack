@@ -10,11 +10,11 @@
 
   <% if (locals.userLogin && locals.userLogin.categories_users_id === 2) { %>
     <div class="adminIcon">
-      <a href="admin/list"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
+      <a href="/admin/list"><i class="fa-solid fa-wand-magic-sparkles"></i></a>
     </div>
 <% } %>
   
-    <form action="/search" method="get">
+    <form action="/product/search" method="get">
         <input type="text" name="search" id="search" class="searchBar" placeholder="Busque aquí...">
         <button type="submit" class="lupa"><i class="fas fa-search"></i></button>
     </form>
@@ -34,7 +34,7 @@
   <nav id="menu">
           <ul>
             <% if (locals.userLogin) { %>
-              <li><a href="/user/profile">Bienvenido <%= locals.userLogin.name %> </a></li>
+              <li><a href="/user/profile">Bienvenido <%= locals.userLogin.first_name %> </a></li>
               <li><a href="/product">Productos</a></li>
               <li><a href="/aboutUs">Sobre Nosotros</a></li>
               <li><a href="#footer">Contáctanos</a></li>
