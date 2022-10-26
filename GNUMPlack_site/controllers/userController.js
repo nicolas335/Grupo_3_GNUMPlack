@@ -95,7 +95,7 @@ module.exports ={
         return res.render('users/profile')
     },
     editUser:() =>{
-        editarUser: (req, res) => {  
+        editUser: (req, res) => {  
             let id = +req.params.id;
             db.User.findOne({
                 where: {
