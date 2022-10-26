@@ -12,16 +12,16 @@
         <form action="/user/editUser?_method=PUT" method="POST" enctype="multipart/form-data">
             <h2 class="container bottom"></h2>
             <div class="container">
-                <label for="name">Nombre</label>
-                <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" value="<%= user.first_name? user.first_name : "" %>" >
+                <label for="first_name">Nombre</label>
+                <input type="text" name="first_name" id="name" placeholder="Ingresa tu nombre" value="<%= user.first_name? user.first_name : "" %>" >
                 <% if (locals.errors && errors.name) { %>
                     <small><%= errors.name.msg %></small>
                 <% } %>
                 
             </div>
             <div class="container">
-                <label for="lastName">Apellido</label>
-                <input type="text" name="lastName" id="lastName" placeholder="Ingresa tu apellido" value="<%= user.last_name? user.last_name : "" %>">
+                <label for="last_name">Apellido</label>
+                <input type="text" name="last_name" id="lastName" placeholder="Ingresa tu apellido" value="<%= user.last_name? user.last_name : "" %>">
                 <% if (locals.errors && errors.lastName) { %>
                     <small><%= errors.lastName.msg %></small>
                 <% } %>

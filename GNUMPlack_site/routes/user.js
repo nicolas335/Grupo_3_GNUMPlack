@@ -25,6 +25,6 @@ router.get('/profile',noLogin,profile);
 router.delete('/logout',noLogin,logout);
 
 router.get('/editUser', editUser);
-router.put('/editUser',editUserValidation,processEdit);
+router.put('/editUser', uploadFile.single('imageUser'),editUserValidation,processEdit);
 
 module.exports = router;

@@ -18,7 +18,7 @@ module.exports = {
         }
         if (errors.isEmpty()) {
             let { name, lastName, email, pass, phoneNumber, city, gender } = req.body;
-
+            //return res.send(req.body)
             db.Users.create({
                 first_name: name,
                 last_name: lastName,
@@ -118,6 +118,7 @@ module.exports = {
     },
     processEdit: (req, res) => {
         let errors = validationResult(req);
+        //return res.send(errors)
         if (req.fileValidationError) {
             let image = {
                 param: 'imageUser',
@@ -126,12 +127,21 @@ module.exports = {
             errors.errors.push(image);
         }
         if (errors.isEmpty()) {
-            let { name, lastName, email, phoneNumber, city} = req.body;
+            let { first_name, last_name, email, phoneNumber, city} = req.body;
         
-            return res.send(req.body)
-        db.Users.update({
-            first_name: name,
-            last_name: lastName,
+           // return res.send(req.body)
+            db.Users.findOne({
+                where: {
+                    id: req.session.userLogin.id,
+                }/* ,
+                include: [{
+                    all: true,
+                }] */
+            })
+            .then(user => {
+            db.Users.update({
+            first_name: first_name,
+            last_name: last_name,
             email: email,   
             phoneNumber: +phoneNumber,
             city: city,
@@ -143,7 +153,7 @@ module.exports = {
         )
         .then(usuario => res.redirect("/user/profile"))
         .catch(error => res.send(error))
-    } else {
+    })} else {
         res.send(errors)
     }
     }, 
