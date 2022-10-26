@@ -9,7 +9,7 @@
    
     <main class="signin">
         <h1>Editar Datos Personales</h1>
-        <form action="/user/editUser?_method=Put" method="POST" enctype="multipart/form-data">
+        <form action="/user/editUser?_method=PUT" method="POST" enctype="multipart/form-data">
             <h2 class="container bottom"></h2>
             <div class="container">
                 <label for="name">Nombre</label>
@@ -47,19 +47,9 @@
                     <small><%= errors.city.msg %></small>
                 <% } %>
             </div>
-            <div class="container">
-                <label for="pass">Contraseña</label>
-                <input type="password" name="pass" id="pass" placeholder="Ingresa tu contraseña">
-                <% if (locals.errors && errors.pass) { %>
-                    <small><%= errors.pass.msg %></small>
-                <% } %>
-            </div>
-            <div class="container">
-                <label for="pass2">Confirmar tu contraseña</label>
-                <input type="password" name="pass2" id="pass2" placeholder="Confirmar contraseña">
-                <% if (locals.errors && errors.pass2) { %>
-                    <small><%= errors.pass2.msg %></small>
-                <% } %>
+            <div>
+                <span>Usted tiene la siguiente imagen:</span>
+                <img src="/img/users/<%= user.image %> " alt="">
             </div>
             <div class="container">
                 <label for="signinFile" >Cambiar imagen</label>
@@ -67,7 +57,7 @@
                   <% if (locals.errors && errors.imageUser) { %>
                     <small><%= errors.imageUser.msg %> </small>
                 <% } %>
-            </div>  
+            </div>
             <h2 class="bottom"></h2>
             <div class="bottom">
                 <button type="submit">Guardar Datos</button>

@@ -72,6 +72,7 @@ module.exports = {
 
                     //return res.send(user)
                     req.session.userLogin = {
+                        id: user.id,
                         first_name: user.first_name,
                         last_name: user.last_name,
                         email: user.email,
@@ -101,7 +102,7 @@ module.exports = {
 
         db.Users.findOne({
             where: {
-                email: req.session.userLogin.email,
+                id: req.session.userLogin.id,
             },
             include: [{
                 all: true,
@@ -125,21 +126,25 @@ module.exports = {
             errors.errors.push(image);
         }
         if (errors.isEmpty()) {
-            let { name, lastName, email, pass, phoneNumber, city, gender } = req.body;
+            let { name, lastName, email, phoneNumber, city} = req.body;
         
-
+            return res.send(req.body)
         db.Users.update({
             first_name: name,
             last_name: lastName,
-            email: email,
-
-            phoneNumber: phoneNumber,
+            email: email,   
+            phoneNumber: +phoneNumber,
             city: city,
+            updatedAt: new Date
              //req.file ? req.file.filename : "",
-
-        })
+        },{
+            where: {id: req.session.userLogin.id}
+        }
+        )
         .then(usuario => res.redirect("/user/profile"))
         .catch(error => res.send(error))
+    } else {
+        res.send(errors)
     }
     }, 
 
