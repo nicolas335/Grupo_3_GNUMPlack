@@ -9,11 +9,10 @@
 
 
     <main>
-        <form action="" method="post" enctype="multipart/form-data">
         <section class="seccion-perfil-usuario">
             
             <div class="perfil-usuario-avatar">
-                <img src="/img/users/default-profile-image.jpg " alt="img-avatar">
+                <img src="/img/users/<%= user.image %> " alt="img-avatar">
                     <button type="button" class="boton-avatar">
                         <i class="far fa-image"></i>
                     </button>
@@ -22,21 +21,20 @@
             <div class="perfil-usuario-body">
 
                 <div class="perfil-usuario-bio">
-                    <h3 class="titulo">Nombre de usuario </h3>
+                    <h3 class="titulo"><%= user.first_name %> <%= user.last_name %></h3>
                 </div>
                 <div class="perfil-usuario-datos">
                 <ul class="lista-datos">
-                    <li><i class="icono fa-solid fa-cart-shopping"></i>Mi Carrito </li>
-                    <li><i class="icono fas fa-phone-alt"></i>Teléfono: 111111111 </i></li>
+                    <li><i class="icono fa-solid fa-cart-shopping"></i><a href="/cart">Mi carrito</a></li>
+                    <li><i class="icono fas fa-phone-alt"></i>Teléfono: <%= user.phoneNumber %>  </i></li>
                 </ul>
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-map-marker-alt"></i> Ciudad: Lorem ipsum dolor </li>
-                    <li><i class="icono fas fa-solid fa-envelope"></i>Email: email@hotmail.com </li>
+                    <li><i class="icono fas fa-map-marker-alt"></i> Ciudad: <%= user.city %>  </li>
+                    <li><i class="icono fas fa-solid fa-envelope"></i>Email: <%= user.email %>  </li>
                 </ul>
                 </div>
             </div>
         </section>
-        </form>
         <section class="container-section">
                 <div class="perfil-usuario-last">
                     <form action="/user/logout?_method=DELETE" method="post">

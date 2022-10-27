@@ -96,7 +96,14 @@ module.exports = {
         }
     },
     profile: (req, res) => {
-        return res.render('users/profile')
+        db.Users.findOne({
+            where: {
+                id: req.session.userLogin.id,
+            }
+        })
+        .then(user => {
+            return res.render('users/profile',{user})
+        })
     },
     editUser: (req, res) => {
 
@@ -145,8 +152,8 @@ module.exports = {
             email: email,   
             phoneNumber: +phoneNumber,
             city: city,
-            updatedAt: new Date
-             //req.file ? req.file.filename : "",
+            updatedAt: new Date,
+            image: req.file ? req.file.filename : user.image,
         },{
             where: {id: req.session.userLogin.id}
         }
@@ -154,7 +161,19 @@ module.exports = {
         .then(usuario => res.redirect("/user/profile"))
         .catch(error => res.send(error))
     })} else {
-        res.send(errors)
+        db.Users.findOne({
+            where: {
+                id: req.session.userLogin.id,
+            }
+        })
+        .then(user => {
+            console.log(user);
+            console.log(errors.mapped());
+            res.render('users/editUser',{
+                user,
+                errors: errors.mapped()
+            })
+        })
     }
     }, 
 

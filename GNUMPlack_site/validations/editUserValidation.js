@@ -17,7 +17,7 @@ module.exports = [
           }
       })
       .then(user => {
-          if(user){
+          if(user && user.email!==value){
               return Promise.reject('El email se encuentra registrado')
           }
       })

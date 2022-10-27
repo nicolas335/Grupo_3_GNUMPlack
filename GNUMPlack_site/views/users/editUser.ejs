@@ -14,16 +14,16 @@
             <div class="container">
                 <label for="first_name">Nombre</label>
                 <input type="text" name="first_name" id="name" placeholder="Ingresa tu nombre" value="<%= user.first_name? user.first_name : "" %>" >
-                <% if (locals.errors && errors.name) { %>
-                    <small><%= errors.name.msg %></small>
+                <% if (locals.errors && errors.first_name) { %>
+                    <small><%= errors.first_name.msg %></small>
                 <% } %>
                 
             </div>
             <div class="container">
                 <label for="last_name">Apellido</label>
                 <input type="text" name="last_name" id="lastName" placeholder="Ingresa tu apellido" value="<%= user.last_name? user.last_name : "" %>">
-                <% if (locals.errors && errors.lastName) { %>
-                    <small><%= errors.lastName.msg %></small>
+                <% if (locals.errors && errors.last_name) { %>
+                    <small><%= errors.last_name.msg %></small>
                 <% } %>
             </div>
             <div class="container">
@@ -47,17 +47,27 @@
                     <small><%= errors.city.msg %></small>
                 <% } %>
             </div>
-            <div>
-                <span>Usted tiene la siguiente imagen:</span>
-                <img src="/img/users/<%= user.image %> " alt="">
-            </div>
-            <div class="container">
-                <label for="signinFile" >Cambiar imagen</label>
-                  <input class="signinFile" type="file" id="signinFile" name="imageUser" >
-                  <% if (locals.errors && errors.imageUser) { %>
-                    <small><%= errors.imageUser.msg %> </small>
-                <% } %>
-            </div>
+            <% if (user.image !== 'default-profile-image.jfif') { %>
+                <div class="container">
+                    <span>Usted tiene la siguiente imagen:</span>
+                    <img src="/img/users/<%= user.image %> " alt="" class="image-profile">
+                </div>
+                <div class="container">
+                    <label for="signinFile" >Cambiar imagen</label>
+                      <input class="signinFile" type="file" id="signinFile" name="imageUser" >
+                      <% if (locals.errors && errors.imageUser) { %>
+                        <small><%= errors.imageUser.msg %> </small>
+                    <% } %>
+                </div>
+             <% } else { %>
+                <div class="container">
+                    <label for="signinFile" >Agregar imagen</label>
+                      <input class="signinFile" type="file" id="signinFile" name="imageUser" >
+                      <% if (locals.errors && errors.imageUser) { %>
+                        <small><%= errors.imageUser.msg %> </small>
+                    <% } %>
+                </div>
+            <% } %>
             <h2 class="bottom"></h2>
             <div class="bottom">
                 <button type="submit">Guardar Datos</button>

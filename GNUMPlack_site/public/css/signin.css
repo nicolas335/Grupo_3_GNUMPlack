@@ -68,6 +68,9 @@
     font-family: var(--fuenteSubtitulos)
 
 }
+.signin .container .image-profile{
+    width: 100%;
+}
 
 .signin .bottom {
     margin-bottom: 15px;
