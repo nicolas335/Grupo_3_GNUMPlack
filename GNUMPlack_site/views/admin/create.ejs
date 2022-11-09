@@ -52,7 +52,8 @@
         max-width: 1800px;
         margin: 0 auto;}
         h1{color: white;} 
-        form{padding: 0 10%;}      
+        form{padding: 0 10%;}
+        div{margin-top: 15px;}     
         </style>
       <h1>Creating a new product!</h1>
 
@@ -61,74 +62,74 @@
               <div class="form-floating">
                   <input type="text" name="name" class="form-control" id="name" placeholder="name" value="<%= locals.old ? old.name : null %>">
                   <label for="name">Name</label>
-                  <small> <%= (locals.errors && errors.name) ? errors.name.msg : '*' %> </small>
+                  <small id="nameError"> <%= (locals.errors && errors.name) ? errors.name.msg : '*' %> </small>
               </div>
               <div class="form-floating">
                 <input type="text" name="qualities" class="form-control" id="qualities" placeholder="Qualities" value="<%= locals.old ? old.qualities : null %>">
                 <label for="qualities">Qualities</label>
                 <small>Remember to use the -- to separate elements</small><br>
-                <small> <%= (locals.errors && errors.qualities) ? errors.qualities.msg : '*' %> </small>
+                <small id="qualitiesError"> <%= (locals.errors && errors.qualities) ? errors.qualities.msg : '*' %> </small>
               </div>
               <div class="form-floating">
                 <input type="text" name="advantage" class="form-control" id="advantage" placeholder="Advantage" value="<%= locals.old ? old.advantage : null %>">
                 <label for="advantage">Advantage</label>
                 <small>Remember to use the -- to separate elements</small><br>
-                <small> <%= (locals.errors && errors.advantage) ? errors.advantage.msg : '*' %> </small>
+                <small id="advantageError"> <%= (locals.errors && errors.advantage) ? errors.advantage.msg : '*' %> </small>
               </div>
               <div class="form-floating">
                 <input type="text" name="dimensions" class="form-control" id="dimensions" placeholder="Dimensions" value="<%= locals.old ? old.dimensions : null %>">
                 <label for="dimensions">Dimensions</label>
-                <small> <%= (locals.errors && errors.dimensions ) ? errors.dimensions.msg : '*' %> </small>
+                <small id="dimensionsError"> <%= (locals.errors && errors.dimensions ) ? errors.dimensions.msg : '*' %> </small>
               </div>
               <div class="form-floating">
-                <textarea class="form-control" name="description" placeholder="Please insert the description of the product" id="floatingTextarea"><%= locals.old ? old.description : null %></textarea>
+                <textarea class="form-control" name="description" placeholder="Please insert the description of the product" id="description"><%= locals.old ? old.description : null %></textarea>
                 <label for="floatingTextarea">Description</label>
-                <small> <%= (locals.errors && errors.description ) ? errors.description.msg : '*' %> </small>
+                <small id="descriptionError"> <%= (locals.errors && errors.description ) ? errors.description.msg : '*' %> </small>
               </div>  
               <div class="form-floating">
-                <select class="form-select" name="category" id="floatingSelect" aria-label="Floating label select example">
+                <select class="form-select" name="category" id="category" aria-label="Floating label select example">
                   <option value="" selected hidden>Select the category</option>
                   <option value= 1 <%= (locals.old && old.category === 'Placa de yeso') ? 'selected' : null %> >Placa de yeso</option>
-                  <option value=  2 <%= (locals.old && old.category === 'Placa de yeso laminado') ? 'selected' : null %> >Placa de yeso laminado</option>
+                  <option value= 2 <%= (locals.old && old.category === 'Placa de yeso laminado') ? 'selected' : null %> >Placa de yeso laminado</option>
                   <option value= 3 <%= (locals.old && old.category === 'Placa de yeso con fibras') ? 'selected' : null %> >Placa de yeso con fibras</option>
                   <option value= 4 <%= (locals.old && old.category === 'Placa de lana de madera') ? 'selected' : null %> >Placa de lana de madera</option>
                   <option value= 5  <%= (locals.old && old.category === 'Placa de cemento') ? 'selected' : null %> >Placa de cemento</option>
                 </select>
                 <label for="floatingSelect">Category</label>
-                <small> <%= (locals.errors && errors.category ) ? errors.category.msg : '*' %> </small>
+                <small id="categoryError"> <%= (locals.errors && errors.category ) ? errors.category.msg : '*' %> </small>
               </div>
               <div class="form-floating">
-                <select class="form-select" name="condition" id="floatingSelect" aria-label="Floating label select example">
+                <select class="form-select" name="condition" id="condition" aria-label="Floating label select example">
                   <option value="" selected hidden>Select the condition</option>
                   <option value= 1 <%= (locals.old && old.condition === 'destacados') ? 'selected' : null %> >Destacados</option>
                   <option value= 2 <%= (locals.old && old.condition === 'oferta') ? 'selected' : null %> >Oferta</option>
                   <option value= 3 <%= (locals.old && old.condition === '') ? 'selected' : null %> >Sin condición</option>
                 </select>
                 <label for="floatingSelect">Condition</label>
-                <small> <%= (locals.errors && errors.condition ) ? errors.condition.msg : '*' %> </small>
+                <small id="conditionError"> <%= (locals.errors && errors.condition ) ? errors.condition.msg : '*' %> </small>
               </div>
               <div class="form-floating">
                   <input type="number" name="price" class="form-control" id="price" placeholder="Price" value="<%= locals.old ? old.price : null %>">
                   <label for="price">Price</label>
-                  <small> <%= (locals.errors && errors.price ) ? errors.price.msg : '*' %> </small>
+                  <small id="priceError"> <%= (locals.errors && errors.price ) ? errors.price.msg : '*' %> </small>
               </div>
               <div class="form-floating">
                   <input type="number" name="stock" class="form-control" id="stock" placeholder="Stock" value="<%= locals.old ? old.stock : null %>">
                   <label for="stock" value="1">Stock</label>
-                  <small> <%= (locals.errors && errors.stock ) ? errors.stock.msg : '*' %> </small>
+                  <small id="stockError"> <%= (locals.errors && errors.stock ) ? errors.stock.msg : '*' %> </small>
               </div>
                 <div class="form-floating">
                   <input type="number" name="discount" class="form-control" id="discount" placeholder="Discount" value="<%= locals.old ? old.discount : null %>">
-                  <label for="discount" value="0">Discount</label>
-                  <small> <%= (locals.errors && errors.discount ) ? errors.discount.msg : '*' %> </small>
+                  <label for="discount">Discount</label>
+                  <small id="discountError"> <%= (locals.errors && errors.discount ) ? errors.discount.msg : '*' %> </small>
               </div>
               <div class="mb-3">
                   <label for="formFile" class="form-label">Add image</label>
-                  <input class="form-control" type="file" id="formFile" name="image">
-                  <small> <%= (locals.errors && errors.image ) ? errors.image.msg : '*' %> </small>
+                  <input class="form-control" type="file" id="image" name="image">
+                  <small id="imageError"> <%= (locals.errors && errors.image ) ? errors.image.msg : '*' %> </small>
               </div>
               <div class="button">
-                  <button class="btn btn-outline-success" type="submit">Create Product</button>
+                  <button class="btn btn-outline-success" id="submit" type="submit">Create Product</button>
               </div>
               
           </section>
@@ -137,6 +138,7 @@
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <script src="/js/createProductsValidation.js"></script>
   </body>
 </html>
