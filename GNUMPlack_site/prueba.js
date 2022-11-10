@@ -1,4 +1,4 @@
-let productsJson = require('./data/products.json');
+/* let productsJson = require('./data/products.json');
 
 let categories_products = ["Placa de yeso","Placa de yeso laminado","Placa de yeso con fibras","Placa de lana de madera","Placa de cemento"];
 
@@ -26,4 +26,6 @@ let Products = productsJson.map(product => {
     return element
   });
 
-  console.log(Products);
+  console.log(Products); */
+
+
