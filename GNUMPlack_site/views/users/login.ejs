@@ -19,8 +19,10 @@
                     <small><%= errors.email.msg %> </small>
 
                 <% } %>
+                <small id="emailContainer"></small>
                 
             </div>
+            
             <div class="container bottom">
                 <label for="pass">Contraseña</label>
                 <input type="password" name="pass" id="pass" placeholder="Ingresa tu contraseña">
@@ -29,9 +31,11 @@
                     <small><%= errors.pass.msg %> </small>
 
                 <% } %>
+                <small id="passContainer"></small>
                 
                 
             </div>
+            
             <h2 class="bottom"></h2>
             <div class="recordarme bottom">
                 <input type="checkbox" name="recordame" id="recordame" value="Recordame">
