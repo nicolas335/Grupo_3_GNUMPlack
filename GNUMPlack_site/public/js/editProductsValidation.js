@@ -46,8 +46,8 @@ window.addEventListener('load', () => {
                 this.classList.add('is-invalid')
                 validate.name = false
                 break;
-            case !this.value.trim() > 100:
-                $('#nameError').innerHTML = 'El nombre debe tener como máximo 100 caracteres'
+                case !(this.value.trim().length > 5 && this.value.trim().length < 100):
+                    $('#nameError').innerHTML = 'El nombre debe tener al menos 5 caracteres y máximo 100 caracteres'
                 this.classList.add('is-invalid')
                 validate.name = false
                 break;
