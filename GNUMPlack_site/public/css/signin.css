@@ -82,7 +82,9 @@
     color: #000000;
     font-family: var(--fuenteSubtitulos)
 }
-
+.signin #imagenContainer{
+    text-align:center
+}
 /*tablet*/
 
 @media(min-width:461px) {
