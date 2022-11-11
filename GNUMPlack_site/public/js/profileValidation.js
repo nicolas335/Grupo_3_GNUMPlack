@@ -13,7 +13,7 @@ window.addEventListener('load', function() {
 
     // Expresiones regulares
     let regExNumber = /^[+]?([0-9][0-9]?|150)$/
-    const regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
+    let regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
 
 
     // Funcion para validar el formulario
@@ -82,7 +82,7 @@ window.addEventListener('load', function() {
                 validation.email = false
                 break;
             case !regExEmail.test(email.value):
-                $('$emailError').innerHTML = 'Debe ingresar un email válido'
+                $('#emailError').innerHTML = 'Debe ingresar un email válido'
                 $('#emailError').style.color = 'red'
                 validation.email = false
                 break
