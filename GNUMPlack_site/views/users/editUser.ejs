@@ -14,38 +14,27 @@
             <div class="container">
                 <label for="first_name">Nombre</label>
                 <input type="text" name="first_name" id="name" placeholder="Ingresa tu nombre" value="<%= user.first_name? user.first_name : "" %>" >
-                <% if (locals.errors && errors.first_name) { %>
-                    <small><%= errors.first_name.msg %></small>
-                <% } %>
-                
+                <small id="nameError"><%= (locals.errors && errors.first_name) ? errors.first_name.msg : null %></small>
             </div>
             <div class="container">
                 <label for="last_name">Apellido</label>
                 <input type="text" name="last_name" id="lastName" placeholder="Ingresa tu apellido" value="<%= user.last_name? user.last_name : "" %>">
-                <% if (locals.errors && errors.last_name) { %>
-                    <small><%= errors.last_name.msg %></small>
-                <% } %>
+                <small id="lastNameError"><%= (locals.errors && errors.last_name) ? errors.last_name.msg : null %></small>
             </div>
             <div class="container">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Ingresa tu email" value="<%= user.email? user.email : "" %>">
-                <% if (locals.errors && errors.email) { %>
-                    <small><%= errors.email.msg %></small>
-                <% } %>
+                    <small id="emailError"><%= (locals.errors && errors.email) ? errors.email.msg : null %></small>
             </div>
             <div class="container">
                 <label for="phoneNumber">Celular</label>
                 <input type="number" name="phoneNumber" id="phoneNumber" placeholder="11..." value="<%=user.phoneNumber? user.phoneNumber: ""%>">
-                <% if (locals.errors && errors.phoneNumber) { %>
-                    <small><%= errors.phoneNumber.msg %></small>
-                <% } %>
+                <small id="phoneNumberError"><%= (locals.errors && errors.phoneNumber) ? errors.phoneNumber.msg : null %></small>
             </div>
             <div class="container">
                 <label for="city">Ciudad</label>
                 <input type="text" name="city" id="city" placeholder="Ej: Buenos Aires, etc" value="<%= user.city? user.city: "" %>">
-                <% if (locals.errors && errors.city) { %>
-                    <small><%= errors.city.msg %></small>
-                <% } %>
+                <small id="cityError"><%= (locals.errors && errors.city) ? errors.city.msg : null %></small>
             </div>
             <% if (user.image !== 'default-profile-image.jfif') { %>
                 <div class="container">
@@ -55,22 +44,18 @@
                 <div class="container">
                     <label for="signinFile" >Cambiar imagen</label>
                       <input class="signinFile" type="file" id="signinFile" name="imageUser" >
-                      <% if (locals.errors && errors.imageUser) { %>
-                        <small><%= errors.imageUser.msg %> </small>
-                    <% } %>
+                      <small><%= (locals.errors && errors.imageUser) ? errors.imageUser.msg : null %> </small>
                 </div>
              <% } else { %>
                 <div class="container">
                     <label for="signinFile" >Agregar imagen</label>
                       <input class="signinFile" type="file" id="signinFile" name="imageUser" >
-                      <% if (locals.errors && errors.imageUser) { %>
-                        <small><%= errors.imageUser.msg %> </small>
-                    <% } %>
+                      <small><%= (locals.errors && errors.imageUser) ? errors.imageUser.msg : null %> </small>
                 </div>
             <% } %>
             <h2 class="bottom"></h2>
             <div class="bottom">
-                <button type="submit">Guardar Datos</button>
+                <button type="submit" id="btn">Guardar Datos</button>
                 <button type="reset">Cancelar</button>
             </div>
 
@@ -79,6 +64,7 @@
     </main>
     
     <%- include("../partials/footer") %> 
+    <script src="/js/profileValidation.js"></script>
 
 </body>
 

@@ -5,7 +5,7 @@ window.addEventListener('load', () => {
 
     const regExLetter = /^[A-Z]+$/;
     const regExExt = /\.(jpg|jpeg|png|jfif|gif|webp)$/
-    const regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
+    const regExPass = /^(?=.*\d)(?=.*[a-z]).{6,12}$/;
     const regExEmail = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
 
     let form = $('#formulario')
