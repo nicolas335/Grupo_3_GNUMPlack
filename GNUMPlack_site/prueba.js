@@ -28,4 +28,11 @@ let Products = productsJson.map(product => {
 
   console.log(Products); */
 
+  /* let invalid = {
+    name:true,
+}
+invalid.name = true
+console.log(invalid.name); */
+
+  
 
