@@ -43,14 +43,14 @@
                 </div>
                 <div class="container">
                     <label for="signinFile" >Cambiar imagen</label>
-                      <input class="signinFile" type="file" id="signinFile" name="imageUser" >
-                      <small><%= (locals.errors && errors.imageUser) ? errors.imageUser.msg : null %> </small>
+                      <input class="signinFile" type="file" id="imagen" name="imageUser" >
+                      <small id="imagenError"><%= (locals.errors && errors.imageUser) ? errors.imageUser.msg : null %> </small>
                 </div>
              <% } else { %>
                 <div class="container">
                     <label for="signinFile" >Agregar imagen</label>
-                      <input class="signinFile" type="file" id="signinFile" name="imageUser" >
-                      <small><%= (locals.errors && errors.imageUser) ? errors.imageUser.msg : null %> </small>
+                      <input class="signinFile" type="file" id="imagen" name="imageUser" >
+                      <small id="imagenError"><%= (locals.errors && errors.imageUser) ? errors.imageUser.msg : null %> </small>
                 </div>
             <% } %>
             <h2 class="bottom"></h2>

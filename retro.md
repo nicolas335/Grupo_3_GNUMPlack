@@ -130,3 +130,29 @@ No hacer la retro cuando finalizamos el sprint.
 
 ## Dejar de hacer
 Terminar las tareas sobre limite de tiempo.
+
+
+RETROSPECTIVA DEL SPRINT 7
+
+## Seguir haciendo
+La organizacion en Trello durante el Sprint.
+Organizar reuniones para ver avances del grupo.
+La comunicacion individual con el grupo, si se presentan dificultades.
+Mover las tarjetas del trello cuando esten en proceso o finalizadas.
+Hacer reuniones que duren poco.
+Etiquetar las tarjetas con dificultades.
+Agregar fechas de vencimiento en las tareas.
+
+## Hacer mas
+Puntualidad en las fechas de entrega de tareas.
+Repartir tareas equitativamente.
+
+## Empezar a hacer
+Estar al dia con playground para los sprints (o lo que se pueda).
+Estar al día con los trabajos prácticos para tener un mayor desempeño en el sprint.
+
+## Hacer menos
+No hacer la retro cuando finalizamos el sprint.
+
+## Dejar de hacer
+Terminar las tareas sobre limite de tiempo.
