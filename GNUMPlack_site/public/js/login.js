@@ -91,11 +91,11 @@ window.addEventListener('load', () => {
                 }
                 break;
             case !regExPass.test(inputPass.value):
-                $('#passContainer').innerHTML = "<small>La contraseña debe tener entre 6 y 12 caracteres </small>"
+                $('#passContainer').innerHTML = "<small>La contraseña debe tener entre 6 y 12 caracteres <br> y contener una mayuscula, una minuscula y un numero</small>"
                 email.style.border = "1px solid red"
                 errores.forEach(e => {
                     if (e.id === 1) {
-                        e.mensaje = "La contraseña debe tener entre 6 y 12 caracteres"
+                        e.mensaje = "La contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero"
                         variable = false
                     }
                 });
