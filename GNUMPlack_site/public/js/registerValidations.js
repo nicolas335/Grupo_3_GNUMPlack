@@ -225,23 +225,6 @@ window.addEventListener('load', () => {
             funcValidate(validate) 
         })
 
-        
-         
-        /* form.addEventListener('submit',(e) => {
-            
-            e.preventDefault();
-            submitContainer.innerHTML = "Tienes que completar los campos del formulario"
-            submitContainer.style.margin = "10px 0"
-            submitContainer.style.color = "red"
-            buttonSubmit.classList.add("invalid");
-            
-            if(invalid.length == 1 ){
-                buttonSubmit.classList.remove("invalid");
-                submitContainer.innerHTML = ""
-                form.submit()
-             }
-        })
-
-
-        console.log(invalid); */
+    funcValidate(validate) 
+    
 }) 
