@@ -39,7 +39,7 @@ window.addEventListener('load', () => {
         console.log(arr);
         if (!arr.includes(false)) {
             buttonSubmit.disabled = false;
-            //buttonSubmit.classList.remove("invalid");
+            buttonSubmit.classList.remove("invalid");
         } else {
             buttonSubmit.disabled = true
             /*submitContainer.innerHTML = "Tienes que completar los campos del formulario";
