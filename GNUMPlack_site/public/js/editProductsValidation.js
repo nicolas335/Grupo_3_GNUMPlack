@@ -46,8 +46,8 @@ window.addEventListener('load', () => {
                 this.classList.add('is-invalid')
                 validate.name = false
                 break;
-                case !(this.value.trim().length > 5 && this.value.trim().length < 100):
-                    $('#nameError').innerHTML = 'El nombre debe tener al menos 5 caracteres y máximo 100 caracteres'
+            case !(this.value.trim().length >= 5 && this.value.trim().length < 100):
+                $('#nameError').innerHTML = 'El nombre debe tener al menos 5 caracteres y máximo 100 caracteres'
                 this.classList.add('is-invalid')
                 validate.name = false
                 break;
@@ -68,11 +68,11 @@ window.addEventListener('load', () => {
                 this.classList.add('is-invalid')
                 validate.qualities = false
                 break;
-            case !this.value.length > 600:
-                $('#qualitiesError').innerHTML = 'Las cualidades no puede contener mas de 600 caracteres'
-                this.classList.add('is-invalid')
-                validate.qualities = false
-                break;
+                case !(this.value.trim().length >= 10 && this.value.trim().length < 600):
+                    $('#qualitiesError').innerHTML = 'Las cualidades debe contener al menos 10 caracteres y no mas de 600 caracteres'
+                    this.classList.add('is-invalid')
+                    validate.qualities = false
+                    break;
             default:
                 $('#qualitiesError').innerHTML = ''
                 this.classList.remove('is-invalid')
@@ -112,8 +112,8 @@ window.addEventListener('load', () => {
                 this.classList.add('is-invalid')
                 validate.dimensions = false
                 break;
-            case !this.value.length > 600:
-                $('#dimensionsError').innerHTML = 'Las dimensiones no puede contener mas de 45 caracteres'
+            case !(this.value.trim().length >= 10 && this.value.trim().length < 45):
+                $('#dimensionsError').innerHTML = 'Las ventajas debe contener al menos 10 caracteres y no mas de 45 caracteres'
                 this.classList.add('is-invalid')
                 validate.dimensions = false
                 break;
@@ -134,8 +134,8 @@ window.addEventListener('load', () => {
                 this.classList.add('is-invalid')
                 validate.description = false
                 break;
-            case !this.value.length > 600:
-                $('#descriptionError').innerHTML = 'La descripción no puede contener mas de 600 caracteres'
+            case !(this.value.trim().length >= 10 && this.value.trim().length < 600):
+                $('#descriptionError').innerHTML = 'La descripción debe contener al menos 10 caracteres y no mas de 600 caracteres'
                 this.classList.add('is-invalid')
                 validate.description = false
                 break;
@@ -190,6 +190,11 @@ window.addEventListener('load', () => {
                 this.classList.add('is-invalid')
                 validate.price = false
                 break;
+            /* case !regExNumber.test(this.value.trim()):
+                $('#priceError').innerHTML = 'Solo se permiten números'
+                this.classList.add('is-invalid')
+                validate.price = false
+                break; */
             case this.value.trim()<0:
                 $('#priceError').innerHTML = 'No puede ingresar un precio negativo'
                 this.classList.add('is-invalid')
@@ -218,16 +223,16 @@ window.addEventListener('load', () => {
                 this.classList.add('is-invalid')
                 validate.stock = false
                 break;
-            case !(this.value.trim()>0 && this.value.trim().length<9):
-                $('#stockError').innerHTML = 'No puede ingresar un stock negativo o mayor que 100 millones'
+            case !regExNumber.test(this.value.trim()):
+                $('#stockError').innerHTML = 'Solo se permiten números'
                 this.classList.add('is-invalid')
                 validate.stock = false
                 break;
-            /* case !this.value.trim().length<9:
-                $('#stockError').innerHTML = 'El stock no puede ser mayor que 1 millon'
+            case !(this.value.trim()>=0 && this.value.trim().length<9):
+                $('#stockError').innerHTML = 'No puede ingresar un stock negativo o mayor que 100 millones'
                 this.classList.add('is-invalid')
                 validate.stock = false
-                break;  */       
+                break;  
             default:
                 $('#stockError').innerHTML = ''
                 this.classList.remove('is-invalid')
@@ -245,7 +250,12 @@ window.addEventListener('load', () => {
                 this.classList.add('is-invalid')
                 validate.discount = false
                 break;
-            case !(this.value.trim()>0 && this.value.trim()<100):
+            case !regExNumber.test(this.value.trim()):
+                $('#discountError').innerHTML = 'Solo se permiten números'
+                this.classList.add('is-invalid')
+                validate.discount = false
+                break;
+            case !(this.value.trim()>=0 && this.value.trim()<100):
                 $('#discountError').innerHTML = 'No puede ingresar un descuento negativo o mayor que 100'
                 this.classList.add('is-invalid')
                 validate.discount = false
@@ -275,6 +285,7 @@ window.addEventListener('load', () => {
         funcValidate(validate)
     })
 
+    // Intento de capturar los imputs y comprobar si estan llenos o no
     /* let inputs = $all('input')
     console.log(inputs);
     inputs.forEach(input => {

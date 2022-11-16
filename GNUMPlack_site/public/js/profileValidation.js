@@ -9,12 +9,13 @@ window.addEventListener('load', function() {
     let email = $('#email')
     let celular = $('#phoneNumber')
     let ciudad = $('#city')
+    let imagen = $('#imagen')
     let btn = $('#btn')
 
     // Expresiones regulares
-    let regExNumber = /^[+]?([0-9][0-9]?|150)$/
+    let regExNumber = /^[A-Z]+$/i
     let regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
-
+    const regExExt = /\.(jpg|jpeg|png|jfif|gif|webp)$/
 
     // Funcion para validar el formulario
     const funcValidate = (obj) => {
@@ -22,27 +23,29 @@ window.addEventListener('load', function() {
         console.log(arr);
         if (!arr.includes(false)) {
             btn.disabled = false
-            //btn.style.backgroundColor = '#1a78fd'
         } else {
             btn.disabled = true
-            //btn.style.backgroundColor = 'var(--Jorge)'
         }
     }
 
     
     nombre.addEventListener('blur', function() {
-        console.log('salio del input');
         switch (true) {
             case !this.value.trim():
                 $('#nameError').innerHTML = 'Debe ingresar su nombre'
                 $('#nameError').style.color = 'red'
                 validation.name = false                
                 break;
-            case regExNumber.test(nombre.value.trim()):
+                case !regExNumber.test(nombre.value.trim()):
                 $('#nameError').innerHTML = 'Solo se aceptan letras'
                 $('#nameError').style.color = 'red'
                 validation.name = false                
                 break;
+            case this.value.trim().length < 3:
+                $('#nameError').innerHTML = 'Debe ingresar al menos 3 caracteres'
+                $('#nameError').style.color = 'red'
+                validation.name = false   
+                break
         
             default:
                 $('#nameError').innerHTML = null
@@ -53,18 +56,22 @@ window.addEventListener('load', function() {
     })
     
     apellido.addEventListener('blur', function() {
-        console.log('salio del input');
         switch (true) {
             case !this.value.trim():
                 $('#lastNameError').innerHTML = 'Debe ingresar su apellido'
                 $('#lastNameError').style.color = 'red'
                 validation.name = false                
                 break;
-            case regExNumber.test(apellido.value.trim()):
+            case !regExNumber.test(apellido.value.trim()):
                 $('#lastNameError').innerHTML = 'Solo se aceptan letras'
                 $('#lastNameError').style.color = 'red'
-                validation.name = false                
+                validation.name = false
                 break;
+                case this.value.trim().length < 3:
+                $('#lastNameError').innerHTML = 'Debe ingresar al menos 3 caracteres'
+                $('#lastNameError').style.color = 'red'
+                validation.name = false   
+                break
         
             default:
                 $('#lastNameError').innerHTML = null
@@ -129,12 +136,28 @@ window.addEventListener('load', function() {
         }
     })
 
+    imagen.addEventListener('change', function() {
+        //console.log(this.value);
+        switch (true) {
+            case !regExExt.exec(imagen.value):
+                $('#imagenError').innerHTML = 'Solo se permiten imagenes con formato (jpg|jpeg|png|jfif|gif|webp)'
+                validate.imagen = false
+                break;
+            default:
+                $('#imagenError').innerHTML = ''
+                validate.imagen = true
+                break;
+        }
+        funcValidate(validate)
+    })
+
     let validation = {
         nombre: true,
         apellido: true,
         email: true,
         celular: true,
-        ciudad: true
+        ciudad: true,
+        imagen: true
     }  
 
     funcValidate(validate)
