@@ -28,7 +28,6 @@ window.addEventListener('load', () => {
         phoneNumber: false,
         email: false,
         city: false,
-        image: false,
         terms: false,
         pass: false,
         pass2: false
@@ -40,11 +39,10 @@ window.addEventListener('load', () => {
         console.log(arr);
         if (!arr.includes(false)) {
             buttonSubmit.disabled = false;
-            buttonSubmit.classList.remove("invalid");
-            submitContainer.innerHTML = "";
+            //buttonSubmit.classList.remove("invalid");
         } else {
-            /* buttonSubmit.disabled = true
-            submitContainer.innerHTML = "Tienes que completar los campos del formulario";
+            buttonSubmit.disabled = true
+            /*submitContainer.innerHTML = "Tienes que completar los campos del formulario";
             submitContainer.style.margin = "10px 0";
             submitContainer.style.color = "red"; */
             buttonSubmit.classList.add("invalid");
@@ -121,11 +119,11 @@ window.addEventListener('load', () => {
                     phoneNumber.style.border = "1.5px solid red"
                     validate.phoneNumber = false
                 break;
-                case phoneNumber.value.length < 10:
+                /* case phoneNumber.value.length <= 10:
                     $("#phoneNumberContainer").innerHTML = "<small>El campo Celular debe tener al menos 10 números</small>"
                     phoneNumber.style.border = "1.5px solid red"
                     validate.phoneNumber = false
-                break;
+                break; */
                 default:
                     $("#phoneNumberContainer").innerHTML = ""
                     phoneNumber.style.border = "1px solid black"
@@ -157,8 +155,8 @@ window.addEventListener('load', () => {
                     pass.style.border = "1px solid red"
                     validate.pass = false
                 break;
-                case !regExPass.test(pass.value):
-                    $('#passContainer').innerHTML = "<small>La contraseña debe tener entre 6 y 12 caracteres <br> y contener una mayuscula, una minuscula y un numero</small>"
+                case !pass.length > 8:
+                    $('#passContainer').innerHTML = "<small>La contraseña debe tener un minimo de 8 caracteres</small>"
                     email.style.border = "1px solid red"
                     validate.pass = false
                 break;
@@ -174,17 +172,16 @@ window.addEventListener('load', () => {
             switch (true) {
                 case pass2.value != pass.value:
                     $('#passContainer2').innerHTML = "<small>Las contraseñas no coinciden</small>"
-                    error.mensaje = "Las contraseñas no coinciden"
                     pass2.style.border = "1px solid red"
-                
+                    validate.pass2 = false
                 break;
                 case !pass2.value:
                     $('#passContainer2').innerHTML = "<small>La confirmacion de la contraseña no puede estar vacia</small>"
                     pass2.style.border = "1px solid red"
                     validate.pass2 = false
                     break;
-                case pass2.value < 6:
-                   $("#passContainer2").innerHTML = "<small>El campo debe tener al menos 6 digitos</small>"
+                case pass2.length < 8:
+                   $("#passContainer2").innerHTML = "<small>El campo debe tener al menos 8 caracteres</small>"
                    pass2.style.border = "1px solid red"
                    validate.pass2 = false
                 break;  
@@ -215,14 +212,14 @@ window.addEventListener('load', () => {
             switch (true) {
             case !regExExt.exec(image.value):
                 $('#imagenContainer').innerHTML = "Solo se permite formatos: <br> (jpg|jpeg|png|jfif|gif|webp)"
-                validate.image = false 
+
             break;
             default:
-                $('#imagenContainer').innerHTML = null
-                validate.image = true
+                $('#imagenContainer').innerHTML = ""
+                
             break;
             }
-            funcValidate(validate) 
+             
         })
 
     funcValidate(validate) 
