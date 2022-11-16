@@ -14,59 +14,37 @@
             <div class="container">
                 <label for="name">Nombre</label>
                 <input type="text" name="name" id="name" placeholder="Ingresa tu nombre" value="<%= locals.old && old.name ? old.name : null%>" >
-                <div id="namesContainer"></div>
-                <% if (locals.errors && errors.name) { %>
-                    <small><%= errors.name.msg %></small>
-                <% } %>
-                
+                <div id="namesContainer"></div>  
             </div>
             <div class="container">
                 <label for="lastName">Apellido</label>
                 <input type="text" name="lastName" id="lastName" placeholder="Ingresa tu apellido" value="<%= locals.old && old.lastName ? old.lastName : null%>">
                 <div id="lastNameContainer"></div>
-                <% if (locals.errors && errors.lastName) { %>
-                    <small><%= errors.lastName.msg %></small>
-                <% } %>
             </div>
             <div class="container">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" placeholder="Ingresa tu email" value="<%= locals.old && old.email ? old.email : null%>">
                 <div id="emailContainer"></div>
-                <% if (locals.errors && errors.email) { %>
-                    <small><%= errors.email.msg %></small>
-                <% } %>
             </div>
             <div class="container">
                 <label for="pass">Contraseña</label>
                 <input type="password" name="pass" id="pass" placeholder="Ingresa tu contraseña">
-                <div id="passContainer"></div>
-                <% if (locals.errors && errors.pass) { %>
-                    <small><%= errors.pass.msg %></small>
-                <% } %>
+                <div id="passContainer"></div>               
             </div>
             <div class="container">
                 <label for="pass2">Confirmar tu contraseña</label>
                 <input type="password" name="pass2" id="pass2" placeholder="Confirmar contraseña">
-                <div id="passContainer2"></div>
-                <% if (locals.errors && errors.pass2) { %>
-                    <small><%= errors.pass2.msg %></small>
-                <% } %>
+                <div id="passContainer2"></div>                
             </div>
             <div class="container">
                 <label for="phoneNumber">Celular</label>
                 <input type="number" name="phoneNumber" id="phoneNumber" placeholder="11..." value="<%= locals.old && old.phoneNumber ? old.phoneNumber : null%>">
-                <div id="phoneNumberContainer"></div>
-                <% if (locals.errors && errors.phoneNumber) { %>
-                    <small><%= errors.phoneNumber.msg %></small>
-                <% } %>
+                <div id="phoneNumberContainer"></div>                
             </div>
             <div class="container">
                 <label for="city">Ciudad</label>
                 <input type="text" name="city" id="city" placeholder="Ej: Buenos Aires, etc" value="<%= locals.old && old.city ? old.city : null%>">
-                <div id="cityContainer"></div>
-                <% if (locals.errors && errors.city) { %>
-                    <small><%= errors.city.msg %></small>
-                <% } %>
+                <div id="cityContainer"></div>                
             </div>
             <div class="container">
                 <label for="gender">Género</label>
@@ -80,25 +58,20 @@
             <div class="container">
                 <label for="signinFile" >Añadir imagen</label>
                   <input class="signinFile" type="file" id="signinFile" name="imageUser" >
-                  <div id="imagenContainer"></div>
-                  <% if (locals.errors && errors.imageUser) { %>
-                    <small><%= errors.imageUser.msg %> </small>
-                <% } %>
+                  <div id="imagenContainer"></div>                  
             </div>
             <h2 class="bottom">Terminos y Condiciones</h2>
             <div class="bottom">
                 <input type="checkbox" name="terminos" id="terminos" <%= locals.old && old.terminos == "on"? "checked":"" %> >
                 <label for="terminos">Al registrarte aceptas nuestras Condiciones de uso y Politica de privacidad</label>
                 <div id="terminosContainer"></div>
-                <% if (locals.errors && errors.terminos) { %>
-                    <small><%= errors.terminos.msg %></small>
-                <% } %>
             </div>
             <h2 class="bottom"></h2>
             <div class="bottom">
-                <button type="submit">Registrarme</button>
+                <button type="submit" id="buttonSubmit">Registrarme</button>
                 <button type="reset">Cancelar</button>
             </div>
+            <div id="submitContainer"></div>
 
             <h4><a href="/inicia sesion">¿ya tienes cuenta? Inicia Sesion</a></h4>
 

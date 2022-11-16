@@ -79,6 +79,7 @@
               <div class="form-floating">
                 <input type="text" name="dimensions" class="form-control" id="dimensions" placeholder="Dimensions" value="<%= locals.old ? old.dimensions : null %>">
                 <label for="dimensions">Dimensions</label>
+                <small>Remember to add the units</small><br>
                 <small id="dimensionsError"> <%= (locals.errors && errors.dimensions ) ? errors.dimensions.msg : '*' %> </small>
               </div>
               <div class="form-floating">

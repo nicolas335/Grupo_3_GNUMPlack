@@ -5,12 +5,13 @@ window.addEventListener('load', () => {
 
     const regExLetter = /^[A-Z]+$/;
     const regExExt = /\.(jpg|jpeg|png|jfif|gif|webp)$/
-    const regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
+    const regExPass = /^(?=.*\d)(?=.*[a-z]).{6,12}$/;
     const regExEmail = /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
 
     let form = $('#formulario')
     let email = $('#email')
     let inputPass = $('#pass')
+    let btn = $('#btn')
 
 
     let errores = [{
@@ -113,6 +114,15 @@ window.addEventListener('load', () => {
         }
     })
 
+    const funcValidate = (obj) => {
+        let arr = Object.values(obj)
+        console.log(arr);
+        if (!arr.includes(false)) {
+            btn.disabled = false
+        } else {
+            btn.disabled = true
+        }
+    }
 
 
     form.addEventListener('submit', (e) => {

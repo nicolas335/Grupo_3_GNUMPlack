@@ -28,4 +28,44 @@ let Products = productsJson.map(product => {
 
   console.log(Products); */
 
+  /* let invalid = {
+    name:true,
+}
+invalid.name = true
+console.log(invalid.name); */
+/* <% if (locals.errors && errors.name) { %>
+  <small><%= errors.name.msg %></small>
+<% } %> */
 
+/* <% if (locals.errors && errors.lastName) { %>
+  <small><%= errors.lastName.msg %></small>
+<% } %>
+ */
+
+/* <% if (locals.errors && errors.email) { %>
+  <small><%= errors.email.msg %></small>
+<% } %> */
+
+/* <% if (locals.errors && errors.pass) { %>
+  <small><%= errors.pass.msg %></small>
+<% } %> */
+
+/* <% if (locals.errors && errors.pass2) { %>
+  <small><%= errors.pass2.msg %></small>
+<% } %> */
+
+/* <% if (locals.errors && errors.phoneNumber) { %>
+  <small><%= errors.phoneNumber.msg %></small>
+<% } %> */
+
+/* <% if (locals.errors && errors.city) { %>
+  <small><%= errors.city.msg %></small>
+<% } %> */
+  
+/* <% if (locals.errors && errors.imageUser) { %>
+  <small><%= errors.imageUser.msg %> </small>
+<% } %> */
+
+/* <% if (locals.errors && errors.terminos) { %>
+  <small><%= errors.terminos.msg %></small>
+<% } %> */

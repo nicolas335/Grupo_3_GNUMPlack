@@ -13,15 +13,14 @@ module.exports = [
     .custom(value => {
       return db.Users.findOne({
           where : {
-              email : value
+              email : value.trim()
           }
       })
       .then(user => {
-          if(user && user.email!==value){
+          if(user && user.email===value.trim()){
               return Promise.reject('El email se encuentra registrado')
           }
       })
-      
   }),
    
     body('phoneNumber').notEmpty().withMessage("Debe ingresar su número telefónico").bail()
