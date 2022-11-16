@@ -43,10 +43,10 @@ window.addEventListener('load', () => {
             buttonSubmit.classList.remove("invalid");
             submitContainer.innerHTML = "";
         } else {
-            buttonSubmit.disabled = true
+            /* buttonSubmit.disabled = true
             submitContainer.innerHTML = "Tienes que completar los campos del formulario";
             submitContainer.style.margin = "10px 0";
-            submitContainer.style.color = "red";
+            submitContainer.style.color = "red"; */
             buttonSubmit.classList.add("invalid");
         }
     }
