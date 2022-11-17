@@ -77,14 +77,22 @@
     text-align: center;
     font-family: var(--fuenteSubtitulos)
 }
+.signin .bottom button {
+   margin: 7px;
+}
 
 .signin main a {
     color: #000000;
     font-family: var(--fuenteSubtitulos)
 }
 .signin #imagenContainer{
-    text-align:center
+    text-align:center;
 }
+.signin .invalid{
+    background-color: rgba(208, 119, 10, .3);
+    color: rgba(0, 0, 0, .4);
+}
+
 /*tablet*/
 
 @media(min-width:461px) {
@@ -108,6 +116,7 @@
         font-family: var(--fuenteSubtitulos)
 
 }
+
 
 /*Desktop*/
 
