@@ -14,7 +14,8 @@ module.exports =[
 
      //contraseña//
      check('pass').trim()
-     .notEmpty().withMessage('Debe ingresar su contraseña'),
+     .notEmpty().withMessage('Debe ingresar su contraseña')
+     .isLength({min:8}).withMessage('La contraseña debe tener un mínimo de 8 caracteres'),
      
      body('pass')
      .custom((value, {req}) => {

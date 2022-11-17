@@ -13,6 +13,20 @@ window.addEventListener('load', () => {
     let inputPass = $('#pass')
     let btn = $('#btn')
 
+    const validate = {
+        email: false,
+        pass: false,
+    }
+    const funcValidate = (obj) => {
+        let arr = Object.values(obj)
+        console.log(arr);
+        if (!arr.includes(false)) {
+            btn.disabled = false
+        } else {
+            btn.disabled = true
+        }
+    }
+
 
     let errores = [{
         id: 1,
@@ -37,6 +51,7 @@ window.addEventListener('load', () => {
             case !email.value:
                 $('#emailContainer').innerHTML = "<small>El campo Email es obligatorio</small>"
                 email.style.border = "1px solid red"
+                validate.email= false
                 errores.forEach(e => {
                     if (e.id === 1) {
                         e.mensaje = "El campo Email es obligatorio"
@@ -50,6 +65,7 @@ window.addEventListener('load', () => {
             case !regExEmail.test(email.value):
                 $('#emailContainer').innerHTML = "<small>El email no coincide con un email valido</small>"
                 email.style.border = "1px solid red"
+                validate.email= false
                 errores.forEach(e => {
                     if (e.id === 1) {
                         e.mensaje = "El email no coincide con un email valido"
@@ -63,12 +79,15 @@ window.addEventListener('load', () => {
             default:
                 $('#emailContainer').innerHTML = ""
                 email.style.border = "1px solid black"
+                validate.email= true
                 errores = errores.filter(error => {
                     return error.id !== 1
                 })
                 break;
         }
+        funcValidate(validate)
         console.log(errores);
+    
     })
     inputPass.addEventListener('blur', () => {
         let error = {
@@ -76,11 +95,12 @@ window.addEventListener('load', () => {
             elemento: "inputPass",
             mensaje: "La contraseña es obligatoria"
         }
-        let variable = true
+        let variable = false
         switch (true) {
             case !inputPass.value:
                 $('#passContainer').innerHTML = "<small>La contraseña es obligatoria</small>"
                 inputPass.style.border = "1px solid red"
+                validate.pass= false
                 errores.forEach(e => {
                     if (e.id === 2) {
                         e.mensaje = "La contraseña es obligatoria"
@@ -92,11 +112,12 @@ window.addEventListener('load', () => {
                 }
                 break;
             case !regExPass.test(inputPass.value):
-                $('#passContainer').innerHTML = "<small>La contraseña debe tener entre 6 y 12 caracteres <br> y contener una mayuscula, una minuscula y un numero</small>"
+                $('#passContainer').innerHTML = "<small>La contraseña debe tener un mínimo de 8 caracteres</small>"
                 email.style.border = "1px solid red"
+                validate.pass= false
                 errores.forEach(e => {
                     if (e.id === 1) {
-                        e.mensaje = "La contraseña debe tener entre 6 y 12 caracteres y debe contener una mayuscula, una minuscula y un numero"
+                        e.mensaje = "La contraseña debe tener un mínimo de 8 caracteres "
                         variable = false
                     }
                 });
@@ -107,22 +128,20 @@ window.addEventListener('load', () => {
             default:
                 $('#passContainer').innerHTML = ""
                 inputPass.style.border = "1px solid black"
+                validate.pass= true
                 errores = errores.filter(error => {
                     return error.id !== 2
                 })
                 break;
         }
+        funcValidate(validate)
+        
     })
+    funcValidate(validate)
+    
 
-    const funcValidate = (obj) => {
-        let arr = Object.values(obj)
-        console.log(arr);
-        if (!arr.includes(false)) {
-            btn.disabled = false
-        } else {
-            btn.disabled = true
-        }
-    }
+
+    
 
 
     form.addEventListener('submit', (e) => {
