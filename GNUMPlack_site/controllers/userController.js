@@ -167,8 +167,8 @@ module.exports = {
             }
         })
         .then(user => {
-            console.log(user);
-            console.log(errors.mapped());
+            //console.log(user);
+            //console.log(errors.mapped());
             res.render('users/editUser',{
                 user,
                 errors: errors.mapped()
