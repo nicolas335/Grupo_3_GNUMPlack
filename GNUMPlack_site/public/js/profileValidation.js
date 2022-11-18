@@ -123,7 +123,7 @@ window.addEventListener('load', function() {
                 $('#cityError').style.color = 'red'
                 validation.ciudad = false                
                 break;
-            case regExNumber.test(ciudad.value.trim()):
+            case !regExNumber.test(ciudad.value.trim()):
                 $('#cityError').innerHTML = 'Solo se permiten letras'
                 $('#cityError').style.color = 'red'
                 validation.ciudad = false                
@@ -141,11 +141,11 @@ window.addEventListener('load', function() {
         switch (true) {
             case !regExExt.exec(imagen.value):
                 $('#imagenError').innerHTML = 'Solo se permiten imagenes con formato (jpg|jpeg|png|jfif|gif|webp)'
-                validate.imagen = false
+                validation.imagen = false
                 break;
             default:
                 $('#imagenError').innerHTML = ''
-                validate.imagen = true
+                validation.imagen = true
                 break;
         }
         funcValidate(validate)

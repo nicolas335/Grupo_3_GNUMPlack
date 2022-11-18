@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
 
     // Expresiones regulares
     let regExLetter = /^[a-zA-Z\sñáéíóúü]*$/
-    let regExNumber = /^[+]?([0-9][0-9]?|0)$/
+    let regExNumber = /^[+]?([0-9][0-9][0-9][0-9]?|0)$/
     const regExExt = /\.(jpg|jpeg|png|jfif|gif|webp)$/
 
     // Funcion para validar el formulario

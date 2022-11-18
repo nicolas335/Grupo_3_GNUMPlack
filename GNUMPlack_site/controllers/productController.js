@@ -1,6 +1,7 @@
 //const products = require('../data/products.json')
 const db = require('../database/models')
 const {Op} = require('Sequelize')
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 module.exports={
@@ -23,7 +24,10 @@ module.exports={
            })
            .then(product => {
                //return res.send(product)
-               return res.render("detail",{productoDetallado:product})
+               return res.render("detail",{
+                productoDetallado:product,
+                toThousand
+               })
            })
            .catch(error => res.send(error))
    },

@@ -47,7 +47,7 @@ module.exports = {
                 discount: +discount,
                 qualities: qualities,
                 advantages: advantage,
-                image: req.file.filename
+                image: req.file.filename ? req.file.filename : 'default-product-image.png'
           
           }) .then(p => {  
             res.redirect("/admin/list");
@@ -57,17 +57,21 @@ module.exports = {
 
         } else {
             let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'img', 'products', dato))
-            req.files.forEach(image => {
-                if (ruta(image) && (image !== "default-product-image.png")) {
-                    fs.unlinkSync(path.join(__dirname, '..', 'public', 'img', 'products', req.file.filename))
-                }
-
+            if (ruta(req.file.filename) && (req.file.filename !== "default-product-image.png")) {
+                fs.unlinkSync(path.join(__dirname, '..', 'public', 'img', 'products', req.file.filename))
+            }
+                
+            let categories_products = db.Categories_products.findAll()
+            let conditions = db.Conditions.findAll()
+            Promise.all([categories_products,conditions])
+            .then(([categories_products,conditions]) => {
             })
-
-            return res.render('admin/create', {
+            return res.render('admin/create'), {
                 errors: errors.mapped(),
-                old: req.body
-            })
+                old: req.body,
+                categories_products,
+                conditions
+            }
         }
         },
     list :(req, res) =>{
@@ -88,7 +92,7 @@ module.exports = {
     },
     
     edit :(req, res) =>{
-        db.Products.findOne({
+        let product = db.Products.findOne({
             where: {
                 id : req.params.id
             },
@@ -96,9 +100,16 @@ module.exports = {
                 all:true
             }]
         })
-        .then(producto => {
+        let categories_products = db.Categories_products.findAll()
+        let conditions = db.Conditions.findAll()
+        Promise.all([product,categories_products,conditions])
+        .then(([product,categories_products,conditions]) => {
             //return res.send(producto)
-            res.render('admin/edit',{producto})
+            res.render('admin/edit',{
+                producto: product,
+                categories_products,
+                conditions
+            })
         })
         .catch(error => res.send(error))
     },
@@ -112,48 +123,69 @@ module.exports = {
             }
             errors.errors.push(image);
         }
+        let idParams  =+req.params.id
 
         if (errors.isEmpty()) {
 
-            db.Products.update({
+            let oldProduct = db.Products.findByPk(idParams)
+            let updatedProducto = db.Products.update({
                 name: req.body.name,
                 description: req.body.description,
                 dimensions: req.body.dimensions,
                 discount: +req.body.discount,
                 price: +req.body.price,
                 qualities: req.body.qualities,
-                image: req.file.filename,
                 stock: +req.body.stock,
                 categories_products_id: +req.body.category,
                 condition_id: +req.body.condition,
                 updatedAt: new Date,
             },{
                 where: {
-                    id : +req.params.id
+                    id : idParams
                 }
             })
-            .then(product => {
-                res.redirect('/admin/list')
+            Promise.all([oldProduct,updatedProducto])
+            .then(([oldProduct,updatedProducto]) => {    
+                
+                if (req.file) {
+                    db.Products.update({
+                        image: req.file.filename
+                    }, {
+                        where: {id: idParams}
+                    })
+                    .then(resultado => {
+                        let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'img', 'products', dato))
+                        if (ruta(req.file.filename) && (oldProduct.image !== "default-product-image.png")) {
+                            fs.unlinkSync(path.join(__dirname, '..', 'public', 'img', 'products', oldProduct.image))
+                        }
+                    })
+                }
+                return res.redirect('/admin/list')
             })
             .catch(error => res.send(error))
 
         } else {
             let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'img', 'products', dato))
-            if (req.file && ruta(req.file.filename) && (req.file.filename !== "default-product-image.png")) {
+            if (ruta(req.file.filename) && (req.file.filename !== "default-product-image.png")) {
                 fs.unlinkSync(path.join(__dirname, '..', 'public', 'img', 'products', req.file.filename))
             }
             
-            db.Products.findOne({
+            let categories_products = db.Categories_products.findAll()
+            let conditions = db.Conditions.findAll()
+            let product = db.Products.findOne({
                 where: {
-                    id : +req.params.id
+                    id : idParams
                 },
                 include: [{
                     all:true
                 }]
             })
-            .then(producto => {
+            Promise.all([product,product,categories_products,conditions])
+            .then(([product,categories_products,conditions]) => {
                 res.render('admin/edit',{
-                    producto,
+                    producto: product,
+                    categories_products,
+                    conditions,
                     errors:errors.mapped()
                 })
             })
@@ -252,11 +284,21 @@ module.exports = {
 
     destroy: (req,res) => {
         let idParams = +req.params.id
-        db.Removed_products.destroy({
-            where: {id:idParams}
+        db.Removed_products.findByPk(idParams)
+        .then(productRemoved => {
+            let ruta = (dato) => fs.existsSync(path.join(__dirname, '..', 'public', 'img', 'products', dato))
+            if (ruta(productRemoved.image) && (productRemoved.image !== "default-product-image.png")) {
+                fs.unlinkSync(path.join(__dirname, '..', 'public', 'img', 'products', productRemoved.image))
+            }
         })
-        .then(redireccion => {
-            res.redirect('/admin/listDeleted')
+        .then(respuesta => {
+            db.Removed_products.destroy({
+                where: {id:idParams}
+            })
+            .then(redireccion => {
+                res.redirect('/admin/listDeleted')
+            })
         })
+        .catch(errors => res.send(errors))        
     }
 }

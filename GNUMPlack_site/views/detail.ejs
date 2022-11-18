@@ -28,12 +28,12 @@
                             <% }) %>
                         </ul>
                         <div class="precioDesktop">
-                            <span>$<%= productoDetallado.price %> </span>
+                            <span>$<%= toThousand(productoDetallado.price) %> </span>
                             <input type="submit" value="Añadir a carrito">
                         </div>
                     </div>
                     <div class="button">
-                        <span>$<%= productoDetallado.price %> </span>
+                        <span>$<%= toThousand(productoDetallado.price) %> </span>
                         <input type="submit" value="Añadir a carrito">
                     </div>
                 </article>
