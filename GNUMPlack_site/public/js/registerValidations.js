@@ -42,13 +42,9 @@ window.addEventListener('load', () => {
             buttonSubmit.classList.remove("invalid");
         } else {
             buttonSubmit.disabled = true
-            /*submitContainer.innerHTML = "Tienes que completar los campos del formulario";
-            submitContainer.style.margin = "10px 0";
-            submitContainer.style.color = "red"; */
             buttonSubmit.classList.add("invalid");
         }
     }
-
 
     name.addEventListener("blur",() => {
         switch (true) {
@@ -57,8 +53,8 @@ window.addEventListener('load', () => {
                 name.style.border = "1.5px solid red"
                 validate.name = false
                 break;
-            case name.value.length < 2:
-                $("#namesContainer").innerHTML = "<small>El campo nombre debe tener al menos 2 caracteres</small>"
+            case name.value.length < 3:
+                $("#namesContainer").innerHTML = "<small>El campo nombre debe tener al menos 3 caracteres</small>"
                 name.style.border = "1.5px solid red"
                 validate.name = false
                 break;
@@ -79,8 +75,8 @@ window.addEventListener('load', () => {
                 lastName.style.border = "1.5px solid red"
                 validate.lastName = false
                 break;
-                case lastName.value.length < 2:
-                $("#lastNameContainer").innerHTML = "<small>El campo apellido debe tener al menos 2 caracteres</small>"
+                case lastName.value.length < 3:
+                $("#lastNameContainer").innerHTML = "<small>El campo apellido debe tener al menos 3 caracteres</small>"
                 lastName.style.border = "1.5px solid red"
                 validate.lastName = false
                 break;
@@ -119,11 +115,6 @@ window.addEventListener('load', () => {
                     phoneNumber.style.border = "1.5px solid red"
                     validate.phoneNumber = false
                 break;
-                /* case phoneNumber.value.length <= 10:
-                    $("#phoneNumberContainer").innerHTML = "<small>El campo Celular debe tener al menos 10 números</small>"
-                    phoneNumber.style.border = "1.5px solid red"
-                    validate.phoneNumber = false
-                break; */
                 default:
                     $("#phoneNumberContainer").innerHTML = ""
                     phoneNumber.style.border = "1px solid black"
@@ -155,7 +146,7 @@ window.addEventListener('load', () => {
                     pass.style.border = "1px solid red"
                     validate.pass = false
                 break;
-                case !pass.length > 8:
+                case pass.value.length <= 8:
                     $('#passContainer').innerHTML = "<small>La contraseña debe tener un minimo de 8 caracteres</small>"
                     email.style.border = "1px solid red"
                     validate.pass = false
@@ -180,7 +171,7 @@ window.addEventListener('load', () => {
                     pass2.style.border = "1px solid red"
                     validate.pass2 = false
                     break;
-                case pass2.length < 8:
+                case pass2.value.length <= 8:
                    $("#passContainer2").innerHTML = "<small>El campo debe tener al menos 8 caracteres</small>"
                    pass2.style.border = "1px solid red"
                    validate.pass2 = false
