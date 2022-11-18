@@ -111,17 +111,17 @@
             <small id="conditionError"> <%= (locals.errors && errors.condition ) ? errors.condition.msg : '*' %> </small>
           </div>
           <div class="form-floating">
-              <input type="number" name="price" class="form-control" id="price" placeholder="Price" value="<%= producto.price %>">
+              <input type="text" name="price" class="form-control" id="price" placeholder="Price" value="<%= producto.price %>">
               <label for="price">Price</label>
               <small id="priceError"> <%= (locals.errors && errors.price ) ? errors.price.msg : '*' %> </small>
             </div>
           <div class="form-floating">
-              <input type="number" name="stock" class="form-control" id="stock" placeholder="Stock" value="<%= producto.stock %>">
+              <input type="text" name="stock" class="form-control" id="stock" placeholder="Stock" value="<%= producto.stock %>">
               <label for="stock" >Stock</label>
               <small id="stockError"> <%= (locals.errors && errors.stock ) ? errors.stock.msg : '*' %> </small>
           </div>
           <div class="form-floating">
-            <input type="number" name="discount" class="form-control" id="discount" placeholder="Discount" value="<%= producto.discount %>">
+            <input type="text" name="discount" class="form-control" id="discount" placeholder="Discount" value="<%= producto.discount %>">
             <label for="discount" >Discount</label>
             <small id="discountError"> <%= (locals.errors && errors.discount ) ? errors.discount.msg : '*' %> </small>
           </div>

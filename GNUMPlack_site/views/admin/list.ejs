@@ -49,7 +49,8 @@
         body{background-color:#d4d700;
         max-width: 1800px;
         margin: 0 auto;}
-        h1{color: white;}      
+        h1{color: white;}
+        a{text-decoration: none;color: black;} 
         </style>
       </header>
       <main>
@@ -72,7 +73,7 @@
               <% products.forEach(producto => { %>
                 <tr>
                   <th scope="row"><%= producto.id %></th>
-                  <td><%= producto.name%></td>
+                  <td><a href="/product/detail/<%= producto.id%>"><%= producto.name%></a></td>
                   <td><%= producto.stock %> </td>
                   <td>$<%= producto.price %></td>
                   <td>

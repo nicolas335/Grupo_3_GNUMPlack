@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
 
     // Expresiones regulares
     let regExLetter = /^[a-zA-Z\sñáéíóúü]*$/
-    let regExNumber = /^[+]?([0-9][0-9]?|150)$/
+    let regExNumber = /^[+]?([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]?|150)$/
     const regExExt = /\.(jpg|jpeg|png|jfif|gif|webp)$/
 
     // Funcion para validar el formulario
@@ -190,11 +190,11 @@ window.addEventListener('load', () => {
                 this.classList.add('is-invalid')
                 validate.price = false
                 break;
-            /* case !regExNumber.test(this.value.trim()):
+            case !regExNumber.test(this.value.trim()):
                 $('#priceError').innerHTML = 'Solo se permiten números'
                 this.classList.add('is-invalid')
                 validate.price = false
-                break; */
+                break;
             case this.value.trim()<0:
                 $('#priceError').innerHTML = 'No puede ingresar un precio negativo'
                 this.classList.add('is-invalid')
@@ -204,7 +204,6 @@ window.addEventListener('load', () => {
                 $('#priceError').innerHTML = 'El precio no puede ser menor que 100 y mayor que 100 millones'
                 this.classList.add('is-invalid')
                 validate.price = false
-                //this.value < 0 ? console.log('es menor que cero') : console.log('es mayor a cero');
                 break;        
             default:
                 $('#priceError').innerHTML = ''
