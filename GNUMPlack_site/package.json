@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/nicolas335/Grupo_4_GNUMPlack#readme",
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
     "bcryptjs": "^2.4.3",
     "bootstrap-icons": "^1.9.1",
     "cookie-parser": "^1.4.6",

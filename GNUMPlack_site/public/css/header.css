@@ -41,9 +41,6 @@
 .header form input::placeholder{
     color: rgba(255, 255, 255, .69);
 }
-
-
-
 .header .cart-container{
     margin-right: 10px;
 }

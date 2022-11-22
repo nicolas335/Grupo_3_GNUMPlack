@@ -33,5 +33,3 @@ let Products = productsJson.map(product => {
 }
 invalid.name = true
 console.log(invalid.name); */
-
-
