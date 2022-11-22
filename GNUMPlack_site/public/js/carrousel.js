@@ -29,7 +29,7 @@ const swiper = new Swiper('.swiper', {
 
   let img = document.querySelectorAll('.img_slides');
 
-    eye.addEventListener('click',(e) => {
+    /* eye.addEventListener('click',(e) => {
         if(eye.classList.contains('fa-eye-slash')){
           paragraph.forEach(p=> p.style.display =  'flex')
           img.forEach(img => img.style.opacity = 0)
@@ -44,6 +44,6 @@ const swiper = new Swiper('.swiper', {
         }
 
         
-    })
+    }) */
 
 })
