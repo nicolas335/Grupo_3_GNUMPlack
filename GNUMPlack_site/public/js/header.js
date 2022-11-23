@@ -1,3 +1,4 @@
+//const { localsName } = require("ejs");
 let menuToggle = document.querySelector(".menu-toggle");
 let menu = document.getElementById("menu");
 

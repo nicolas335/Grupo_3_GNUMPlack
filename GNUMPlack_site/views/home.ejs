@@ -1,207 +1,247 @@
 <!DOCTYPE html>
 <html lang="es">
 <!-- incluyo head -->
-<%- include('./partials/head') %>
 
-  <body>
-    <!-- incluyo header -->
-    <%- include('./partials/header') %>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://kit.fontawesome.com/7c3a0709de.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <title>GNUMPlack</title>
+</head>
 
-      <main class="home">
-        <div class="banner">
-          <img src="img/logoGNUMPlack.jpg" alt="banner">
+<body>
+  <style>.swiper {
+    width: 1200px;
+    height: 300px;
+  }</style>
+  <!-- incluyo header -->
+  <%- include('./partials/header') %>
+
+    <main class="home">
+      <div class="banner">
+        <img src="img/logoGNUMPlack.jpg" alt="banner">
+      </div>
+<!-- 
+      Slider main container
+      <div class="swiper">
+        Additional required wrapper 
+        <div class="swiper-wrapper">
+           Slides 
+          <div class="swiper-slide">
+            
+          </div>
+
+          <div class="swiper-slide">
+            
+          </div>
+          <div class="swiper-slide">Slide 3</div>
+          ...
         </div>
+        If we need pagination 
+        <div class="swiper-pagination"></div>
 
-        <h1 class="ofertas">Ofertas</h1>
-        <section class="destacados">
-          <article>
-            <div>
-              <a href="/product/detail"><img src="/img/products/cutout_123615_detail_picture_1.jpg" alt=""></a>
-            </div>
-            <h3><a href="/product/detail">SILENTBOARD</a></h3>
-            <p>Placa para el máximo aislamiento acústico en construcciones en seco</p>
-            <a class="ver-mas" href="/product/detail">Ver más</a>
-          </article>
-          <article class="mobile">
-            <div>
-              <a href="/product/detail"><img src="/img/products/cutout_82877_detail_picture_1.jpg" alt=""></a>
-            </div>
-            <h3><a href="/product/detail">AQUAPANEL CEMENT BOARD INDOOR</a></h3>
-            <p>Placa para baldosas idónea para toda clase de entornos con humedad</p>
-            <a class="ver-mas" href="/product/detail">Ver más</a>
-          </article>
-          <article class="mobile">
-            <i class="fas fa-arrow-circle-left"></i>
-            <div>
-              <a href="/product/detail"><img src="/img/products/cutout_123566_popup_landscape_4x3_1.jpg" alt=""></a>
-            </div>
-            <h3><a href="/product/detail">CLEANEO AKUSTIK LINEAR</a></h3>
-            <p>Placa de yeso perforada con formación de bordes sin relleno para una absorción acústica con efecto
-              purificador del aire</p>
-            <a class="ver-mas" href="/product/detail">Ver más</a>
-          </article>
-          <article class="tablet">
-            <div>
-              <a href="/product/detail"><img src="/img/products/cutout_123584_detail_picture_1.jpg" alt=""></a>
-            </div>
-            <h3><a href="/product/detail">SAFEBOARD</a></h3>
-            <p>Placa de protección radiológica para instalaciones radiográficas</p>
-            <a class="ver-mas" href="/product/detail">Ver más</a>
-          </article>
-          <i class="fas fa-arrow-circle-right"></i>
-        </section>
+         If we need navigation buttons 
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
 
-        <h1>Productos destacados</h1>
-        <section class="destacados">
-          <article class="mobile">
-            <i class="fas fa-arrow-circle-left"></i>
-            <div>
-              <a href="/product/detail"><img src="/img/products/cutout_123566_popup_landscape_4x3_1.jpg" alt=""></a>
-            </div>
-            <h3><a href="/product/detail">CLEANEO AKUSTIK LINEAR</a></h3>
-            <p>Placa de yeso perforada con formación de bordes sin relleno para una absorción acústica con efecto
-              purificador del aire</p>
-            <a class="ver-mas" href="/product/detail">Ver más</a>
-          </article>
-          <article class="mobile">
-            <div>
-              <a href="/product/detail"><img src="/img/products/cutout_82877_detail_picture_1.jpg" alt=""></a>
-            </div>
-            <h3><a href="/product/detail">AQUAPANEL CEMENT BOARD INDOOR</a></h3>
-            <p>Placa para baldosas idónea para toda clase de entornos con humedad</p>
-            <a class="ver-mas" href="/product/detail">Ver más</a>
-          </article>
-          <article class="tablet">
-            <div>
-              <a href="/product/detail"><img src="/img/products/cutout_123584_detail_picture_1.jpg" alt=""></a>
-            </div>
-            <h3><a href="/product/detail">SAFEBOARD</a></h3>
-            <p>Placa de protección radiológica para instalaciones radiográficas</p>
-            <a class="ver-mas" href="/product/detail">Ver más</a>
-          </article>
-          <article>
-            <div>
-              <a href="/product/detail"><img src="/img/products/cutout_123615_detail_picture_1.jpg" alt=""></a>
-            </div>
-            <h3><a href="/product/detail">SILENTBOARD</a></h3>
-            <p>Placa para el máximo aislamiento acústico en construcciones en seco</p>
-            <a class="ver-mas" href="/product/detail">Ver más</a>
-          </article>
-          <i class="fas fa-arrow-circle-right"></i>
-        </section>
+      </div> -->
 
-        <section class="section1">
+      <h1 class="ofertas">Ofertas</h1>
+      <section class="destacados">
+        <i class="fas fa-arrow-circle-left"></i>
+        
+        <article>
           <div>
-            <img src="img/01.jpg" alt="">
-            <h3>Sistema ideal</h3>
-            <p>Es ideal para realizar todo tipo de proyectos y ofrece múltiples ventajas sobre la construcción
-              tradicional, con soluciones constructivas y estéticas con placas de yeso y cemento, para usos en interior
-              y exterior.
-              Es sumamente práctico y veloz en su ejecución, brinda mayor nivel de confort y se adapta a cualquier tipo
-              de diseño.
-            </p>
+            <a href="/product/detail"><img src="/img/products/cutout_123615_detail_picture_1.jpg" alt=""></a>
           </div>
+          <h3><a href="/product/detail">SILENTBOARD</a></h3>
+          <p>Placa para el máximo aislamiento acústico en construcciones en seco</p>
+          <a class="ver-mas" href="/product/detail">Ver más</a>
+        </article>
+        <article class="mobile">
           <div>
-            <img src="img/02.jpg" alt="">
-            <h3>Sustentabilidad</h3>
-            <p>Cuidado del medio ambiente en cada una de las etapas del proceso de producción. Desde la selección de los
-              insumos hasta la obtención y despacho del producto final.</p>
+            <a href="/product/detail"><img src="/img/products/cutout_123566_popup_landscape_4x3_1.jpg" alt=""></a>
           </div>
+          <h3><a href="/product/detail">CLEANEO AKUSTIK LINEAR</a></h3>
+          <p>Placa de yeso perforada con formación de bordes sin relleno para una absorción acústica con efecto
+            purificador del aire</p>
+          <a class="ver-mas" href="/product/detail">Ver más</a>
+        </article>
+        <article class="mobile">
           <div>
-            <img src="img/03.jpg" alt="">
-            <h3>Una placa para cada uso</h3>
-            <p>GNUMPlack © ofrece un portfolio completo para que puedas resolver tus paredes, revestimientos y
-              cielorrasos.
-              <a href="product">Productos</a>
-            </p>
+            <a href="/product/detail"><img src="/img/products/cutout_82877_detail_picture_1.jpg" alt=""></a>
           </div>
-        </section>
-        <section class="sliderSection">
-
-          <div id="home-slider">
-
-            <ul class="slider">
-              <li id="slide1">
-                <img src="img/control-calidad-icono.png" />
-                <div class="capa">
-                  <p>En GNUMPLACK controlamos toda la producción mediante sistemas automatizados que
-                    monitorean el avance del producto a lo largo de todo el proceso productivo. Tenemos un
-                    laboratorio especialmente preparado para cubrir todos los requerimientos de control de
-                    la norma americana ASTM, norma de la que desprenden la totalidad del resto de normas
-                    mundiales para placas de yeso. Allí hacemos ensayos de calidad periódicos sobre las
-                    placas terminadas y registramos cualquier desvío para llevar una estadística que nos
-                    permita mejorar día a día. Periódicamente también procedemos a controlar nuestras placas
-                    por terceros, para lo cual enviamos muestras de placas retiradas al azar de distintos
-                    lotes de producción al INTI (Instituto Nacional de Tecnología Industrial) y al Instituto
-                    de Materiales y Suelos de la Facultad de Ingeniería de la Universidad de San Juan, que
-                    emiten sus correspondientes certificados de ensayo que verifican el cumplimiento de
-                    todas las normas.</p>
-                </div>
-              </li>
-              <li id="slide2">
-                <img src="img/conciencia_ecologica2.png" />
-                <div class="capa">
-                  <p>En nuestra planta trabajamos fuertemente en el cuidado del medio ambiente.
-                    Nuestro proceso productivo no produce emisiones nocivas por tratarse fundamentalmente
-                    de vapor de agua y gases de combustión de gas natural que son controlados por el uso de
-                    quemadores de última tecnología que se controlan periódicamente para garantizar su
-                    correcto funcionamiento. En la producción de placas GNUMPLACK no se producen de manera
-                    significativa efluentes líquidos pues el agua se incorpora a la masa del producto y el
-                    sobrante se evapora. Todos los insumos y aditivos que se incorporan quedan en la placa,
-                    con la salvedad del agua que se evapora. Nuestro compromiso con el cuidado del planeta
-                    se extiende también a la selección de los insumos.</p>
-                </div>
-              </li>
-              <li id="slide3">
-                <img src="img/mision-icono.png" alt="">
-                <div class="capa">
-                  <p>Lograr la satisfacción y fidelización de nuestros
-                    clientes ofreciéndoles placas de yeso para la construcción en seco con la más alta tecnología y
-                    calidad, preservando el medio ambiente y de manera responsable con la sociedad.</p>
-                </div>
-              </li>
-              <li id="slide4">
-                <img src="img/vision-icono.png" alt="">
-                <div class="capa">
-                  <p>Aspiramos a ser una marca reconocida por la calidad de
-                    sus productos y por el compromiso con sus clientes, sus colaboradores, la sociedad en general y el
-                    medio ambiente.</p>
-                </div>
-              </li>
-            </ul>
-
-            <ul class="menu">
-              <li>
-                <a href="#slide1"></a>
-              </li>
-              <li>
-                <a href="#slide2"></a>
-              </li>
-              <li>
-                <a href="#slide3"></a>
-              </li>
-              <li>
-                <a href="#slide4"></a>
-              </li>
-            </ul>
-
+          <h3><a href="/product/detail">AQUAPANEL CEMENT BOARD INDOOR</a></h3>
+          <p>Placa para baldosas idónea para toda clase de entornos con humedad</p>
+          <a class="ver-mas" href="/product/detail">Ver más</a>
+        </article>
+        <article class="tablet">
+          <div>
+            <a href="/product/detail"><img src="/img/products/cutout_123584_detail_picture_1.jpg" alt=""></a>
           </div>
-        </section>
-        <section class="ubiSection">
-          <h3>Ubicación de la empresa</h3>
-          <div class="containerUbi">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.0786820779986!2d-58.71456388505418!3d-34.55156316224676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbde66c4400ad%3A0x392d596bc40c565a!2sDURLOCK!5e0!3m2!1ses!2sar!4v1659647863097!5m2!1ses!2sar"
-              width="380" height="420" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <h3><a href="/product/detail">SAFEBOARD</a></h3>
+          <p>Placa de protección radiológica para instalaciones radiográficas</p>
+          <a class="ver-mas" href="/product/detail">Ver más</a>
+        </article>
+        <i class="fas fa-arrow-circle-right"></i>
+      </section>
+
+      <h1>Productos destacados</h1>
+      <section class="destacados">
+        <article class="mobile">
+          <i class="fas fa-arrow-circle-left"></i>
+          <div>
+            <a href="/product/detail"><img src="/img/products/cutout_123566_popup_landscape_4x3_1.jpg" alt=""></a>
           </div>
-        </section>
+          <h3><a href="/product/detail">CLEANEO AKUSTIK LINEAR</a></h3>
+          <p>Placa de yeso perforada con formación de bordes sin relleno para una absorción acústica con efecto
+            purificador del aire</p>
+          <a class="ver-mas" href="/product/detail">Ver más</a>
+          </article>
+        <article class="mobile">
+          <div>
+            <a href="/product/detail"><img src="/img/products/cutout_82877_detail_picture_1.jpg" alt=""></a>
+          </div>
+          <h3><a href="/product/detail">AQUAPANEL CEMENT BOARD INDOOR</a></h3>
+          <p>Placa para baldosas idónea para toda clase de entornos con humedad</p>
+          <a class="ver-mas" href="/product/detail">Ver más</a>
+        </article>
+        <article class="tablet">
+          <div>
+            <a href="/product/detail"><img src="/img/products/cutout_123584_detail_picture_1.jpg" alt=""></a>
+          </div>
+          <h3><a href="/product/detail">SAFEBOARD</a></h3>
+          <p>Placa de protección radiológica para instalaciones radiográficas</p>
+          <a class="ver-mas" href="/product/detail">Ver más</a>
+        </article>
+        
+        <article>
+          <div>
+            <a href="/product/detail"><img src="/img/products/cutout_123615_detail_picture_1.jpg" alt=""></a>
+          </div>
+          <h3><a href="/product/detail">SILENTBOARD</a></h3>
+          <p>Placa para el máximo aislamiento acústico en construcciones en seco</p>
+          <a class="ver-mas" href="/product/detail">Ver más</a>
+        </article>
+        <i class="fas fa-arrow-circle-right"></i>
+      </section>
 
-      </main>
+      <section class="section1">
+        <div>
+          <img src="img/01.jpg" alt="">
+          <h3>Sistema ideal</h3>
+          <p>Es ideal para realizar todo tipo de proyectos y ofrece múltiples ventajas sobre la construcción
+            tradicional, con soluciones constructivas y estéticas con placas de yeso y cemento, para usos en interior
+            y exterior.
+            Es sumamente práctico y veloz en su ejecución, brinda mayor nivel de confort y se adapta a cualquier tipo
+            de diseño.
+          </p>
+        </div>
+        <div>
+          <img src="img/02.jpg" alt="">
+          <h3>Sustentabilidad</h3>
+          <p>Cuidado del medio ambiente en cada una de las etapas del proceso de producción. Desde la selección de los
+            insumos hasta la obtención y despacho del producto final.</p>
+        </div>
+        <div>
+          <img src="img/03.jpg" alt="">
+          <h3>Una placa para cada uso</h3>
+          <p>GNUMPlack © ofrece un portfolio completo para que puedas resolver tus paredes, revestimientos y
+            cielorrasos.
+            <a href="product">Productos</a>
+          </p>
+        </div>
+      </section>
+      <section class="sliderSection">
 
-      <!-- incluyo footer -->
-      <%- include('./partials/footer') %>
+        <div id="home-slider">
 
-  </body>
+          <ul class="slider">
+            <li id="slide1">
+              <img src="img/control-calidad-icono.png" />
+              <div class="capa">
+                <p>En GNUMPLACK controlamos toda la producción mediante sistemas automatizados que
+                  monitorean el avance del producto a lo largo de todo el proceso productivo. Tenemos un
+                  laboratorio especialmente preparado para cubrir todos los requerimientos de control de
+                  la norma americana ASTM, norma de la que desprenden la totalidad del resto de normas
+                  mundiales para placas de yeso. Allí hacemos ensayos de calidad periódicos sobre las
+                  placas terminadas y registramos cualquier desvío para llevar una estadística que nos
+                  permita mejorar día a día. Periódicamente también procedemos a controlar nuestras placas
+                  por terceros, para lo cual enviamos muestras de placas retiradas al azar de distintos
+                  lotes de producción al INTI (Instituto Nacional de Tecnología Industrial) y al Instituto
+                  de Materiales y Suelos de la Facultad de Ingeniería de la Universidad de San Juan, que
+                  emiten sus correspondientes certificados de ensayo que verifican el cumplimiento de
+                  todas las normas.</p>
+              </div>
+            </li>
+            <li id="slide2">
+              <img src="img/conciencia_ecologica2.png" />
+              <div class="capa">
+                <p>En nuestra planta trabajamos fuertemente en el cuidado del medio ambiente.
+                  Nuestro proceso productivo no produce emisiones nocivas por tratarse fundamentalmente
+                  de vapor de agua y gases de combustión de gas natural que son controlados por el uso de
+                  quemadores de última tecnología que se controlan periódicamente para garantizar su
+                  correcto funcionamiento. En la producción de placas GNUMPLACK no se producen de manera
+                  significativa efluentes líquidos pues el agua se incorpora a la masa del producto y el
+                  sobrante se evapora. Todos los insumos y aditivos que se incorporan quedan en la placa,
+                  con la salvedad del agua que se evapora. Nuestro compromiso con el cuidado del planeta
+                  se extiende también a la selección de los insumos.</p>
+              </div>
+            </li>
+            <li id="slide3">
+              <img src="img/mision-icono.png" alt="">
+              <div class="capa">
+                <p>Lograr la satisfacción y fidelización de nuestros
+                  clientes ofreciéndoles placas de yeso para la construcción en seco con la más alta tecnología y
+                  calidad, preservando el medio ambiente y de manera responsable con la sociedad.</p>
+              </div>
+            </li>
+            <li id="slide4">
+              <img src="img/vision-icono.png" alt="">
+              <div class="capa">
+                <p>Aspiramos a ser una marca reconocida por la calidad de
+                  sus productos y por el compromiso con sus clientes, sus colaboradores, la sociedad en general y el
+                  medio ambiente.</p>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="menu">
+            <li>
+              <a href="#slide1"></a>
+            </li>
+            <li>
+              <a href="#slide2"></a>
+            </li>
+            <li>
+              <a href="#slide3"></a>
+            </li>
+            <li>
+              <a href="#slide4"></a>
+            </li>
+          </ul>
+
+        </div>
+      </section>
+      <section class="ubiSection">
+        <h3>Ubicación de la empresa</h3>
+        <div class="containerUbi">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3286.0786820779986!2d-58.71456388505418!3d-34.55156316224676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbde66c4400ad%3A0x392d596bc40c565a!2sDURLOCK!5e0!3m2!1ses!2sar!4v1659647863097!5m2!1ses!2sar"
+            width="380" height="420" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- incluyo footer -->
+    <%- include('./partials/footer') %>
+      <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+      <script src="/js/carrusel.js"></script> -->
+</body>
 
 </html>
