@@ -41,9 +41,6 @@
 .header form input::placeholder{
     color: rgba(255, 255, 255, .69);
 }
-
-
-
 .header .cart-container{
     margin-right: 10px;
 }
@@ -70,6 +67,10 @@
 .header nav.hidden{
     display: inline-block;
     width: 50vw;
+    position: relative;
+    right: 173px;
+    top: 229px;
+    z-index: 10;
 
 } 
 .header nav.hidden ul li{

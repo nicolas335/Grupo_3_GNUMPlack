@@ -111,7 +111,7 @@ window.addEventListener('load', () => {
                     errores.push(error)
                 }
                 break;
-            case !regExPass.test(inputPass.value):
+            case inputPass.value.length < 8:
                 $('#passContainer').innerHTML = "<small>La contraseña debe tener un mínimo de 8 caracteres</small>"
                 email.style.border = "1px solid red"
                 validate.pass= false

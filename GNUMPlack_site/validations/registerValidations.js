@@ -9,7 +9,7 @@ module.exports = [
 
     body('email').trim().notEmpty().withMessage('Debe ingresar su email').bail()
     .isEmail().withMessage('Debe ingresar un formato de correo válido').bail()
-    .custom((value, { req }) => {
+    .custom((value) => {
           return db.Users.findOne({
               where:{
                   email:value
