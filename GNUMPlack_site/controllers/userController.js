@@ -30,7 +30,7 @@ module.exports = {
                 image: req.file ? req.file.filename : "default-profile-image.jfif",
                 categories_users_id: 1
             })
-                /* .then(user => {
+                .then(user => {
                     req.session.userLogin = {
                         first_name: name,
                         last_name: lastName,
@@ -39,7 +39,7 @@ module.exports = {
                         categories_users_id: 1
                     }
                     res.cookie('recordar', req.session.userLogin, { maxAge: 1000 * 60 * 60 * 24 })
-                }) */
+                })
                 .then(iniciar => {
                     return res.redirect('/')
                 })
@@ -98,7 +98,7 @@ module.exports = {
     profile: (req, res) => {
         db.Users.findOne({
             where: {
-                id: req.session.userLogin.id,
+                email: req.session.userLogin.email,
             }
         })
         .then(user => {
