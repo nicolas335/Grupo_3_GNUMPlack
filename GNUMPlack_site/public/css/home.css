@@ -19,6 +19,7 @@ body.bodyHome{
  /*  font-family:var(--secondaryFont); */
   font-weight: 100;
   font-size: medium;
+  
 }
 .home .section1{
   margin: 50px 0;
@@ -28,6 +29,10 @@ body.bodyHome{
   background-color: rgba(118, 173, 143, .2);
   color: #fff;
   text-align: center;
+}
+.home .section1 div p{
+  color: #062030;
+  font-weight: 500;
 }
 
 
@@ -53,6 +58,7 @@ body.bodyHome{
    box-shadow: 0px 0px 30px 5px rgb(255 255 255 / 75%);
    background-color: #dee2e6;
    border: #cfcfcf .2px solid;
+   border-radius: 10px;
   }
   .home .img_slides1{
     width: 100%;
