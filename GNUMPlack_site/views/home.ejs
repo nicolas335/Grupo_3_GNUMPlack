@@ -6,7 +6,7 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
 />
-  <body>
+  <body class="bodyHome">
     <!-- incluyo header -->
     <%- include('./partials/header') %>
 
@@ -14,12 +14,14 @@
         <!-- <div class="banner">
           <img src="img/logoGNUMPlack.jpg" alt="banner">
         </div> -->
-
+        
+<div class="swiper_bg"></div>
         <!-- Slider main container -->
-  <div class="swiper">
+  <div class="swiper swiper1">
     <!-- <div class="eyes_container">
       <i class="fa-solid fa-eye-slash" id="eye"></i>
     </div> -->
+    <div class="helper_container"></div>
 <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
 <!-- Slides -->
@@ -30,9 +32,7 @@
             la norma americana ASTM, norma de la que desprenden la totalidad del resto de normas
             mundiales para placas de yeso.Hacemos ensayos de calidad periódicos sobre las
             placas terminadas y registramos cualquier desvío para llevar una estadística que nos
-            permita mejorar.Periódicamente enviamos muestras de placas retiradas al azar de distintos
-            lotes de producción al INTI (Instituto Nacional de Tecnología Industrial) y al Instituto
-            de Materiales y Suelos de la Facultad de Ingeniería de la Universidad de San Juan, que
+            permita mejorar.Periódicamente enviamos muestras de placas retiradas al azar al INTI y a la Facultad de Ingeniería de la Universidad de San Juan, que
             emiten sus correspondientes certificados de ensayo que verifican el cumplimiento de
             todas las normas.</p></div>
           <div class="swiper-slide">
@@ -40,10 +40,7 @@
             <p class="img_p">En nuestra planta trabajamos fuertemente en el cuidado del medio ambiente.
             Nuestro proceso productivo no produce emisiones nocivas por tratarse fundamentalmente
             de vapor de agua y gases de combustión de gas natural que son controlados por el uso de
-            quemadores de última tecnología que se controlan periódicamente para garantizar su
-            correcto funcionamiento. En la producción de placas GNUMPLACK no se producen de manera
-            significativa efluentes líquidos pues el agua se incorpora a la masa del producto y el
-            sobrante se evapora. Todos los insumos y aditivos que se incorporan quedan en la placa,
+            quemadores de última tecnología.Todos los insumos y aditivos que se incorporan quedan en la placa,
             con la salvedad del agua que se evapora. Nuestro compromiso con el cuidado del planeta
             se extiende también a la selección de los insumos.</p></div>
           <div class="swiper-slide">
@@ -57,9 +54,7 @@
             sus productos y por el compromiso con sus clientes, sus colaboradores, la sociedad en general y el
             medio ambiente.</p>
           </div>
-          
-        </div>
-
+        
 <!-- navigation buttons -->
 
       <div class="swiper-button-prev"></div>
@@ -67,86 +62,71 @@
       <div class="swiper-button-next"></div>
       
     </div>
+  </div>
+  
+  
 
-        <h1 class="ofertas">Ofertas</h1>
-        <section class="destacados">
-          <article>
-            <div>
-              <a href="/product/detail"><img src="/img/products/cutout_123615_detail_picture_1.jpg" alt=""></a>
-            </div>
-            <h3><a href="/product/detail">SILENTBOARD</a></h3>
-            <p>Placa para el máximo aislamiento acústico en construcciones en seco</p>
-            <a class="ver-mas" href="/product/detail">Ver más</a>
-          </article>
-          <article class="mobile">
-            <div>
-              <a href="/product/detail"><img src="/img/products/cutout_82877_detail_picture_1.jpg" alt=""></a>
-            </div>
-            <h3><a href="/product/detail">AQUAPANEL CEMENT BOARD INDOOR</a></h3>
-            <p>Placa para baldosas idónea para toda clase de entornos con humedad</p>
-            <a class="ver-mas" href="/product/detail">Ver más</a>
-          </article>
-          <article class="mobile">
-            <i class="fas fa-arrow-circle-left"></i>
-            <div>
-              <a href="/product/detail"><img src="/img/products/cutout_123566_popup_landscape_4x3_1.jpg" alt=""></a>
-            </div>
-            <h3><a href="/product/detail">CLEANEO AKUSTIK LINEAR</a></h3>
-            <p>Placa de yeso perforada con formación de bordes sin relleno para una absorción acústica con efecto
-              purificador del aire</p>
-            <a class="ver-mas" href="/product/detail">Ver más</a>
-          </article>
-          <article class="tablet">
-            <div>
-              <a href="/product/detail"><img src="/img/products/cutout_123584_detail_picture_1.jpg" alt=""></a>
-            </div>
-            <h3><a href="/product/detail">SAFEBOARD</a></h3>
-            <p>Placa de protección radiológica para instalaciones radiográficas</p>
-            <a class="ver-mas" href="/product/detail">Ver más</a>
-          </article>
-          <i class="fas fa-arrow-circle-right"></i>
-        </section>
+
+
+  <h1>Ofertas</h1>
+        <!-- Slider main container -->
+<div class="swiper swiper2">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide"><%- include('./partials/card') %></div>
+    <div class="swiper-slide"><%- include('./partials/card') %></div>
+    <div class="swiper-slide"><%- include('./partials/card') %></div>
+  </div>
+
+  <!--navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+
+</div>
+
+
+
+
+
+
+
 
         <h1>Productos destacados</h1>
-        <section class="destacados">
-          <article class="mobile">
-            <i class="fas fa-arrow-circle-left"></i>
-            <div>
-              <a href="/product/detail"><img src="/img/products/cutout_123566_popup_landscape_4x3_1.jpg" alt=""></a>
-            </div>
-            <h3><a href="/product/detail">CLEANEO AKUSTIK LINEAR</a></h3>
-            <p>Placa de yeso perforada con formación de bordes sin relleno para una absorción acústica con efecto
-              purificador del aire</p>
-            <a class="ver-mas" href="/product/detail">Ver más</a>
-          </article>
-          <article class="mobile">
-            <div>
-              <a href="/product/detail"><img src="/img/products/cutout_82877_detail_picture_1.jpg" alt=""></a>
-            </div>
-            <h3><a href="/product/detail">AQUAPANEL CEMENT BOARD INDOOR</a></h3>
-            <p>Placa para baldosas idónea para toda clase de entornos con humedad</p>
-            <a class="ver-mas" href="/product/detail">Ver más</a>
-          </article>
-          <article class="tablet">
-            <div>
-              <a href="/product/detail"><img src="/img/products/cutout_123584_detail_picture_1.jpg" alt=""></a>
-            </div>
-            <h3><a href="/product/detail">SAFEBOARD</a></h3>
-            <p>Placa de protección radiológica para instalaciones radiográficas</p>
-            <a class="ver-mas" href="/product/detail">Ver más</a>
-          </article>
-          <article>
-            <div>
-              <a href="/product/detail"><img src="/img/products/cutout_123615_detail_picture_1.jpg" alt=""></a>
-            </div>
-            <h3><a href="/product/detail">SILENTBOARD</a></h3>
-            <p>Placa para el máximo aislamiento acústico en construcciones en seco</p>
-            <a class="ver-mas" href="/product/detail">Ver más</a>
-          </article>
-          <i class="fas fa-arrow-circle-right"></i>
-        </section>
+        
+      <!-- Slider main container -->
+      <div class="swiper swiper2">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide"><%- include('./partials/card') %></div>
+          <div class="swiper-slide"><%- include('./partials/card') %></div>
+          <div class="swiper-slide"><%- include('./partials/card') %></div>
+        </div>
+      
+        <!--navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      
+      
+      </div>
+
+
+
+
+
+
+
 
         <section class="section1">
+          
+          <div>
+            <img src="img/02.jpg" alt="">
+            <h3>Sustentabilidad</h3>
+            <p>Cuidado del medio ambiente en cada una de las etapas del proceso de producción. Desde la selección de los
+              insumos hasta la obtención y despacho del producto final.</p>
+          </div>
           <div>
             <img src="img/01.jpg" alt="">
             <h3>Sistema ideal</h3>
@@ -156,12 +136,6 @@
               Es sumamente práctico y veloz en su ejecución, brinda mayor nivel de confort y se adapta a cualquier tipo
               de diseño.
             </p>
-          </div>
-          <div>
-            <img src="img/02.jpg" alt="">
-            <h3>Sustentabilidad</h3>
-            <p>Cuidado del medio ambiente en cada una de las etapas del proceso de producción. Desde la selección de los
-              insumos hasta la obtención y despacho del producto final.</p>
           </div>
           <div>
             <img src="img/03.jpg" alt="">

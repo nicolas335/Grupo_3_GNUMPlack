@@ -1,11 +1,12 @@
 .header{
     width: 100vw;
     height: 60px;
-    background-color: #ffd000;
+    /* background-color: #ffd000; */
+    background-color: rgba(107, 144, 128, 1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom-left-radius: 10px;
+    /* border-bottom-left-radius: 10px; */
 }
 .header .organizing{
     display: flex;
@@ -19,14 +20,15 @@
     margin-left:5px;
     height: 55px;
     width: 70px;
-    border-bottom-left-radius: 10px;
+/*     border-bottom-left-radius: 10px; */
 }
 .header form{
     display: flex;
     margin-right: 10px;
     padding: 5px ;
     background-color: rgba(255, 255, 255, .20);
-    border: yellow 1px solid;
+    border: #6B9080 1px solid;
+    /* border: yellow 1px solid; */
     border-radius: 12px;
 }
 .header form button{
@@ -62,7 +64,8 @@
     top: 62px;
     right: 0;
     display: none;
-    background-color: #ffd000;
+    /* background-color: #ffd000; */
+    background-color: #6B9080;
 }
 .header nav.hidden{
     display: inline-block;

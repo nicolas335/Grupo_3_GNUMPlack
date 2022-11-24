@@ -146,7 +146,7 @@ window.addEventListener('load', () => {
                     pass.style.border = "1px solid red"
                     validate.pass = false
                 break;
-                case pass.value.length <= 8:
+                case pass.value.length < 8:
                     $('#passContainer').innerHTML = "<small>La contraseña debe tener un minimo de 8 caracteres</small>"
                     email.style.border = "1px solid red"
                     validate.pass = false
@@ -171,7 +171,7 @@ window.addEventListener('load', () => {
                     pass2.style.border = "1px solid red"
                     validate.pass2 = false
                     break;
-                case pass2.value.length <= 8:
+                case pass2.value.length < 8:
                    $("#passContainer2").innerHTML = "<small>El campo debe tener al menos 8 caracteres</small>"
                    pass2.style.border = "1px solid red"
                    validate.pass2 = false

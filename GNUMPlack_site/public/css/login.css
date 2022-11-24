@@ -1,14 +1,16 @@
+.login{
+    background-color: #a4c3b2;
+}
 .login main {
     width: 400px;
     margin: 0 auto;
     padding-bottom: 50px;
     padding-top: 60px;
-
 }
 
 .login main h1 {
     text-align: center;
-    font-family: var(--fuenteTitulos)
+    font-family: var(--fuenteParrafo)
 }
 
 .login main .container {
@@ -18,43 +20,43 @@
     align-content: center;
     margin-bottom: 15px;
     font-weight: bold;
-    font-family: var(--fuenteSubtitulos);
+    font-family: var(--fuenteParrafo);
 }
 
 .login main .container label {
     margin-bottom: 5px;
     text-align: left;
-    font-family: var(--fuenteSubtitulos)
+    font-family: var(--fuenteParrafo)
 }
 
 .login main .container input {
     width: 80%;
     padding: 10px;
-    font-family: var(--fuenteSubtitulos)
+    font-family: var(--fuenteParrafo)
 }
 
 .login main .container small {
     margin-top: 5px;
     text-align: left;
     color: #f20808;
-    font-family: var(--fuenteSubtitulos)
+    font-family: var(--fuenteParrafo)
 }
 
 .login main h2 {
-    font-family: var(--fuenteSubtitulos);
+    font-family: var(--fuenteParrafo);
     text-align: center;
     margin-top: 15px;
 }
 
 .login main h4 {
     text-align: center;
-    font-family: var(--fuenteSubtitulos);
+    font-family: var(--fuenteParrafo);
     color: #000000;
 }
 
 .login main button {
     padding: 15px;
-    background-color: #d0770a;
+    background-color: #cce3de;
     color: black;
     font-weight: 600;
     border: none;
@@ -62,18 +64,18 @@
     font-size: 20px;
     width: 170px;
     text-align: center;
-    font-family: var(--fuenteSubtitulos)
+    font-family: var(--fuenteParrafo)
 }
 
 .login .bottom {
     margin-bottom: 20px;
     text-align: center;
-    font-family: var(--fuenteSubtitulos)
+    font-family: var(--fuenteParrafo)
 }
 
 .login main a {
     color: #000000;
-    font-family: var(--fuenteSubtitulos)
+    font-family: var(--fuenteParrafo)
 }
 
 /* Tablet */
@@ -81,7 +83,7 @@
 @media (min-width:461px) {
     .login main button {
         padding: 15px;
-        background-color: #d0770a;
+        background-color: #cce3de;
         color: black;
         font-weight: 600;
         border: none;
@@ -99,7 +101,7 @@
 @media(min-width :768px) {
     .login main button {
         padding: 10px;
-        background-color: #d0770a;
+        background-color: #cce3de;
         color: black;
         font-weight: 600;
         border: none;
@@ -107,6 +109,6 @@
         font-size: 20px;
         width: 170px;
         text-align: center;
-        font-family: var(--fuenteSubtitulos)
+        font-family: var(--fuenteParrafo)
     }
 }
