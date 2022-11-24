@@ -11,8 +11,7 @@
     border-radius: 38px;
 }
 .product .contenedor img{
-   border:solid 7px orangered;
-
+   border:solid 3px #1d1d1d;
 }
 .product article{
     margin: 40px 0;

@@ -20,7 +20,7 @@ router.put('/edit/:id'/* ,adminCheck */,notFound,upload.single('image'),productV
 router.delete('/:id'/* ,adminCheck */,notFound, trash);
 
 router.get('/listDeleted'/* ,adminCheck */,history)
-router.put('/restored/:id'/* ,adminCheck */,notFound,restore)
-router.delete('/destroy/:id'/* ,adminCheck */,notFound,destroy)
+router.put('/restored/:id'/* ,adminCheck */,restore)
+router.delete('/destroy/:id'/* ,adminCheck */,destroy)
 
 module.exports = router;

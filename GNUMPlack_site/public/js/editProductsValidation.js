@@ -190,7 +190,7 @@ window.addEventListener('load', () => {
                 this.classList.add('is-invalid')
                 validate.price = false
                 break;
-            case !regExNumber.test(this.value.trim()):
+            case regExNumber.test(this.value.trim()):
                 $('#priceError').innerHTML = 'Solo se permiten números'
                 this.classList.add('is-invalid')
                 validate.price = false
@@ -222,7 +222,7 @@ window.addEventListener('load', () => {
                 this.classList.add('is-invalid')
                 validate.stock = false
                 break;
-            case !regExNumber.test(this.value.trim()):
+            case regExNumber.test(this.value.trim()):
                 $('#stockError').innerHTML = 'Solo se permiten números'
                 this.classList.add('is-invalid')
                 validate.stock = false
@@ -249,7 +249,7 @@ window.addEventListener('load', () => {
                 this.classList.add('is-invalid')
                 validate.discount = false
                 break;
-            case !regExNumber.test(this.value.trim()):
+            case regExNumber.test(this.value.trim()):
                 $('#discountError').innerHTML = 'Solo se permiten números'
                 this.classList.add('is-invalid')
                 validate.discount = false
