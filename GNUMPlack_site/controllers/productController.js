@@ -1,16 +1,49 @@
 //const products = require('../data/products.json')
 const db = require('../database/models')
-const {Op} = require('Sequelize')
+const {Op, where} = require('Sequelize')
+/* const Sequelize  = require('Sequelize') */
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
 module.exports={
      product:(req,res)=>{
-        db.Products.findAll()
-        .then(products => {
-            return res.render("product",{products})
+        
+        let placaYeso = db.Products.findAll({
+            where: {
+                categories_products_id: 1,
+            }
         })
-        .catch(error => res.send(error))
+        let placaLaminado = db.Products.findAll({
+            where: {
+                categories_products_id: 2,
+            }
+        })
+        let placaFibras = db.Products.findAll({
+            where: {
+                categories_products_id: 3,
+            }
+        })
+        let placaMadera = db.Products.findAll({
+            where: {
+                categories_products_id: 4,
+            }
+        })
+        let placaCemento = db.Products.findAll({
+            where: {
+                categories_products_id: 5,
+            }
+        })
+        Promise.all([placaYeso, placaLaminado, placaFibras,placaMadera,placaCemento])
+            .then(([placaYeso, placaLaminado, placaFibras,placaMadera,placaCemento]) => {
+                res.render("product", {
+                    placaYeso ,
+                    placaLaminado ,
+                    placaFibras ,
+                    placaMadera ,
+                    placaCemento
+                });
+            })
+            .catch((error) => res.send(error));
     },
      detail:(req,res)=>{
         const idParams = +req.params.id

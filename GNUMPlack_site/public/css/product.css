@@ -4,6 +4,7 @@
 .product h1{
     text-align:center;
     padding: 5px;
+    font-size: large;
 }
 
 .product .contenedor img{
@@ -24,6 +25,94 @@
 .product .name p{
     margin-bottom: 15px;
 }
+
+
+
+  
+  
+  svg {
+    width: 100%;
+    display: block;
+  }
+  /* Código */ 
+  .header2{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width:100%;
+    background-color: #282828;
+    padding: .8em;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  .header2 .button{
+    display: none;
+  }
+  .header2 .svg{
+    width:2em;
+    height:2em;
+  }
+ 
+  .header2 .ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    
+  }
+  .header2 .li{
+    margin: 0 .5em;
+    
+  }
+  .header2 .li a{
+    color: #a4c3b2;
+  }
+  .header2 h1 a{
+    color: #a4c3b2;
+  }
+  
+  @media screen and (max-width:480px){
+    .header2 .button{
+      display: block;
+      cursor: pointer;
+    }
+    .header2 .nav{
+      width:100%;
+      /* display: none; */
+      height:0;
+      pointer-events: none;
+      overflow: hidden;
+      transition: all .5s ease;
+  
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+    .header2 .nav.activo{
+      /* display: block; */
+      height:auto;
+      pointer-events: auto;
+    }
+    .header2 .ul{
+      flex-direction: column;
+    }
+    .header2 .li{
+      margin: .8rem 0;
+    }
+  
+  }
+
+
+
+
+
+
+
 
 /* Tablet */
 @media (min-width:461px) {

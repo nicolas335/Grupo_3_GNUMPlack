@@ -7,9 +7,104 @@
     <%- include ("./partials/header") %> 
 
     <main class="product">
-        <h1>Productos</h1>
+
+          <div class="header2">
+            <h1 class="h1">
+                <a href="#" class="a">>Seleccione el tipo de producto</a>
+            </h1>
+      
+            <button class="button">
+              <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                </svg>
+            </button>
+      
+            <nav class="nav">
+                <ul class="ul">
+                    <li class="li"><a href="#yeso" class="a">Placa de yeso</a></li>
+                    <li class="li"><a href="#laminado" class="a">Placa de yeso laminado</a></li>
+                    <li class="li"><a href="#fibras" class="a">Placa de yeso con fibras</a></li>
+                    <li class="li"><a href="#madera" class="a">Placa de lana de madera</a></li>
+                    <li class="li"><a href="#cemento" class="a">Placa de cemento</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <h1 id="yeso">Placas de yeso</h1>
         <section>
-            <% products.forEach(producto => { %>
+            <% placaYeso.forEach(producto => { %>
+                <article class="contenedor">
+                    <div class="name">
+                        <h3><a href="/product/detail/<%= producto.id %> " target="_blank"><%= producto.name %> </a></h3>
+                        <p><%= producto.description %> </p>
+                    </div>
+                    <div class="image">
+                        <a href="/product/detail/<%= producto.id %>" target="_blank" ><img class="placas" src="/img/products/<%- producto.image %> " alt="placa de yeso" ></a>
+                    </div>
+                </article>
+             
+            <% }) %>
+           
+        </section>
+
+
+        <h1 id="laminado">Placas de yeso laminado</h1>
+        <section >
+            <% placaLaminado.forEach(producto => { %>
+                <article class="contenedor">
+                    <div class="name">
+                        <h3><a href="/product/detail/<%= producto.id %> " target="_blank"><%= producto.name %> </a></h3>
+                        <p><%= producto.description %> </p>
+                    </div>
+                    <div class="image">
+                        <a href="/product/detail/<%= producto.id %>" target="_blank" ><img class="placas" src="/img/products/<%- producto.image %> " alt="placa de yeso" ></a>
+                    </div>
+                </article>
+             
+            <% }) %>
+           
+        </section>
+
+ 
+        <h1 id="fibras">Placa de yeso con fibras</h1>
+        <section>
+            <% placaFibras.forEach(producto => { %>
+                <article class="contenedor">
+                    <div class="name">
+                        <h3><a href="/product/detail/<%= producto.id %> " target="_blank"><%= producto.name %> </a></h3>
+                        <p><%= producto.description %> </p>
+                    </div>
+                    <div class="image">
+                        <a href="/product/detail/<%= producto.id %>" target="_blank" ><img class="placas" src="/img/products/<%- producto.image %> " alt="placa de yeso" ></a>
+                    </div>
+                </article>
+             
+            <% }) %>
+           
+        </section>
+        
+
+        <h1 id="madera">Placa de lana de madera</h1>
+        <section>
+            <% placaMadera.forEach(producto => { %>
+                <article class="contenedor">
+                    <div class="name">
+                        <h3><a href="/product/detail/<%= producto.id %> " target="_blank"><%= producto.name %> </a></h3>
+                        <p><%= producto.description %> </p>
+                    </div>
+                    <div class="image">
+                        <a href="/product/detail/<%= producto.id %>" target="_blank" ><img class="placas" src="/img/products/<%- producto.image %> " alt="placa de yeso" ></a>
+                    </div>
+                </article>
+             
+            <% }) %>
+           
+        </section>
+
+
+        <h1 id="cemento">Placa de cemento</h1>
+        <section>
+            <% placaCemento.forEach(producto => { %>
                 <article class="contenedor">
                     <div class="name">
                         <h3><a href="/product/detail/<%= producto.id %> " target="_blank"><%= producto.name %> </a></h3>
@@ -24,7 +119,7 @@
            
         </section>
     </main>
-<%- include ("./partials/footer") %> 
+    <script src="js/products.js"></script>
 </body>
 
 </html>
