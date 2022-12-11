@@ -79,46 +79,43 @@
   <!-- Additional required wrapper -->
   <div class="swiper-wrapper">
     <!-- Slides -->
-    <div class="swiper-slide">
-      <% products.forEach(producto => { %>    
-        <div class="swiper-slide"><div class="card">
-          <div class="imgBox">
-              <img src="..\img\products\<%= producto.image %> " alt="img of Product" srcset="">
-          </div>
-          <div class="details">
-              <div class="title">
-                  <h3>nombre del producto</h3>
-                  <small>placa de yeso </small>
-              </div>
-              <div class="description">
-                  <p><%= producto.description %> </p>
-              </div>
-              <div class="buy">
-                  <div class="price">
-                      <sup>$</sup>
-                      <span><%= producto.price %> </span>
-                  </div>
-                  <button class="btn">
-                      <a href="">Comprar</a>
-                  </button>
-              </div>
-          </div>
-      </div>
+    <% saleProducts.forEach(producto => { %>  
+  
+      <div class="swiper-slide"><div class="card">
+        <a href="/product/detail/<%= producto.id %> " target="_blank">
+        <div class="imgBox">
+            <img src="..\img\products\<%= producto.image %> " alt="img of Product" srcset="">
+        </div>
+      </a>
+        <div class="details">
+            <div class="title">
+                <h3><a href="/product/detail/<%= producto.id %> " target="_blank"><%= producto.name %> </a></h3>
+                <small><%= categories[producto.categories_products_id - 1] %></small>
+            </div>
+            <div class="description">
+                <p><%= producto.description %> </p>
+            </div>
+            <div class="buy">
+                <div class="price">
+                    <sup>$</sup>
+                    <span><%= producto.price %> </span>
+                </div>
+                <button class="btn">
+                    <a href="">Comprar</a>
+                </button>
+            </div>
+        </div>
     </div>
-    <% }) %>
-    </div>
-    
   </div>
-
-  <!--navigation buttons -->
-  <div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-
-
-</div>
-
-
-
+  <% }) %>
+    </div>
+  
+    <!--navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+  
+  </div>
 
 
 
@@ -131,15 +128,17 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
-          <% products.forEach(producto => { %>    
+          <% featuredProducts.forEach(producto => { %>    
           <div class="swiper-slide"><div class="card">
+            <a href="/product/detail/<%= producto.id %> " target="_blank">
             <div class="imgBox">
                 <img src="..\img\products\<%= producto.image %> " alt="img of Product" srcset="">
             </div>
+          </a>
             <div class="details">
                 <div class="title">
-                    <h3>nombre del producto</h3>
-                    <small>categoria del producto</small>
+                    <h3><a href="/product/detail/<%= producto.id %> " target="_blank"><%= producto.name %> </a></h3>
+                    <small><%= categories[producto.categories_products_id - 1] %></small>
                 </div>
                 <div class="description">
                     <p><%= producto.description %> </p>

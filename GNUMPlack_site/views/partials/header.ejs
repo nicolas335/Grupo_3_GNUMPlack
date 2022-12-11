@@ -38,6 +38,9 @@
               <li><a href="/product">Productos</a></li>
               <li><a href="/aboutUs">Sobre Nosotros</a></li>
               <li><a href="#footer">Contáctanos</a></li>
+              <li class="session"><form action="/user/logout?_method=DELETE" method="post">
+                <button type="submit">Cerrar Sesión</button>
+            </form></li>
             <% } else{%>
               <li><a href="/user/login">Iniciar Sesión</a></li>
               <li><a href="/user/signin">Regístrate</a></li>

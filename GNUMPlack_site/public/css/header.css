@@ -16,6 +16,9 @@
     margin-right: 15px;
     color: white;
 }
+.header .session form button{
+    cursor: pointer;
+}
 .header .logo a img{
     margin-left:5px;
     height: 55px;

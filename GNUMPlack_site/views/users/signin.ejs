@@ -58,7 +58,7 @@
             <div class="container">
                 <label for="signinFile" >Añadir imagen</label>
                   <input class="signinFile" type="file" id="signinFile" name="imageUser" >
-                  <small id="imagenContainer"><%= (locals.errors && errors.imageUser) ? errors.imageUser.msg : '*' %></small>                
+                  <small id="imagenContainer"><%= (locals.errors && errors.imageUser) ? errors.imageUser.msg : '' %></small>                
             </div>
             <h2 class="bottom">Terminos y Condiciones</h2>
             <div class="bottom">
