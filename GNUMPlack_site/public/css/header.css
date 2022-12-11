@@ -142,4 +142,7 @@
     .header form{
         margin-right: 3vw;
     }
+    .header form input{
+        padding: 5px;
+    }
 }
