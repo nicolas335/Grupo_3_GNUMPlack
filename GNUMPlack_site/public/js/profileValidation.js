@@ -36,7 +36,7 @@ window.addEventListener('load', function() {
                 $('#nameError').style.color = 'red'
                 validation.name = false                
                 break;
-                case !regExNumber.test(nombre.value.trim()):
+            case !regExNumber.test(nombre.value.trim()):
                 $('#nameError').innerHTML = 'Solo se aceptan letras'
                 $('#nameError').style.color = 'red'
                 validation.name = false                
@@ -121,17 +121,13 @@ window.addEventListener('load', function() {
             case !this.value.trim():
                 $('#cityError').innerHTML = 'Debe ingresar su ciudad'
                 $('#cityError').style.color = 'red'
-                validation.ciudad = false                
+                validation.ciudad = false
                 break;
-            case !regExNumber.test(ciudad.value.trim()):
-                $('#cityError').innerHTML = 'Solo se permiten letras'
-                $('#cityError').style.color = 'red'
-                validation.ciudad = false                
-                break
+            
         
             default:
                 $('#cityError').innerHTML = null
-                validation.ciudad = true             
+                validation.ciudad = true
                 break;
         }
     })

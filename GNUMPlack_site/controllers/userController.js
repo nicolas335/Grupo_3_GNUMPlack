@@ -104,12 +104,13 @@ module.exports = {
         .then(user => {
             return res.render('users/profile',{user})
         })
+        .catch(err => res.send(err))
     },
     editUser: (req, res) => {
 
         db.Users.findOne({
             where: {
-                id: req.session.userLogin.id,
+                email: req.session.userLogin.email
             },
             include: [{
                 all: true,
@@ -174,6 +175,7 @@ module.exports = {
                 errors: errors.mapped()
             })
         })
+        .catch(err => res.send(err))
     }
     }, 
 
