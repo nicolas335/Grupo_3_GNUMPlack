@@ -20,11 +20,13 @@
     </form>
   
   
-  <div class="cart-container">
-  <a class="cart" href="cart">
-    <i class="fa-solid fa-cart-shopping cart"></i>
-    </a>
-  </div>
+    <div class="cart-container">
+      <% if (locals.userLogin) { %>
+        <a class="cart" href="cart">
+          <i class="fa-solid fa-cart-shopping cart"></i>
+        </a>
+        <% } %>
+    </div>
 
   <button class="menu-toggle">
       <i class="fas fa-bars"></i>
