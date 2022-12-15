@@ -17,7 +17,7 @@ module.exports = {
             errors.errors.push(image);
         }
         if (errors.isEmpty()) {
-            let { name, lastName, email, pass, phoneNumber, city, gender } = req.body;
+            let { name, lastName, email, pass, phoneNumber, city, gender, sesion } = req.body;
             //return res.send(req.body)
             db.Users.create({
                 first_name: name,
@@ -31,16 +31,17 @@ module.exports = {
                 categories_users_id: 1
             })
                 .then(user => {
-                    req.session.userLogin = {
-                        first_name: name,
-                        last_name: lastName,
-                        email: email,
-                        image: req.file ? req.file.filename : "default-profile-image.jfif",
-                        categories_users_id: 1
-                    }
+                    if (sesion == 'on') {                        
+                        req.session.userLogin = {
+                            id: user.id,
+                            first_name: user.first_name,
+                            last_name: user.last_name,
+                            email: user.email,
+                            image: user.image,
+                            categories_users_id: user.categories_users_id
+                        }
                     res.cookie('recordar', req.session.userLogin, { maxAge: 1000 * 60 * 60 * 24 })
-                })
-                .then(iniciar => {
+                    }
                     return res.redirect('/')
                 })
                 .catch(errors => res.send(errors))
@@ -98,7 +99,7 @@ module.exports = {
     profile: (req, res) => {
         db.Users.findOne({
             where: {
-                email: req.session.userLogin.email,
+                id: req.session.userLogin.id,
             }
         })
         .then(user => {
@@ -110,11 +111,8 @@ module.exports = {
 
         db.Users.findOne({
             where: {
-                email: req.session.userLogin.email
-            },
-            include: [{
-                all: true,
-            }]
+                id: req.session.userLogin.id
+            }
         })
             .then((user) => {
                 //return res.send(user)//

@@ -195,6 +195,11 @@ window.addEventListener('load', () => {
                 this.classList.add('is-invalid')
                 validate.price = false
                 break;
+            case regExLetter.test(this.value.trim()):
+                $('#priceError').innerHTML = 'No se permiten letras'
+                this.classList.add('is-invalid')
+                validate.price = false
+                break;
             case this.value.trim()<0:
                 $('#priceError').innerHTML = 'No puede ingresar un precio negativo'
                 this.classList.add('is-invalid')

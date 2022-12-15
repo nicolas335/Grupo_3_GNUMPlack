@@ -19,15 +19,9 @@ module.exports = {
           key:'id'
         }
       },
-      carts_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references:{
-          model:{
-            tableName:'Carts'
-          },
-          key:'id'
-        }
+      status: {
+        type: Sequelize.STRING(100),
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

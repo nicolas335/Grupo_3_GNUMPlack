@@ -9,11 +9,15 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      amount: {
-        type: Sequelize.INTEGER
-      },
-      totalPrice:{
-      type: Sequelize.INTEGER
+      users_id:{
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references:{
+          model:{
+            tableName:'Users'
+          },
+          key:'id'
+        }
       },
       products_id:{
         type: Sequelize.INTEGER,
@@ -25,15 +29,18 @@ module.exports = {
           key:'id'
         }
       },
-      users_id:{
+      orders_id:{
         type: Sequelize.INTEGER,
         allowNull: false,
         references:{
           model:{
-            tableName:'Users'
+            tableName:'Orders'
           },
           key:'id'
         }
+      },
+      amount: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

@@ -101,7 +101,7 @@
     background-size: cover;
     background-position: center;
     border-radius: 15px;
-    width: 10%;
+    width: 20%;
     margin: 15px 10px;
 }
 
@@ -121,7 +121,9 @@
     .profile .seccion-perfil-usuario .lista-datos {
         width: 100%;
     }
-
+    .profile .perfil-usuario-last{
+    width: 15%;
+    }
     .profile .seccion-perfil-usuario .perfil-usuario-portada,
     .profile .seccion-perfil-usuario .perfil-usuario-body {
         width: 95%;

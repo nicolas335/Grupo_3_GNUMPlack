@@ -29,14 +29,46 @@
                         </ul>
                         <div class="precioDesktop">
                             <span>$<%= toThousand(productoDetallado.price) %> </span>
-                            <input type="submit" value="Añadir a carrito">
+                            <% if ((!locals.userLogin) || (msg==1)) { %>
+                                <input type="submit" value="Añadir a carrito">
+                            <% } else {%>
+                                <form action="/cart/agregar/<%= productoDetallado.id %>" method="POST">
+                                    <input type="submit" value="Añadir a carrito">
+                                </form>
+                            <% } %> 
                         </div>
+                        <% if (!locals.userLogin) { %>
+                            <p class="alertSesion">Debe iniciar sesión para añadir el producto al carrito</p>
+                        <% } %> 
+                        <% if (msg==1) { %>
+                            <p class="alertSesion">El producto ya se encuentra en el carrito</p>
+                        <% } %> 
                     </div>
                     <div class="button">
                         <span>$<%= toThousand(productoDetallado.price) %> </span>
-                        <input type="submit" value="Añadir a carrito">
+                        <% if ((!locals.userLogin) || (msg==1)) { %>
+                            <input type="submit" value="Añadir a carrito">
+                        <% } else {%>
+                            <form action="/cart/agregar/<%= productoDetallado.id %>" method="POST">
+                                <input type="submit" value="Añadir a carrito">
+                            </form>
+                        <% } %> 
                     </div>
+                    <% if (!locals.userLogin) { %>
+                        <p class="alertSesion">Debe iniciar sesión para añadir el producto al carrito</p>
+                    <% } %> 
+                    <% if (msg==1) { %>
+                        <p class="alertSesion">El producto ya se encuentra en el carrito</p>
+                    <% } %> 
                 </article>
+
+                <!-- FORMS PARA CHEQUEAR EL FUNCIONAMIENTO DE LOS METODOS DEL CART -->
+                <!-- <form action="/cart/quitar/1?_method=delete" method="POST">
+                    <input type="submit" value="Eliminar">
+                </form><br>
+                <form action="/cart/comprar?_method=put" method="POST">
+                    <input type="submit" value="comprar">
+                </form> -->
 
                 <h1 class="relacionados">Productos relacionados</h1>
                 <section class="destacados">

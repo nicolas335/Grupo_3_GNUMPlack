@@ -66,6 +66,10 @@
                 <label for="terminos">Al registrarte aceptas nuestras Condiciones de uso y Politica de privacidad</label>
                 <small id="terminosContainer"><%= (locals.errors && errors.terminos) ? errors.terminos.msg : '*' %></small>
             </div>
+            <div class="bottom">
+                <input type="checkbox" name="sesion" id="sesion" <%= locals.old && old.sesion == "on"? "checked":"" %> >
+                <label for="sesion">¿Desea mantener la sesión iniciada?</label>
+            </div>
             <h2 class="bottom"></h2>
             <div class="bottom">
                 <button type="submit" id="buttonSubmit">Registrarme</button>

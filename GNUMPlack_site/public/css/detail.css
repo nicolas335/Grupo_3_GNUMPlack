@@ -37,6 +37,13 @@
     list-style: inside;
 }
 
+.detail .descripcion .lista .alertSesion{
+    display: none;
+}
+.detail .descripcion .alertSesion{
+    text-align: center;
+}
+
 .detail .descripcion h3 {
     margin: 30px 0 15px;
 }
@@ -125,6 +132,10 @@
         margin: 2px 0;
         width: 100%;
     }
+    .detail .descripcion .alertSesion{
+        order: 10;
+        display: block;
+    }
     .detail .descripcion .textoDescripcion{
         margin: 15px 0;
     }
@@ -194,6 +205,12 @@
     .detail .descripcion .lista .precioDesktop span{
         font-size: 25px;
         margin-right: 30px;
+    }
+    .detail .descripcion .lista .alertSesion{
+        display: block;
+    }
+    .detail .descripcion .alertSesion{
+        display: none;
     }
 }
 

@@ -47,7 +47,7 @@ module.exports = {
                 discount: +discount,
                 qualities: qualities,
                 advantages: advantage,
-                image: req.file.filename ? req.file.filename : 'default-product-image.png'
+                image: req.file ? req.file.filename : 'default-product-image.png'
           
           }) .then(p => {  
             res.redirect("/admin/list");
