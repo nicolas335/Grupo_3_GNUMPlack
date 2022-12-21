@@ -21,8 +21,8 @@
   
   
     <div class="cart-container">
-      <% if (locals.userLogin) { %>
-        <a class="cart" href="cart">
+      <a class="cart" href="cart">
+          <% if (locals.userLogin) { %>
           <i class="fa-solid fa-cart-shopping cart"></i>
         </a>
         <% } %>

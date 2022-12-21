@@ -2,10 +2,10 @@ const { validationResult, Result } = require('express-validator');
 const path = require('path');
 const db = require('../database/models')
 const {Op, where} = require('Sequelize')
-
+/*  */
 module.exports = {
      cart : (req, res) => {
-        db.Carts.findOne({
+        db.Carts.findAll({
             where: {
                 users_id: req.session.userLogin.id
             },
@@ -13,10 +13,12 @@ module.exports = {
                 {
                     all:true
                 }
-            ]
+            ],
+           
+
         })
         .then(cart => {
-            //return res.send(cart)
+            
             return res.render('cart',{cart})
         })
         .catch(err => res.send(err))
