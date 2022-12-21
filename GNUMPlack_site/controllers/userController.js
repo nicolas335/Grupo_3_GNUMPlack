@@ -38,7 +38,8 @@ module.exports = {
                             last_name: user.last_name,
                             email: user.email,
                             image: user.image,
-                            categories_users_id: user.categories_users_id
+                            categories_users_id: user.categories_users_id,
+                            cart: 0
                         }
                     res.cookie('recordar', req.session.userLogin, { maxAge: 1000 * 60 * 60 * 24 })
                     }
@@ -69,23 +70,40 @@ module.exports = {
                     email
                 }
             })
-                .then(user => {
-
+                .then(userLogin => {
+                    let user = userLogin
                     //return res.send(user)
-                    req.session.userLogin = {
-                        id: user.id,
-                        first_name: user.first_name,
-                        last_name: user.last_name,
-                        email: user.email,
-                        image: user.image,
-                        categories_users_id: user.categories_users_id
-                    }
-                    //return res.send(req.session.userLogin)
-                    if (recordame) {
-                        res.cookie('recordar', req.session.userLogin, { maxAge: 1000 * 60 * 60 * 24 })
-                    }
-                    return res.redirect('/')
-                    // return res.send(req.body) 
+                    db.Carts.findAll({
+                        where: {
+                            users_id: user.id
+                        },
+                        include: [{
+                            all: true
+                        }]
+                    })
+                    .then(carts => {
+                        //return res.send(carts)
+                        let productInCart = 0;
+                        carts.forEach(cart => {
+                            if (cart.order.status == 'pending') {
+                                productInCart = 1
+                            }
+                        });
+                        req.session.userLogin = {
+                            id: user.id,
+                            first_name: user.first_name,
+                            last_name: user.last_name,
+                            email: user.email,
+                            image: user.image,
+                            categories_users_id: user.categories_users_id,
+                            cart: productInCart
+                        }
+                        //return res.send(req.session.userLogin)
+                        if (recordame) {
+                            res.cookie('recordar', req.session.userLogin, { maxAge: 1000 * 60 * 60 * 24 })
+                        }
+                        return res.redirect('/')
+                    })
                 })
                 .catch(err => res.send(err))
         } else {
@@ -119,7 +137,8 @@ module.exports = {
                 return res.render('users/editUser', {
                     user
                 });
-            }).catch((error) => res.send(error));
+            })
+            .catch((error) => res.send(error));
 
     },
     processEdit: (req, res) => {

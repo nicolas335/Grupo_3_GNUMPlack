@@ -68,7 +68,7 @@ module.exports = {
                 })
                 .then(newOrder => {
                     db.Carts.create({
-                        users_id: +req.session.userLogin.id,
+                        users_id: req.session.userLogin.id,
                         products_id: idParams,
                         orders_id: +newOrder.id,
                         amount: 1,
@@ -76,6 +76,20 @@ module.exports = {
                         updatedAt: new Date
                     })
                     .then(response => {
+                        // Creo la nueva session
+                        req.session.userLogin = {
+                            id: req.session.userLogin.id,
+                            first_name: req.session.userLogin.first_name,
+                            last_name: req.session.userLogin.last_name,
+                            email: req.session.userLogin.email,
+                            image: req.session.userLogin.image,
+                            categories_users_id: req.session.userLogin.categories_users_id,
+                            cart: 1
+                        }
+                    if (req.cookies.recordar) {
+                        res.cookie('recordar', '', { maxAge: -1 })
+                        res.cookie('recordar', req.session.userLogin, { maxAge: 1000 * 60 * 60 * 24 })
+                    }
                         return res.redirect(`/product/detail/${idParams}`)
                     })
                 })
@@ -154,6 +168,19 @@ module.exports = {
                     where: {id: order.id}
                 })
                 .then(response => {
+                    req.session.userLogin = {
+                        id: req.session.userLogin.id,
+                        first_name: req.session.userLogin.first_name,
+                        last_name: req.session.userLogin.last_name,
+                        email: req.session.userLogin.email,
+                        image: req.session.userLogin.image,
+                        categories_users_id: req.session.userLogin.categories_users_id,
+                        cart: 0
+                    }
+                    if (req.cookies.recordar) {
+                        res.cookie('recordar', '', { maxAge: -1 })
+                        res.cookie('recordar', req.session.userLogin, { maxAge: 1000 * 60 * 60 * 24 })
+                    }
                     res.redirect('/')
                 })     
                 .catch(err => res.send(err))           
