@@ -14,14 +14,6 @@
 
 
 
-
-
-            
-            
-
-
-
-
             <% cart.forEach(e => { %>
                 
                
@@ -39,10 +31,11 @@
                 </div> <br>
                 <sup>$</sup>
                 <span class="p-price"><%= e.product.price %></span>
-                
             </div>
             <div class="trash-container">
-                <i class="fas fa-trash"></i>
+                <form action="/cart/quitar/<%=  e.id %>?_method=delete" method="POST">
+                    <input type="submit" value="X"><!-- <i class="fas fa-trash"></i> -->
+                </form> 
             </div>
         </div>
         
@@ -58,8 +51,14 @@
         <!-- pintando el precio -->
         <div class="total-container">
             <h4>El total es de:</h4>
-            <p class="total" id="total"><%= total %> </p>
+            <p class="total" id="total">$ <%= total %> </p>
+            
+            <form action="/cart/comprar?_method=put" method="POST">
+                <input id="submit" type="submit" value="Comprar!">
+            </form>
+        
         </div>
+
      
 
     </main>
