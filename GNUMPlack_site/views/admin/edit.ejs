@@ -16,7 +16,7 @@
           </button>
           <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menú</h5>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
@@ -25,13 +25,13 @@
                   <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/admin/list">List</a>
+                  <a class="nav-link" href="/admin/list">Lista de Productos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/admin/create">Create</a>
+                  <a class="nav-link" href="/admin/create">Crear un Producto</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/admin/listDeleted">List Deleted</a>
+                  <a class="nav-link" href="/admin/listDeleted">Productos Eliminados</a>
                 </li>
               </ul>
               <form class="d-flex" role="search">
@@ -54,65 +54,66 @@
         h1{color: white;} 
         form{padding: 0 10%;}
         img.image{max-width: 320px;}
-        div{margin-top: 15px;} 
+        div.form-floating{margin-top: 15px;} 
         </style>
-      <h1>Editing a product!</h1>
+      <h1>Editando un Producto</h1>
 
       <form action="/admin/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <section>
           <div class="form-floating">
               <input type="text" name="name" class="form-control" id="name" placeholder="Name"  value="<%= producto.name %>">
-              <label for="name">Name</label>
+              <label for="name">Nombre</label>
               <small id="nameError"> <%= (locals.errors && errors.name) ? errors.name.msg : '*' %> </small>
           </div>
           <div class="form-floating">
             <input type="text" name="qualities" class="form-control" id="qualities" placeholder="Qualities" value="<%= producto.qualities %>">
-            <label for="qualities">Qualities</label>
+            <label for="qualities">Cualidades</label>
             <small id="qualitiesError"> <%= (locals.errors && errors.qualities) ? errors.qualities.msg : '*' %> </small>
-            <small>Remember to use the -- to separate elements</small>
+            <small>Recuerde usar -- para separar los elementos</small>
           </div>
           <div class="form-floating">
             <input type="text" name="advantage" class="form-control" id="advantage" placeholder="Advantage" value="<%= producto.advantages %>">
-            <label for="advantage">Advantage</label>
+            <label for="advantage">Ventajas</label>
             <small id="advantageError"> <%= (locals.errors && errors.advantage) ? errors.advantage.msg : '*' %> </small>
-            <small>Remember to use the -- to separate elements</small>
+            <small>Recuerde usar -- para separar los elementos</small>
           </div>
           <div class="form-floating">
             <input type="text" name="dimensions" class="form-control" id="dimensions" placeholder="Dimensions" value="<%= producto.dimensions %>" >
-            <label for="dimensions">Dimensions</label>
+            <label for="dimensions">Dimensiones</label>
+            <small>Recuerde agregar las unidades</small><br>
             <small id="dimensionsError"> <%= (locals.errors && errors.dimensions ) ? errors.dimensions.msg : '*' %> </small>
           </div>
           <div class="form-floating">
             <textarea class="form-control" name="description" placeholder="Please insert the description of the product" id="description"><%= producto.description %> </textarea>
-            <label for="floatingTextarea">Description</label>
+            <label for="floatingTextarea">Descripción</label>
             <small id="descriptionError"> <%= (locals.errors && errors.description ) ? errors.description.msg : '*' %> </small>
           </div>  
         </div>
         <div class="form-floating">
             <select class="form-select" name="category" id="category" aria-label="Floating label select example">
-              <option selected hidden>Select the category</option>
+              <option selected hidden>Seleccione la categoria</option>
               <option value="1" <%= producto.categoryProduct.name === "Placa de yeso" ? "selected" : "" %> >Placa de yeso</option>
               <option value="2" <%= producto.categoryProduct.name === "Placa de yeso laminado" ? "selected" : "" %> >Placa de yeso laminado</option>
               <option value="3" <%= producto.categoryProduct.name === "Placa de yeso con fibras" ? "selected" : "" %> >Placa de yeso con fibras</option>
               <option value="4" <%= producto.categoryProduct.name === "Placa de lana de madera" ? "selected" : "" %> >Placa de lana de madera</option>
               <option value="5" <%= producto.categoryProduct.name === "Placa de cemento" ? "selected" : "" %> >Placa de cemento</option>
             </select>
-            <label for="floatingSelect">Category</label>
+            <label for="floatingSelect">Categoria</label>
             <small id="categoryError"> <%= (locals.errors && errors.category ) ? errors.category.msg : '*' %> </small>
           </div>
           <div class="form-floating">
             <select class="form-select" name="condition" id="condition" aria-label="Floating label select example">
-              <option selected hidden>Select the condition</option>
+              <option selected hidden>Seleccione la condición</option>
               <option value="1" <%= producto.condition.name === "destacados" ? "selected" : "" %> >Destacados</option>
               <option value="2" <%= producto.condition.name === "oferta" ? "selected" : "" %> >En oferta</option>
               <option value="3" <%= producto.condition.name === "sin condicion" ? "selected" : "" %> >Sin condición</option>
             </select>
-            <label for="floatingSelect">Condition</label>
+            <label for="floatingSelect">Condición</label>
             <small id="conditionError"> <%= (locals.errors && errors.condition ) ? errors.condition.msg : '*' %> </small>
           </div>
           <div class="form-floating">
               <input type="text" name="price" class="form-control" id="price" placeholder="Price" value="<%= producto.price %>">
-              <label for="price">Price</label>
+              <label for="price">Precio</label>
               <small id="priceError"> <%= (locals.errors && errors.price ) ? errors.price.msg : '*' %> </small>
             </div>
           <div class="form-floating">
@@ -122,11 +123,11 @@
           </div>
           <div class="form-floating">
             <input type="text" name="discount" class="form-control" id="discount" placeholder="Discount" value="<%= producto.discount %>">
-            <label for="discount" >Discount</label>
+            <label for="discount" >Descuento</label>
             <small id="discountError"> <%= (locals.errors && errors.discount ) ? errors.discount.msg : '*' %> </small>
           </div>
           <div class="mb-3">
-              <label for="formFile" class="form-label">Add image</label><br>
+              <label for="formFile" class="form-label">Añadir imagen</label><br>
                <small>El producto tiene la siguiente imagen: <%= producto.image %> </small>
                <div ><img class="image" src="/img/products/<%= producto.image %>" alt=""></div>
               <input class="form-control" type="file" id="image" name="image">
@@ -134,7 +135,7 @@
           </div>
           
           <div class="button">
-              <button class="btn btn-outline-success" id="submit" type="submit">Edit Product</button>
+              <button class="btn btn-outline-success" id="submit" type="submit">Editar el Producto</button>
           </div>
       </section>  
       </form>

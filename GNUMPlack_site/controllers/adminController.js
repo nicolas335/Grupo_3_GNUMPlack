@@ -227,7 +227,7 @@ module.exports = {
                 })
             })
             .then(producto => {
-                res.redirect('/admin/list')
+                res.redirect('/admin/listDeleted')
             })
         })
         .catch(error => res.send(error))

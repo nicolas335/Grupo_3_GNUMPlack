@@ -179,5 +179,33 @@ body.bodyHome{
   }
   .home #home-slider{
     width: 550px;
-}}
+  }
+
+  .home .footerDesktop{
+    display: flex;
+  }
+  .home .footerDesktop .ubiSection{
+    width: 45%;
+  }
+  .home .footerDesktop .social{
+    width: 45%;
+  }
+  .home .footerDesktop .social h3{
+    margin: 18px auto;
+    padding-top: 20px;
+    padding-bottom: 8px;
+  }
+  .home .footerDesktop .social div{
+    margin: 20px 0;
+  }
+  .home .footerDesktop .social div a{
+    font-size: 30px;
+    font-family: var(--fuenteParrafo);
+  }
+  .home .footerDesktop .social div i{
+    padding-right: 15px;
+  }
+
+
+}
 

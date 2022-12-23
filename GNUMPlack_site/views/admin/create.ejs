@@ -25,13 +25,13 @@
                   <a class="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/admin/list">List</a>
+                  <a class="nav-link" href="/admin/list">Lista de Productos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/admin/Create">Create</a>
+                  <a class="nav-link" href="/admin/Create">Crear un Producto</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/admin/listDeleted">List Deleted</a>
+                  <a class="nav-link" href="/admin/listDeleted">Productos Eliminados</a>
                 </li>
               </ul>
               <form class="d-flex" role="search">
@@ -53,65 +53,65 @@
         margin: 0 auto;}
         h1{color: white;} 
         form{padding: 0 10%;}
-        div{margin-top: 15px;}     
+        div.form-floating{margin-top: 15px;}     
         </style>
-      <h1>Creating a new product!</h1>
+      <h1>Creando un Producto</h1>
 
       <form action="/admin/create" method="post" enctype="multipart/form-data">
           <section>
               <div class="form-floating">
                   <input type="text" name="name" class="form-control" id="name" placeholder="name" value="<%= locals.old ? old.name : null %>">
-                  <label for="name">Name</label>
+                  <label for="name">Nombre</label>
                   <small id="nameError"> <%= (locals.errors && errors.name) ? errors.name.msg : '*' %> </small>
               </div>
               <div class="form-floating">
                 <input type="text" name="qualities" class="form-control" id="qualities" placeholder="Qualities" value="<%= locals.old ? old.qualities : null %>">
-                <label for="qualities">Qualities</label>
-                <small>Remember to use the -- to separate elements</small><br>
+                <label for="qualities">Cualidades</label>
+                <small>Recuerde usar -- para separar los elementos</small><br>
                 <small id="qualitiesError"> <%= (locals.errors && errors.qualities) ? errors.qualities.msg : '*' %> </small>
               </div>
               <div class="form-floating">
                 <input type="text" name="advantage" class="form-control" id="advantage" placeholder="Advantage" value="<%= locals.old ? old.advantage : null %>">
                 <label for="advantage">Advantage</label>
-                <small>Remember to use the -- to separate elements</small><br>
+                <small>Recuerde usar -- para separar los elementos</small><br>
                 <small id="advantageError"> <%= (locals.errors && errors.advantage) ? errors.advantage.msg : '*' %> </small>
               </div>
               <div class="form-floating">
                 <input type="text" name="dimensions" class="form-control" id="dimensions" placeholder="Dimensions" value="<%= locals.old ? old.dimensions : null %>">
-                <label for="dimensions">Dimensions</label>
-                <small>Remember to add the units</small><br>
+                <label for="dimensions">Dimensiones</label>
+                <small>Recuerde agregar las unidades</small><br>
                 <small id="dimensionsError"> <%= (locals.errors && errors.dimensions ) ? errors.dimensions.msg : '*' %> </small>
               </div>
               <div class="form-floating">
                 <textarea class="form-control" name="description" placeholder="Please insert the description of the product" id="description"><%= locals.old ? old.description : null %></textarea>
-                <label for="floatingTextarea">Description</label>
+                <label for="floatingTextarea">Descripción</label>
                 <small id="descriptionError"> <%= (locals.errors && errors.description ) ? errors.description.msg : '*' %> </small>
               </div>  
               <div class="form-floating">
                 <select class="form-select" name="category" id="category" aria-label="Floating label select example">
-                  <option value="" selected hidden>Select the category</option>
+                  <option value="" selected hidden>Seleccione la categoria</option>
                   <option value= 1 <%= (locals.old && old.category === 'Placa de yeso') ? 'selected' : null %> >Placa de yeso</option>
                   <option value= 2 <%= (locals.old && old.category === 'Placa de yeso laminado') ? 'selected' : null %> >Placa de yeso laminado</option>
                   <option value= 3 <%= (locals.old && old.category === 'Placa de yeso con fibras') ? 'selected' : null %> >Placa de yeso con fibras</option>
                   <option value= 4 <%= (locals.old && old.category === 'Placa de lana de madera') ? 'selected' : null %> >Placa de lana de madera</option>
                   <option value= 5  <%= (locals.old && old.category === 'Placa de cemento') ? 'selected' : null %> >Placa de cemento</option>
                 </select>
-                <label for="floatingSelect">Category</label>
+                <label for="floatingSelect">Categoria</label>
                 <small id="categoryError"> <%= (locals.errors && errors.category ) ? errors.category.msg : '*' %> </small>
               </div>
               <div class="form-floating">
                 <select class="form-select" name="condition" id="condition" aria-label="Floating label select example">
-                  <option value="" selected hidden>Select the condition</option>
+                  <option value="" selected hidden>Seleccione la condición</option>
                   <option value= 1 <%= (locals.old && old.condition === 'destacados') ? 'selected' : null %> >Destacados</option>
                   <option value= 2 <%= (locals.old && old.condition === 'oferta') ? 'selected' : null %> >Oferta</option>
                   <option value= 3 <%= (locals.old && old.condition === '') ? 'selected' : null %> >Sin condición</option>
                 </select>
-                <label for="floatingSelect">Condition</label>
+                <label for="floatingSelect">Condición</label>
                 <small id="conditionError"> <%= (locals.errors && errors.condition ) ? errors.condition.msg : '*' %> </small>
               </div>
               <div class="form-floating">
                   <input type="text" name="price" class="form-control" id="price" placeholder="Price" value="<%= locals.old ? old.price : null %>">
-                  <label for="price">Price</label>
+                  <label for="price">Precio</label>
                   <small id="priceError"> <%= (locals.errors && errors.price ) ? errors.price.msg : '*' %> </small>
               </div>
               <div class="form-floating">
@@ -121,16 +121,16 @@
               </div>
                 <div class="form-floating">
                   <input type="text" name="discount" class="form-control" id="discount" placeholder="Discount" value="<%= locals.old ? old.discount : null %>">
-                  <label for="discount">Discount</label>
+                  <label for="discount">Descuento</label>
                   <small id="discountError"> <%= (locals.errors && errors.discount ) ? errors.discount.msg : '*' %> </small>
               </div>
               <div class="mb-3">
-                  <label for="formFile" class="form-label">Add image</label>
+                  <label for="formFile" class="form-label">Añadir imagen</label>
                   <input class="form-control" type="file" id="image" name="image">
                   <small id="imageError"> <%= (locals.errors && errors.image ) ? errors.image.msg : '*' %> </small>
               </div>
               <div class="button">
-                  <button class="btn btn-outline-success" id="submit" type="submit">Create Product</button>
+                  <button class="btn btn-outline-success" id="submit" type="submit">Crear el Producto</button>
               </div>
               
           </section>
