@@ -25,12 +25,12 @@
                 <p><%= e.product.name %></p> <br>
                 <p>Stock: <%= e.product.stock %></p> <br>
                 <div class="p-amount">
-                    <i class="fas fa-minus boton menos"></i>
+                    <i class="fas fa-minus botonMenos menos"></i>
                     <p id="p-cantidad" class="p-contador">1</p>
-                    <i class="fas fa-plus boton mas"></i>
+                    <i class="fas fa-plus botonMas mas"></i>
                 </div> <br>
-                <sup>$</sup>
-                <span class="p-price"><%= e.product.price %></span>
+                <!-- <sup>$</sup> -->
+                <span class="p-price">Precio por unidad: $<%=e.product.price%></span>
             </div>
             <div class="trash-container">
                 <form action="/cart/quitar/<%=e.product.id%>?_method=delete" method="POST">
