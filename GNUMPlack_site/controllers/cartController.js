@@ -14,7 +14,6 @@ module.exports = {
                     all:true
                 }
             ],
-           
 
         })
         .then(cart => {

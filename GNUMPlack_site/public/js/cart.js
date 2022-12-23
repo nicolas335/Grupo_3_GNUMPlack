@@ -1,17 +1,16 @@
-/* window.addEventListener('load', function() {
+window.addEventListener('load', function() {
     const $ = (e) => document.querySelector(e);
     const $all = (e) => document.querySelectorAll(e);
 
     let valorActual = 1;
-    let sumaTotal = 0;
 
     const botones = $all('.boton');
     const contador = $('#p-cantidad');
-    const prices = $all('.p-price');
-    const total = $('#total');
+    const contadoresClass = $all('.p-contador');
 
 
-    botones.forEach(boton =>{
+    botones.forEach((boton, i) =>{
+
         boton.addEventListener('click', e => {
 
             const estilos = e.currentTarget.classList;
@@ -26,26 +25,14 @@
                 valorActual = 1;
             }
 
+            
             valorActual < 1? valorActual = 1: contador.textContent = valorActual;
-            console.log(e);
+            
+            
         })
     })
         
-   prices.forEach(p => {
-    sumaTotal += +p.textContent
-   });
-   total.textContent = sumaTotal
-   
-}) */
-
-
-window.addEventListener('load', function() {
-
-const $ = (tag) => document.querySelector(tag);
-
-
   
+   
+})
 
-    
- 
- });
