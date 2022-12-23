@@ -15,11 +15,11 @@
                 <% products.forEach(producto => { %>
                     <article class="contenedor">
                         <div class="name">
-                            <h3><a href="/product/detail/<%= producto.id %> " target="_blank"><%= producto.name %> </a></h3>
+                            <h3><a href="/product/detail/<%= producto.id %> " ><%= producto.name %> </a></h3>
                             <p><%= producto.description %> </p>
                         </div>
                         <div class="image">
-                            <a href="/product/detail/<%= producto.id %>" target="_blank" ><img class="placas" src="/img/products/<%- producto.image %> " alt="placa de yeso" ></a>
+                            <a href="/product/detail/<%= producto.id %>" ><img class="placas" src="/img/products/<%- producto.image %> " alt="placa de yeso" ></a>
                         </div>
                     </article>
                 <% }) %>

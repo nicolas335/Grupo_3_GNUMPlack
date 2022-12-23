@@ -18,6 +18,7 @@
   "homepage": "https://github.com/nicolas335/Grupo_4_GNUMPlack#readme",
   "dependencies": {
     "@splidejs/splide": "^4.1.4",
+    "alertifyjs": "^1.13.1",
     "bcryptjs": "^2.4.3",
     "bootstrap-icons": "^1.9.1",
     "cookie-parser": "^1.4.6",
@@ -30,6 +31,7 @@
     "multer": "^1.4.5-lts.1",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.20",
-    "sequelize": "^6.25.2"
+    "sequelize": "^6.25.2",
+    "sweetalert": "^2.1.2"
   }
 }
