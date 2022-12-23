@@ -1,5 +1,5 @@
 window.addEventListener('load', function() {
-    let forms = document.querySelectorAll('form');
+    let forms = document.querySelectorAll('.formHistorial');
     for (let i = 0; i < forms.length; i++) {
         forms[i].addEventListener('submit', event => {
                 event.preventDefault();

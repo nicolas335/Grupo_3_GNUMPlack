@@ -86,6 +86,12 @@
 .header nav.hidden ul li a{
     color: rgba(255, 255, 255, .85);
 }
+.header .fa-exclamation{
+   /*  color: #e76f51; */
+   color: #80ffdb;
+    font-size: 25px;
+    position: absolute;
+}
 
 
 /* Media Queries */
