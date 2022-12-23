@@ -24,10 +24,12 @@
       <a class="cart" href="/cart">
           <% if (locals.userLogin) { %>
           <i class="fa-solid fa-cart-shopping cart"></i>
+          <% if (locals.userLogin && locals.userLogin.cart==1) { %>
+            <p>S</p>
+          <% } %>
         </a>
         <% } %>
     </div>
-
   <button class="menu-toggle">
       <i class="fas fa-bars"></i>
   </button>
