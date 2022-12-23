@@ -61,6 +61,7 @@
     margin: 50px auto;
     padding-top: 30px;
     width: 70%;
+    height: 180px;
     border-bottom: #ddd 1px solid;
     border-top: #ddd 1px solid ;
 }
@@ -99,7 +100,7 @@
     width: 130px;
     height: 40px;
     line-height: 42px;
-    padding: 0;
+    padding-bottom: 4px;
     border: none;
     
   }
@@ -164,7 +165,7 @@
   }
 .body-cart .custom-btn {
     width: 130px;
-    height: 40px;
+    height: 50px;
     color: #fff;
     border-radius: 5px;
     padding: 10px 25px;
