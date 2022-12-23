@@ -33,7 +33,7 @@
                 <span class="p-price"><%= e.product.price %></span>
             </div>
             <div class="trash-container">
-                <form action="/cart/quitar/<%=e.id%>?_method=delete" method="POST">
+                <form action="/cart/quitar/<%=e.product.id%>?_method=delete" method="POST">
                     <input type="submit" value="X"><!-- <i class="fas fa-trash"></i> -->
                 </form> 
             </div>

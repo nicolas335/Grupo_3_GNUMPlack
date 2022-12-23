@@ -1,4 +1,4 @@
-window.addEventListener('load', function() {
+/* window.addEventListener('load', function() {
     const $ = (e) => document.querySelector(e);
     const $all = (e) => document.querySelectorAll(e);
 
@@ -34,5 +34,5 @@ window.addEventListener('load', function() {
         
   
    
-})
+}) */
 
