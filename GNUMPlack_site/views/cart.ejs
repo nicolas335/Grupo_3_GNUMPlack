@@ -53,18 +53,18 @@
             <h4>El total es de:</h4>
             <p class="total" id="total">$ <%= total %> </p>
             
-            <!-- <form action="/cart/comprar?_method=put" method="POST">
-                <input id="submit" type="submit" value="Comprar!">
-            </form> -->
-            <div class="boton-modal">
+            <form action="/cart/comprar?_method=put" method="POST" class="comprarOrden">
+                <button class="custom-btn btn-3" type="submit">Comprar!</button>
+            </form>
+            <!-- <div class="boton-modal">
                 <label for="btn-modal">
                     Comprar!
                 </label>
-            </div>
+            </div> -->
         </div>
         <!-- ventana modal-->
 
-        <input type="checkbox" id="btn-modal">
+        <!-- <input type="checkbox" id="btn-modal">
     <div class="container-modal">
         <div class="content-modal">
             <h2>¡Compra realizada con éxito!</h2>
@@ -76,7 +76,7 @@
             </div>
         </div>
         <label for="btn-modal" class="cerrar-modal"></label>
-    </div>
+    </div> -->
 
      <!--Fin de Ventana-->
 
@@ -85,6 +85,7 @@
     <%- include("./partials/footer") %> 
 
     <script src="/js/cart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
