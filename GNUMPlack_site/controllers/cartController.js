@@ -16,9 +16,11 @@ module.exports = {
             ],
 
         })
-        .then(cart => {
-            
-            return res.render('cart',{cart})
+        .then(carts => {
+            //return res.send(cartsPending)
+            let cartsPending = carts.filter(cart => cart.order.status === 'pending')
+                        
+            return res.render('cart',{cart: cartsPending})
         })
         .catch(err => res.send(err))
     },

@@ -36,7 +36,7 @@
                 <input type="password" name="pass2" id="pass2" placeholder="Confirmar contraseña">
                 <small id="passContainer2"><%= (locals.errors && errors.pass2) ? errors.pass2.msg : '*' %></small>       
             </div>
-            <div class="container">
+            <!-- <div class="container">
                 <label for="phoneNumber">Celular</label>
                 <input type="number" name="phoneNumber" id="phoneNumber" placeholder="11..." value="<%= locals.old && old.phoneNumber ? old.phoneNumber : null%>">
                 <small id="phoneNumberContainer"><%= (locals.errors && errors.phoneNumber) ? errors.phoneNumber.msg : '*' %></small>      
@@ -59,7 +59,7 @@
                 <label for="signinFile" >Añadir imagen</label>
                   <input class="signinFile" type="file" id="signinFile" name="imageUser" >
                   <small id="imagenContainer"><%= (locals.errors && errors.imageUser) ? errors.imageUser.msg : '' %></small>                
-            </div>
+            </div> -->
             <h2 class="bottom">Terminos y Condiciones</h2>
             <div class="bottom">
                 <input type="checkbox" name="terminos" id="terminos" <%= locals.old && old.terminos == "on"? "checked":"" %> >

@@ -23,8 +23,8 @@ module.exports = [
                 })
         }),
 
-    body('phoneNumber').notEmpty().withMessage("Debe ingresar su número telefónico").bail()
-        .isNumeric(),
+    body('phoneNumber').isNumeric(),/* .notEmpty().withMessage("Debe ingresar su número telefónico").bail() */
+        
 
-    body('city').notEmpty().withMessage('Debe ingresar su ciudad'),
+    /* body('city').notEmpty().withMessage('Debe ingresar su ciudad'), */
 ];

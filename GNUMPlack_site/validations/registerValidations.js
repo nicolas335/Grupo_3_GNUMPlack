@@ -31,10 +31,10 @@ module.exports = [
     .custom((value,{req}) => value !== req.body.pass ? false : true)
     .withMessage('Las contraseñas no coinciden'),
 
-    body('phoneNumber').notEmpty().withMessage("Debe ingresar su número telefónico").bail()
+   /*  body('phoneNumber').notEmpty().withMessage("Debe ingresar su número telefónico").bail()
     .isNumeric(),
 
-    body('city').notEmpty().withMessage('Debe ingresar su ciudad'),
+    body('city').notEmpty().withMessage('Debe ingresar su ciudad'), */
 
     body('terminos').notEmpty().withMessage('Debe Aceptar nuestros términos y condiciones'),
 

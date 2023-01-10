@@ -1,0 +1,15 @@
+.listAdmin{
+    padding: 10px 12px 30px;
+    background-color: #a4c3b2;
+    max-width: 1800px;
+    margin: 50px auto 0;
+}
+
+.listAdmin h1 {
+    color: white;
+}
+
+.listAdmin a {
+    text-decoration: none;
+    color: black;
+}

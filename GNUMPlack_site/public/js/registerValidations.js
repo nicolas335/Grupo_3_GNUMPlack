@@ -25,9 +25,9 @@ window.addEventListener('load', () => {
     const validate = {
         name: false,
         lastName: false,
-        phoneNumber: false,
+        /* phoneNumber: false, */
         email: false,
-        city: false,
+        /* city: false, */
         terms: false,
         pass: false,
         pass2: false
@@ -108,7 +108,7 @@ window.addEventListener('load', () => {
                 }
                 funcValidate(validate)           
             })
-        phoneNumber.addEventListener("blur",() => {
+        /* phoneNumber.addEventListener("blur",() => {
             switch (true) {
                 case !phoneNumber.value:
                     $("#phoneNumberContainer").innerHTML = "<small>El campo Celular es obligatorio</small>"
@@ -138,7 +138,7 @@ window.addEventListener('load', () => {
                     break;
             }
             funcValidate(validate)
-        })
+        }) */
         pass.addEventListener('blur',() => {
             switch (true) {
                 case !pass.value:

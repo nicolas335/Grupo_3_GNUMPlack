@@ -2,7 +2,7 @@
     width: 100vw;
     height: 60px;
     /* background-color: #ffd000; */
-    background-color: rgba(107, 144, 128, 1);
+    background-color: rgba(107, 144, 128, 1) !important;
     display: flex;
     justify-content: space-between;
     align-items: center;

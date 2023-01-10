@@ -1,0 +1,31 @@
+.editAdmin {
+    padding: 10px 12px 30px;
+    background-color: #a4c3b2;
+    max-width: 1800px;
+    margin: 50px auto 0;
+}
+
+.editAdmin h1 {
+    color: white;
+}
+
+.editAdmin a {
+    text-decoration: none;
+    color: black;
+}
+
+.editAdmin h1 {
+    color: white;
+}
+
+.editAdmin form {
+    padding: 0 10%;
+}
+
+.editAdmin img.image {
+    max-width: 320px;
+}
+
+.editAdmin div.form-floating {
+    margin-top: 15px;
+}

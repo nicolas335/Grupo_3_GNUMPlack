@@ -1,0 +1,27 @@
+.productAdmin {
+    margin-top: 50px;
+    padding: 10px 12px 30px;
+    background-color: #a4c3b2;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.productAdmin h1 {
+    color: white;
+}
+
+.productAdmin form {
+    padding: 0 10%;
+}
+
+.productAdmin div.form-floating {
+    margin-top: 15px;
+}
+@media(min-width :1023px) {
+    .productAdmin div small {
+        font-size: 19px;
+    }
+    .productAdmin section div input {
+        font-size: 19px;
+    }
+}

@@ -24,9 +24,9 @@ module.exports = {
                 last_name: lastName,
                 email: email,
                 password: bcryptjs.hashSync(pass, 12),
-                phoneNumber: phoneNumber,
-                city: city,
-                genders_id: gender == "Seleccione su género"? 1 : gender,
+                phoneNumber: 1123456789,
+                city: 'undefined',
+                genders_id: 1,
                 image: req.file ? req.file.filename : "default-profile-image.jfif",
                 categories_users_id: 1
             })
