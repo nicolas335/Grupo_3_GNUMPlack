@@ -37,8 +37,8 @@ module.exports = {
                             first_name: user.first_name,
                             last_name: user.last_name,
                             email: user.email,
-                            image: user.image,
-                            categories_users_id: user.categories_users_id,
+                            image: req.file ? user.image : "default-profile-image.jfif",
+                            categories_users_id: 1,
                             cart: 0
                         }
                     res.cookie('recordar', req.session.userLogin, { maxAge: 1000 * 60 * 60 * 24 })

@@ -132,11 +132,24 @@ module.exports = {
                     })
                     Promise.all([cartDetele,OrderDelete])
                     .then(([cartDetele,OrderDelete]) => {
+                        req.session.userLogin = {
+                            id: req.session.userLogin.id,
+                            first_name: req.session.userLogin.first_name,
+                            last_name: req.session.userLogin.last_name,
+                            email: req.session.userLogin.email,
+                            image: req.session.userLogin.image,
+                            categories_users_id: req.session.userLogin.categories_users_id,
+                            cart: 0
+                        }
+                    if (req.cookies.recordar) {
+                        res.cookie('recordar', '', { maxAge: -1 })
+                        res.cookie('recordar', req.session.userLogin, { maxAge: 1000 * 60 * 60 * 24 })
+                    }
                         res.redirect('/cart')
                     })
                     .catch(err => res.send(err))
 
-                } else {    // si hay mas de un carrito, solo elimino el carrito
+                } else {    // si hay mas de un carrito, solo elimino el carrito seleccionado
                     db.Carts.destroy({
                         where: {
                             products_id: idParams,
